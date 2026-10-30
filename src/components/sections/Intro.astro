@@ -6,22 +6,24 @@ import team from '../../assets/team/pierluigi-alberto.jpg';
 <!-- Presentazione: Pierluigi e Alberto -->
 <section class="mx-auto max-w-screen-xl px-5 pt-24 pb-12 md:px-10 md:pt-40 md:pb-16" aria-labelledby="intro-title">
   <div class="grid items-center gap-12 md:grid-cols-2 md:gap-16">
-    <!-- Titolo verticale sovrapposto al bordo sinistro della foto; P e A nel corsivo del logo -->
-    <div class="reveal relative pl-9 md:order-last md:pl-12">
+    <!-- Titolo verticale sovrapposto al bordo destro della foto. Due livelli allineati:
+         il testo in "difference" diventa bianco sul nero e nero sulle parti chiare della foto;
+         sopra, solo la P e la A in rosso nel corsivo del logo. -->
+    <div class="reveal relative pr-9 md:order-last md:pr-12">
       <Photo
         src={team}
         alt="Pierluigi e Alberto di PandA Wedding, in bianco e nero nel cortile di una villa, con macchina fotografica e videocamera"
         ratio="2 / 3"
         sizes="(min-width: 768px) 40vw, 85vw"
       />
-      <h2
-        id="intro-title"
-        class="intro-title vertical-text absolute bottom-8 left-0 z-10 text-[1.375rem] leading-[1.15] font-light tracking-[0.12em] uppercase md:bottom-12 md:text-[1.75rem]"
-      >
+      <h2 id="intro-title" class="intro-title intro-title--text">
         We are<br />
-        <span class="text-accent"><span class="script">P</span>ierluigi</span> and
-        <span class="text-accent"><span class="script">A</span>lberto</span>
+        <span class="script">P</span>ierluigi and <span class="script">A</span>lberto
       </h2>
+      <p class="intro-title intro-title--accent" aria-hidden="true">
+        We are<br />
+        <span class="script">P</span>ierluigi and <span class="script">A</span>lberto
+      </p>
     </div>
 
     <div class="reveal max-w-md">
@@ -38,11 +40,47 @@ import team from '../../assets/team/pierluigi-alberto.jpg';
 </section>
 
 <style>
-  /* Leggibile anche dove passa sopra le parti chiare della foto */
   .intro-title {
-    text-shadow:
-      0 1px 2px rgb(0 0 0 / 0.5),
-      0 2px 24px rgb(0 0 0 / 0.55);
+    position: absolute;
+    right: 0;
+    bottom: 2rem;
+    z-index: 10;
+    writing-mode: vertical-rl;
+    white-space: nowrap;
+    font-size: 1.375rem;
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+  @supports (writing-mode: sideways-lr) {
+    .intro-title {
+      writing-mode: sideways-lr;
+    }
+  }
+  @supports not (writing-mode: sideways-lr) {
+    .intro-title {
+      transform: rotate(180deg);
+    }
+  }
+  @media (min-width: 768px) {
+    .intro-title {
+      bottom: 3rem;
+      font-size: 1.75rem;
+    }
+  }
+  /* Bianco sul fondo scuro, nero dove passa sopra le parti chiare della foto */
+  .intro-title--text {
+    color: #fff;
+    mix-blend-mode: difference;
+  }
+  .intro-title--text .script,
+  .intro-title--accent {
+    color: transparent;
+  }
+  .intro-title--accent .script {
+    color: var(--accent);
   }
   .script {
     font-family: var(--font-script);
