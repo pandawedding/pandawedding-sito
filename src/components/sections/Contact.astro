@@ -1,13 +1,14 @@
 ---
 import { site } from '../../data/site';
 
+// Etichette e placeholder dal sito Framer (pagina Contatti)
 const fields = [
-  { name: 'names', label: 'Full names', type: 'text', required: true, autocomplete: 'name' },
-  { name: 'email', label: 'Email', type: 'email', required: true, autocomplete: 'email' },
-  { name: 'date', label: 'Wedding date', type: 'text', required: false, autocomplete: 'off' },
-  { name: 'venue', label: 'Location / Venue', type: 'text', required: true, autocomplete: 'off' },
-  { name: 'phone', label: 'Phone number', type: 'tel', required: false, autocomplete: 'tel' },
-  { name: 'planner', label: 'Wedding planner (if applicable)', type: 'text', required: false, autocomplete: 'off' },
+  { name: 'names', label: 'Full names', placeholder: 'e.g. Livia & Marco', type: 'text', required: true, autocomplete: 'name' },
+  { name: 'email', label: 'Email', placeholder: 'name@email.com', type: 'email', required: true, autocomplete: 'email' },
+  { name: 'date', label: 'Wedding date', placeholder: 'DD / MM / YYYY', type: 'text', required: false, autocomplete: 'off' },
+  { name: 'venue', label: 'Location / Venue', placeholder: 'City, estate or destination', type: 'text', required: true, autocomplete: 'off' },
+  { name: 'phone', label: 'Phone number', placeholder: '+39 000 000 0000', type: 'tel', required: false, autocomplete: 'tel' },
+  { name: 'planner', label: 'Wedding planner', placeholder: 'If applicable', type: 'text', required: false, autocomplete: 'off' },
 ];
 ---
 
@@ -35,16 +36,6 @@ const fields = [
         {site.email}
       </a>
       <p class="label mt-6">Italia e destinazioni</p>
-
-      <a
-        href={site.whatsapp}
-        target="_blank"
-        rel="noopener"
-        data-track="click_whatsapp"
-        class="btn btn-ghost mt-10"
-      >
-        WhatsApp <span class="arrow" aria-hidden="true">→</span>
-      </a>
     </div>
 
     <form id="contact-form" class="reveal grid gap-x-5 gap-y-6 sm:grid-cols-2" novalidate>
@@ -59,6 +50,7 @@ const fields = [
               name={field.name}
               type={field.type}
               required={field.required}
+              placeholder={field.placeholder}
               autocomplete={field.autocomplete}
               class="field"
             />
@@ -69,7 +61,12 @@ const fields = [
         <span class="text-[0.6875rem] font-semibold tracking-[0.2em] text-fg-muted uppercase">
           Message &amp; your vision <span class="text-accent">*</span>
         </span>
-        <textarea name="message" required rows="5" class="field resize-y"></textarea>
+        <textarea
+          name="message"
+          required
+          rows="5"
+          placeholder="Tell us about what you envision: the atmosphere, people and details you’d like to remember."
+          class="field resize-y"></textarea>
       </label>
 
       <!-- Honeypot antispam: invisibile alle persone -->
@@ -102,6 +99,10 @@ const fields = [
     box-shadow: inset 0 0 0 1px var(--line);
     font-size: 1rem; /* evita lo zoom automatico su iOS */
     transition: box-shadow 0.2s;
+  }
+  .field::placeholder {
+    color: var(--fg-muted);
+    opacity: 0.6;
   }
   .field:focus {
     outline: none;

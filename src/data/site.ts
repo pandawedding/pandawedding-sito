@@ -1,8 +1,8 @@
 export const site = {
   name: 'PandA Wedding',
   tagline: 'Italian Wedding Photographers and Videographers based in Verona',
-  description:
-    'PandA Wedding: fotografi e videomaker di matrimonio con base a Verona, in Italia e destinazioni estere. Fotografia e film dal linguaggio editoriale.',
+  // Meta description del sito Framer
+  description: 'Fotografia e videografia di matrimonio dal linguaggio editoriale.',
   email: 'hello@pandafotovideo.it',
   whatsapp: 'https://wa.me/393489538074',
   company: {

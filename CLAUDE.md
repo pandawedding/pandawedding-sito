@@ -84,14 +84,16 @@ Il sito è **una sola landing page** a sezioni (decisione del 30/10/2026), forma
 
 Menu ad ancore (con evidenza della sezione corrente): Wedding Films · Portfolio · Real Weddings · About Us · Contatti. Il logo riporta in cima.
 
-1. **Hero** (`#top`): foto a tutto schermo, tagline *Italian Wedding Photographers and Videographers based in Verona*, titolo *STORIES MADE TO BE FELT, NOT SIMPLY REMEMBERED*, chip "Now showing" che apre un trailer.
+1. **Hero** (`#top`): foto a tutto schermo, tagline *Italian Wedding Photographers and Videographers based in Verona*, titolo *STORIES MADE TO BE FELT, NOT SIMPLY REMEMBERED*, chip ▶ con il nome della coppia che apre un trailer.
 2. **Presentazione**: *WE ARE PIERLUIGI AND ALBERTO* (in verticale), testo *For those looking for more than beautiful images...*, foto dei due, `OUR APPROACH →`.
 3. **Frames / Wedding Films** (`#films`): riga Netflix di card film (poster, location, coppia, descrizione). Il trailer si apre in un player a schermo intero; Vimeo (`dnt=1`) si carica solo al click.
 4. **Inspirations / Portfolio** (`#portfolio`): **sezione bianca** (`data-theme="light"`), selezione di foto + `Vedi altre foto` a blocchi + visore a schermo intero. Chiude con *Next chapter, your story*.
 5. **Pages / Real Weddings** (`#real-weddings`): card dei matrimoni; `LEGGI IL DIARIO →` apre il diario in un pannello (link condivisibile `#diario/<slug>`). Ogni diario ha anche una pagina statica `/real-weddings/<slug>` per la SEO. I diari sono una content collection in `src/content/diaries/`; le foto di un diario vanno in `src/assets/real-weddings/<slug>/`.
-6. **About** (`#about`): *The right team makes the difference*, i tre valori in riquadri, *Research & Approach* espandibile, CTA *Se sentite affinità, raccontateci chi siete.*
-7. **Contatti** (`#contatti`): *Your story deserves more than ordinary.* / *Let's talk about your wedding.*, email, *ITALIA E DESTINAZIONI*, form: Full names*, Email*, Wedding date, Location / Venue*, Phone number, Wedding planner (if applicable), Message & your vision* (* obbligatori).
-8. **Footer**: nome, *Raccontateci la vostra storia.*, *Stories made to be felt*, WhatsApp (`https://wa.me/393489538074`), dati societari.
+6. **About** (`#about`): *The right team makes the difference*, *Photography captures the moment / Cinema brings you back to it*, *Research & Approach* con i tre paragrafi in inglese, `get in touch`.
+7. **Contatti** (`#contatti`): *Your story deserves more than ordinary.* / *Let's talk about your wedding.*, email, *ITALIA E DESTINAZIONI*, form con etichette e placeholder di Framer: Full names*, Email*, Wedding date, Location / Venue*, Phone number, Wedding planner, Message & your vision* (* obbligatori).
+8. **Footer**: nome, *Stories made to be felt*, WhatsApp (`https://wa.me/393489538074`), dati societari.
+
+**Testi: fonte unica = sito Framer attuale.** Non aggiungere frasi, etichette o CTA che su Framer non ci sono (decisione del 30/10/2026: il proprietario ha tolto testi e vuole solo quelli presenti). Ammessi solo i controlli d'interfaccia (es. `Vedi altre foto`, chiudi, play) e gli avvisi legali obbligatori.
 
 Pagine separate: solo `/privacy`, `/cookie-policy` e le pagine statiche dei diari.
 

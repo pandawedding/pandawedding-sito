@@ -12,13 +12,13 @@ interface Props {
 }
 const { diary, titleId } = Astro.props;
 const { Content } = await render(diary.entry);
-const { couple, label } = diary.entry.data;
+const { couple, title, label } = diary.entry.data;
 ---
 
 <article class="mx-auto max-w-screen-lg px-5 md:px-10" data-lightbox-group>
   <header class="pt-6 md:pt-12">
     <p class="label">{label}</p>
-    <h2 id={titleId} class="mt-4 text-display font-light tracking-title uppercase">{couple}</h2>
+    <h2 id={titleId} class="mt-4 text-display font-light tracking-title uppercase">{title}</h2>
   </header>
 
   <Photo
@@ -66,9 +66,14 @@ const { couple, label } = diary.entry.data;
 
   <footer class="mx-auto mt-20 max-w-2xl border-t border-line pt-12 pb-20 text-center md:mt-28">
     <p class="label">Il vostro diario</p>
-    <p class="mt-5 text-title font-light">Avete immaginato una giornata così? Parliamone.</p>
-    <a href="/#contatti" class="btn mt-10" data-diary-cta data-track="cta_click" data-label="get in touch" data-position="diary">
-      Get in touch <span class="arrow" aria-hidden="true">→</span>
-    </a>
+    <p class="mt-5 text-title font-light">Il tuo matrimonio merita di essere raccontato così</p>
+    <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <a href="/#contatti" class="btn" data-diary-cta data-track="cta_click" data-label="raccontaci la tua storia" data-position="diary">
+        Raccontaci la tua storia <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="/#about" class="btn btn-ghost" data-diary-cta data-track="cta_click" data-label="our approach" data-position="diary">
+        Our approach <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
   </footer>
 </article>
