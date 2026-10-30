@@ -4,7 +4,7 @@ import Photo from '../Photo.astro';
 import placeholder from '../../assets/team/pierluigi-alberto.jpg';
 ---
 
-<!-- Impaginazione editoriale: foto e testo si alternano, le foto leggermente inclinate -->
+<!-- Impaginazione editoriale: le due foto vicine e inclinate accanto al testo -->
 <section id="about" class="pt-8 pb-20 md:pt-12 md:pb-28" aria-labelledby="about-title">
   <div class="mx-auto max-w-screen-xl px-5 md:px-10">
     <header class="reveal mx-auto max-w-4xl text-center">
@@ -14,30 +14,37 @@ import placeholder from '../../assets/team/pierluigi-alberto.jpg';
       </h2>
     </header>
 
-    <div class="mt-14 grid grid-cols-6 items-center gap-x-4 gap-y-14 md:mt-24 md:grid-cols-12 md:gap-x-8 md:gap-y-0">
-      <Photo
-        src={placeholder}
-        alt="Foto segnaposto, da sostituire"
-        ratio="4 / 5"
-        sizes="(min-width: 768px) 30vw, 65vw"
-        widths={[400, 640, 960]}
-        class="reveal col-span-4 col-start-1 -rotate-2 md:col-span-4 md:col-start-2 md:row-start-1"
-      >
-        <span class="badge">Da sostituire</span>
-      </Photo>
+    <!-- Le due foto vicine, piccole e inclinate, accanto al testo (su mobile sopra) -->
+    <div class="mt-14 grid items-center gap-14 md:mt-24 md:grid-cols-[5fr_7fr] md:gap-16">
+      <div class="reveal flex items-start justify-center">
+        <Photo
+          src={placeholder}
+          alt="Foto segnaposto, da sostituire"
+          ratio="4 / 5"
+          sizes="(min-width: 768px) 14rem, 40vw"
+          widths={[320, 480, 640]}
+          class="w-[40%] max-w-56 -rotate-3 shadow-2xl shadow-black/50"
+        >
+          <span class="badge">Da sostituire</span>
+        </Photo>
+        <Photo
+          src={placeholder}
+          alt="Foto segnaposto, da sostituire"
+          ratio="4 / 5"
+          sizes="(min-width: 768px) 14rem, 40vw"
+          widths={[320, 480, 640]}
+          class="-ml-4 mt-12 w-[40%] max-w-56 rotate-[2.5deg] shadow-2xl shadow-black/50 md:-ml-6 md:mt-16"
+        >
+          <span class="badge">Da sostituire</span>
+        </Photo>
+      </div>
 
-      <p
-        class="reveal col-span-6 text-center text-title font-light md:col-span-5 md:col-start-7 md:row-start-1 md:text-left"
-      >
-        Photography captures the moment<br />
-        <span class="text-accent">Cinema brings you back to it</span>
-      </p>
-
-      <div
-        class="reveal col-span-6 text-center md:col-span-5 md:col-start-2 md:row-start-2 md:mt-16 md:text-left"
-        lang="en"
-      >
-        <h3 class="label">Research &amp; Approach</h3>
+      <div class="reveal text-center md:text-left" lang="en">
+        <p class="text-title font-light">
+          Photography captures the moment<br />
+          <span class="text-accent">Cinema brings you back to it</span>
+        </p>
+        <h3 class="label mt-14">Research &amp; Approach</h3>
         <div class="mt-8 space-y-6 text-lead font-light text-fg-muted">
           <p>
             Our work lives at the intersection of documentary spontaneity, editorial aesthetics, and cinematic emotion.
@@ -49,17 +56,6 @@ import placeholder from '../../assets/team/pierluigi-alberto.jpg';
           </p>
         </div>
       </div>
-
-      <Photo
-        src={placeholder}
-        alt="Foto segnaposto, da sostituire"
-        ratio="4 / 5"
-        sizes="(min-width: 768px) 25vw, 65vw"
-        widths={[400, 640, 960]}
-        class="reveal col-span-4 col-start-3 rotate-[1.5deg] md:col-span-3 md:col-start-9 md:row-start-2 md:mt-40"
-      >
-        <span class="badge">Da sostituire</span>
-      </Photo>
     </div>
   </div>
 </section>
