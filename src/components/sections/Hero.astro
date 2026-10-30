@@ -49,7 +49,7 @@ const featured = films.find((f) => f.slug === 'imani-john')!;
   </div>
   <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/30"></div>
 
-  <div class="relative mx-auto w-full max-w-screen-2xl px-5 pt-28 pb-14 md:px-10 md:pb-20">
+  <div class="relative mx-auto flex w-full max-w-screen-2xl flex-col items-center px-5 pt-28 pb-14 text-center md:px-10 md:pb-20">
     <button
       type="button"
       data-film={featured.slug}
@@ -64,10 +64,36 @@ const featured = films.find((f) => f.slug === 'imani-john')!;
       not simply <span class="text-accent">remembered</span>
     </h1>
 
-    <p class="mt-10 max-w-xs text-[0.75rem] leading-relaxed font-medium tracking-label text-white/75 uppercase md:max-w-md">
-      {site.tagline}
-    </p>
+    <div class="mt-10 flex flex-col items-center gap-6">
+      <p class="max-w-xs text-[0.75rem] leading-relaxed font-medium tracking-label text-white/75 uppercase md:max-w-none">
+        {site.tagline}
+      </p>
+      <div class="flex flex-wrap justify-center gap-x-8">
+        <a href="#contatti" class="cta-link" data-track="cta_click" data-label="get in touch" data-position="hero">
+          Get in touch <span class="chevron" aria-hidden="true">›</span>
+        </a>
+        <a href="#films" class="cta-link text-white!" data-track="cta_click" data-label="wedding films" data-position="hero">
+          Wedding Films <span class="chevron" aria-hidden="true">›</span>
+        </a>
+      </div>
+    </div>
   </div>
+
+  <!-- I browser bloccano l'autoplay con audio: il video parte muto, l'audio si attiva qui -->
+  <button
+    id="hero-sound"
+    type="button"
+    aria-pressed="false"
+    class="absolute top-20 right-5 z-10 inline-flex items-center gap-2 rounded-full bg-white/10 py-2 pr-4 pl-3 text-[0.6875rem] font-semibold tracking-[0.2em] text-white uppercase backdrop-blur-md transition-colors hover:bg-white/20 md:top-28 md:right-10"
+    hidden
+  >
+    <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+      <path d="M11 5 6 9H2v6h4l5 4V5Z" fill="currentColor" stroke="none" />
+      <path data-wave d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13" stroke-linecap="round" />
+      <path data-mute d="m16 9 6 6m0-6-6 6" stroke-linecap="round" />
+    </svg>
+    <span data-sound-label>Sound on</span>
+  </button>
 </section>
 
 <style>
@@ -86,6 +112,11 @@ const featured = films.find((f) => f.slug === 'imani-john')!;
       transform: translateY(12%) scale(1.05);
     }
   }
+
+  #hero-sound[aria-pressed='true'] [data-mute],
+  #hero-sound[aria-pressed='false'] [data-wave] {
+    display: none;
+  }
 </style>
 
 <script>
@@ -99,5 +130,54 @@ const featured = films.find((f) => f.slug === 'imani-john')!;
     video.src = (desktop ? video.dataset.srcDesktop : video.dataset.srcMobile)!;
     video.addEventListener('playing', () => video.toggleAttribute('data-playing', true), { once: true });
     pauseWhenHidden(video, document.getElementById('top')!);
+    initSound(video);
+  }
+
+  // Audio su richiesta: si sente finché l'hero è in vista, poi sfuma e torna muto
+  function initSound(video: HTMLVideoElement) {
+    const button = document.getElementById('hero-sound') as HTMLButtonElement;
+    const label = button.querySelector('[data-sound-label]')!;
+    let fadeTimer = 0;
+
+    // Dissolvenza del volume; su iOS il volume è di sola lettura, quindi chiude comunque dopo 12 passi
+    const fadeTo = (target: number, done?: () => void) => {
+      clearInterval(fadeTimer);
+      let steps = 0;
+      fadeTimer = window.setInterval(() => {
+        const next = video.volume + (target > video.volume ? 0.1 : -0.1);
+        video.volume = Math.min(1, Math.max(0, next));
+        if (Math.abs(video.volume - target) < 0.05 || ++steps >= 12) {
+          video.volume = target;
+          clearInterval(fadeTimer);
+          done?.();
+        }
+      }, 40);
+    };
+
+    const setSound = (on: boolean) => {
+      button.setAttribute('aria-pressed', String(on));
+      label.textContent = on ? 'Sound off' : 'Sound on';
+      if (on) {
+        video.volume = 0;
+        video.muted = false;
+        video.play().catch(() => {});
+        fadeTo(1);
+      } else {
+        fadeTo(0, () => (video.muted = true));
+      }
+    };
+
+    video.addEventListener('playing', () => (button.hidden = false), { once: true });
+    button.addEventListener('click', () => setSound(video.muted));
+    // Se parte un trailer completo, l'hero tace
+    document.addEventListener('film_play', () => !video.muted && setSound(false));
+
+    // Quando l'hero è visibile per meno di metà, l'audio si spegne
+    new IntersectionObserver(
+      ([entry]) => {
+        if (entry.intersectionRatio < 0.5 && !video.muted) setSound(false);
+      },
+      { threshold: [0, 0.5] },
+    ).observe(document.getElementById('top')!);
   }
 </script>

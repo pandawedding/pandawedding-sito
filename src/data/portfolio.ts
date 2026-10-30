@@ -93,7 +93,7 @@ const alts: Record<string, string> = {
 };
 
 // Selezione mostrata subito; le altre si aprono con "Vedi altre foto"
-const featured = ['0016', '0024', '0011', '0062', '0045', '0058', '0063', '0068', '0075', '0028', '0037', '0083'];
+const featured = ['0016', '0024', '0011', '0062', '0045', '0058', '0063', '0068', '0075'];
 
 const all = Object.entries(files)
   .map(([path, mod]) => {

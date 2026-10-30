@@ -275,3 +275,31 @@ html {
 .prose-diary > p:first-child {
   color: var(--fg);
 }
+
+/* CTA testuale stile Apple: rossa, con freccia, accanto o al posto del bottone */
+@layer components {
+  .cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    min-height: 2.75rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .cta-link .chevron {
+    transition: transform 0.3s var(--ease-out-soft);
+  }
+  .cta-link:hover .chevron {
+    transform: translateX(3px);
+  }
+}
+/* Sul bianco il rosso piccolo non ha contrasto sufficiente: testo scuro, freccia rossa */
+[data-theme='light'] .cta-link {
+  color: var(--fg);
+}
+[data-theme='light'] .cta-link .chevron {
+  color: var(--accent);
+}

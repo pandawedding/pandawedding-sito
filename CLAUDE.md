@@ -93,13 +93,15 @@ Menu ad ancore (con evidenza della sezione corrente): Wedding Films · Portfolio
 7. **Contatti** (`#contatti`): *Your story deserves more than ordinary.* / *Let's talk about your wedding.*, email, *ITALIA E DESTINAZIONI*, form con etichette e placeholder di Framer: Full names*, Email*, Wedding date, Location / Venue*, Phone number, Wedding planner, Message & your vision* (* obbligatori).
 8. **Footer**: nome, *Stories made to be felt*, WhatsApp (`https://wa.me/393489538074`), dati societari.
 
-**Testi: fonte unica = sito Framer attuale.** Non aggiungere frasi, etichette o CTA che su Framer non ci sono (decisione del 30/10/2026: il proprietario ha tolto testi e vuole solo quelli presenti). Ammessi solo i controlli d'interfaccia (es. `Vedi altre foto`, chiudi, play) e gli avvisi legali obbligatori.
+**Testi:** quelli attuali nel codice sono la base approvata (allineati a Framer il 30/10/2026). Framer non è più la fonte vincolante: si possono aggiungere CTA e brevi testi d'interfaccia in stile Apple (bottone principale + link testuale rosso con `›`, classe `.cta-link`), ma non riscrivere i testi esistenti senza chiedere.
+
+**CTA:** ogni sezione chiude con un'azione chiara (bottone principale) e, dove serve, un link secondario. Etichette in inglese come il resto delle CTA (`Get in touch`, `Our approach`, `Watch the trailer`, `See the portfolio`, `Message us on WhatsApp`); `Leggi il diario` resta in italiano.
 
 Pagine separate: solo `/privacy`, `/cookie-policy` e le pagine statiche dei diari.
 
 **Video:** i trailer originali stanno in `src/assets/trailers/` (esclusi da git, troppo pesanti). Le clip per il sito si generano con `node scripts/make-clips.mjs` (ffmpeg da `@ffmpeg-installer/ffmpeg`) in `public/videos/`: hero in loop (orizzontale 1080p e verticale per mobile) e anteprime delle card film al passaggio del mouse su desktop. Autoplay solo se non c'è "riduci movimento", risparmio dati o connessione lenta; il trailer completo con audio resta su Vimeo, al click.
 
-Il codice ricostruisce i testi dal sito Framer pubblicato: `https://delightful-plans-781348--build-luxury-portfolio-xdyarmjqp.framer.app/`. I testi lunghi di Wedding Films, Real Weddings e Portfolio vanno completati dal proprietario.
+I testi di partenza vengono dal sito Framer: `https://delightful-plans-781348--build-luxury-portfolio-xdyarmjqp.framer.app/`. I diari di Imani & John e Daniel & Josiane vanno ancora scritti dal proprietario.
 
 ## Correzioni ai testi (autorizzate)
 
