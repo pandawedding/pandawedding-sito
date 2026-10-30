@@ -1,0 +1,91 @@
+---
+import { getImage } from 'astro:assets';
+import { site } from '../../data/site';
+import { films } from '../../data/films';
+import mobileSrc from '../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0043.jpg';
+import desktopSrc from '../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0050.jpg';
+
+// Foto diversa per verticale (mobile) e orizzontale (desktop)
+const srcset = async (src: ImageMetadata, widths: number[], format: 'avif' | 'webp') =>
+  (await getImage({ src, widths, format })).srcSet.attribute;
+
+const mobile = { avif: await srcset(mobileSrc, [640, 960], 'avif'), webp: await srcset(mobileSrc, [640, 960], 'webp') };
+const desktop = {
+  avif: await srcset(desktopSrc, [1280, 1600], 'avif'),
+  webp: await srcset(desktopSrc, [1280, 1600], 'webp'),
+};
+const fallback = await getImage({ src: desktopSrc, width: 1600, format: 'jpg' });
+
+const featured = films.find((f) => f.slug === 'imani-john')!;
+---
+
+<section id="top" class="relative flex min-h-svh items-end overflow-hidden bg-black">
+  <picture class="hero-media absolute inset-0">
+    <source media="(min-width: 768px)" type="image/avif" srcset={desktop.avif} sizes="100vw" />
+    <source media="(min-width: 768px)" type="image/webp" srcset={desktop.webp} sizes="100vw" />
+    <source type="image/avif" srcset={mobile.avif} sizes="100vw" />
+    <source type="image/webp" srcset={mobile.webp} sizes="100vw" />
+    <img
+      src={fallback.src}
+      alt="Sposi che corrono mano nella mano su un prato al tramonto, davanti a una villa storica"
+      fetchpriority="high"
+      decoding="async"
+      class="size-full object-cover object-[50%_60%]"
+    />
+  </picture>
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/30"></div>
+
+  <div class="relative mx-auto w-full max-w-screen-2xl px-5 pt-28 pb-14 md:px-10 md:pb-20">
+    <button
+      type="button"
+      data-film={featured.slug}
+      class="group mb-8 inline-flex items-center gap-3 rounded-full bg-white/10 py-2 pr-4 pl-2 text-[0.6875rem] font-semibold tracking-[0.2em] text-white uppercase backdrop-blur-md transition-colors hover:bg-white/20"
+    >
+      <span class="flex size-7 items-center justify-center rounded-full bg-accent text-[0.625rem]" aria-hidden="true">▶</span>
+      <span>Now showing · {featured.couple}</span>
+    </button>
+
+    <h1 class="text-display font-light tracking-title text-white uppercase">
+      Stories made<br class="md:hidden" /> to be <span class="text-accent">felt,</span><br />
+      not simply <span class="text-accent">remembered</span>
+    </h1>
+
+    <div class="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+      <p class="max-w-xs text-[0.75rem] leading-relaxed font-medium tracking-label text-white/75 uppercase md:max-w-md">
+        {site.tagline}
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#films" class="btn" data-track="cta_click" data-label="wedding films" data-position="hero">
+          Wedding Films <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a
+          href="#contatti"
+          class="btn btn-ghost text-white! shadow-[inset_0_0_0_1px_rgb(255_255_255/0.35)]!"
+          data-track="cta_click"
+          data-label="get in touch"
+          data-position="hero"
+        >
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Leggero parallax solo dove lo scroll guida l'animazione in CSS */
+  @supports (animation-timeline: scroll()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-media {
+        animation: hero-drift linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 100vh;
+      }
+    }
+  }
+  @keyframes hero-drift {
+    to {
+      transform: translateY(12%) scale(1.05);
+    }
+  }
+</style>

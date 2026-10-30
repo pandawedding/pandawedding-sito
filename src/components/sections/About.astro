@@ -1,0 +1,85 @@
+---
+// Testi dal sito Framer (pagina About Us)
+const values = [
+  {
+    title: 'Discrezione ed eleganza',
+    text: 'Lavoriamo muovendoci in punta di piedi, permettendo al vostro matrimonio di scorrere con naturalezza e senza interruzioni artificiali.',
+  },
+  {
+    title: 'Ricerca estetica',
+    text: 'Dalle palette cromatiche all’inquadratura, ogni scelta richiama il mondo della fotografia editoriale e del cinema d’autore.',
+    more: true,
+  },
+  {
+    title: 'Esperienza tailor-made',
+    text: 'Ogni coppia è unica. Lavoriamo con voi e con la vostra wedding planner per un servizio impeccabile e personalizzato in ogni fase.',
+  },
+];
+---
+
+<section id="about" class="py-24 md:py-40" aria-labelledby="about-title">
+  <div class="mx-auto max-w-screen-2xl px-5 md:px-10">
+    <header class="reveal max-w-4xl">
+      <p class="label">About us / Dietro l’obiettivo</p>
+      <h2 id="about-title" class="mt-4 text-display font-light tracking-title">
+        The right team makes the <span class="text-accent">difference</span>
+      </h2>
+    </header>
+
+    <div class="reveal mt-14 grid gap-10 md:mt-20 md:grid-cols-2 md:gap-16">
+      <p class="text-title font-light">
+        Photography captures the moment<br />
+        <span class="text-accent">Cinema brings you back to it</span>
+      </p>
+      <p class="text-lead font-light text-fg-muted">
+        Siamo registi e fotografi uniti dalla passione per l’estetica visiva e le storie umane autentiche. Con sede in
+        Italia ma con uno sguardo aperto alle più affascinanti destinazioni internazionali, accompagniamo coppie ed
+        esperti del settore nella creazione di ricordi visivi di altissimo profilo.
+      </p>
+    </div>
+
+    <p class="label reveal mt-24 md:mt-32">I nostri valori</p>
+    <ul class="mt-8 grid gap-4 md:grid-cols-3 md:gap-5">
+      {
+        values.map((value, i) => (
+          <li class="reveal rounded-[6px] bg-bg-raised p-7 md:p-9" style={`transition-delay: ${i * 90}ms`}>
+            <p class="text-sm font-semibold tracking-[0.2em] text-fg-muted">0{i + 1}</p>
+            <h3 class="mt-8 text-2xl font-light md:text-[1.75rem]">{value.title}</h3>
+            <p class="mt-4 leading-relaxed font-light text-fg-muted">{value.text}</p>
+            {value.more && (
+              <details class="group mt-6 border-t border-line pt-5">
+                <summary class="flex cursor-pointer list-none items-center justify-between text-[0.8125rem] font-semibold tracking-[0.2em] uppercase [&::-webkit-details-marker]:hidden">
+                  Research &amp; Approach
+                  <span class="text-xl text-accent transition-transform duration-300 group-open:rotate-45" aria-hidden="true">
+                    +
+                  </span>
+                </summary>
+                <div class="mt-5 space-y-4 leading-relaxed font-light text-fg-muted" lang="en">
+                  <p>
+                    Our work lives at the intersection of documentary spontaneity, editorial aesthetics, and cinematic
+                    emotion.
+                  </p>
+                  <p>We believe in elegance without artifice, and spontaneity with intention.</p>
+                  <p>
+                    We personally guide every wedding, working seamlessly together or alongside our trusted team—all
+                    united by a single vision: to observe, interpret, and craft an authentic story of your day.
+                  </p>
+                </div>
+              </details>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="reveal mt-24 flex flex-col items-start gap-6 md:mt-32 md:flex-row md:items-end md:justify-between">
+      <div>
+        <p class="label">Conosciamoci</p>
+        <p class="mt-5 text-title font-light">Se sentite affinità, raccontateci chi siete.</p>
+      </div>
+      <a href="#contatti" class="btn" data-track="cta_click" data-label="get in touch" data-position="about">
+        Get in touch <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DiaryContent from '../../components/DiaryContent.astro';
+import { getDiaries } from '../../data/diaries';
+
+// Pagina statica di ogni diario completo, per la SEO e per chi arriva da un link diretto
+export async function getStaticPaths() {
+  const diaries = await getDiaries();
+  return diaries.filter((d) => d.hasStory).map((diary) => ({ params: { slug: diary.slug }, props: { diary } }));
+}
+
+const { diary } = Astro.props;
+const { title, excerpt } = diary.entry.data;
+---
+
+<BaseLayout title={`${title}, Real Wedding`} description={excerpt}>
+  <div class="pt-16 md:pt-20">
+    <DiaryContent diary={diary} titleId="diary-title" />
+  </div>
+</BaseLayout>

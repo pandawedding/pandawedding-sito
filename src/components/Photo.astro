@@ -35,6 +35,7 @@ const {
         src={src}
         alt={alt}
         formats={['avif', 'webp']}
+        fallbackFormat="webp"
         widths={widths.filter((w) => w <= src.width)}
         sizes={sizes}
         loading={eager ? 'eager' : 'lazy'}

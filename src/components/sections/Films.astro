@@ -1,0 +1,70 @@
+---
+import { Picture } from 'astro:assets';
+import ScrollRow from '../ScrollRow.astro';
+import { films } from '../../data/films';
+---
+
+<!-- Frames: i film, in una riga stile Netflix -->
+<section id="films" class="py-24 md:py-40" aria-labelledby="films-title">
+  <header class="reveal mx-auto max-w-screen-2xl px-5 md:px-10">
+    <p class="label">Wedding Films</p>
+    <h2 id="films-title" class="mt-4 text-display font-light tracking-title">
+      Fr<span class="text-accent">a</span>mes
+    </h2>
+    <p class="mt-6 max-w-xl text-lead font-light text-fg-muted">
+      <span class="text-fg">frame by frame a day becomes a story</span><br />
+      crafted from real moments, cinematic vision and genuine emotion.
+    </p>
+  </header>
+
+  <ScrollRow name="films" label="Wedding films" class="mt-12 md:mt-16">
+    {
+      films.map((film) => (
+        <article class="w-[85vw] max-w-[44rem] md:w-[46vw]">
+          <button
+            type="button"
+            data-film={film.slug}
+            class="group block w-full text-left"
+            aria-label={`Guarda il trailer di ${film.couple}, ${film.location}`}
+          >
+            <div class="photo relative aspect-video">
+              <Picture
+                src={film.poster}
+                alt=""
+                formats={['avif', 'webp']}
+                fallbackFormat="webp"
+                widths={[640, 960, 1280]}
+                sizes="(min-width: 768px) 46vw, 85vw"
+                loading="lazy"
+                class="absolute inset-0 size-full object-cover transition-transform duration-700 ease-out-soft group-hover:scale-[1.04]"
+              />
+              <div class="absolute inset-0 bg-black/10 transition-colors duration-500 group-hover:bg-black/30" />
+              <span
+                class="absolute bottom-4 left-4 flex size-12 items-center justify-center rounded-full bg-accent text-sm text-white transition-transform duration-500 ease-out-soft group-hover:scale-110 md:bottom-6 md:left-6 md:size-14"
+                aria-hidden="true"
+              >
+                ▶
+              </span>
+              <span
+                class="absolute right-4 bottom-4 rounded-full bg-black/55 px-3 py-1.5 text-[0.6875rem] font-semibold tracking-[0.18em] text-white uppercase backdrop-blur-sm md:right-6 md:bottom-6"
+                aria-hidden="true"
+              >
+                {film.kind} · {film.duration}
+              </span>
+            </div>
+          </button>
+          <p class="label mt-6">{film.location}</p>
+          <h3 class="mt-3 text-title font-light">{film.couple}</h3>
+          <p class="mt-3 max-w-md leading-relaxed font-light text-fg-muted">{film.text}</p>
+        </article>
+      ))
+    }
+  </ScrollRow>
+
+  <div class="reveal mx-auto mt-20 flex max-w-screen-2xl flex-col items-start gap-6 px-5 md:mt-28 md:flex-row md:items-center md:justify-between md:px-10">
+    <p class="text-title font-light tracking-title uppercase">Your emotions in <span class="text-accent">frames</span></p>
+    <a href="#contatti" class="btn" data-track="cta_click" data-label="get in touch" data-position="films">
+      Get in touch <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>

@@ -1,0 +1,115 @@
+---
+import { Picture, getImage } from 'astro:assets';
+import { portfolio, PORTFOLIO_FIRST } from '../../data/portfolio';
+
+// Prima la selezione, poi blocchi da 24 aperti con "Vedi altre foto".
+// Ogni blocco ha le sue colonne: aprirne uno non sposta le foto già viste.
+const BATCH = 24;
+const photos = await Promise.all(
+  portfolio.map(async (p, index) => ({
+    ...p,
+    index,
+    full: (await getImage({ src: p.src, width: 1600, format: 'webp' })).src,
+  })),
+);
+const batches = [photos.slice(0, PORTFOLIO_FIRST)];
+for (let i = PORTFOLIO_FIRST; i < photos.length; i += BATCH) batches.push(photos.slice(i, i + BATCH));
+---
+
+<!-- Inspirations: unica sezione chiara del sito -->
+<section
+  id="portfolio"
+  data-theme="light"
+  data-lightbox-group
+  class="fade-from-dark bg-bg py-24 text-fg md:py-40"
+  aria-labelledby="portfolio-title"
+>
+  <header class="reveal mx-auto max-w-screen-2xl px-5 md:px-10">
+    <p class="label">Portfolio · Photo</p>
+    <h2 id="portfolio-title" class="mt-4 text-display font-light tracking-title">
+      Insp<span class="text-accent">i</span>rations
+    </h2>
+    <p class="mt-6 max-w-xl text-lead font-light text-fg-muted">
+      shaped by real stories, refined aesthetics and authentic moments.
+    </p>
+  </header>
+
+  <div class="mx-auto mt-12 max-w-screen-2xl px-5 md:mt-16 md:px-10">
+    {
+      batches.map((batch, b) => (
+        <div
+          class="portfolio-batch columns-2 gap-3 md:columns-3 md:gap-4 lg:columns-4 [&+&]:mt-3 md:[&+&]:mt-4"
+          data-batch={b}
+          hidden={b > 0}
+        >
+          {batch.map((photo) => (
+            <button
+              type="button"
+              class="group mb-3 block w-full break-inside-avoid md:mb-4"
+              data-lightbox={photo.index}
+              data-full={photo.full}
+              data-alt={photo.alt}
+              aria-label={`Ingrandisci: ${photo.alt}`}
+            >
+              <span class="photo block shadow-[0_0_0_1px_var(--line)]">
+                <Picture
+                  src={photo.src}
+                  alt={photo.alt}
+                  formats={['avif', 'webp']}
+                  fallbackFormat="webp"
+                  widths={[400, 640, 960]}
+                  sizes="(min-width: 1024px) 24vw, (min-width: 768px) 32vw, 48vw"
+                  loading="lazy"
+                  decoding="async"
+                  class="block h-auto w-full transition-transform duration-700 ease-out-soft group-hover:scale-[1.03]"
+                />
+              </span>
+            </button>
+          ))}
+        </div>
+      ))
+    }
+
+    <div class="mt-12 flex justify-center">
+      <button
+        type="button"
+        id="portfolio-more"
+        class="btn btn-ghost"
+        data-remaining={photos.length - PORTFOLIO_FIRST}
+      >
+        Vedi altre foto <span class="text-fg-muted" data-count>({photos.length - PORTFOLIO_FIRST})</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="reveal mx-auto mt-24 max-w-screen-2xl px-5 text-center md:mt-36 md:px-10">
+    <p class="label">Il prossimo capitolo</p>
+    <h3 class="mt-5 text-title font-light tracking-title uppercase">
+      Next chapter, <span class="text-accent">your story</span>
+    </h3>
+    <p class="mt-5 text-lead font-light text-fg-muted">Lasciateci fotografare ciò che vi rende unici.</p>
+    <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <a href="#contatti" class="btn" data-track="cta_click" data-label="get in touch" data-position="portfolio">
+        Get in touch <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="#about" class="btn btn-ghost" data-track="cta_click" data-label="our approach" data-position="portfolio">
+        Our approach <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const more = document.getElementById('portfolio-more') as HTMLButtonElement;
+  const count = more.querySelector('[data-count]')!;
+  let remaining = Number(more.dataset.remaining);
+
+  more.addEventListener('click', () => {
+    const next = document.querySelector<HTMLElement>('.portfolio-batch[hidden]');
+    if (!next) return;
+    next.hidden = false;
+    remaining -= next.querySelectorAll('[data-lightbox]').length;
+    count.textContent = `(${remaining})`;
+    if (!document.querySelector('.portfolio-batch[hidden]')) more.parentElement!.hidden = true;
+  });
+</script>

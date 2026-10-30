@@ -1,199 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ScrollRow from '../components/ScrollRow.astro';
-import Photo from '../components/Photo.astro';
-import { site } from '../data/site';
-
-import p0002 from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0002.jpg';
-import p0003 from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0003.jpg';
-import p0007 from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0007.jpg';
-import p0026 from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0026.jpg';
-import p0043 from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0043.jpg';
-import p0044 from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0044.jpg';
-import p0047 from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0047.jpg';
-import p0059 from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0059.jpg';
-import p0067 from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0067.jpg';
-import p0069 from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0069.jpg';
-import p0070 from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0070.jpg';
-import p0079 from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0079.jpg';
-import p0082 from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0082.jpg';
-
-const heroPhotos = [
-  { src: p0043, alt: 'Sposi che camminano mano nella mano su un prato al tramonto' },
-  { src: p0003, alt: 'Sposa di spalle che prende l’abito appeso alla porta di una stanza con travi a vista' },
-  { src: p0026, alt: 'Sposa con velo lungo sulla scalinata di una villa, lo sposo in cima che la guarda' },
-  { src: p0007, alt: 'Scarpe da sposa bianche appese tra le foglie di un albero di limoni' },
-  { src: p0044, alt: 'Sposa che scende uno scalone barocco con il velo che scivola sui gradini' },
-  { src: p0069, alt: 'Sposi abbracciati sotto un albero in fiore, in bianco e nero' },
-  { src: p0059, alt: 'Coppia in un viale di una villa storica, con il lungo velo della sposa nel vento' },
-  { src: p0047, alt: 'Cerimonia all’aperto con nastri colorati sospesi tra due cipressi' },
-  { src: p0079, alt: 'Primo ballo degli sposi sotto le luci a festone, con gli ospiti intorno' },
-  { src: p0082, alt: 'Sposi di spalle che guardano i fuochi d’artificio sopra la festa notturna' },
-];
-
-const cards = [
-  {
-    lines: ['Portfolio', 'Photo'],
-    href: '/portfolio',
-    src: p0002,
-    alt: 'Ritratto di una sposa bionda che si volta, con l’abito ricamato aperto sulla schiena',
-  },
-  {
-    lines: ['Wedding', 'Films'],
-    href: '/wedding-films',
-    src: p0067,
-    alt: 'Sposi che si baciano controluce avvolti dal velo, in un giardino',
-  },
-  {
-    lines: ['Real', 'Weddings'],
-    href: '/real-weddings',
-    src: p0070,
-    alt: 'Sposi abbracciati accanto a un muro di pietra fiorito, con le colline sullo sfondo',
-  },
-];
+import Hero from '../components/sections/Hero.astro';
+import Intro from '../components/sections/Intro.astro';
+import Films from '../components/sections/Films.astro';
+import Portfolio from '../components/sections/Portfolio.astro';
+import Diaries from '../components/sections/Diaries.astro';
+import About from '../components/sections/About.astro';
+import Contact from '../components/sections/Contact.astro';
+import FilmPlayer from '../components/FilmPlayer.astro';
+import StickyCta from '../components/StickyCta.astro';
 ---
 
 <BaseLayout>
-  <!-- Hero: tagline + carosello di foto verticali -->
-  <section class="flex flex-col pt-20 pb-8 md:min-h-svh md:pt-28 md:pb-12" aria-labelledby="tagline">
-    <h1
-      id="tagline"
-      class="mx-auto max-w-[22rem] px-5 text-center text-[0.75rem] leading-relaxed font-medium tracking-label text-fg-muted uppercase md:max-w-none md:text-[0.8125rem]"
-    >
-      {site.tagline}
-    </h1>
+  <Hero />
+  <Intro />
+  <Films />
+  <Portfolio />
+  <Diaries />
+  <About />
+  <Contact />
 
-    <ScrollRow name="home-hero" label="Fotografie di matrimonio" class="mt-6 flex-1 md:mt-10">
-      {
-        heroPhotos.map((photo, i) => (
-          <Photo
-            src={photo.src}
-            alt={photo.alt}
-            ratio="2 / 3"
-            eager={i < 2}
-            sizes="(min-width: 768px) 26vw, 78vw"
-            class="w-[78vw] max-w-[28rem] md:w-[26vw]"
-          />
-        ))
-      }
-    </ScrollRow>
-  </section>
-
-  <!-- Manifesto -->
-  <section class="flex min-h-[80svh] items-center justify-center px-5 py-28 md:py-40">
-    <h2
-      class="reveal text-center text-display font-light tracking-title uppercase"
-    >
-      Stories<br />
-      made to be<br />
-      <span class="text-accent">felt,</span><br />
-      not simply<br />
-      <span class="text-accent">remembered</span>
-    </h2>
-  </section>
-
-  <!-- Chi siamo -->
-  <section class="mx-auto max-w-screen-xl px-5 py-20 md:px-10 md:py-32" aria-labelledby="about-title">
-    <div class="grid items-end gap-10 md:grid-cols-[auto_1fr_1fr] md:items-center md:gap-14">
-      <div class="flex items-end gap-5 md:contents">
-        <h2
-          id="about-title"
-          class="reveal vertical-text text-[1.375rem] leading-tight font-light tracking-[0.12em] uppercase md:self-stretch md:text-[1.75rem]"
-        >
-          We are<br />
-          <span class="text-accent">Pierluigi</span> and <span class="text-accent">Alberto</span>
-        </h2>
-        <Photo
-          alt="Pierluigi e Alberto, fotografo e videomaker di PandA Wedding"
-          ratio="4 / 5"
-          sizes="(min-width: 768px) 40vw, 80vw"
-          class="reveal flex-1 md:order-last"
-        />
-      </div>
-
-      <div class="reveal max-w-md">
-        <p class="text-lead font-medium">For those looking for more than beautiful images.</p>
-        <p class="mt-6 text-lead font-light text-fg-muted">
-          We bring photography and film together at their best, to create a sophisticated, unique and authentic
-          visual expression of your wedding.
-        </p>
-        <a
-          href="/about-us"
-          class="btn mt-10"
-          data-track="cta_click"
-          data-label="our approach"
-          data-position="home-about"
-        >
-          Our approach <span class="arrow" aria-hidden="true">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tre card: Portfolio, Wedding Films, Real Weddings -->
-  <section class="mx-auto max-w-screen-2xl px-5 py-20 md:px-10 md:py-32" aria-label="Il nostro lavoro">
-    <ul class="grid gap-4 md:grid-cols-3 md:gap-5">
-      {
-        cards.map((card, i) => (
-          <li class="reveal" style={`transition-delay: ${i * 90}ms`}>
-            <a href={card.href} class="group block" aria-label={card.lines.join(' ')}>
-              <Photo
-                src={card.src}
-                alt={card.alt}
-                ratio="4 / 5"
-                sizes="(min-width: 768px) 32vw, 100vw"
-                class="md:aspect-[2/3]!"
-                imgClass="transition-transform duration-700 ease-out-soft group-hover:scale-[1.04]"
-              >
-                <div class="absolute inset-0 bg-gradient-to-r from-black/55 via-black/10 to-transparent" />
-                <span
-                  class="vertical-text absolute bottom-6 left-5 text-[2.25rem] leading-[0.95] font-light tracking-[0.06em] text-white uppercase md:text-[2.75rem]"
-                  aria-hidden="true"
-                >
-                  {card.lines[0]}
-                  <br />
-                  <span class="text-accent">{card.lines[1]}</span>
-                </span>
-                <span
-                  class="absolute right-5 bottom-6 text-xl text-white transition-transform duration-300 group-hover:translate-x-1"
-                  aria-hidden="true"
-                >
-                  →
-                </span>
-              </Photo>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
-
-  <!-- Tailoring your story, together -->
-  <section class="flex min-h-[70svh] items-center justify-center px-5 py-28 md:py-40">
-    <div class="reveal text-center">
-      <h2 class="text-title font-light tracking-title uppercase">
-        Tailoring your story,<br class="md:hidden" /> <span class="text-accent">together</span>
-      </h2>
-      <div class="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <a
-          href="/contatti"
-          class="btn"
-          data-track="cta_click"
-          data-label="get in touch"
-          data-position="home-tailoring"
-        >
-          Get in touch <span class="arrow" aria-hidden="true">→</span>
-        </a>
-        <a
-          href="/about-us"
-          class="btn btn-ghost"
-          data-track="cta_click"
-          data-label="our approach"
-          data-position="home-tailoring"
-        >
-          Our approach <span class="arrow" aria-hidden="true">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
+  <FilmPlayer />
+  <StickyCta />
 </BaseLayout>

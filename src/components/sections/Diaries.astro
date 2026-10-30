@@ -1,0 +1,171 @@
+---
+import Photo from '../Photo.astro';
+import ScrollRow from '../ScrollRow.astro';
+import DiaryContent from '../DiaryContent.astro';
+import { getDiaries } from '../../data/diaries';
+
+const diaries = await getDiaries();
+---
+
+<!-- Pages: i Real Weddings. Il diario si apre in un pannello sopra la pagina -->
+<section id="real-weddings" class="fade-from-light bg-bg py-24 md:py-40" aria-labelledby="diaries-title">
+  <header class="reveal mx-auto max-w-screen-2xl px-5 md:px-10">
+    <p class="label">Journal / Real weddings</p>
+    <h2 id="diaries-title" class="mt-4 text-display font-light tracking-title">
+      <span class="text-accent">Pa</span>ges
+    </h2>
+    <p class="mt-6 text-lead font-light text-fg-muted">
+      people brought together<br />
+      places carved in memory<br />
+      <span class="text-fg">a story revealed</span>
+    </p>
+    <p class="mt-8 max-w-md leading-relaxed font-light text-fg-muted">
+      Giornate, luoghi e persone. Il diario delle nostre storie preferite.
+    </p>
+  </header>
+
+  <ScrollRow name="diaries" label="Real weddings" class="mt-12 md:mt-16">
+    {
+      diaries.map((diary) => (
+        <article class="w-[80vw] max-w-[26rem] md:w-[30vw]">
+          <Photo
+            src={diary.cover}
+            alt={`${diary.entry.data.couple}, ${diary.entry.data.label}`}
+            ratio="4 / 5"
+            sizes="(min-width: 768px) 30vw, 80vw"
+          />
+          <p class="label mt-6">{diary.entry.data.label}</p>
+          <h3 class="mt-3 text-title font-light">{diary.entry.data.couple}</h3>
+          <p class="mt-3 leading-relaxed font-light text-fg-muted">{diary.entry.data.excerpt}</p>
+          {diary.hasStory ? (
+            <a
+              href={`/real-weddings/${diary.slug}`}
+              data-diary={diary.slug}
+              class="mt-6 inline-flex items-center gap-2 text-[0.8125rem] font-semibold tracking-[0.2em] text-accent uppercase"
+            >
+              Leggi il diario <span aria-hidden="true">→</span>
+            </a>
+          ) : (
+            diary.entry.data.film && (
+              <button
+                type="button"
+                data-film={diary.entry.data.film}
+                class="mt-6 inline-flex items-center gap-2 text-[0.8125rem] font-semibold tracking-[0.2em] text-accent uppercase"
+              >
+                <span aria-hidden="true">▶</span> Trailer
+              </button>
+            )
+          )}
+        </article>
+      ))
+    }
+  </ScrollRow>
+
+  <div class="reveal mx-auto mt-24 max-w-screen-2xl px-5 text-center md:mt-36 md:px-10">
+    <p class="label">La prossima storia</p>
+    <p class="mt-5 text-title font-light">Potrebbe iniziare dal vostro sogno.</p>
+    <a href="#contatti" class="btn mt-10" data-track="cta_click" data-label="start a new page" data-position="diaries">
+      Start a new page <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- Pannelli dei diari -->
+{
+  diaries
+    .filter((d) => d.hasStory)
+    .map((diary) => (
+      <dialog
+        class="diary-panel m-0 h-dvh max-h-none w-screen max-w-none overflow-y-auto overscroll-contain bg-bg p-0 text-fg"
+        data-diary-panel={diary.slug}
+        aria-labelledby={`diary-title-${diary.slug}`}
+      >
+        <div class="sticky top-0 z-10 flex justify-end bg-gradient-to-b from-bg to-transparent px-5 py-4 md:px-10">
+          <button
+            type="button"
+            data-diary-close
+            class="flex size-11 items-center justify-center rounded-full bg-bg-raised text-xl transition-colors hover:bg-accent hover:text-white"
+            aria-label="Chiudi il diario"
+          >
+            ✕
+          </button>
+        </div>
+        <DiaryContent diary={diary} titleId={`diary-title-${diary.slug}`} />
+      </dialog>
+    ))
+}
+
+<style>
+  .diary-panel[open] {
+    animation: panel-in 0.6s var(--ease-out-soft);
+  }
+  .diary-panel::backdrop {
+    background: rgb(0 0 0 / 0.6);
+  }
+  @keyframes panel-in {
+    from {
+      transform: translateY(6%);
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  // Apertura dei diari nel pannello, con link condivisibile #diario/<slug>.
+  // Il tasto indietro chiude il pannello; senza JS il link porta alla pagina statica.
+  const HASH = '#diario/';
+  const panel = (slug: string) => document.querySelector<HTMLDialogElement>(`[data-diary-panel="${slug}"]`);
+  let pushed = false;
+
+  const open = (slug: string, push: boolean) => {
+    const dialog = panel(slug);
+    if (!dialog || dialog.open) return;
+    if (push) {
+      history.pushState({ diary: slug }, '', HASH + slug);
+      pushed = true;
+    }
+    dialog.showModal();
+    dialog.scrollTop = 0;
+    document.documentElement.style.overflow = 'hidden';
+    document.dispatchEvent(new CustomEvent('diary_open', { detail: { slug } }));
+  };
+
+  const closeAll = () => {
+    document.querySelectorAll<HTMLDialogElement>('[data-diary-panel][open]').forEach((d) => d.close());
+  };
+
+  document.querySelectorAll<HTMLDialogElement>('[data-diary-panel]').forEach((dialog) => {
+    dialog.addEventListener('close', () => {
+      document.documentElement.style.overflow = '';
+      if (location.hash.startsWith(HASH)) {
+        if (pushed) history.back();
+        else history.replaceState(null, '', location.pathname + location.search);
+      }
+      pushed = false;
+    });
+    dialog.querySelector('[data-diary-close]')?.addEventListener('click', () => dialog.close());
+    // "Get in touch" dal diario: chiude il pannello e scende ai contatti
+    dialog.querySelector('[data-diary-cta]')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      dialog.close();
+      setTimeout(() => document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' }), 50);
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    const link = (e.target as HTMLElement).closest<HTMLAnchorElement>('[data-diary]');
+    if (!link || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    open(link.dataset.diary!, true);
+  });
+
+  window.addEventListener('popstate', () => {
+    if (location.hash.startsWith(HASH)) open(location.hash.slice(HASH.length), false);
+    else {
+      pushed = false;
+      closeAll();
+    }
+  });
+
+  if (location.hash.startsWith(HASH)) open(location.hash.slice(HASH.length), false);
+</script>

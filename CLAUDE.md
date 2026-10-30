@@ -33,7 +33,7 @@ Il sito esiste già su Framer: questo progetto lo **ricostruisce da zero in codi
 | Sfondo rialzato | `#151517` | Card, form, sezioni alternate. |
 | Testo principale | `#F5F5F7` | |
 | Testo secondario | `#A1A1A6` | |
-| Sfondo chiaro | `#FFFFFF` | Solo pagina Portfolio (vedi "Tema"). |
+| Sfondo chiaro | `#FFFFFF` | Solo sezione Portfolio (vedi "Tema"). |
 | Testo scuro originale | `#171513` | Testo sulle sezioni chiare. |
 
 Definisci tutto come variabili CSS / token Tailwind. Verifica il contrasto del testo (almeno 4.5:1) e usa il rosso su sfondo scuro per titoli grandi e CTA, non per testi piccoli.
@@ -62,37 +62,40 @@ Definisci tutto come variabili CSS / token Tailwind. Verifica il contrasto del t
 
 ### Tema
 
-Il sito è **prevalentemente scuro/nero**: Home, Wedding Films, Real Weddings, About Us, Contatti, menu e footer.
-**Eccezione voluta:** la pagina **Portfolio** (foto) ha **sfondo bianco**, per dare respiro alle fotografie e variare il ritmo. Il passaggio da scuro a chiaro avviene con una transizione morbida tra le pagine.
+Il sito è **prevalentemente scuro/nero**.
+**Eccezione voluta:** la sezione **Portfolio** (foto) ha **sfondo bianco**, per dare respiro alle fotografie e variare il ritmo. Header e menu si adattano quando passano sopra la sezione bianca.
 
 Conseguenze da gestire:
 - Il logo "PandA Wedding" ha le lettere scure nell'originale: su sfondo nero deve diventare **chiaro** (P e A restano `#FF4040`), su sfondo bianco resta scuro. Essendo testo in font, basta cambiare il colore via CSS.
-- Header, menu mobile e testi si adattano al tema della pagina (usa variabili CSS e una classe/attributo `data-theme="light"` solo sul Portfolio).
+- Header, menu mobile e testi si adattano al tema della sezione su cui si trovano (variabili CSS e `data-theme="light"` solo sulla sezione Portfolio).
 - Le foto del Portfolio con sfondi chiari non devono "sparire" sul bianco: usa angoli arrotondati e, se serve, una sottile ombra o bordo.
-- Il passaggio dalla Home (scura) al Portfolio (chiaro) non deve causare un lampo bianco: precarica e gestisci la transizione.
+- Il passaggio dallo scuro alla sezione bianca deve essere morbido (sfumatura tra le sezioni), mai un lampo.
 
 Regole:
 - Rispetta `prefers-reduced-motion`: se attivo, niente parallax né autoplay.
 - Foto e video sono i protagonisti: poco testo sopra le immagini, gradienti scuri solo dove serve per leggere.
 - Menu mobile a schermo intero con voci grandi.
 
-## Struttura delle pagine
+## Struttura: landing page unica
 
-Menu: Portfolio · Wedding Films · Real Weddings · About Us · Contatti (il logo porta alla Home).
+Il sito è **una sola landing page** a sezioni (decisione del 30/10/2026), formato ispirato ad Apple con un accenno di Netflix per i video. Riferimento di formato (non di contenuti): https://primafilm-production.up.railway.app/
 
-1. **Home**
-   - Header con logo e tagline: *Italian Wedding Photographers and Videographers based in Verona*.
-   - Carosello orizzontale di foto verticali.
-   - Titolo: *STORIES MADE TO BE FELT, NOT SIMPLY REMEMBERED*.
-   - Presentazione: *WE ARE PIERLUIGI AND ALBERTO* (in verticale) + testo *For those looking for more than beautiful images...* + foto dei due + bottone verso About Us.
-   - Tre card grandi con testo verticale: Portfolio (Photo), Wedding Films, Real Weddings.
-   - Blocco *Tailoring your story, together* con CTA (`our approach`, `get in touch`).
-   - Footer: nome, *Raccontateci la vostra storia.*, *Stories made to be felt*, link WhatsApp (`https://wa.me/393489538074`), dati societari.
-2. **Portfolio**: titolo *Inspirations* con sottotitolo *shaped by real stories, refined aesthetics and authentic moments.* Galleria fotografica su **sfondo bianco** (unica pagina chiara del sito).
-3. **Wedding Films**: titolo *Frames* con sottotitolo *frame by frame a day becomes a story...* Card per film: video Vimeo, etichetta (location · città), nomi della coppia, breve descrizione (es. Johanna e Côme, Imani e John).
-4. **Real Weddings**: titolo *Pages* con sottotitolo *people brought together, places carved in memory, a story revealed.* Card: foto, etichetta (location · stagione), nomi, testo, link `LEGGI IL DIARIO →` verso la pagina del matrimonio.
-5. **About Us**: *The right team makes the difference*, foto di Alberto (bianco e nero), sezione *Research & Approach*, i valori (Discrezione ed eleganza, Ricerca estetica, Esperienza tailor-made), CTA *Se sentite affinità, raccontateci chi siete.*
-6. **Contatti**: *Your story deserves more than ordinary.* / *Let's talk about your wedding.* Email `hello@pandafotovideo.it`, sottotitolo *ITALIA E DESTINAZIONI*, e form con questi campi: Full names*, Email*, Wedding date, Location / Venue*, Phone number, Wedding planner (if applicable), Message & your vision*. (* obbligatori)
+**Esplorabile senza interrompere il flusso:** ogni sezione mostra una selezione; chi vuole approfondisce sul posto (`Vedi altre foto`, `Scopri di più`) o in un pannello sopra la pagina (player video, diario, foto ingrandita). Chiudendo si torna esattamente dove si era.
+
+Menu ad ancore (con evidenza della sezione corrente): Wedding Films · Portfolio · Real Weddings · About Us · Contatti. Il logo riporta in cima.
+
+1. **Hero** (`#top`): foto a tutto schermo, tagline *Italian Wedding Photographers and Videographers based in Verona*, titolo *STORIES MADE TO BE FELT, NOT SIMPLY REMEMBERED*, chip "Now showing" che apre un trailer.
+2. **Presentazione**: *WE ARE PIERLUIGI AND ALBERTO* (in verticale), testo *For those looking for more than beautiful images...*, foto dei due, `OUR APPROACH →`.
+3. **Frames / Wedding Films** (`#films`): riga Netflix di card film (poster, location, coppia, descrizione). Il trailer si apre in un player a schermo intero; Vimeo (`dnt=1`) si carica solo al click.
+4. **Inspirations / Portfolio** (`#portfolio`): **sezione bianca** (`data-theme="light"`), selezione di foto + `Vedi altre foto` a blocchi + visore a schermo intero. Chiude con *Next chapter, your story*.
+5. **Pages / Real Weddings** (`#real-weddings`): card dei matrimoni; `LEGGI IL DIARIO →` apre il diario in un pannello (link condivisibile `#diario/<slug>`). Ogni diario ha anche una pagina statica `/real-weddings/<slug>` per la SEO. I diari sono una content collection in `src/content/diaries/`; le foto di un diario vanno in `src/assets/real-weddings/<slug>/`.
+6. **About** (`#about`): *The right team makes the difference*, i tre valori in riquadri, *Research & Approach* espandibile, CTA *Se sentite affinità, raccontateci chi siete.*
+7. **Contatti** (`#contatti`): *Your story deserves more than ordinary.* / *Let's talk about your wedding.*, email, *ITALIA E DESTINAZIONI*, form: Full names*, Email*, Wedding date, Location / Venue*, Phone number, Wedding planner (if applicable), Message & your vision* (* obbligatori).
+8. **Footer**: nome, *Raccontateci la vostra storia.*, *Stories made to be felt*, WhatsApp (`https://wa.me/393489538074`), dati societari.
+
+Pagine separate: solo `/privacy`, `/cookie-policy` e le pagine statiche dei diari.
+
+**Video:** per hero e anteprime animate servono clip brevi ospitate sul sito (MP4/WebM, 8–15 s, senza audio), da ricevere dal proprietario; finché mancano si usano i poster in `src/assets/films/`.
 
 Il codice ricostruisce i testi dal sito Framer pubblicato: `https://delightful-plans-781348--build-luxury-portfolio-xdyarmjqp.framer.app/`. I testi lunghi di Wedding Films, Real Weddings e Portfolio vanno completati dal proprietario.
 

@@ -209,3 +209,69 @@ html:not(.js) .reveal {
     transform: none;
   }
 }
+
+/* ---------- Landing: ancore e passaggi di tema tra sezioni ---------- */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+/* Passaggio morbido scuro → bianco → scuro mentre la sezione entra nello schermo.
+   Senza supporto per le animazioni legate allo scroll resta il colore finale. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .fade-from-dark {
+      animation: from-dark linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+    .fade-from-light {
+      animation: from-light linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+  }
+}
+@keyframes from-dark {
+  from {
+    background-color: #0b0b0c;
+  }
+}
+@keyframes from-light {
+  from {
+    background-color: #ffffff;
+  }
+}
+
+/* Testo dei diari */
+.prose-diary {
+  font-size: var(--text-lead);
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--fg-muted);
+}
+.prose-diary > * + * {
+  margin-top: 1.25em;
+}
+.prose-diary h3 {
+  margin-top: 2.5em;
+  color: var(--fg);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+.prose-diary h3 + p {
+  margin-top: 0.75em;
+}
+.prose-diary blockquote {
+  margin-block: 2.5em;
+  color: var(--fg);
+  font-size: var(--text-title);
+  line-height: 1.2;
+  font-weight: 300;
+}
+.prose-diary > p:first-child {
+  color: var(--fg);
+}

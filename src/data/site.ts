@@ -14,10 +14,11 @@ export const site = {
   },
 };
 
+// Landing unica: il menu punta alle sezioni (ordine della pagina)
 export const nav = [
-  { label: 'Portfolio', href: '/portfolio' },
-  { label: 'Wedding Films', href: '/wedding-films' },
-  { label: 'Real Weddings', href: '/real-weddings' },
-  { label: 'About Us', href: '/about-us' },
-  { label: 'Contatti', href: '/contatti' },
+  { label: 'Wedding Films', href: '/#films' },
+  { label: 'Portfolio', href: '/#portfolio' },
+  { label: 'Real Weddings', href: '/#real-weddings' },
+  { label: 'About Us', href: '/#about' },
+  { label: 'Contatti', href: '/#contatti' },
 ];

@@ -1,0 +1,74 @@
+---
+import { render } from 'astro:content';
+import { Picture } from 'astro:assets';
+import Photo from './Photo.astro';
+import type { Diary } from '../data/diaries';
+
+// Testo e foto di un diario: usato sia nel pannello della landing sia nella pagina statica
+interface Props {
+  diary: Diary;
+  /** id del titolo, per aria-labelledby */
+  titleId: string;
+}
+const { diary, titleId } = Astro.props;
+const { Content } = await render(diary.entry);
+const { couple, label } = diary.entry.data;
+---
+
+<article class="mx-auto max-w-screen-lg px-5 md:px-10" data-lightbox-group>
+  <header class="pt-6 md:pt-12">
+    <p class="label">{label}</p>
+    <h2 id={titleId} class="mt-4 text-display font-light tracking-title uppercase">{couple}</h2>
+  </header>
+
+  <Photo
+    src={diary.cover}
+    alt={`${couple}, ${label}`}
+    ratio="3 / 2"
+    sizes="(min-width: 1024px) 960px, 100vw"
+    widths={[640, 960, 1280, 1600]}
+    class="mt-10 md:mt-14"
+  />
+
+  <div class="prose-diary mx-auto mt-12 max-w-2xl md:mt-16">
+    <Content />
+  </div>
+
+  {
+    diary.photos.length > 1 && (
+      <div class="mt-16 columns-2 gap-3 md:columns-3 md:gap-4">
+        {diary.photos.slice(1).map((src, i) => (
+          <button
+            type="button"
+            class="mb-3 block w-full break-inside-avoid md:mb-4"
+            data-lightbox={i}
+            data-full={src.src}
+            data-alt={`${couple}, foto ${i + 2}`}
+            aria-label={`Ingrandisci la foto ${i + 2} di ${couple}`}
+          >
+            <span class="photo block">
+              <Picture
+                src={src}
+                alt={`${couple}, foto ${i + 2}`}
+                formats={['avif', 'webp']}
+                fallbackFormat="webp"
+                widths={[400, 640, 960]}
+                sizes="(min-width: 768px) 32vw, 48vw"
+                loading="lazy"
+                class="block h-auto w-full"
+              />
+            </span>
+          </button>
+        ))}
+      </div>
+    )
+  }
+
+  <footer class="mx-auto mt-20 max-w-2xl border-t border-line pt-12 pb-20 text-center md:mt-28">
+    <p class="label">Il vostro diario</p>
+    <p class="mt-5 text-title font-light">Avete immaginato una giornata così? Parliamone.</p>
+    <a href="/#contatti" class="btn mt-10" data-diary-cta data-track="cta_click" data-label="get in touch" data-position="diary">
+      Get in touch <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </footer>
+</article>

@@ -1,0 +1,37 @@
+---
+import Photo from '../Photo.astro';
+import team from '../../assets/team/pierluigi-alberto.jpg';
+---
+
+<!-- Presentazione: Pierluigi e Alberto -->
+<section class="mx-auto max-w-screen-xl px-5 py-24 md:px-10 md:py-40" aria-labelledby="intro-title">
+  <div class="grid items-end gap-10 md:grid-cols-[auto_1fr_1fr] md:items-center md:gap-14">
+    <div class="flex items-end gap-5 md:contents">
+      <h2
+        id="intro-title"
+        class="reveal vertical-text text-[1.375rem] leading-tight font-light tracking-[0.12em] uppercase md:self-stretch md:text-[1.75rem]"
+      >
+        We are<br />
+        <span class="text-accent">Pierluigi</span> and <span class="text-accent">Alberto</span>
+      </h2>
+      <Photo
+        src={team}
+        alt="Pierluigi e Alberto di PandA Wedding, in bianco e nero nel cortile di una villa, con macchina fotografica e videocamera"
+        ratio="2 / 3"
+        sizes="(min-width: 768px) 40vw, 80vw"
+        class="reveal flex-1 md:order-last"
+      />
+    </div>
+
+    <div class="reveal max-w-md">
+      <p class="text-lead font-medium">For those looking for more than beautiful images.</p>
+      <p class="mt-6 text-lead font-light text-fg-muted">
+        We bring photography and film together at their best, to create a sophisticated, unique and authentic
+        visual expression of your wedding.
+      </p>
+      <a href="#about" class="btn mt-10" data-track="cta_click" data-label="our approach" data-position="intro">
+        Our approach <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+---
+// Barra fissa in basso su mobile: compare dopo l'hero, sparisce sui contatti
+---
+
+<a
+  id="sticky-cta"
+  href="#contatti"
+  data-track="cta_click"
+  data-label="raccontateci la vostra storia"
+  data-position="sticky"
+  class="fixed inset-x-3 bottom-3 z-30 flex translate-y-[150%] items-center justify-between rounded-[6px] bg-accent px-5 py-4 text-[0.75rem] font-semibold tracking-[0.18em] text-white uppercase shadow-lg shadow-black/30 transition-transform duration-500 ease-out-soft data-[show]:translate-y-0 md:hidden"
+  tabindex="-1"
+>
+  Raccontateci la vostra storia <span aria-hidden="true">→</span>
+</a>
+
+<script>
+  const bar = document.getElementById('sticky-cta')!;
+  const hero = document.getElementById('top');
+  const contact = document.getElementById('contatti');
+  const footer = document.querySelector('footer');
+  if (hero && contact && 'IntersectionObserver' in window) {
+    const state = { hero: true, end: false };
+    const update = () => {
+      const show = !state.hero && !state.end;
+      bar.toggleAttribute('data-show', show);
+      bar.tabIndex = show ? 0 : -1;
+    };
+    new IntersectionObserver(([e]) => {
+      state.hero = e.isIntersecting;
+      update();
+    }).observe(hero);
+    const ends = new Set<Element>();
+    const endIo = new IntersectionObserver((entries) => {
+      entries.forEach((e) => (e.isIntersecting ? ends.add(e.target) : ends.delete(e.target)));
+      state.end = ends.size > 0;
+      update();
+    });
+    endIo.observe(contact);
+    if (footer) endIo.observe(footer);
+  }
+</script>

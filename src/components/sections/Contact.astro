@@ -1,0 +1,162 @@
+---
+import { site } from '../../data/site';
+
+const fields = [
+  { name: 'names', label: 'Full names', type: 'text', required: true, autocomplete: 'name' },
+  { name: 'email', label: 'Email', type: 'email', required: true, autocomplete: 'email' },
+  { name: 'date', label: 'Wedding date', type: 'text', required: false, autocomplete: 'off' },
+  { name: 'venue', label: 'Location / Venue', type: 'text', required: true, autocomplete: 'off' },
+  { name: 'phone', label: 'Phone number', type: 'tel', required: false, autocomplete: 'tel' },
+  { name: 'planner', label: 'Wedding planner (if applicable)', type: 'text', required: false, autocomplete: 'off' },
+];
+---
+
+<!-- Interludio prima dei contatti -->
+<section class="flex min-h-[60svh] items-center justify-center px-5 py-24" aria-label="Tailoring your story">
+  <p class="reveal text-center text-display font-light tracking-title uppercase">
+    Tailoring<br />your story,<br /><span class="text-accent">together</span>
+  </p>
+</section>
+
+<section id="contatti" class="bg-bg-raised py-24 md:py-40" aria-labelledby="contact-title">
+  <div class="mx-auto grid max-w-screen-2xl gap-16 px-5 md:grid-cols-[1fr_1.1fr] md:gap-20 md:px-10">
+    <div class="reveal">
+      <p class="label">Contatti</p>
+      <h2 id="contact-title" class="mt-4 text-title font-light">
+        Your story deserves more than <span class="text-accent">ordinary.</span>
+      </h2>
+      <p class="mt-6 text-lead font-light text-fg-muted">Let’s talk about your wedding.</p>
+
+      <a
+        href={`mailto:${site.email}`}
+        data-track="click_email"
+        class="mt-12 inline-block text-xl font-light break-all underline decoration-accent decoration-1 underline-offset-8 transition-colors hover:text-accent md:text-2xl"
+      >
+        {site.email}
+      </a>
+      <p class="label mt-6">Italia e destinazioni</p>
+
+      <a
+        href={site.whatsapp}
+        target="_blank"
+        rel="noopener"
+        data-track="click_whatsapp"
+        class="btn btn-ghost mt-10"
+      >
+        WhatsApp <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <form id="contact-form" class="reveal grid gap-x-5 gap-y-6 sm:grid-cols-2" novalidate>
+      {
+        fields.map((field) => (
+          <label class="flex flex-col gap-2">
+            <span class="text-[0.6875rem] font-semibold tracking-[0.2em] text-fg-muted uppercase">
+              {field.label}
+              {field.required && <span class="text-accent"> *</span>}
+            </span>
+            <input
+              name={field.name}
+              type={field.type}
+              required={field.required}
+              autocomplete={field.autocomplete}
+              class="field"
+            />
+          </label>
+        ))
+      }
+      <label class="flex flex-col gap-2 sm:col-span-2">
+        <span class="text-[0.6875rem] font-semibold tracking-[0.2em] text-fg-muted uppercase">
+          Message &amp; your vision <span class="text-accent">*</span>
+        </span>
+        <textarea name="message" required rows="5" class="field resize-y"></textarea>
+      </label>
+
+      <!-- Honeypot antispam: invisibile alle persone -->
+      <label class="absolute -left-[9999px]" aria-hidden="true">
+        Company <input name="company" type="text" tabindex="-1" autocomplete="off" />
+      </label>
+
+      <div class="flex flex-col items-start gap-4 sm:col-span-2">
+        <p class="text-xs text-fg-muted">
+          Inviando il modulo accettate il trattamento dei dati secondo la
+          <a href="/privacy" class="underline underline-offset-2 hover:text-fg">privacy policy</a>.
+        </p>
+        <button type="submit" class="btn">
+          Send your inquiry <span class="arrow" aria-hidden="true">→</span>
+        </button>
+        <p data-form-status class="text-sm" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<style>
+  .field {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.85rem 1rem 0.7rem;
+    border-radius: 4px;
+    background: var(--bg);
+    color: var(--fg);
+    box-shadow: inset 0 0 0 1px var(--line);
+    font-size: 1rem; /* evita lo zoom automatico su iOS */
+    transition: box-shadow 0.2s;
+  }
+  .field:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 1px var(--accent);
+  }
+  .field[aria-invalid='true'] {
+    box-shadow: inset 0 0 0 1px var(--accent);
+  }
+</style>
+
+<script>
+  import { site } from '../../data/site';
+
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const status = form.querySelector<HTMLElement>('[data-form-status]')!;
+  let started = false;
+
+  form.addEventListener('input', () => {
+    if (started) return;
+    started = true;
+    document.dispatchEvent(new CustomEvent('contact_form_start'));
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    let firstInvalid: HTMLElement | null = null;
+    form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input[required], textarea[required]').forEach((el) => {
+      const ok = el.checkValidity();
+      el.setAttribute('aria-invalid', String(!ok));
+      if (!ok && !firstInvalid) firstInvalid = el;
+    });
+    if (firstInvalid) {
+      status.textContent = 'Compilate i campi obbligatori segnati con *.';
+      (firstInvalid as HTMLElement).focus();
+      return;
+    }
+
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    button.disabled = true;
+    status.textContent = 'Invio in corso…';
+    try {
+      // TODO: endpoint serverless (Resend) ancora da creare
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      form.reset();
+      status.textContent = 'Grazie! Vi risponderemo al più presto.';
+      document.dispatchEvent(new CustomEvent('contact_form_submit'));
+    } catch {
+      status.textContent = `Invio non riuscito. Scriveteci a ${site.email}.`;
+    } finally {
+      button.disabled = false;
+    }
+  });
+</script>

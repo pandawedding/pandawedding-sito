@@ -1,0 +1,130 @@
+---
+import { getImage } from 'astro:assets';
+import { films, vimeoEmbedUrl } from '../data/films';
+
+// Player a schermo intero, aperto da qualunque elemento con data-film="<slug>".
+// Vimeo imposta cookie: l'iframe si carica solo dopo il click su Play.
+const data = Object.fromEntries(
+  await Promise.all(
+    films.map(async (film) => [
+      film.slug,
+      {
+        couple: film.couple,
+        location: film.location,
+        embed: vimeoEmbedUrl(film),
+        poster: (await getImage({ src: film.poster, width: 1600, format: 'webp' })).src,
+      },
+    ]),
+  ),
+);
+---
+
+<dialog
+  id="film-player"
+  class="m-0 h-dvh max-h-none w-screen max-w-none bg-black p-0 text-white backdrop:bg-black/90"
+  aria-labelledby="film-player-title"
+>
+  <div class="flex h-full flex-col">
+    <div class="flex items-center justify-between gap-4 px-5 py-4 md:px-10">
+      <div class="min-w-0">
+        <p class="label" data-player-location></p>
+        <p id="film-player-title" class="mt-1 truncate text-lg font-light" data-player-title></p>
+      </div>
+      <button
+        type="button"
+        data-player-close
+        class="flex size-11 shrink-0 items-center justify-center rounded-full bg-white/10 text-xl transition-colors hover:bg-white/20"
+        aria-label="Chiudi il video"
+      >
+        ✕
+      </button>
+    </div>
+
+    <div class="flex flex-1 items-center justify-center px-0 pb-6 md:px-10">
+      <div class="relative aspect-video w-full max-w-[min(100%,calc((100dvh-9rem)*16/9))] overflow-hidden bg-neutral-900 md:rounded-[6px]">
+        <img data-player-poster alt="" class="absolute inset-0 size-full object-cover opacity-60" />
+        <div data-player-consent class="absolute inset-0 flex flex-col items-center justify-center gap-5 px-6 text-center">
+          <button
+            type="button"
+            data-player-play
+            class="flex size-20 items-center justify-center rounded-full bg-accent text-2xl text-white transition-transform hover:scale-105"
+            aria-label="Riproduci il trailer"
+          >
+            ▶
+          </button>
+          <p class="max-w-sm text-xs leading-relaxed text-white/80">
+            Il video è ospitato su Vimeo. Premendo Play il player viene caricato e Vimeo può impostare i propri cookie.
+            <a href="/cookie-policy" class="underline underline-offset-2">Cookie policy</a>
+          </p>
+        </div>
+        <div data-player-frame class="absolute inset-0"></div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script is:inline type="application/json" id="film-data" set:html={JSON.stringify(data)} />
+
+<script>
+  type FilmData = Record<string, { couple: string; location: string; embed: string; poster: string }>;
+
+  const dialog = document.getElementById('film-player') as HTMLDialogElement;
+  const films: FilmData = JSON.parse(document.getElementById('film-data')!.textContent!);
+  const $ = <T extends HTMLElement>(sel: string) => dialog.querySelector<T>(sel)!;
+  const frame = $('[data-player-frame]');
+  const consent = $('[data-player-consent]');
+  const poster = $<HTMLImageElement>('[data-player-poster]');
+  let current = '';
+
+  const CONSENT_KEY = 'vimeo-consent';
+  const hasConsent = () => {
+    try {
+      return sessionStorage.getItem(CONSENT_KEY) === '1';
+    } catch {
+      return false;
+    }
+  };
+
+  const play = () => {
+    const film = films[current];
+    if (!film) return;
+    try {
+      sessionStorage.setItem(CONSENT_KEY, '1');
+    } catch {}
+    consent.hidden = true;
+    frame.innerHTML = `<iframe src="${film.embed}" title="${film.couple}, trailer" class="size-full" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+    document.dispatchEvent(new CustomEvent('film_play', { detail: { film: current } }));
+  };
+
+  const open = (slug: string) => {
+    const film = films[slug];
+    if (!film) return;
+    current = slug;
+    $('[data-player-title]').textContent = film.couple;
+    $('[data-player-location]').textContent = film.location;
+    poster.src = film.poster;
+    consent.hidden = false;
+    frame.innerHTML = '';
+    dialog.showModal();
+    if (hasConsent()) play();
+    else $('[data-player-play]').focus();
+  };
+
+  dialog.addEventListener('close', () => {
+    // Rimuovere l'iframe ferma il video
+    frame.innerHTML = '';
+    current = '';
+  });
+  $('[data-player-close]').addEventListener('click', () => dialog.close());
+  $('[data-player-play]').addEventListener('click', play);
+  dialog.addEventListener('click', (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+
+  document.addEventListener('click', (e) => {
+    const trigger = (e.target as HTMLElement).closest<HTMLElement>('[data-film]');
+    if (!trigger) return;
+    e.preventDefault();
+    open(trigger.dataset.film!);
+  });
+</script>

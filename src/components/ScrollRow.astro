@@ -98,44 +98,41 @@ const { name, label, class: className = '' } = Astro.props;
 </style>
 
 <script>
-  function initRows() {
-    document.querySelectorAll<HTMLElement>('.scroll-row').forEach((row) => {
-      const track = row.querySelector<HTMLElement>('.track');
-      const buttons = row.querySelectorAll<HTMLButtonElement>('.arrow-btn');
-      if (!track) return;
+  document.querySelectorAll<HTMLElement>('.scroll-row').forEach((row) => {
+    const track = row.querySelector<HTMLElement>('.track');
+    const buttons = row.querySelectorAll<HTMLButtonElement>('.arrow-btn');
+    if (!track) return;
 
-      const update = () => {
-        const max = track.scrollWidth - track.clientWidth - 2;
-        buttons.forEach((btn) => {
-          btn.hidden = max <= 0;
-          btn.disabled = btn.dataset.dir === '-1' ? track.scrollLeft <= 2 : track.scrollLeft >= max;
-        });
-      };
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth - 2;
+      buttons.forEach((btn) => {
+        btn.hidden = max <= 0;
+        btn.disabled = btn.dataset.dir === '-1' ? track.scrollLeft <= 2 : track.scrollLeft >= max;
+      });
+    };
 
-      buttons.forEach((btn) =>
-        btn.addEventListener('click', () => {
-          track.scrollBy({ left: Number(btn.dataset.dir) * track.clientWidth * 0.85, behavior: 'smooth' });
-        }),
-      );
+    buttons.forEach((btn) =>
+      btn.addEventListener('click', () => {
+        track.scrollBy({ left: Number(btn.dataset.dir) * track.clientWidth * 0.85, behavior: 'smooth' });
+      }),
+    );
 
-      let reported = false;
-      track.addEventListener(
-        'scroll',
-        () => {
-          update();
-          // Evento analytics una sola volta per riga e per pagina
-          if (!reported && track.scrollLeft > 40) {
-            reported = true;
-            row.dispatchEvent(
-              new CustomEvent('row_scroll', { bubbles: true, detail: { row: row.dataset.row } }),
-            );
-          }
-        },
-        { passive: true },
-      );
-      new ResizeObserver(update).observe(track);
-      update();
-    });
-  }
-  document.addEventListener('astro:page-load', initRows);
+    let reported = false;
+    track.addEventListener(
+      'scroll',
+      () => {
+        update();
+        // Evento analytics una sola volta per riga e per pagina
+        if (!reported && track.scrollLeft > 40) {
+          reported = true;
+          row.dispatchEvent(
+            new CustomEvent('row_scroll', { bubbles: true, detail: { row: row.dataset.row } }),
+          );
+        }
+      },
+      { passive: true },
+    );
+    new ResizeObserver(update).observe(track);
+    update();
+  });
 </script>
