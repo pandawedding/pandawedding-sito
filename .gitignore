@@ -1,0 +1,23 @@
+# build
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# env
+.env
+.env.*
+!.env.example
+
+# logs
+npm-debug.log*
+
+# os / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+
+# font sorgenti non usati dal sito (BOOWIE, pesi statici, TTF originali)
+font-sources/
