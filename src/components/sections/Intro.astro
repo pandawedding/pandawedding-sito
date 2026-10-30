@@ -5,22 +5,23 @@ import team from '../../assets/team/pierluigi-alberto.jpg';
 
 <!-- Presentazione: Pierluigi e Alberto -->
 <section class="mx-auto max-w-screen-xl px-5 pt-24 pb-12 md:px-10 md:pt-40 md:pb-16" aria-labelledby="intro-title">
-  <div class="grid items-end gap-10 md:grid-cols-[auto_1fr_1fr] md:items-center md:gap-14">
-    <div class="flex items-end gap-5 md:contents">
-      <h2
-        id="intro-title"
-        class="reveal vertical-text text-[1.375rem] leading-tight font-light tracking-[0.12em] uppercase md:self-stretch md:text-[1.75rem]"
-      >
-        We are<br />
-        <span class="text-accent">Pierluigi</span> and <span class="text-accent">Alberto</span>
-      </h2>
+  <div class="grid items-center gap-12 md:grid-cols-2 md:gap-16">
+    <!-- Titolo verticale sovrapposto al bordo sinistro della foto; P e A nel corsivo del logo -->
+    <div class="reveal relative pl-9 md:order-last md:pl-12">
       <Photo
         src={team}
         alt="Pierluigi e Alberto di PandA Wedding, in bianco e nero nel cortile di una villa, con macchina fotografica e videocamera"
         ratio="2 / 3"
-        sizes="(min-width: 768px) 40vw, 80vw"
-        class="reveal flex-1 md:order-last"
+        sizes="(min-width: 768px) 40vw, 85vw"
       />
+      <h2
+        id="intro-title"
+        class="intro-title vertical-text absolute bottom-8 left-0 z-10 text-[1.375rem] leading-[1.15] font-light tracking-[0.12em] uppercase md:bottom-12 md:text-[1.75rem]"
+      >
+        We are<br />
+        <span class="text-accent"><span class="script">P</span>ierluigi</span> and
+        <span class="text-accent"><span class="script">A</span>lberto</span>
+      </h2>
     </div>
 
     <div class="reveal max-w-md">
@@ -35,3 +36,20 @@ import team from '../../assets/team/pierluigi-alberto.jpg';
     </div>
   </div>
 </section>
+
+<style>
+  /* Leggibile anche dove passa sopra le parti chiare della foto */
+  .intro-title {
+    text-shadow:
+      0 1px 2px rgb(0 0 0 / 0.5),
+      0 2px 24px rgb(0 0 0 / 0.55);
+  }
+  .script {
+    font-family: var(--font-script);
+    font-size: 1.4em;
+    font-weight: 400;
+    line-height: 0;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+</style>
