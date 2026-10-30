@@ -112,6 +112,7 @@ I testi di partenza vengono dal sito Framer: `https://delightful-plans-781348--b
 
 ## SEO
 
+- **Versione di prova non indicizzata:** finché `site.indexable` in `src/data/site.ts` è `false`, ogni pagina ha `<meta name="robots" content="noindex, nofollow">`. Metterlo a `true` solo al lancio sul dominio definitivo.
 - Una sola `<title>` e meta description per pagina, in coerenza con il brand "PandA Wedding" (il sito Framer usa "Panda Foto Video Molinaroli": da decidere con il proprietario).
 - Open Graph e Twitter card con immagine dedicata, `sitemap.xml`, `robots.txt`, dati strutturati `LocalBusiness` / `Photographer`.
 - Testi alternativi (`alt`) descrittivi su tutte le immagini.

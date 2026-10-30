@@ -3,6 +3,9 @@ export const site = {
   tagline: 'Italian Wedding Photographers and Videographers based in Verona',
   // Meta description del sito Framer
   description: 'Fotografia e videografia di matrimonio dal linguaggio editoriale.',
+  // Versione di prova: i motori di ricerca non devono indicizzarla.
+  // Mettere true al lancio sul dominio definitivo.
+  indexable: false,
   email: 'hello@pandafotovideo.it',
   whatsapp: 'https://wa.me/393489538074',
   company: {
