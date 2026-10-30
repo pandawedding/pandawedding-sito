@@ -49,5 +49,6 @@ import WhatsAppLink from './WhatsAppLink.astro';
     });
     endIo.observe(contact);
     if (footer) endIo.observe(footer);
+    document.querySelectorAll("[data-sticky-end]").forEach((el) => endIo.observe(el));
   }
 </script>

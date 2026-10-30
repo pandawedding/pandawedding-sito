@@ -13,13 +13,6 @@ const fields = [
 ];
 ---
 
-<!-- Interludio prima dei contatti -->
-<section class="flex min-h-[60svh] items-center justify-center px-5 py-24" aria-label="Tailoring your story">
-  <p class="reveal text-center text-display font-light tracking-title uppercase">
-    Tailoring<br />your story,<br /><span class="text-accent">together</span>
-  </p>
-</section>
-
 <section id="contatti" class="bg-bg-raised py-24 md:py-40" aria-labelledby="contact-title">
   <div class="mx-auto grid max-w-screen-2xl gap-16 px-5 md:grid-cols-[1fr_1.1fr] md:gap-20 md:px-10">
     <div class="reveal">
@@ -29,15 +22,16 @@ const fields = [
       </h2>
       <p class="mt-6 text-lead font-light text-fg-muted">Let’s talk about your wedding.</p>
 
-      <a
-        href={`mailto:${site.email}`}
-        data-track="click_email"
-        class="mt-12 inline-block text-xl font-light break-all underline decoration-accent decoration-1 underline-offset-8 transition-colors hover:text-accent md:text-2xl"
-      >
-        {site.email}
-      </a>
-      <p class="label mt-6">Italia e destinazioni</p>
-      <WhatsAppLink position="contact" class="mt-8" />
+      <div class="mt-12 flex flex-col items-start gap-8">
+        <a
+          href={`mailto:${site.email}`}
+          data-track="click_email"
+          class="text-xl font-light break-all underline decoration-accent decoration-1 underline-offset-8 transition-colors hover:text-accent md:text-2xl"
+        >
+          {site.email}
+        </a>
+        <WhatsAppLink position="contact" />
+      </div>
     </div>
 
     <form id="contact-form" class="reveal grid gap-x-5 gap-y-6 sm:grid-cols-2" novalidate>
@@ -88,6 +82,13 @@ const fields = [
       </div>
     </form>
   </div>
+</section>
+
+<!-- Chiusura dopo i contatti, prima del footer -->
+<section data-sticky-end class="flex min-h-[50svh] items-center justify-center px-5 py-24" aria-label="Tailoring your story">
+  <p class="reveal text-center text-display font-light tracking-title uppercase">
+    Tailoring<br />your story,<br /><span class="text-accent">together</span>
+  </p>
 </section>
 
 <style>
