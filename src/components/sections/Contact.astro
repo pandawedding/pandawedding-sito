@@ -1,4 +1,5 @@
 ---
+import WhatsAppLink from '../WhatsAppLink.astro';
 import { site } from '../../data/site';
 
 // Etichette e placeholder dal sito Framer (pagina Contatti)
@@ -36,16 +37,7 @@ const fields = [
         {site.email}
       </a>
       <p class="label mt-6">Italia e destinazioni</p>
-      <a
-        href={site.whatsapp}
-        target="_blank"
-        rel="noopener"
-        class="cta-link mt-8"
-        data-track="click_whatsapp"
-        data-position="contact"
-      >
-        Message us on WhatsApp <span class="chevron" aria-hidden="true">›</span>
-      </a>
+      <WhatsAppLink position="contact" class="mt-8" />
     </div>
 
     <form id="contact-form" class="reveal grid gap-x-5 gap-y-6 sm:grid-cols-2" novalidate>

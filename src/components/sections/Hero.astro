@@ -1,4 +1,5 @@
 ---
+import WhatsAppLink from '../WhatsAppLink.astro';
 import { getImage } from 'astro:assets';
 import { site } from '../../data/site';
 import { films } from '../../data/films';
@@ -72,9 +73,7 @@ const featured = films.find((f) => f.slug === 'imani-john')!;
         <a href="#contatti" class="cta-link" data-track="cta_click" data-label="get in touch" data-position="hero">
           Get in touch <span class="chevron" aria-hidden="true">›</span>
         </a>
-        <a href="#films" class="cta-link text-white!" data-track="cta_click" data-label="wedding films" data-position="hero">
-          Wedding Films <span class="chevron" aria-hidden="true">›</span>
-        </a>
+        <WhatsAppLink variant="link" position="hero" class="text-white!" />
       </div>
     </div>
   </div>

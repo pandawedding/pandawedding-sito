@@ -1,4 +1,5 @@
 ---
+import WhatsAppLink from './WhatsAppLink.astro';
 import Logo from './Logo.astro';
 import { site, nav } from '../data/site';
 
@@ -12,15 +13,12 @@ const year = new Date().getFullYear();
         <a href="/#top" class="inline-block text-[2rem] md:text-6xl" aria-label="PandA Wedding, torna all'inizio">
           <Logo />
         </a>
-        <a
-          href={site.whatsapp}
-          target="_blank"
-          rel="noopener"
-          data-track="click_whatsapp"
-          class="btn mt-8"
-        >
-          WhatsApp <span class="arrow" aria-hidden="true">→</span>
-        </a>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="/#contatti" class="btn" data-track="cta_click" data-label="get in touch" data-position="footer">
+            Get in touch <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <WhatsAppLink position="footer" />
+        </div>
       </div>
 
       <nav aria-label="Menu footer" class="md:justify-self-end">

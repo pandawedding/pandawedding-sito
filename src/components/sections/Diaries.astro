@@ -1,4 +1,5 @@
 ---
+import WhatsAppLink from '../WhatsAppLink.astro';
 import Photo from '../Photo.astro';
 import DiaryContent from '../DiaryContent.astro';
 import { getDiaries } from '../../data/diaries';
@@ -65,9 +66,12 @@ const VISIBLE = 3;
 
   <div class="reveal mx-auto mt-24 max-w-screen-2xl px-5 text-center md:mt-36 md:px-10">
     <p class="text-title font-light tracking-title uppercase">Start a new <span class="text-accent">page</span></p>
-    <a href="#contatti" class="btn mt-10" data-track="cta_click" data-label="get in touch" data-position="diaries">
-      Get in touch <span class="arrow" aria-hidden="true">→</span>
-    </a>
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+      <a href="#contatti" class="btn" data-track="cta_click" data-label="get in touch" data-position="diaries">
+        Get in touch <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <WhatsAppLink position="diaries" />
+    </div>
   </div>
 </section>
 

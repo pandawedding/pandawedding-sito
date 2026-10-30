@@ -1,4 +1,5 @@
 ---
+import WhatsAppLink from './WhatsAppLink.astro';
 import { render } from 'astro:content';
 import { Picture } from 'astro:assets';
 import Photo from './Photo.astro';
@@ -67,14 +68,15 @@ const { couple, title, label } = diary.entry.data;
   <footer class="mx-auto mt-20 max-w-2xl border-t border-line pt-12 pb-20 text-center md:mt-28">
     <p class="label">Il vostro diario</p>
     <p class="mt-5 text-title font-light">Il tuo matrimonio merita di essere raccontato così</p>
-    <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
       <a href="/#contatti" class="btn" data-diary-cta data-track="cta_click" data-label="raccontaci la tua storia" data-position="diary">
         Raccontaci la tua storia <span class="arrow" aria-hidden="true">→</span>
       </a>
-      <a href="/#about" class="btn btn-ghost" data-diary-cta data-track="cta_click" data-label="our approach" data-position="diary">
-        Our approach <span class="arrow" aria-hidden="true">→</span>
-      </a>
+      <WhatsAppLink position="diary" />
     </div>
+    <a href="/#about" class="cta-link mt-4" data-diary-cta data-track="cta_click" data-label="our approach" data-position="diary">
+      Our approach <span class="chevron" aria-hidden="true">›</span>
+    </a>
   </footer>
 </article>
 

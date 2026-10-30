@@ -95,7 +95,7 @@ Menu ad ancore (con evidenza della sezione corrente): Wedding Films · Portfolio
 
 **Testi:** quelli attuali nel codice sono la base approvata (allineati a Framer il 30/10/2026). Framer non è più la fonte vincolante: si possono aggiungere CTA e brevi testi d'interfaccia in stile Apple (bottone principale + link testuale rosso con `›`, classe `.cta-link`), ma non riscrivere i testi esistenti senza chiedere.
 
-**CTA:** ogni sezione chiude con un'azione chiara (bottone principale) e, dove serve, un link secondario. Etichette in inglese come il resto delle CTA (`Get in touch`, `Our approach`, `Watch the trailer`, `See the portfolio`, `Message us on WhatsApp`); `Leggi il diario` resta in italiano.
+**CTA:** ogni sezione chiude con un'azione chiara (bottone principale) e, dove serve, un link secondario. Etichette in inglese come il resto delle CTA (`Get in touch`, `Our approach`, `Watch the trailer`, `See the portfolio`, `Message us on WhatsApp`); `Leggi il diario` resta in italiano. **WhatsApp sempre accanto a ogni `Get in touch`**: componente `WhatsAppLink` (logo WhatsApp + `Message us`).
 
 Pagine separate: solo `/privacy`, `/cookie-policy` e le pagine statiche dei diari.
 

@@ -1,4 +1,5 @@
 ---
+import WhatsAppLink from '../WhatsAppLink.astro';
 import { Picture } from 'astro:assets';
 import ScrollRow from '../ScrollRow.astro';
 import { films } from '../../data/films';
@@ -17,16 +18,11 @@ import { films } from '../../data/films';
     </p>
   </header>
 
-  <!-- Swipe su mobile, griglia 2×2 centrata su desktop -->
-  <ScrollRow
-    name="films"
-    label="Wedding films"
-    class="mt-12 md:mt-16"
-    trackClass="md:mx-auto md:grid md:max-w-6xl md:grid-cols-2 md:gap-x-8 md:gap-y-16 md:overflow-visible"
-  >
+  <!-- Riga orizzontale: si scorre su mobile e tablet, da 1280px i film stanno tutti affiancati -->
+  <ScrollRow name="films" label="Wedding films" class="mt-12 md:mt-16">
     {
       films.map((film) => (
-        <article class="w-[85vw] max-w-[44rem] md:w-auto md:max-w-none">
+        <article class="w-[85vw] max-w-[44rem] md:w-[44vw] xl:w-[calc((100%-3rem)/4)]">
           <button
             type="button"
             data-film={film.slug}
@@ -40,7 +36,7 @@ import { films } from '../../data/films';
                 formats={['avif', 'webp']}
                 fallbackFormat="webp"
                 widths={[640, 960, 1280]}
-                sizes="(min-width: 768px) 46vw, 85vw"
+                sizes="(min-width: 1280px) 25vw, (min-width: 768px) 44vw, 85vw"
                 loading="lazy"
                 class="absolute inset-0 size-full object-cover transition-transform duration-700 ease-out-soft group-hover:scale-[1.04]"
               />
@@ -75,9 +71,12 @@ import { films } from '../../data/films';
 
   <div class="reveal mx-auto mt-20 flex max-w-screen-2xl flex-col items-center gap-8 px-5 text-center md:mt-28 md:px-10">
     <p class="text-title font-light tracking-title uppercase">Your emotions in <span class="text-accent">frames</span></p>
-    <a href="#contatti" class="btn" data-track="cta_click" data-label="get in touch" data-position="films">
-      Get in touch <span class="arrow" aria-hidden="true">→</span>
-    </a>
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <a href="#contatti" class="btn" data-track="cta_click" data-label="get in touch" data-position="films">
+        Get in touch <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <WhatsAppLink position="films" />
+    </div>
   </div>
 </section>
 

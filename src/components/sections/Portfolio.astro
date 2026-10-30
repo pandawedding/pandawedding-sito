@@ -1,4 +1,5 @@
 ---
+import WhatsAppLink from '../WhatsAppLink.astro';
 import { Picture, getImage } from 'astro:assets';
 import { portfolio, PORTFOLIO_FIRST } from '../../data/portfolio';
 
@@ -100,14 +101,15 @@ for (let i = PORTFOLIO_FIRST; i < photos.length; i += BATCH) batches.push(photos
     <h3 class="text-title font-light tracking-title uppercase">
       Next chapter, <span class="text-accent">your story</span>
     </h3>
-    <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
       <a href="#contatti" class="btn" data-track="cta_click" data-label="get in touch" data-position="portfolio">
         Get in touch <span class="arrow" aria-hidden="true">→</span>
       </a>
-      <a href="#about" class="btn btn-ghost" data-track="cta_click" data-label="our approach" data-position="portfolio">
-        Our approach <span class="arrow" aria-hidden="true">→</span>
-      </a>
+      <WhatsAppLink position="portfolio" />
     </div>
+    <a href="#about" class="cta-link mt-4" data-track="cta_click" data-label="our approach" data-position="portfolio">
+      Our approach <span class="chevron" aria-hidden="true">›</span>
+    </a>
   </div>
 </section>
 
