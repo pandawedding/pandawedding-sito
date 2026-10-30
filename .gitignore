@@ -21,3 +21,6 @@ Thumbs.db
 
 # font sorgenti non usati dal sito (BOOWIE, pesi statici, TTF originali)
 font-sources/
+
+# trailer originali (pesanti): restano in locale, sul sito vanno le clip in public/videos
+src/assets/trailers/

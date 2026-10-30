@@ -97,7 +97,7 @@ Menu ad ancore (con evidenza della sezione corrente): Wedding Films · Portfolio
 
 Pagine separate: solo `/privacy`, `/cookie-policy` e le pagine statiche dei diari.
 
-**Video:** per hero e anteprime animate servono clip brevi ospitate sul sito (MP4/WebM, 8–15 s, senza audio), da ricevere dal proprietario; finché mancano si usano i poster in `src/assets/films/`.
+**Video:** i trailer originali stanno in `src/assets/trailers/` (esclusi da git, troppo pesanti). Le clip per il sito si generano con `node scripts/make-clips.mjs` (ffmpeg da `@ffmpeg-installer/ffmpeg`) in `public/videos/`: hero in loop (orizzontale 1080p e verticale per mobile) e anteprime delle card film al passaggio del mouse su desktop. Autoplay solo se non c'è "riduci movimento", risparmio dati o connessione lenta; il trailer completo con audio resta su Vimeo, al click.
 
 Il codice ricostruisce i testi dal sito Framer pubblicato: `https://delightful-plans-781348--build-luxury-portfolio-xdyarmjqp.framer.app/`. I testi lunghi di Wedding Films, Real Weddings e Portfolio vanno completati dal proprietario.
 

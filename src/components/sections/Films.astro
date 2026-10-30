@@ -38,7 +38,16 @@ import { films } from '../../data/films';
                 loading="lazy"
                 class="absolute inset-0 size-full object-cover transition-transform duration-700 ease-out-soft group-hover:scale-[1.04]"
               />
-              <div class="absolute inset-0 bg-black/10 transition-colors duration-500 group-hover:bg-black/30" />
+              <video
+                class="film-preview absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-500 data-[playing]:opacity-100"
+                data-preview={film.preview}
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              />
+              <div class="absolute inset-0 bg-black/10" />
               <span
                 class="absolute bottom-4 left-4 flex size-12 items-center justify-center rounded-full bg-accent text-sm text-white transition-transform duration-500 ease-out-soft group-hover:scale-110 md:bottom-6 md:left-6 md:size-14"
                 aria-hidden="true"
@@ -62,3 +71,23 @@ import { films } from '../../data/films';
     </a>
   </div>
 </section>
+
+<script>
+  import { canAutoplay } from '../../scripts/autoplay';
+
+  // Anteprima animata al passaggio del mouse, solo su desktop
+  if (matchMedia('(hover: hover) and (pointer: fine)').matches && canAutoplay()) {
+    document.querySelectorAll<HTMLVideoElement>('.film-preview').forEach((video) => {
+      const card = video.closest('button')!;
+      video.muted = true;
+      card.addEventListener('pointerenter', () => {
+        if (!video.src) video.src = video.dataset.preview!;
+        video.play().then(() => video.toggleAttribute('data-playing', true)).catch(() => {});
+      });
+      card.addEventListener('pointerleave', () => {
+        video.removeAttribute('data-playing');
+        video.pause();
+      });
+    });
+  }
+</script>

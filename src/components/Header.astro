@@ -12,15 +12,15 @@ import { nav } from '../data/site';
       <Logo />
     </a>
 
-    <nav class="hidden lg:block" aria-label="Menu principale">
-      <ul class="flex items-center gap-8 lg:gap-10">
+    <nav class="hidden xl:block" aria-label="Menu principale">
+      <ul class="flex items-center gap-10">
         {
           nav.map((item) => (
             <li>
               <a
                 href={item.href}
                 data-nav={item.href.split('#')[1]}
-                class="relative py-2 text-[0.8125rem] font-medium tracking-[0.18em] uppercase text-fg-muted transition-colors hover:text-fg aria-[current=true]:text-fg after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 hover:after:scale-x-100 aria-[current=true]:after:scale-x-100"
+                class="relative py-2 text-[0.8125rem] font-medium tracking-[0.18em] whitespace-nowrap uppercase text-fg-muted transition-colors hover:text-fg aria-[current=true]:text-fg after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 hover:after:scale-x-100 aria-[current=true]:after:scale-x-100"
               >
                 {item.label}
               </a>
@@ -33,7 +33,7 @@ import { nav } from '../data/site';
     <button
       id="menu-toggle"
       type="button"
-      class="relative z-[60] -mr-2 flex size-11 items-center justify-center lg:hidden"
+      class="relative z-[60] -mr-2 flex size-11 items-center justify-center xl:hidden"
       aria-controls="mobile-menu"
       aria-expanded="false"
       aria-label="Apri il menu"
@@ -47,7 +47,7 @@ import { nav } from '../data/site';
      dell'header renderebbe `fixed` relativo all'header invece che allo schermo -->
 <div
   id="mobile-menu"
-  class="fixed inset-0 z-40 flex flex-col bg-bg px-5 pt-24 pb-10 opacity-0 invisible transition-[opacity,visibility] duration-500 data-[open]:visible data-[open]:opacity-100 lg:hidden"
+  class="fixed inset-0 z-40 flex flex-col bg-bg px-5 pt-24 pb-10 opacity-0 invisible transition-[opacity,visibility] duration-500 data-[open]:visible data-[open]:opacity-100 xl:hidden"
   hidden
 >
   <nav aria-label="Menu mobile" class="flex-1">

@@ -12,6 +12,8 @@ export interface Film {
   /** Hash dei video non in elenco */
   vimeoHash: string;
   poster: ImageMetadata;
+  /** Clip muta in public/videos per l'anteprima al passaggio del mouse */
+  preview: string;
 }
 
 // Testi dal sito Framer (pagina Wedding Films)
@@ -24,6 +26,7 @@ export const films: Film[] = [
     vimeoId: '1207460157',
     vimeoHash: '88bc475236',
     poster: johannaCome,
+    preview: '/videos/preview-johanna-come.mp4',
   },
   {
     slug: 'imani-john',
@@ -33,6 +36,7 @@ export const films: Film[] = [
     vimeoId: '1208434310',
     vimeoHash: 'df0186a96f',
     poster: imaniJohn,
+    preview: '/videos/preview-imani-john.mp4',
   },
   {
     slug: 'daniel-josiane',
@@ -42,6 +46,7 @@ export const films: Film[] = [
     vimeoId: '1206117484',
     vimeoHash: '69530501a7',
     poster: danielJosiane,
+    preview: '/videos/preview-daniel-josiane.mp4',
   },
 ];
 

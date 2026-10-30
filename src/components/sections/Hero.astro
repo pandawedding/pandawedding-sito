@@ -20,19 +20,33 @@ const featured = films.find((f) => f.slug === 'imani-john')!;
 ---
 
 <section id="top" class="relative flex min-h-svh items-end overflow-hidden bg-black">
-  <picture class="hero-media absolute inset-0">
-    <source media="(min-width: 768px)" type="image/avif" srcset={desktop.avif} sizes="100vw" />
-    <source media="(min-width: 768px)" type="image/webp" srcset={desktop.webp} sizes="100vw" />
-    <source type="image/avif" srcset={mobile.avif} sizes="100vw" />
-    <source type="image/webp" srcset={mobile.webp} sizes="100vw" />
-    <img
-      src={fallback.src}
-      alt="Sposi che corrono mano nella mano su un prato al tramonto, davanti a una villa storica"
-      fetchpriority="high"
-      decoding="async"
-      class="size-full object-cover object-[50%_60%]"
-    />
-  </picture>
+  <div class="hero-media absolute inset-0">
+    <picture class="absolute inset-0">
+      <source media="(min-width: 768px)" type="image/avif" srcset={desktop.avif} sizes="100vw" />
+      <source media="(min-width: 768px)" type="image/webp" srcset={desktop.webp} sizes="100vw" />
+      <source type="image/avif" srcset={mobile.avif} sizes="100vw" />
+      <source type="image/webp" srcset={mobile.webp} sizes="100vw" />
+      <img
+        src={fallback.src}
+        alt="Sposi che corrono mano nella mano su un prato al tramonto, davanti a una villa storica"
+        fetchpriority="high"
+        decoding="async"
+        class="size-full object-cover object-[50%_60%]"
+      />
+    </picture>
+    <!-- Clip in loop dal trailer di Imani e John: compare sopra la foto quando parte -->
+    <video
+      id="hero-video"
+      class="absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-1000 data-[playing]:opacity-100"
+      data-src-desktop="/videos/hero-imani-john-1080.mp4"
+      data-src-mobile="/videos/hero-imani-john-vertical.mp4"
+      muted
+      loop
+      playsinline
+      preload="none"
+      aria-hidden="true"
+    ></video>
+  </div>
   <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/30"></div>
 
   <div class="relative mx-auto w-full max-w-screen-2xl px-5 pt-28 pb-14 md:px-10 md:pb-20">
@@ -73,3 +87,17 @@ const featured = films.find((f) => f.slug === 'imani-john')!;
     }
   }
 </style>
+
+<script>
+  import { canAutoplay, pauseWhenHidden } from '../../scripts/autoplay';
+
+  const video = document.getElementById('hero-video') as HTMLVideoElement;
+  if (canAutoplay()) {
+    const desktop = matchMedia('(min-width: 768px)').matches;
+    video.muted = true;
+    video.autoplay = true;
+    video.src = (desktop ? video.dataset.srcDesktop : video.dataset.srcMobile)!;
+    video.addEventListener('playing', () => video.toggleAttribute('data-playing', true), { once: true });
+    pauseWhenHidden(video, document.getElementById('top')!);
+  }
+</script>
