@@ -17,10 +17,16 @@ import { films } from '../../data/films';
     </p>
   </header>
 
-  <ScrollRow name="films" label="Wedding films" class="mt-12 md:mt-16">
+  <!-- Swipe su mobile, griglia 2×2 centrata su desktop -->
+  <ScrollRow
+    name="films"
+    label="Wedding films"
+    class="mt-12 md:mt-16"
+    trackClass="md:mx-auto md:grid md:max-w-6xl md:grid-cols-2 md:gap-x-8 md:gap-y-16 md:overflow-visible"
+  >
     {
       films.map((film) => (
-        <article class="w-[85vw] max-w-[44rem] md:w-[46vw]">
+        <article class="w-[85vw] max-w-[44rem] md:w-auto md:max-w-none">
           <button
             type="button"
             data-film={film.slug}
@@ -58,7 +64,7 @@ import { films } from '../../data/films';
           </button>
           <p class="label mt-6">{film.location}</p>
           <h3 class="mt-3 text-title font-light">{film.couple}</h3>
-          <p class="mt-3 max-w-md leading-relaxed font-light text-fg-muted">{film.text}</p>
+          {film.text && <p class="mt-3 max-w-md leading-relaxed font-light text-fg-muted">{film.text}</p>}
           <button type="button" data-film={film.slug} class="cta-link mt-3">
             Watch the trailer <span class="chevron" aria-hidden="true">›</span>
           </button>

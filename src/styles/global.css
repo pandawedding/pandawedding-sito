@@ -303,3 +303,30 @@ html {
 [data-theme='light'] .cta-link .chevron {
   color: var(--accent);
 }
+
+/* Foto nel testo dei diari: una sola a tutta larghezza, più foto consecutive in griglia */
+.prose-diary p:has(> img) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 0.75rem;
+  margin-block: 2.5rem;
+}
+.prose-diary p:has(> img:only-child) {
+  grid-template-columns: 1fr;
+}
+/* Ultima foto di un gruppo dispari: a tutta larghezza */
+.prose-diary p > img:last-child:nth-child(odd):not(:only-child) {
+  grid-column: span 2;
+}
+.prose-diary img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-photo);
+  cursor: zoom-in;
+}
+@media (min-width: 768px) {
+  .prose-diary p:has(> img) {
+    gap: 1rem;
+  }
+}

@@ -15,6 +15,8 @@ export interface Diary {
   cover?: ImageMetadata;
   /** Diario completo (non solo l'anteprima) */
   hasStory: boolean;
+  /** Le foto sono già inserite nel testo: niente galleria automatica in fondo */
+  inlinePhotos: boolean;
 }
 
 export async function getDiaries(): Promise<Diary[]> {
@@ -32,6 +34,7 @@ export async function getDiaries(): Promise<Diary[]> {
       photos,
       cover: photos[0] ?? film?.poster,
       hasStory: !!entry.body?.trim(),
+      inlinePhotos: !!entry.body?.includes('!['),
     };
   });
 }

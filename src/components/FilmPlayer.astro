@@ -4,6 +4,7 @@ import { films, vimeoEmbedUrl } from '../data/films';
 
 // Player a schermo intero, aperto da qualunque elemento con data-film="<slug>".
 // Vimeo imposta cookie: l'iframe si carica solo dopo il click su Play.
+// I trailer ospitati sul sito (film.video) partono subito, senza avviso.
 const data = Object.fromEntries(
   await Promise.all(
     films.map(async (film) => [
@@ -11,7 +12,8 @@ const data = Object.fromEntries(
       {
         couple: film.couple,
         location: film.location,
-        embed: vimeoEmbedUrl(film),
+        embed: film.vimeo ? vimeoEmbedUrl(film.vimeo) : undefined,
+        video: film.video,
         poster: (await getImage({ src: film.poster, width: 1600, format: 'webp' })).src,
       },
     ]),
@@ -66,7 +68,10 @@ const data = Object.fromEntries(
 <script is:inline type="application/json" id="film-data" set:html={JSON.stringify(data)} />
 
 <script>
-  type FilmData = Record<string, { couple: string; location: string; embed: string; poster: string }>;
+  type FilmData = Record<
+    string,
+    { couple: string; location: string; embed?: string; video?: string; poster: string }
+  >;
 
   const dialog = document.getElementById('film-player') as HTMLDialogElement;
   const films: FilmData = JSON.parse(document.getElementById('film-data')!.textContent!);
@@ -88,11 +93,15 @@ const data = Object.fromEntries(
   const play = () => {
     const film = films[current];
     if (!film) return;
-    try {
-      sessionStorage.setItem(CONSENT_KEY, '1');
-    } catch {}
     consent.hidden = true;
-    frame.innerHTML = `<iframe src="${film.embed}" title="${film.couple}, trailer" class="size-full" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+    if (film.video) {
+      frame.innerHTML = `<video src="${film.video}" class="size-full bg-black" controls autoplay playsinline></video>`;
+    } else {
+      try {
+        sessionStorage.setItem(CONSENT_KEY, '1');
+      } catch {}
+      frame.innerHTML = `<iframe src="${film.embed}" title="${film.couple}, trailer" class="size-full" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+    }
     document.dispatchEvent(new CustomEvent('film_play', { detail: { film: current } }));
   };
 
@@ -106,12 +115,12 @@ const data = Object.fromEntries(
     consent.hidden = false;
     frame.innerHTML = '';
     dialog.showModal();
-    if (hasConsent()) play();
+    if (film.video || hasConsent()) play();
     else $('[data-player-play]').focus();
   };
 
   dialog.addEventListener('close', () => {
-    // Rimuovere l'iframe ferma il video
+    // Rimuovere iframe o video ferma la riproduzione
     frame.innerHTML = '';
     current = '';
   });

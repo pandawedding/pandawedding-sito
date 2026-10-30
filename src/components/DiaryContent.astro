@@ -35,7 +35,7 @@ const { couple, title, label } = diary.entry.data;
   </div>
 
   {
-    diary.photos.length > 1 && (
+    diary.photos.length > 1 && !diary.inlinePhotos && (
       <div class="mt-16 columns-2 gap-3 md:columns-3 md:gap-4">
         {diary.photos.slice(1).map((src, i) => (
           <button
@@ -77,3 +77,20 @@ const { couple, title, label } = diary.entry.data;
     </div>
   </footer>
 </article>
+
+<script>
+  // Le foto scritte nel Markdown del diario si aprono nel visore come le altre
+  document.querySelectorAll<HTMLImageElement>('.prose-diary img').forEach((img, i) => {
+    img.dataset.lightbox = String(i);
+    img.dataset.full = img.currentSrc || img.src;
+    img.dataset.alt = img.alt;
+    img.tabIndex = 0;
+    img.setAttribute('role', 'button');
+    img.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        img.click();
+      }
+    });
+  });
+</script>

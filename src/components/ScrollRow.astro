@@ -6,13 +6,18 @@ interface Props {
   name: string;
   label: string;
   class?: string;
+  /** Classi aggiuntive della traccia, es. per diventare una griglia su desktop */
+  trackClass?: string;
 }
-const { name, label, class: className = '' } = Astro.props;
+const { name, label, class: className = '', trackClass = '' } = Astro.props;
 ---
 
 <div class:list={['scroll-row group/row relative', className]} data-row={name}>
   <div
-    class="track flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain px-5 md:gap-4 md:px-10"
+    class:list={[
+      'track flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain px-5 md:gap-4 md:px-10',
+      trackClass,
+    ]}
     role="region"
     aria-label={label}
     tabindex="0"
