@@ -1,0 +1,67 @@
+---
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+// Foto ottimizzata (AVIF/WebP + srcset). Senza `src` mostra un segnaposto
+// con le stesse proporzioni, finché non arrivano le foto vere.
+interface Props {
+  src?: ImageMetadata;
+  alt: string;
+  /** Rapporto d'aspetto CSS, es. "2 / 3" */
+  ratio?: string;
+  sizes?: string;
+  widths?: number[];
+  eager?: boolean;
+  class?: string;
+  imgClass?: string;
+}
+
+const {
+  src,
+  alt,
+  ratio = '2 / 3',
+  sizes = '100vw',
+  widths = [400, 640, 960, 1280, 1920],
+  eager = false,
+  class: className = '',
+  imgClass = '',
+} = Astro.props;
+---
+
+<div class:list={['photo relative', className]} style={`aspect-ratio: ${ratio}`}>
+  {
+    src ? (
+      <Picture
+        src={src}
+        alt={alt}
+        formats={['avif', 'webp']}
+        widths={widths.filter((w) => w <= src.width)}
+        sizes={sizes}
+        loading={eager ? 'eager' : 'lazy'}
+        fetchpriority={eager ? 'high' : 'auto'}
+        decoding="async"
+        class:list={['absolute inset-0 size-full object-cover', imgClass]}
+      />
+    ) : (
+      <div
+        role="img"
+        aria-label={alt}
+        class:list={['placeholder absolute inset-0', imgClass]}
+      />
+    )
+  }
+  <slot />
+</div>
+
+<style>
+  .placeholder {
+    background:
+      radial-gradient(120% 80% at 30% 20%, rgb(255 255 255 / 0.07), transparent 60%),
+      linear-gradient(160deg, #1f1f22, #121214 60%, #19191b);
+  }
+  :global([data-theme='light']) .placeholder {
+    background:
+      radial-gradient(120% 80% at 30% 20%, rgb(255 255 255 / 0.8), transparent 60%),
+      linear-gradient(160deg, #ececee, #dedee1);
+  }
+</style>

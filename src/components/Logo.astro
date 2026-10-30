@@ -1,0 +1,12 @@
+---
+// Wordmark "PandA Wedding" in font calligrafico: P e A sempre rosse,
+// il resto segue il tema (chiaro su scuro, scuro su bianco).
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<span class:list={['font-script leading-none whitespace-nowrap text-(--logo-ink)', className]}>
+  <span class="text-accent">P</span>and<span class="text-accent">A</span> Wedding
+</span>

@@ -1,0 +1,141 @@
+---
+// Riga orizzontale scorrevole stile Netflix: swipe su mobile, frecce su desktop.
+// Gli elementi figli diventano punti di aggancio dello scroll-snap.
+interface Props {
+  /** Nome della riga, usato per l'evento analytics `row_scroll` */
+  name: string;
+  label: string;
+  class?: string;
+}
+const { name, label, class: className = '' } = Astro.props;
+---
+
+<div class:list={['scroll-row group/row relative', className]} data-row={name}>
+  <div
+    class="track flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain px-5 md:gap-4 md:px-10"
+    role="region"
+    aria-label={label}
+    tabindex="0"
+  >
+    <slot />
+  </div>
+
+  <button
+    type="button"
+    class="arrow-btn left-3 md:left-6"
+    data-dir="-1"
+    aria-label="Scorri indietro"
+    hidden
+  >
+    <span aria-hidden="true">←</span>
+  </button>
+  <button
+    type="button"
+    class="arrow-btn right-3 md:right-6"
+    data-dir="1"
+    aria-label="Scorri avanti"
+    hidden
+  >
+    <span aria-hidden="true">→</span>
+  </button>
+</div>
+
+<style>
+  .track {
+    scrollbar-width: none;
+    scroll-padding-inline: 1.25rem;
+  }
+  .track::-webkit-scrollbar {
+    display: none;
+  }
+  .track > :global(*) {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+  @media (min-width: 768px) {
+    .track {
+      scroll-padding-inline: 2.5rem;
+    }
+  }
+
+  .arrow-btn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    display: none;
+    width: 3.25rem;
+    height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgb(11 11 12 / 0.7);
+    color: #fff;
+    font-size: 1.25rem;
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transform: translateY(-50%);
+    transition:
+      opacity 0.3s,
+      background-color 0.2s;
+  }
+  .arrow-btn:hover {
+    background: var(--accent);
+  }
+  .arrow-btn:disabled {
+    opacity: 0 !important;
+    pointer-events: none;
+  }
+  /* Frecce solo su dispositivi con mouse */
+  @media (hover: hover) and (pointer: fine) {
+    .arrow-btn:not([hidden]) {
+      display: flex;
+    }
+    .scroll-row:hover .arrow-btn,
+    .arrow-btn:focus-visible {
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  function initRows() {
+    document.querySelectorAll<HTMLElement>('.scroll-row').forEach((row) => {
+      const track = row.querySelector<HTMLElement>('.track');
+      const buttons = row.querySelectorAll<HTMLButtonElement>('.arrow-btn');
+      if (!track) return;
+
+      const update = () => {
+        const max = track.scrollWidth - track.clientWidth - 2;
+        buttons.forEach((btn) => {
+          btn.hidden = max <= 0;
+          btn.disabled = btn.dataset.dir === '-1' ? track.scrollLeft <= 2 : track.scrollLeft >= max;
+        });
+      };
+
+      buttons.forEach((btn) =>
+        btn.addEventListener('click', () => {
+          track.scrollBy({ left: Number(btn.dataset.dir) * track.clientWidth * 0.85, behavior: 'smooth' });
+        }),
+      );
+
+      let reported = false;
+      track.addEventListener(
+        'scroll',
+        () => {
+          update();
+          // Evento analytics una sola volta per riga e per pagina
+          if (!reported && track.scrollLeft > 40) {
+            reported = true;
+            row.dispatchEvent(
+              new CustomEvent('row_scroll', { bubbles: true, detail: { row: row.dataset.row } }),
+            );
+          }
+        },
+        { passive: true },
+      );
+      new ResizeObserver(update).observe(track);
+      update();
+    });
+  }
+  document.addEventListener('astro:page-load', initRows);
+</script>
