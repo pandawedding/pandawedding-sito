@@ -1,24 +1,35 @@
 ---
 import WhatsAppLink from '../WhatsAppLink.astro';
+import BrochureLink from '../BrochureLink.astro';
 import Photo from '../Photo.astro';
 import { getDiaries } from '../../data/diaries';
+import { getLang, localePath, ui } from '../../i18n';
 
-const diaries = await getDiaries();
+const lang = getLang(Astro.currentLocale);
+const t = ui[lang];
+
+const diaries = await getDiaries(lang);
+const diaryPath = (slug: string) => localePath(lang, `/real-weddings/${slug}/`);
 // Storie mostrate subito
 const VISIBLE = 3;
 ---
 
 <!-- Pages: i Real Weddings. Il diario si apre in un pannello sopra la pagina -->
-<section id="real-weddings" class="fade-from-light bg-bg pt-16 pb-20 md:pt-24 md:pb-28" aria-labelledby="diaries-title">
+<section
+  id="real-weddings"
+  class="fade-from-light bg-bg pt-16 pb-20 md:pt-24 md:pb-28"
+  aria-labelledby="diaries-title"
+  data-diary-hash={t.diaries.hash}
+>
   <header class="reveal mx-auto max-w-screen-2xl px-5 text-center md:px-10">
     <p class="label">Real Weddings</p>
     <h2 id="diaries-title" class="mt-4 text-display font-light tracking-title">
       <span class="text-accent">Pa</span>ges
     </h2>
     <p class="mt-6 text-lead font-light text-fg-muted">
-      people brought together<br />
-      places carved in memory<br />
-      <span class="text-fg">a story revealed</span>
+      {t.diaries.lead[0]}<br />
+      {t.diaries.lead[1]}<br />
+      <span class="text-fg">{t.diaries.lead[2]}</span>
     </p>
   </header>
 
@@ -28,7 +39,6 @@ const VISIBLE = 3;
       diaries.map((diary, i) => (
         <li
           class="reveal w-full max-w-[26rem] text-center md:w-[calc((100%-2.5rem)/3)]"
-          lang={diary.entry.data.lang === 'en' ? 'en' : undefined}
           hidden={i >= VISIBLE}
           data-story
         >
@@ -43,13 +53,13 @@ const VISIBLE = 3;
           <p class="mt-3 leading-relaxed font-light text-fg-muted">{diary.entry.data.excerpt}</p>
           <div class="mt-4 flex flex-wrap justify-center gap-x-6">
             {diary.hasStory && (
-              <a href={`/real-weddings/${diary.slug}/`} data-diary={diary.slug} class="cta-link">
-                Leggi il diario <span class="chevron" aria-hidden="true">›</span>
+              <a href={diaryPath(diary.slug)} data-diary={diary.slug} class="cta-link">
+                {t.cta.readDiary} <span class="chevron" aria-hidden="true">›</span>
               </a>
             )}
             {diary.entry.data.film && (
               <button type="button" data-film={diary.entry.data.film} class="cta-link">
-                Watch the trailer <span class="chevron" aria-hidden="true">›</span>
+                {t.cta.trailer} <span class="chevron" aria-hidden="true">›</span>
               </button>
             )}
           </div>
@@ -62,20 +72,23 @@ const VISIBLE = 3;
     diaries.length > VISIBLE && (
       <div class="mt-14 flex justify-center">
         <button type="button" id="stories-more" class="btn btn-ghost">
-          Vedi altre storie <span class="text-fg-muted">({diaries.length - VISIBLE})</span>
+          {t.diaries.more} <span class="text-fg-muted">({diaries.length - VISIBLE})</span>
         </button>
       </div>
     )
   }
 
   <div class="reveal mx-auto mt-24 max-w-screen-2xl px-5 text-center md:mt-36 md:px-10">
-    <p class="text-title font-light tracking-title uppercase">Start a new <span class="text-accent">page</span></p>
-    <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+    <p class="text-title font-light tracking-title uppercase">
+      {t.diaries.newPage[0]} <span class="text-accent">{t.diaries.newPage[1]}</span>
+    </p>
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
       <a href="#contatti" class="btn" data-track="cta_click" data-label="get in touch" data-position="diaries">
-        Get in touch <span class="arrow" aria-hidden="true">→</span>
+        {t.cta.getInTouch} <span class="arrow" aria-hidden="true">→</span>
       </a>
       <WhatsAppLink position="diaries" />
     </div>
+    <BrochureLink position="diaries" class="mt-5" />
   </div>
 </section>
 
@@ -88,6 +101,7 @@ const VISIBLE = 3;
       <dialog
         class="diary-panel m-0 h-dvh max-h-none w-screen max-w-none overflow-y-auto overscroll-contain bg-bg p-0 text-fg"
         data-diary-panel={diary.slug}
+        data-diary-url={diaryPath(diary.slug)}
         aria-label={diary.entry.data.title}
       >
         <div class="sticky top-0 z-10 flex justify-end bg-gradient-to-b from-bg to-transparent px-5 py-4 md:px-10">
@@ -95,13 +109,13 @@ const VISIBLE = 3;
             type="button"
             data-diary-close
             class="flex size-11 items-center justify-center rounded-full bg-bg-raised text-xl transition-colors hover:bg-accent hover:text-white"
-            aria-label="Chiudi il diario"
+            aria-label={t.diaries.close}
           >
             ✕
           </button>
         </div>
         <div data-diary-body>
-          <p class="label py-32 text-center text-fg-muted" role="status">Loading…</p>
+          <p class="label py-32 text-center text-fg-muted" role="status">{t.diaries.loading}</p>
         </div>
       </dialog>
     ))
@@ -125,9 +139,11 @@ const VISIBLE = 3;
 <script>
   import { prepareDiaryPhotos } from '../../scripts/diary-photos';
 
-  // Apertura dei diari nel pannello, con link condivisibile #diario/<slug>.
+  // Apertura dei diari nel pannello, con link condivisibile #diary/<slug> (#diario/<slug> in italiano).
   // Il tasto indietro chiude il pannello; senza JS il link porta alla pagina statica.
-  const HASH = '#diario/';
+  const HASH = document.getElementById('real-weddings')?.dataset.diaryHash ?? '#diary/';
+  // Accetta anche i link condivisi dall'altra lingua
+  const diaryHash = () => location.hash.match(/^#diar(?:y|io)\/(.+)$/)?.[1];
   const panel = (slug: string) => document.querySelector<HTMLDialogElement>(`[data-diary-panel="${slug}"]`);
   let pushed = false;
 
@@ -136,7 +152,7 @@ const VISIBLE = 3;
     if (dialog.dataset.loaded) return;
     dialog.dataset.loaded = 'true';
     try {
-      const res = await fetch(`/real-weddings/${slug}/`);
+      const res = await fetch(dialog.dataset.diaryUrl!);
       if (!res.ok) throw new Error(String(res.status));
       const doc = new DOMParser().parseFromString(await res.text(), 'text/html');
       const article = doc.querySelector<HTMLElement>('[data-diary-article]');
@@ -154,7 +170,7 @@ const VISIBLE = 3;
       );
     } catch {
       // Senza rete o con un errore: si apre la pagina statica del diario
-      location.href = `/real-weddings/${slug}/`;
+      location.href = dialog.dataset.diaryUrl!;
     }
   };
 
@@ -179,7 +195,7 @@ const VISIBLE = 3;
   document.querySelectorAll<HTMLDialogElement>('[data-diary-panel]').forEach((dialog) => {
     dialog.addEventListener('close', () => {
       document.documentElement.style.overflow = '';
-      if (location.hash.startsWith(HASH)) {
+      if (diaryHash()) {
         if (pushed) history.back();
         else history.replaceState(null, '', location.pathname + location.search);
       }
@@ -196,14 +212,14 @@ const VISIBLE = 3;
   });
 
   window.addEventListener('popstate', () => {
-    if (location.hash.startsWith(HASH)) open(location.hash.slice(HASH.length), false);
+    if (diaryHash()) open(diaryHash()!, false);
     else {
       pushed = false;
       closeAll();
     }
   });
 
-  if (location.hash.startsWith(HASH)) open(location.hash.slice(HASH.length), false);
+  if (diaryHash()) open(diaryHash()!, false);
 
   // "Vedi altre storie": compare solo quando le storie superano quelle mostrate subito
   document.getElementById('stories-more')?.addEventListener('click', (e) => {

@@ -1,11 +1,12 @@
 import { site } from './site';
+import { ui, type Lang } from '../i18n';
 
 // Dati strutturati (JSON-LD) per Google: l'attività e il sito, ripetuti su ogni pagina
 // e collegati tra loro con @id.
 export const businessId = (origin: URL) => new URL('/#business', origin).href;
 export const websiteId = (origin: URL) => new URL('/#website', origin).href;
 
-export function baseSchema(origin: URL, image?: string) {
+export function baseSchema(origin: URL, lang: Lang, image?: string) {
   const url = new URL('/', origin).href;
   return [
     {
@@ -14,7 +15,7 @@ export function baseSchema(origin: URL, image?: string) {
       '@id': businessId(origin),
       name: site.name,
       legalName: site.company.name,
-      description: `${site.tagline}. ${site.description}`,
+      description: ui[lang].description,
       url,
       email: site.email,
       telephone: site.phone,
@@ -52,7 +53,7 @@ export function baseSchema(origin: URL, image?: string) {
       '@id': websiteId(origin),
       url,
       name: site.name,
-      inLanguage: 'it-IT',
+      inLanguage: ['en-US', 'it-IT'],
       publisher: { '@id': businessId(origin) },
     },
   ];

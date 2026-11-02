@@ -1,5 +1,7 @@
 ---
 import WhatsAppLink from './WhatsAppLink.astro';
+import { t as tr } from '../i18n';
+const t = tr(Astro.currentLocale);
 // Barra fissa in basso su mobile: compare dopo l'hero, sparisce sui contatti.
 // "Get in touch" con WhatsApp accanto, come nel resto del sito.
 ---
@@ -16,7 +18,7 @@ import WhatsAppLink from './WhatsAppLink.astro';
     data-position="sticky"
     class="flex flex-1 items-center justify-between rounded-[6px] bg-accent px-5 py-4 text-[0.75rem] font-semibold tracking-[0.18em] text-white uppercase shadow-lg shadow-black/30"
   >
-    Get in touch <span aria-hidden="true">→</span>
+    {t.sticky} <span aria-hidden="true">→</span>
   </a>
   <WhatsAppLink
     position="sticky"

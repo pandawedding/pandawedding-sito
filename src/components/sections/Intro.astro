@@ -1,10 +1,13 @@
 ---
 import Photo from '../Photo.astro';
 import team from '../../assets/team/pierluigi-alberto.jpg';
+import { t as tr } from '../../i18n';
+
+const t = tr(Astro.currentLocale);
 ---
 
 <!-- Presentazione: Pierluigi e Alberto -->
-<section class="mx-auto max-w-screen-xl px-5 pt-24 pb-12 md:px-10 md:pt-40 md:pb-16" aria-labelledby="intro-title">
+<section class="mx-auto max-w-screen-xl overflow-x-clip px-5 pt-24 pb-12 md:px-10 md:pt-40 md:pb-16" aria-labelledby="intro-title">
   <div class="grid items-center gap-12 md:grid-cols-2 md:gap-16">
     <!-- Titolo verticale sovrapposto al bordo destro della foto. Due livelli allineati:
          il testo in "difference" diventa bianco sul nero e nero sulle parti chiare della foto;
@@ -12,28 +15,27 @@ import team from '../../assets/team/pierluigi-alberto.jpg';
     <div class="reveal relative pr-9 md:order-last md:pr-12">
       <Photo
         src={team}
-        alt="Pierluigi e Alberto di PandA Wedding, in bianco e nero nel cortile di una villa, con macchina fotografica e videocamera"
+        alt={t.intro.alt}
         ratio="2 / 3"
         sizes="(min-width: 768px) 40vw, 85vw"
       />
       <h2 id="intro-title" class="intro-title intro-title--text">
-        We are<br />
-        <span class="script">P</span>ierluigi and <span class="script">A</span>lberto
+        {t.intro.we}<br />
+        <span class="script">P</span>ierluigi {t.intro.and} <span class="script">A</span>lberto
       </h2>
       <p class="intro-title intro-title--accent" aria-hidden="true">
-        We are<br />
-        <span class="script">P</span>ierluigi and <span class="script">A</span>lberto
+        {t.intro.we}<br />
+        <span class="script">P</span>ierluigi {t.intro.and} <span class="script">A</span>lberto
       </p>
     </div>
 
     <div class="reveal max-w-md">
-      <p class="text-lead font-medium">For those looking for more than beautiful images.</p>
+      <p class="text-lead font-medium">{t.intro.lead}</p>
       <p class="mt-6 text-lead font-light text-fg-muted">
-        We bring photography and film together at their best, to create a sophisticated, unique and authentic
-        visual expression of your wedding.
+        {t.intro.text}
       </p>
       <a href="#about" class="btn mt-10" data-track="cta_click" data-label="our approach" data-position="intro">
-        Our approach <span class="arrow" aria-hidden="true">→</span>
+        {t.cta.approach} <span class="arrow" aria-hidden="true">→</span>
       </a>
     </div>
   </div>

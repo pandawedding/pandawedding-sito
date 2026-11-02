@@ -2,15 +2,18 @@
 import Photo from '../Photo.astro';
 // TODO: sostituire con i due ritratti definitivi di Pierluigi e Alberto (per ora segnaposto con la foto del team)
 import placeholder from '../../assets/team/pierluigi-alberto.jpg';
+import { t as tr } from '../../i18n';
+
+const t = tr(Astro.currentLocale);
 ---
 
 <!-- Impaginazione editoriale: le due foto vicine e inclinate accanto al testo -->
 <section id="about" class="pt-8 pb-20 md:pt-12 md:pb-28" aria-labelledby="about-title">
   <div class="mx-auto max-w-screen-xl px-5 md:px-10">
     <header class="reveal mx-auto max-w-4xl text-center">
-      <p class="label">About Us</p>
+      <p class="label">{t.about.kicker}</p>
       <h2 id="about-title" class="mt-4 text-display font-light tracking-title">
-        The right team makes the <span class="text-accent">difference</span>
+        {t.about.title[0]} <span class="text-accent">{t.about.title[1]}</span>
       </h2>
     </header>
 
@@ -19,7 +22,7 @@ import placeholder from '../../assets/team/pierluigi-alberto.jpg';
       <div class="reveal flex items-start justify-center">
         <Photo
           src={placeholder}
-          alt="Foto segnaposto, da sostituire"
+          alt={t.about.placeholderAlt}
           ratio="4 / 5"
           sizes="(min-width: 768px) 14rem, 40vw"
           widths={[320, 480, 640]}
@@ -29,7 +32,7 @@ import placeholder from '../../assets/team/pierluigi-alberto.jpg';
         </Photo>
         <Photo
           src={placeholder}
-          alt="Foto segnaposto, da sostituire"
+          alt={t.about.placeholderAlt}
           ratio="4 / 5"
           sizes="(min-width: 768px) 14rem, 40vw"
           widths={[320, 480, 640]}
@@ -39,21 +42,16 @@ import placeholder from '../../assets/team/pierluigi-alberto.jpg';
         </Photo>
       </div>
 
-      <div class="reveal text-center md:text-left" lang="en">
+      <div class="reveal text-center md:text-left">
         <p class="text-title font-light">
-          Photography captures the moment<br />
-          <span class="text-accent">Cinema brings you back to it</span>
+          {t.about.claim[0]}<br />
+          <span class="text-accent">{t.about.claim[1]}</span>
         </p>
-        <h3 class="label mt-14">Research &amp; Approach</h3>
+        <h3 class="label mt-14">{t.about.research}</h3>
         <div class="mt-8 space-y-6 text-lead font-light text-fg-muted">
-          <p>
-            Our work lives at the intersection of documentary spontaneity, editorial aesthetics, and cinematic emotion.
-          </p>
-          <p class="text-fg">We believe in elegance without artifice, and spontaneity with intention.</p>
-          <p>
-            We personally guide every wedding, working seamlessly together or alongside our trusted team—all united by
-            a single vision: to observe, interpret, and craft an authentic story of your day.
-          </p>
+          <p>{t.about.p1}</p>
+          <p class="text-fg">{t.about.p2}</p>
+          <p>{t.about.p3}</p>
         </div>
       </div>
     </div>

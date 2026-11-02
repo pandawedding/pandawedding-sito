@@ -76,28 +76,40 @@ Regole:
 - Foto e video sono i protagonisti: poco testo sopra le immagini, gradienti scuri solo dove serve per leggere.
 - Menu mobile a schermo intero con voci grandi.
 
+## Lingue (decisione del 02/11/2026)
+
+- **Inglese lingua principale** su `/`, **italiano** su `/it/` (routing i18n di Astro, `prefixDefaultLocale: false`). Stessa landing in entrambe: `src/components/HomePage.astro`, pagine `src/pages/index.astro` e `src/pages/it/index.astro`.
+- **Tutti i testi** stanno in `src/i18n/index.ts` (`ui.en` / `ui.it`); i componenti li leggono con `Astro.currentLocale`. Niente testi fissi nei componenti: aggiungili al dizionario in tutte e due le lingue. La versione italiana è riscritta (non tradotta parola per parola) ed è in attesa delle correzioni del proprietario.
+- Testi nei dati: film in `src/data/films.ts` (campi per lingua), alt del portfolio in italiano in `src/data/portfolio.ts` e in inglese in `src/data/portfolio-alts-en.ts`.
+- **Diari:** `src/content/diaries/en/<slug>.md` e `src/content/diaries/it/<slug>.md`, stesso nome file. Pagine `/real-weddings/<slug>/` e `/it/real-weddings/<slug>/`. Il titolo del diario contiene sempre la location (es. `Giada & Luca, Villa La Favorita`).
+- **SEO:** `hreflang` en / it / x-default in ogni pagina e nella sitemap; `html lang`, `og:locale` e dati strutturati seguono la lingua.
+- **Passaggio all'italiano:** solo nel browser, alla visita di una pagina inglese, se la prima lingua del browser è l'italiano (o l'utente ha scelto IT). Mai per i crawler e mai lato server, altrimenti Google non vede l'inglese. Il selettore EN | IT nell'header salva la scelta in `localStorage` (`lang`) e vince sempre.
+- Ancore uguali nelle due lingue (`#films`, `#portfolio`, `#real-weddings`, `#about`, `#contatti`, `#brochure`); link condivisibile del diario `#diary/<slug>` in inglese, `#diario/<slug>` in italiano (sono accettati entrambi).
+
 ## Struttura: landing page unica
 
 Il sito è **una sola landing page** a sezioni (decisione del 30/10/2026), formato ispirato ad Apple con un accenno di Netflix per i video. Riferimento di formato (non di contenuti): https://primafilm-production.up.railway.app/
 
 **Esplorabile senza interrompere il flusso:** ogni sezione mostra una selezione; chi vuole approfondisce sul posto (`Vedi altre foto`, `Scopri di più`) o in un pannello sopra la pagina (player video, diario, foto ingrandita). Chiudendo si torna esattamente dove si era.
 
-Menu ad ancore (con evidenza della sezione corrente): Wedding Films · Portfolio · Real Weddings · About Us · Contatti. Il logo riporta in cima.
+Menu ad ancore (con evidenza della sezione corrente): Wedding Films · Portfolio · Real Weddings · About Us · Contact (in italiano: Wedding Film · Portfolio · Real Weddings · Chi siamo · Contatti), più il selettore EN | IT. Il logo riporta in cima.
 
 1. **Hero** (`#top`): foto a tutto schermo, tagline *Italian Wedding Photographers and Videographers based in Verona*, titolo *STORIES MADE TO BE FELT, NOT SIMPLY REMEMBERED*, chip ▶ con il nome della coppia che apre un trailer.
 2. **Presentazione**: *WE ARE PIERLUIGI AND ALBERTO* (in verticale, sovrapposto al bordo destro della foto: testo bianco o nero secondo lo sfondo con `mix-blend-mode: difference`, solo la P e la A rosse in Amalfi Coast), testo *For those looking for more than beautiful images...*, foto dei due, `OUR APPROACH →`.
 3. **Frames / Wedding Films** (`#films`): riga Netflix di card film (poster, location, coppia, descrizione). Il trailer si apre in un player a schermo intero; Vimeo (`dnt=1`) si carica solo al click. Le anteprime partono in autoplay muto quando la card è visibile, anche su mobile. Ogni card ha anche `Request the full film ›`; sotto la riga, riquadro *Watch a full film* (`#full-film`) con Where + Email: non invia nulla, compila luogo, email e messaggio del form Contatti e ci porta l’utente.
 4. **Inspirations / Portfolio** (`#portfolio`): **sezione bianca** (`data-theme="light"`), selezione di foto + `Vedi altre foto` a blocchi + visore a schermo intero. Chiude con *Next chapter, your story*.
-5. **Pages / Real Weddings** (`#real-weddings`): card dei matrimoni; `LEGGI IL DIARIO →` apre il diario in un pannello (link condivisibile `#diario/<slug>`). Ogni diario ha anche una pagina statica `/real-weddings/<slug>/` per la SEO; il pannello carica l'articolo da quella pagina solo all'apertura (niente contenuto duplicato nella landing). Campo `lang` (`it`/`en`) nel frontmatter: Giada & Luca è in inglese, scritto per un pubblico straniero. I diari sono una content collection in `src/content/diaries/`; le foto di un diario vanno in `src/assets/real-weddings/<slug>/`.
+5. **Pages / Real Weddings** (`#real-weddings`): card dei matrimoni; `Read the diary ›` / `Leggi il diario ›` apre il diario in un pannello (link condivisibile, vedi "Lingue"). Ogni diario ha anche una pagina statica `/real-weddings/<slug>/` per la SEO; il pannello carica l'articolo da quella pagina solo all'apertura (niente contenuto duplicato nella landing). I diari sono una content collection in `src/content/diaries/<lingua>/`; le foto di un diario vanno in `src/assets/real-weddings/<slug>/`.
 6. **About** (`#about`): impaginazione editoriale, le due foto piccole, vicine e leggermente inclinate accanto al testo (su mobile sopra): *The right team makes the difference*, *Photography captures the moment / Cinema brings you back to it*, *Research & Approach* con i tre paragrafi in inglese. Nessuna CTA: subito dopo vengono i contatti.
 7. **Contatti** (`#contatti`): *Your story deserves more than ordinary.* / *Let's talk about your wedding.*, email, WhatsApp, form con etichette e placeholder di Framer: Full names*, Email*, Wedding date, Location / Venue*, Phone number, Wedding planner, Message & your vision* (* obbligatori). Subito dopo: interludio *Tailoring your story, together*.
 8. **Footer**: nome, *Stories made to be felt*, WhatsApp (`https://wa.me/393489538074`), dati societari.
 
 **Testi:** quelli attuali nel codice sono la base approvata (allineati a Framer il 30/10/2026). Framer non è più la fonte vincolante: si possono aggiungere CTA e brevi testi d'interfaccia in stile Apple (bottone principale + link testuale rosso con `›`, classe `.cta-link`), ma non riscrivere i testi esistenti senza chiedere.
 
-**CTA:** ogni sezione chiude con un'azione chiara (bottone principale) e, dove serve, un link secondario. Etichette in inglese come il resto delle CTA (`Get in touch`, `Our approach`, `Watch the trailer`, `See the portfolio`, `Message us on WhatsApp`); `Leggi il diario` resta in italiano. **WhatsApp sempre accanto a ogni `Get in touch`**: componente `WhatsAppLink` (logo WhatsApp + `Message us`).
+**CTA:** ogni sezione chiude con un'azione chiara (bottone principale) e, dove serve, un link secondario. Etichette nella lingua della pagina (`Get in touch` / `Contattaci`, `Our approach` / `Il nostro approccio`, `Watch the trailer` / `Guarda il trailer`, `Message us` / `Scrivici`). **WhatsApp sempre accanto a ogni `Get in touch`**: componente `WhatsAppLink` (logo WhatsApp + `Message us`).
 
 Pagine separate: solo `/privacy`, `/cookie-policy` e le pagine statiche dei diari.
+
+**Brochure:** riquadro `#brochure` nei Contatti, sotto WhatsApp (solo email, tono leggero: "Just looking?"). Componente `BrochureLink` (`Just looking? Get the brochure ›`) sotto i `Get in touch` di Portfolio, Real Weddings e footer. Brochure e form contatti inviano a `/api/contact` con `type` (`brochure` / `inquiry`) e `lang`: **endpoint ancora da creare** (Resend); per `brochure` deve spedire il file della brochure.
 
 **Video:** i trailer originali stanno in `src/assets/trailers/` (esclusi da git, troppo pesanti). Le clip per il sito si generano con `node scripts/make-clips.mjs` (ffmpeg da `@ffmpeg-installer/ffmpeg`) in `public/videos/`: hero in loop (orizzontale 1080p e verticale per mobile) e anteprime delle card film al passaggio del mouse su desktop. Autoplay solo se non c'è "riduci movimento", risparmio dati o connessione lenta; il trailer completo con audio resta su Vimeo, al click.
 
@@ -116,7 +128,7 @@ I testi di partenza vengono dal sito Framer: `https://delightful-plans-781348--b
 - Una sola `<title>` e meta description per pagina, in coerenza con il brand "PandA Wedding" (il sito Framer usa "Panda Foto Video Molinaroli": da decidere con il proprietario).
 - Open Graph e Twitter card con immagine dedicata, `sitemap.xml`, `robots.txt`, dati strutturati `LocalBusiness` / `Photographer`.
 - Testi alternativi (`alt`) descrittivi su tutte le immagini.
-- Lingua del sito: `lang="it"` per le parti in italiano. Valuta in futuro una versione completa in inglese (`/en`) per le destinazioni estere.
+- Lingue: vedi "Lingue" (inglese su `/`, italiano su `/it/`, hreflang).
 
 ## PostHog
 

@@ -1,62 +1,13 @@
 ---
-import { getImage } from 'astro:assets';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import DiaryContent from '../../components/DiaryContent.astro';
+import DiaryPage from '../../components/DiaryPage.astro';
 import { getDiaries } from '../../data/diaries';
-import { businessId, websiteId } from '../../data/schema';
-import { site } from '../../data/site';
 
-// Pagina statica di ogni diario completo, per la SEO e per chi arriva da un link diretto
 export async function getStaticPaths() {
-  const diaries = await getDiaries();
+  const diaries = await getDiaries('en');
   return diaries.filter((d) => d.hasStory).map((diary) => ({ params: { slug: diary.slug }, props: { diary } }));
 }
 
 const { diary } = Astro.props;
-const { title, excerpt, couple, label, lang } = diary.entry.data;
-const url = new URL(Astro.url.pathname, Astro.site).href;
-const coverAlt = `${couple}, ${label}`;
-const images = await Promise.all(
-  diary.photos.slice(0, 10).map(async (src) => new URL((await getImage({ src, width: 1600, format: 'webp' })).src, Astro.site).href),
-);
-
-const schema = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    '@id': `${url}#article`,
-    headline: title,
-    description: excerpt,
-    url,
-    mainEntityOfPage: url,
-    inLanguage: lang === 'en' ? 'en-US' : 'it-IT',
-    ...(images.length && { image: images }),
-    author: { '@id': businessId(Astro.site!) },
-    publisher: { '@id': businessId(Astro.site!) },
-    isPartOf: { '@id': websiteId(Astro.site!) },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: site.name, item: new URL('/', Astro.site).href },
-      { '@type': 'ListItem', position: 2, name: 'Real Weddings', item: new URL('/#real-weddings', Astro.site).href },
-      { '@type': 'ListItem', position: 3, name: title, item: url },
-    ],
-  },
-];
 ---
 
-<BaseLayout
-  title={`${title}, Real Wedding`}
-  description={excerpt}
-  ogType="article"
-  ogImage={diary.cover}
-  ogImageAlt={coverAlt}
-  schema={schema}
-  lang={lang}
->
-  <div class="pt-16 md:pt-20">
-    <DiaryContent diary={diary} />
-  </div>
-</BaseLayout>
+<DiaryPage diary={diary} />

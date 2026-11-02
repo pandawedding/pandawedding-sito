@@ -1,0 +1,22 @@
+---
+import { getLang, localePath, ui } from '../i18n';
+
+// Richiamo leggero alla brochure, da mettere sotto "Get in touch": per chi non è ancora pronto a scrivere
+interface Props {
+  /** Posizione nella pagina, per l'evento analytics cta_click */
+  position: string;
+  class?: string;
+}
+const { position, class: className = '' } = Astro.props;
+const lang = getLang(Astro.currentLocale);
+---
+
+<a
+  href={localePath(lang, '/#brochure')}
+  class:list={['cta-link text-fg-muted!', className]}
+  data-track="cta_click"
+  data-label="brochure"
+  data-position={position}
+>
+  {ui[lang].brochure.teaser} <span class="chevron" aria-hidden="true">›</span>
+</a>

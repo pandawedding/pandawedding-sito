@@ -1,8 +1,11 @@
 ---
 import WhatsAppLink from '../WhatsAppLink.astro';
 import { getImage } from 'astro:assets';
-import { site } from '../../data/site';
-import { films } from '../../data/films';
+import { t as tr } from '../../i18n';
+import { getFilms } from '../../data/films';
+
+const t = tr(Astro.currentLocale);
+const films = getFilms(Astro.currentLocale === 'it' ? 'it' : 'en');
 import mobileSrc from '../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0043.jpg';
 import desktopSrc from '../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0050.jpg';
 
@@ -29,7 +32,7 @@ const featured = films.find((f) => f.slug === 'imani-john')!;
       <source type="image/webp" srcset={mobile.webp} sizes="100vw" />
       <img
         src={fallback.src}
-        alt="Sposi che corrono mano nella mano su un prato al tramonto, davanti a una villa storica"
+        alt={t.hero.alt}
         fetchpriority="high"
         decoding="async"
         class="size-full object-cover object-[50%_60%]"
@@ -63,18 +66,18 @@ const featured = films.find((f) => f.slug === 'imani-john')!;
     <!-- Il titolo h1 comprende la tagline: è la frase con le parole chiave (fotografi, videomaker, Verona) -->
     <h1 class="flex flex-col items-center">
       <span class="block text-display font-light tracking-title text-white uppercase">
-        Stories made<br class="md:hidden" /> to be <span class="text-accent">felt,</span><br />
-        not simply <span class="text-accent">remembered</span>
+        {t.hero.title[0]}<br class="md:hidden" /> {t.hero.title[1]} <span class="text-accent">{t.hero.title[2]}</span><br />
+        {t.hero.title[3]} <span class="text-accent">{t.hero.title[4]}</span>
       </span>
       <span class="mt-10 block max-w-xs text-[0.75rem] leading-relaxed font-medium tracking-label text-white/75 uppercase md:max-w-none">
-        {site.tagline}
+        {t.tagline}
       </span>
     </h1>
 
     <div class="mt-6 flex flex-col items-center gap-6">
       <div class="flex flex-wrap justify-center gap-x-8">
         <a href="#contatti" class="cta-link" data-track="cta_click" data-label="get in touch" data-position="hero">
-          Get in touch <span class="chevron" aria-hidden="true">›</span>
+          {t.cta.getInTouch} <span class="chevron" aria-hidden="true">›</span>
         </a>
         <WhatsAppLink variant="link" position="hero" class="text-white!" />
       </div>
@@ -94,7 +97,7 @@ const featured = films.find((f) => f.slug === 'imani-john')!;
       <path data-wave d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13" stroke-linecap="round" />
       <path data-mute d="m16 9 6 6m0-6-6 6" stroke-linecap="round" />
     </svg>
-    <span data-sound-label>Sound on</span>
+    <span data-sound-label data-on={t.hero.soundOn} data-off={t.hero.soundOff}>{t.hero.soundOn}</span>
   </button>
 </section>
 
@@ -138,7 +141,7 @@ const featured = films.find((f) => f.slug === 'imani-john')!;
   // Audio su richiesta: si sente finché l'hero è in vista, poi sfuma e torna muto
   function initSound(video: HTMLVideoElement) {
     const button = document.getElementById('hero-sound') as HTMLButtonElement;
-    const label = button.querySelector('[data-sound-label]')!;
+    const label = button.querySelector<HTMLElement>('[data-sound-label]')!;
     let fadeTimer = 0;
 
     // Dissolvenza del volume; su iOS il volume è di sola lettura, quindi chiude comunque dopo 12 passi
@@ -158,7 +161,7 @@ const featured = films.find((f) => f.slug === 'imani-john')!;
 
     const setSound = (on: boolean) => {
       button.setAttribute('aria-pressed', String(on));
-      label.textContent = on ? 'Sound off' : 'Sound on';
+      label.textContent = (on ? label.dataset.off : label.dataset.on)!;
       if (on) {
         video.volume = 0;
         video.muted = false;

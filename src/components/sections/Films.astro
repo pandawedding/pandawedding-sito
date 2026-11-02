@@ -2,24 +2,29 @@
 import WhatsAppLink from '../WhatsAppLink.astro';
 import { Picture } from 'astro:assets';
 import ScrollRow from '../ScrollRow.astro';
-import { films } from '../../data/films';
+import { getFilms } from '../../data/films';
+import { getLang, ui } from '../../i18n';
+
+const lang = getLang(Astro.currentLocale);
+const t = ui[lang];
+const films = getFilms(lang);
 ---
 
 <!-- Frames: i film, in una riga stile Netflix -->
 <section id="films" class="pt-8 pb-20 md:pt-12 md:pb-28" aria-labelledby="films-title">
   <header class="reveal mx-auto max-w-screen-2xl px-5 text-center md:px-10">
-    <p class="label">Wedding Films</p>
+    <p class="label">{t.films.kicker}</p>
     <h2 id="films-title" class="mt-4 text-display font-light tracking-title">
       Fr<span class="text-accent">a</span>mes
     </h2>
     <p class="mx-auto mt-6 max-w-xl text-lead font-light text-fg-muted">
-      <span class="text-fg">frame by frame a day becomes a story</span><br />
-      crafted from real moments, cinematic vision and genuine emotion.
+      <span class="text-fg">{t.films.lead}</span><br />
+      {t.films.text}
     </p>
   </header>
 
   <!-- Riga orizzontale: si scorre su mobile e tablet, da 1280px i film stanno tutti affiancati -->
-  <ScrollRow name="films" label="Wedding films" class="mt-12 md:mt-16">
+  <ScrollRow name="films" label={t.films.row} class="mt-12 md:mt-16">
     {
       films.map((film) => (
         <article class="w-[85vw] max-w-[44rem] md:w-[44vw] xl:w-[calc((100%-3rem)/4)]">
@@ -27,12 +32,12 @@ import { films } from '../../data/films';
             type="button"
             data-film={film.slug}
             class="group block w-full text-left"
-            aria-label={`Guarda il trailer di ${film.couple}, ${film.location}`}
+            aria-label={t.films.watch(film.couple, film.location)}
           >
             <div class="photo relative aspect-video">
               <Picture
                 src={film.poster}
-                alt={`Wedding film di ${film.couple}, ${film.location}`}
+                alt={t.films.posterAlt(film.couple, film.location)}
                 formats={['avif', 'webp']}
                 fallbackFormat="webp"
                 widths={[640, 960, 1280]}
@@ -63,7 +68,7 @@ import { films } from '../../data/films';
           {film.text && <p class="mt-3 max-w-md leading-relaxed font-light text-fg-muted">{film.text}</p>}
           <div class="mt-3 flex flex-wrap gap-x-6 gap-y-2">
             <button type="button" data-film={film.slug} class="cta-link">
-              Watch the trailer <span class="chevron" aria-hidden="true">›</span>
+              {t.cta.trailer} <span class="chevron" aria-hidden="true">›</span>
             </button>
             <a
               href="#full-film"
@@ -73,7 +78,7 @@ import { films } from '../../data/films';
               data-position="film card"
               class="cta-link text-fg-muted!"
             >
-              Request the full film <span class="chevron" aria-hidden="true">›</span>
+              {t.films.requestFull} <span class="chevron" aria-hidden="true">›</span>
             </a>
           </div>
         </article>
@@ -86,23 +91,26 @@ import { films } from '../../data/films';
   <div id="full-film" class="reveal mx-auto mt-16 max-w-screen-lg scroll-mt-28 px-5 md:mt-24 md:px-10">
     <div class="grid gap-10 rounded-[6px] bg-bg-raised p-7 md:grid-cols-[1fr_1.15fr] md:items-center md:gap-14 md:p-12">
       <div class="text-center md:text-left">
-        <p class="label">Full films</p>
+        <p class="label">{t.films.fullKicker}</p>
         <h3 class="mt-4 text-title font-light tracking-title uppercase">
-          Watch a <span class="text-accent">full</span> film
+          {t.films.fullTitle[0]} <span class="text-accent">{t.films.fullTitle[1]}</span> {t.films.fullTitle[2]}
         </h3>
         <p class="mt-5 leading-relaxed font-light text-fg-muted">
-          Trailers are only the beginning. Tell us where you’re getting married and we’ll privately share a complete
-          film from a wedding like yours.
+          {t.films.fullText}
         </p>
       </div>
 
-      <form id="full-film-form" class="grid gap-4 sm:grid-cols-2" novalidate>
+      <form
+        id="full-film-form"
+        data-request={t.films.request}
+        data-request-template={t.films.requestWithFilm("{film}")}
+        class="grid gap-4 sm:grid-cols-2" novalidate>
         <input type="hidden" name="film" />
         <label class="flex flex-col gap-2">
           <span class="text-[0.6875rem] font-semibold tracking-[0.2em] text-fg-muted uppercase">
-            Where <span class="text-accent">*</span>
+            {t.films.where} <span class="text-accent">*</span>
           </span>
-          <input name="venue" type="text" required placeholder="Villa, city or region" class="request-field" />
+          <input name="venue" type="text" required placeholder={t.films.wherePlaceholder} class="request-field" />
         </label>
         <label class="flex flex-col gap-2">
           <span class="text-[0.6875rem] font-semibold tracking-[0.2em] text-fg-muted uppercase">
@@ -112,20 +120,20 @@ import { films } from '../../data/films';
             name="email"
             type="email"
             required
-            placeholder="name@email.com"
+            placeholder={t.contact.fields.email[1]}
             autocomplete="email"
             class="request-field"
           />
         </label>
-        <div class="flex flex-col items-center gap-3 sm:col-span-2 sm:flex-row sm:flex-wrap md:items-center">
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:col-span-2 sm:justify-start sm:gap-3">
           <button
             type="submit"
-            class="btn w-full justify-center sm:w-auto"
+            class="btn"
             data-track="cta_click"
             data-label="request full film"
             data-position="films"
           >
-            Request a full film <span class="arrow" aria-hidden="true">→</span>
+            {t.films.submit} <span class="arrow" aria-hidden="true">→</span>
           </button>
           <WhatsAppLink position="full film" />
         </div>
@@ -228,8 +236,8 @@ import { films } from '../../data/films';
     contact.email.value = requestForm.email.value;
     const film = requestForm.film.value;
     const request = film
-      ? `We’d love to watch the full film of ${film}, or one from a wedding like ours.`
-      : 'We’d love to watch a full film from a wedding like ours.';
+      ? requestForm.dataset.requestTemplate!.replace('{film}', film)
+      : requestForm.dataset.request!;
     if (!contact.message.value.trim()) contact.message.value = request;
     // Avvia il tracciamento "form iniziato" come se l'utente avesse scritto lì
     contact.dispatchEvent(new Event('input', { bubbles: true }));

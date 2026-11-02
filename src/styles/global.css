@@ -154,6 +154,17 @@
     box-shadow: inset 0 0 0 1px var(--accent);
   }
 
+  /* Su mobile bottoni più compatti: "Get in touch" e WhatsApp stanno affiancati */
+  @media (max-width: 639px) {
+    .btn {
+      gap: 0.5em;
+      min-height: 2.75rem;
+      padding: 0.85em 1.1em 0.7em;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+    }
+  }
+
   /* Testo verticale ruotato, letto dal basso verso l'alto.
      sideways-lr mantiene l'ordine corretto delle righe (la prima a sinistra);
      il fallback ruotato inverte l'ordine sui testi su più righe. */

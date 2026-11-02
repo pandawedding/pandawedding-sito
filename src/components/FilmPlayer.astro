@@ -1,6 +1,11 @@
 ---
 import { getImage } from 'astro:assets';
-import { films, vimeoEmbedUrl } from '../data/films';
+import { getFilms, vimeoEmbedUrl } from '../data/films';
+import { getLang, ui } from '../i18n';
+
+const lang = getLang(Astro.currentLocale);
+const t = ui[lang];
+const films = getFilms(lang);
 
 // Player a schermo intero, aperto da qualunque elemento con data-film="<slug>".
 // Vimeo imposta cookie: l'iframe si carica solo dopo il click su Play.
@@ -36,7 +41,7 @@ const data = Object.fromEntries(
         type="button"
         data-player-close
         class="flex size-11 shrink-0 items-center justify-center rounded-full bg-white/10 text-xl transition-colors hover:bg-white/20"
-        aria-label="Chiudi il video"
+        aria-label={t.player.close}
       >
         ✕
       </button>
@@ -50,12 +55,12 @@ const data = Object.fromEntries(
             type="button"
             data-player-play
             class="flex size-20 items-center justify-center rounded-full bg-accent text-2xl text-white transition-transform hover:scale-105"
-            aria-label="Riproduci il trailer"
+            aria-label={t.player.play}
           >
             ▶
           </button>
           <p class="max-w-sm text-xs leading-relaxed text-white/80">
-            Il video è ospitato su Vimeo. Premendo Play il player viene caricato e Vimeo può impostare i propri cookie.
+            {t.player.consent}
             <a href="/cookie-policy" class="underline underline-offset-2">Cookie policy</a>
           </p>
         </div>

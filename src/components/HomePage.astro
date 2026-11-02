@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from './sections/Hero.astro';
+import Intro from './sections/Intro.astro';
+import Films from './sections/Films.astro';
+import Portfolio from './sections/Portfolio.astro';
+import Diaries from './sections/Diaries.astro';
+import About from './sections/About.astro';
+import Contact from './sections/Contact.astro';
+import FilmPlayer from './FilmPlayer.astro';
+import StickyCta from './StickyCta.astro';
+
+// La landing, uguale nelle due lingue: "/" (inglese) e "/it/" (italiano)
+---
+
+<BaseLayout>
+  <Hero />
+  <Intro />
+  <Films />
+  <Portfolio />
+  <Diaries />
+  <About />
+  <Contact />
+
+  <FilmPlayer />
+  <StickyCta />
+</BaseLayout>

@@ -1,8 +1,7 @@
+import { localePath, ui, type Lang } from '../i18n';
+
 export const site = {
   name: 'PandA Wedding',
-  tagline: 'Italian Wedding Photographers and Videographers based in Verona',
-  // Meta description del sito Framer
-  description: 'Fotografia e videografia di matrimonio dal linguaggio editoriale.',
   // Versione di prova: i motori di ricerca non devono indicizzarla.
   // Mettere true al lancio sul dominio definitivo.
   indexable: false,
@@ -23,11 +22,14 @@ export const site = {
   },
 };
 
-// Landing unica: il menu punta alle sezioni (ordine della pagina)
-export const nav = [
-  { label: 'Wedding Films', href: '/#films' },
-  { label: 'Portfolio', href: '/#portfolio' },
-  { label: 'Real Weddings', href: '/#real-weddings' },
-  { label: 'About Us', href: '/#about' },
-  { label: 'Contatti', href: '/#contatti' },
-];
+// Landing unica: il menu punta alle sezioni (ordine della pagina), nella lingua della pagina
+export const navFor = (lang: Lang) => {
+  const labels = ui[lang].nav;
+  return [
+    { label: labels.films, href: localePath(lang, '/#films') },
+    { label: labels.portfolio, href: localePath(lang, '/#portfolio') },
+    { label: labels.diaries, href: localePath(lang, '/#real-weddings') },
+    { label: labels.about, href: localePath(lang, '/#about') },
+    { label: labels.contact, href: localePath(lang, '/#contatti') },
+  ];
+};

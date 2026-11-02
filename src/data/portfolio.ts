@@ -1,4 +1,5 @@
 import type { ImageMetadata } from 'astro';
+import { altsEn } from './portfolio-alts-en';
 
 const files = import.meta.glob<{ default: ImageMetadata }>('../assets/PORTFOLIO/*.jpg', { eager: true });
 
@@ -98,7 +99,14 @@ const featured = ['0016', '0024', '0011', '0062', '0045', '0058', '0063', '0068'
 const all = Object.entries(files)
   .map(([path, mod]) => {
     const id = path.match(/_(\d{4}(?:_\d)?)\.jpg$/)![1];
-    return { id, src: mod.default, alt: alts[id] ?? 'Fotografia di matrimonio di PandA Wedding' };
+    return {
+      id,
+      src: mod.default,
+      alt: {
+        en: altsEn[id] ?? 'Wedding photography by PandA Wedding',
+        it: alts[id] ?? 'Fotografia di matrimonio di PandA Wedding',
+      },
+    };
   })
   .sort((a, b) => a.id.localeCompare(b.id));
 

@@ -1,7 +1,13 @@
 ---
 import WhatsAppLink from './WhatsAppLink.astro';
+import BrochureLink from './BrochureLink.astro';
 import Logo from './Logo.astro';
-import { site, nav } from '../data/site';
+import { site, navFor } from '../data/site';
+import { getLang, localePath, ui } from '../i18n';
+
+const lang = getLang(Astro.currentLocale);
+const t = ui[lang];
+const nav = navFor(lang);
 
 const year = new Date().getFullYear();
 ---
@@ -10,18 +16,19 @@ const year = new Date().getFullYear();
   <div class="mx-auto max-w-screen-2xl px-5 pt-20 pb-10 md:px-10 md:pt-28">
     <div class="grid gap-14 md:grid-cols-[1.4fr_1fr] md:gap-10">
       <div>
-        <a href="/#top" class="inline-block text-[2rem] md:text-6xl" aria-label="PandA Wedding, torna all'inizio">
+        <a href={localePath(lang, '/#top')} class="inline-block text-[2rem] md:text-6xl" aria-label={t.header.home}>
           <Logo />
         </a>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="/#contatti" class="btn" data-track="cta_click" data-label="get in touch" data-position="footer">
-            Get in touch <span class="arrow" aria-hidden="true">→</span>
+        <div class="mt-8 flex flex-wrap gap-2 sm:gap-3">
+          <a href={localePath(lang, '/#contatti')} class="btn" data-track="cta_click" data-label="get in touch" data-position="footer">
+            {t.cta.getInTouch} <span class="arrow" aria-hidden="true">→</span>
           </a>
           <WhatsAppLink position="footer" />
         </div>
+        <BrochureLink position="footer" class="mt-4" />
       </div>
 
-      <nav aria-label="Menu footer" class="md:justify-self-end">
+      <nav aria-label={t.footer.menu} class="md:justify-self-end">
         <ul class="space-y-3">
           {
             nav.map((item) => (
@@ -39,7 +46,7 @@ const year = new Date().getFullYear();
       </nav>
     </div>
 
-    <p class="label mt-20">Stories made to be felt</p>
+    <p class="label mt-20">{t.footer.claim}</p>
 
     <div
       class="mt-6 flex flex-col gap-4 border-t border-line pt-6 text-xs leading-relaxed text-fg-muted md:flex-row md:items-end md:justify-between"

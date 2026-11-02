@@ -1,7 +1,12 @@
 ---
 import WhatsAppLink from '../WhatsAppLink.astro';
+import BrochureLink from '../BrochureLink.astro';
 import { Picture, getImage } from 'astro:assets';
 import { portfolio, PORTFOLIO_FIRST } from '../../data/portfolio';
+import { getLang, ui } from '../../i18n';
+
+const lang = getLang(Astro.currentLocale);
+const t = ui[lang];
 
 // Prima la selezione, poi blocchi da 18 aperti con "Vedi altre foto".
 // Ogni blocco ha la sua griglia: aprirne uno non sposta le foto già viste.
@@ -23,6 +28,7 @@ const layout = [
 const photos = await Promise.all(
   portfolio.map(async (p, index) => ({
     ...p,
+    alt: p.alt[lang],
     index,
     full: (await getImage({ src: p.src, width: 1600, format: 'webp' })).src,
   })),
@@ -40,12 +46,12 @@ for (let i = PORTFOLIO_FIRST; i < photos.length; i += BATCH) batches.push(photos
   aria-labelledby="portfolio-title"
 >
   <header class="reveal mx-auto max-w-screen-2xl px-5 text-center md:px-10">
-    <p class="label">Portfolio Photo</p>
+    <p class="label">{t.portfolio.kicker}</p>
     <h2 id="portfolio-title" class="mt-4 text-display font-light tracking-title">
       Insp<span class="text-accent">i</span>rations
     </h2>
     <p class="mx-auto mt-6 max-w-xl text-lead font-light text-fg-muted">
-      shaped by real stories, refined aesthetics and authentic moments.
+      {t.portfolio.text}
     </p>
   </header>
 
@@ -64,7 +70,7 @@ for (let i = PORTFOLIO_FIRST; i < photos.length; i += BATCH) batches.push(photos
               data-lightbox={photo.index}
               data-full={photo.full}
               data-alt={photo.alt}
-              aria-label={`Ingrandisci: ${photo.alt}`}
+              aria-label={`${t.portfolio.enlarge}: ${photo.alt}`}
             >
               <span class="photo block shadow-[0_0_0_1px_var(--line)]">
                 <Picture
@@ -92,21 +98,22 @@ for (let i = PORTFOLIO_FIRST; i < photos.length; i += BATCH) batches.push(photos
         class="btn btn-ghost"
         data-remaining={photos.length - PORTFOLIO_FIRST}
       >
-        Vedi altre foto <span class="text-fg-muted" data-count>({photos.length - PORTFOLIO_FIRST})</span>
+        {t.portfolio.more} <span class="text-fg-muted" data-count>({photos.length - PORTFOLIO_FIRST})</span>
       </button>
     </div>
   </div>
 
   <div class="reveal mx-auto mt-24 max-w-screen-2xl px-5 text-center md:mt-36 md:px-10">
     <h3 class="text-title font-light tracking-title uppercase">
-      Next chapter, <span class="text-accent">your story</span>
+      {t.portfolio.next[0]} <span class="text-accent">{t.portfolio.next[1]}</span>
     </h3>
-    <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
       <a href="#contatti" class="btn" data-track="cta_click" data-label="get in touch" data-position="portfolio">
-        Get in touch <span class="arrow" aria-hidden="true">→</span>
+        {t.cta.getInTouch} <span class="arrow" aria-hidden="true">→</span>
       </a>
       <WhatsAppLink position="portfolio" />
     </div>
+    <BrochureLink position="portfolio" class="mt-5" />
   </div>
 </section>
 

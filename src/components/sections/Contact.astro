@@ -1,26 +1,29 @@
 ---
 import WhatsAppLink from '../WhatsAppLink.astro';
 import { site } from '../../data/site';
+import { t as tr } from '../../i18n';
 
-// Etichette e placeholder dal sito Framer (pagina Contatti)
+// Etichette e placeholder dal sito Framer (pagina Contatti), nella lingua della pagina
+const t = tr(Astro.currentLocale);
+const f = t.contact.fields;
 const fields = [
-  { name: 'names', label: 'Full names', placeholder: 'e.g. Livia & Marco', type: 'text', required: true, autocomplete: 'name' },
-  { name: 'email', label: 'Email', placeholder: 'name@email.com', type: 'email', required: true, autocomplete: 'email' },
-  { name: 'date', label: 'Wedding date', placeholder: 'DD / MM / YYYY', type: 'text', required: false, autocomplete: 'off' },
-  { name: 'venue', label: 'Location / Venue', placeholder: 'City, estate or destination', type: 'text', required: true, autocomplete: 'off' },
-  { name: 'phone', label: 'Phone number', placeholder: '+39 000 000 0000', type: 'tel', required: false, autocomplete: 'tel' },
-  { name: 'planner', label: 'Wedding planner', placeholder: 'If applicable', type: 'text', required: false, autocomplete: 'off' },
+  { name: 'names', label: f.names[0], placeholder: f.names[1], type: 'text', required: true, autocomplete: 'name' },
+  { name: 'email', label: f.email[0], placeholder: f.email[1], type: 'email', required: true, autocomplete: 'email' },
+  { name: 'date', label: f.date[0], placeholder: f.date[1], type: 'text', required: false, autocomplete: 'off' },
+  { name: 'venue', label: f.venue[0], placeholder: f.venue[1], type: 'text', required: true, autocomplete: 'off' },
+  { name: 'phone', label: f.phone[0], placeholder: f.phone[1], type: 'tel', required: false, autocomplete: 'tel' },
+  { name: 'planner', label: f.planner[0], placeholder: f.planner[1], type: 'text', required: false, autocomplete: 'off' },
 ];
 ---
 
 <section id="contatti" class="bg-bg-raised py-24 md:py-40" aria-labelledby="contact-title">
   <div class="mx-auto grid max-w-screen-2xl gap-16 px-5 md:grid-cols-[1fr_1.1fr] md:gap-20 md:px-10">
     <div class="reveal">
-      <p class="label">Contatti</p>
+      <p class="label">{t.contact.kicker}</p>
       <h2 id="contact-title" class="mt-4 text-title font-light">
-        Your story deserves more than <span class="text-accent">ordinary.</span>
+        {t.contact.title[0]} <span class="text-accent">{t.contact.title[1]}</span>
       </h2>
-      <p class="mt-6 text-lead font-light text-fg-muted">Let’s talk about your wedding.</p>
+      <p class="mt-6 text-lead font-light text-fg-muted">{t.contact.lead}</p>
 
       <div class="mt-12 flex flex-col items-start gap-8">
         <a
@@ -32,9 +35,56 @@ const fields = [
         </a>
         <WhatsAppLink position="contact" />
       </div>
+
+      <!-- Brochure: per chi non è ancora pronto a scrivere, basta l'email -->
+      <form
+        id="brochure"
+        class="mt-14 scroll-mt-28 rounded-[6px] bg-bg p-6 md:p-8"
+        novalidate
+        data-msg-sending={t.contact.sending}
+        data-msg-sent={t.brochure.sent}
+        data-msg-failed={t.contact.failed(site.email)}
+        aria-labelledby="brochure-title"
+      >
+        <p class="label">{t.brochure.kicker}</p>
+        <h3 id="brochure-title" class="mt-3 text-xl font-light md:text-2xl">
+          {t.brochure.title[0]} <span class="text-accent">{t.brochure.title[1]}</span>
+        </h3>
+        <p class="mt-3 leading-relaxed font-light text-fg-muted">{t.brochure.text}</p>
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+          <label class="flex-1">
+            <span class="sr-only">Email</span>
+            <input
+              name="email"
+              type="email"
+              required
+              placeholder={t.contact.fields.email[1]}
+              autocomplete="email"
+              class="field"
+            />
+          </label>
+          <!-- Honeypot antispam: invisibile alle persone -->
+          <label class="absolute -left-[9999px]" aria-hidden="true">
+            Company <input name="company" type="text" tabindex="-1" autocomplete="off" />
+          </label>
+          <button type="submit" class="btn justify-center" data-track="cta_click" data-label="brochure" data-position="contact">
+            {t.brochure.submit} <span class="arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+        <p class="mt-3 text-xs text-fg-muted">{t.brochure.privacy}</p>
+        <p data-form-status class="mt-2 text-sm" role="status" aria-live="polite"></p>
+      </form>
     </div>
 
-    <form id="contact-form" class="reveal grid gap-x-5 gap-y-6 sm:grid-cols-2" novalidate>
+    <form
+      id="contact-form"
+      class="reveal grid gap-x-5 gap-y-6 sm:grid-cols-2"
+      novalidate
+      data-msg-required={t.contact.required}
+      data-msg-sending={t.contact.sending}
+      data-msg-sent={t.contact.sent}
+      data-msg-failed={t.contact.failed(site.email)}
+    >
       {
         fields.map((field) => (
           <label class="flex flex-col gap-2">
@@ -55,28 +105,28 @@ const fields = [
       }
       <label class="flex flex-col gap-2 sm:col-span-2">
         <span class="text-[0.6875rem] font-semibold tracking-[0.2em] text-fg-muted uppercase">
-          Message &amp; your vision <span class="text-accent">*</span>
+          {f.message[0]} <span class="text-accent">*</span>
         </span>
         <textarea
           name="message"
           required
           rows="5"
-          placeholder="Tell us about what you envision: the atmosphere, people and details you’d like to remember."
+          placeholder={f.message[1]}
           class="field resize-y"></textarea>
       </label>
 
       <!-- Honeypot antispam: invisibile alle persone -->
       <label class="absolute -left-[9999px]" aria-hidden="true">
-        Company <input name="company" type="text" tabindex="-1" autocomplete="off" />
+        Company <input name="company" type='text' tabindex="-1" autocomplete='off' />
       </label>
 
       <div class="flex flex-col items-start gap-4 sm:col-span-2">
         <p class="text-xs text-fg-muted">
-          Inviando il modulo accettate il trattamento dei dati secondo la
-          <a href="/privacy" class="underline underline-offset-2 hover:text-fg">privacy policy</a>.
+          {t.contact.privacy[0]}
+          <a href="/privacy" class="underline underline-offset-2 hover:text-fg">{t.contact.privacy[1]}</a>.
         </p>
         <button type="submit" class="btn">
-          Send your inquiry <span class="arrow" aria-hidden="true">→</span>
+          {t.contact.submit} <span class="arrow" aria-hidden="true">→</span>
         </button>
         <p data-form-status class="text-sm" role="status" aria-live="polite"></p>
       </div>
@@ -85,9 +135,9 @@ const fields = [
 </section>
 
 <!-- Chiusura dopo i contatti, prima del footer -->
-<section data-sticky-end class="flex min-h-[50svh] items-center justify-center px-5 py-24" aria-label="Tailoring your story">
+<section data-sticky-end class="flex min-h-[50svh] items-center justify-center px-5 py-24" aria-label={t.contact.outroLabel}>
   <p class="reveal text-center text-display font-light tracking-title uppercase">
-    Tailoring<br />your story,<br /><span class="text-accent">together</span>
+    {t.contact.outro[0]}<br />{t.contact.outro[1]}<br /><span class="text-accent">{t.contact.outro[2]}</span>
   </p>
 </section>
 
@@ -117,7 +167,6 @@ const fields = [
 </style>
 
 <script>
-  import { site } from '../../data/site';
 
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const status = form.querySelector<HTMLElement>('[data-form-status]')!;
@@ -138,27 +187,59 @@ const fields = [
       if (!ok && !firstInvalid) firstInvalid = el;
     });
     if (firstInvalid) {
-      status.textContent = 'Compilate i campi obbligatori segnati con *.';
+      status.textContent = form.dataset.msgRequired!;
       (firstInvalid as HTMLElement).focus();
       return;
     }
 
     const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
     button.disabled = true;
-    status.textContent = 'Invio in corso…';
+    status.textContent = form.dataset.msgSending!;
     try {
       // TODO: endpoint serverless (Resend) ancora da creare
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        body: JSON.stringify({ type: 'inquiry', lang: document.documentElement.lang, ...Object.fromEntries(new FormData(form)) }),
       });
       if (!res.ok) throw new Error(String(res.status));
       form.reset();
-      status.textContent = 'Grazie! Vi risponderemo al più presto.';
+      status.textContent = form.dataset.msgSent!;
       document.dispatchEvent(new CustomEvent('contact_form_submit'));
     } catch {
-      status.textContent = `Invio non riuscito. Scriveteci a ${site.email}.`;
+      status.textContent = form.dataset.msgFailed!;
+    } finally {
+      button.disabled = false;
+    }
+  });
+
+  // Richiesta brochure: solo l'email, stesso endpoint dei contatti con type "brochure"
+  const brochure = document.getElementById('brochure') as HTMLFormElement;
+  const brochureStatus = brochure.querySelector<HTMLElement>('[data-form-status]')!;
+  brochure.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = brochure.querySelector<HTMLInputElement>('input[name="email"]')!;
+    email.setAttribute('aria-invalid', String(!email.checkValidity()));
+    if (!email.checkValidity()) {
+      email.focus();
+      return;
+    }
+    const button = brochure.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    button.disabled = true;
+    brochureStatus.textContent = brochure.dataset.msgSending!;
+    try {
+      // TODO: endpoint serverless (Resend) ancora da creare: invia la brochure all'indirizzo indicato
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'brochure', lang: document.documentElement.lang, ...Object.fromEntries(new FormData(brochure)) }),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      brochure.reset();
+      brochureStatus.textContent = brochure.dataset.msgSent!;
+      document.dispatchEvent(new CustomEvent('brochure_request'));
+    } catch {
+      brochureStatus.textContent = brochure.dataset.msgFailed!;
     } finally {
       button.disabled = false;
     }

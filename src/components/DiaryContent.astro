@@ -4,6 +4,7 @@ import { render } from 'astro:content';
 import { Picture } from 'astro:assets';
 import Photo from './Photo.astro';
 import type { Diary } from '../data/diaries';
+import { localePath, ui } from '../i18n';
 
 // Testo e foto di un diario, nella sua pagina statica. Il pannello della landing
 // carica questo stesso <article> dalla pagina solo quando viene aperto.
@@ -12,28 +13,13 @@ interface Props {
 }
 const { diary } = Astro.props;
 const { Content } = await render(diary.entry);
-const { couple, title, label, lang } = diary.entry.data;
-
-// Testi d'interfaccia nella lingua del diario
-const t =
-  lang === 'en'
-    ? {
-        photo: 'photo',
-        enlarge: (n: number) => `Enlarge photo ${n} of ${couple}`,
-        kicker: 'Your diary',
-        heading: 'Your wedding deserves to be told like this',
-        cta: 'Tell us your story',
-      }
-    : {
-        photo: 'foto',
-        enlarge: (n: number) => `Ingrandisci la foto ${n} di ${couple}`,
-        kicker: 'Il vostro diario',
-        heading: 'Il tuo matrimonio merita di essere raccontato così',
-        cta: 'Raccontaci la tua storia',
-      };
+const { couple, title, label } = diary.entry.data;
+const { lang } = diary;
+const ui_ = ui[lang];
+const t = { ...ui_.diary, enlarge: (n: number) => ui_.diary.enlarge(n, couple) };
 ---
 
-<article class="mx-auto max-w-screen-lg px-5 md:px-10" lang={lang} data-lightbox-group data-diary-article>
+<article class="mx-auto max-w-screen-lg px-5 md:px-10" data-lightbox-group data-diary-article>
   <header class="pt-6 md:pt-12">
     <p class="label">{label}</p>
     <h1 id="diary-title" class="mt-4 text-display font-light tracking-title uppercase">{title}</h1>
@@ -85,14 +71,14 @@ const t =
   <footer class="mx-auto mt-20 max-w-2xl border-t border-line pt-12 pb-20 text-center md:mt-28">
     <p class="label">{t.kicker}</p>
     <p class="mt-5 text-title font-light">{t.heading}</p>
-    <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
-      <a href="/#contatti" class="btn" data-diary-cta data-track="cta_click" data-label={t.cta.toLowerCase()} data-position="diary">
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+      <a href={localePath(lang, '/#contatti')} class="btn" data-diary-cta data-track="cta_click" data-label={t.cta.toLowerCase()} data-position="diary">
         {t.cta} <span class="arrow" aria-hidden="true">→</span>
       </a>
       <WhatsAppLink position="diary" />
     </div>
-    <a href="/#about" class="cta-link mt-4" data-diary-cta data-track="cta_click" data-label="our approach" data-position="diary">
-      Our approach <span class="chevron" aria-hidden="true">›</span>
+    <a href={localePath(lang, '/#about')} class="cta-link mt-4" data-diary-cta data-track="cta_click" data-label="our approach" data-position="diary">
+      {ui_.cta.approach} <span class="chevron" aria-hidden="true">›</span>
     </a>
   </footer>
 </article>

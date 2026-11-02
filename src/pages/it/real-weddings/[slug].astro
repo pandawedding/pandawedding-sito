@@ -1,0 +1,13 @@
+---
+import DiaryPage from '../../../components/DiaryPage.astro';
+import { getDiaries } from '../../../data/diaries';
+
+export async function getStaticPaths() {
+  const diaries = await getDiaries('it');
+  return diaries.filter((d) => d.hasStory).map((diary) => ({ params: { slug: diary.slug }, props: { diary } }));
+}
+
+const { diary } = Astro.props;
+---
+
+<DiaryPage diary={diary} />
