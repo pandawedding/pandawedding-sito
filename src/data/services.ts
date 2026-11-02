@@ -4,6 +4,7 @@ import photoImg from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0004.jp
 import filmImg from '../assets/films/johanna-come.jpg';
 import bothImg from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0026.jpg';
 import extrasImg from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0078.jpg';
+import planningImg from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0013.jpg';
 
 // Pagina Servizi: descrittiva, per la SEO, linkata solo dal footer. Mai prezzi qui:
 // il listino sta nella brochure, che si invia di persona.
@@ -99,8 +100,31 @@ export const services: Record<Lang, ServicesCopy> = {
         kicker: '04 · Extras',
         title: ['To complete', 'your story'],
         lead: 'A few additions to shape the service around your day.',
-        text: 'From the printed album to the full film, and weddings anywhere in Italy or abroad.',
-        points: ['Wedding album', 'Full wedding film, in addition to the trailer', 'Destination weddings in Italy and abroad'],
+        text: 'From the printed album to the full film, a second photographer or videographer, analogue film footage and a photobooth for your guests.',
+        points: [
+          'Wedding album',
+          'Full wedding film, in addition to the trailer',
+          'Second photographer, for a second point of view on the day',
+          'Second videographer, for more angles during the ceremony and speeches',
+          'Analogue film footage, with a warm, timeless grain, edited into your film',
+          'Photobooth for group shots and your guests’ spontaneous portraits',
+          'Destination weddings in Italy and abroad',
+        ],
+      },
+      {
+        id: 'planning',
+        image: planningImg,
+        alt: 'Wedding invitations, ring boxes, shoes and a glass of champagne on a table',
+        kicker: '05 · Planning',
+        title: ['One team,', 'one direction'],
+        lead: 'Behind a day that flows effortlessly there is precise teamwork.',
+        text: 'We work closely with your wedding planner, venue and suppliers, before and during the wedding, so that every moment is ready when it arrives.',
+        points: [
+          'A shared timeline with your wedding planner',
+          'Timings, light and transfers planned together, so no moment is missed',
+          'One point of contact for your planner on the day',
+          'Discreet coordination with whoever runs the ceremony and reception',
+        ],
       },
     ],
     placesTitle: 'Where we work',
@@ -120,6 +144,10 @@ export const services: Record<Lang, ServicesCopy> = {
       [
         'Can we book photography and video together?',
         'Yes. We work as one team for photography and film, with a single vision for the whole day.',
+      ],
+      [
+        'Do you work with wedding planners?',
+        'Yes. We work closely with your planner, venue and suppliers, sharing the timeline of the day before the wedding and coordinating with them on the day.',
       ],
       [
         'Can we watch a full wedding film?',
@@ -193,8 +221,31 @@ export const services: Record<Lang, ServicesCopy> = {
         kicker: '04 · Extra',
         title: ['Per completare', 'la vostra storia'],
         lead: 'Qualche aggiunta per costruire il servizio intorno alla vostra giornata.',
-        text: 'Dall’album stampato al film completo, fino ai matrimoni in tutta Italia e all’estero.',
-        points: ['Album di matrimonio', 'Film completo, oltre al trailer', 'Destination wedding in Italia e all’estero'],
+        text: 'Dall’album stampato al film completo, dal secondo fotografo o videomaker alle riprese in analogico, fino al photobooth per i vostri ospiti.',
+        points: [
+          'Album di matrimonio',
+          'Film completo, oltre al trailer',
+          'Secondo fotografo, per un secondo punto di vista sulla giornata',
+          'Secondo videomaker, per più angolazioni durante cerimonia e discorsi',
+          'Riprese in analogico su pellicola, dalla grana calda e senza tempo, montate nel vostro film',
+          'Photobooth per le foto di gruppo e i ritratti spontanei degli ospiti',
+          'Destination wedding in Italia e all’estero',
+        ],
+      },
+      {
+        id: 'organizzazione',
+        image: planningImg,
+        alt: 'Partecipazioni, scatole delle fedi, scarpe e un calice di champagne su un tavolo',
+        kicker: '05 · Organizzazione',
+        title: ['Una squadra,', 'un’unica regia'],
+        lead: 'Dietro un giorno che scorre leggero c’è un lavoro di squadra preciso.',
+        text: 'Lavoriamo in contatto diretto con il vostro wedding planner, la location e i fornitori, prima e durante il matrimonio, perché ogni momento sia pronto quando arriva.',
+        points: [
+          'Una timeline condivisa con il wedding planner',
+          'Orari, luce e spostamenti pianificati insieme, per non perdere nessun momento',
+          'Un solo riferimento per il planner durante la giornata',
+          'Un coordinamento discreto con chi segue cerimonia e ricevimento',
+        ],
       },
     ],
     placesTitle: 'Dove lavoriamo',
@@ -211,6 +262,10 @@ export const services: Record<Lang, ServicesCopy> = {
       [
         'Possiamo avere foto e video insieme?',
         'Sì. Lavoriamo come un’unica squadra per fotografia e video, con un’unica visione per tutta la giornata.',
+      ],
+      [
+        'Lavorate con i wedding planner?',
+        'Sì. Lavoriamo in contatto diretto con il planner, la location e i fornitori: condividiamo la timeline della giornata prima del matrimonio e ci coordiniamo con loro durante.',
       ],
       [
         'Possiamo vedere un film completo?',
