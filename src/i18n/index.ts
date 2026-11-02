@@ -142,13 +142,13 @@ export const ui = {
     breadcrumbDiaries: 'Real Weddings',
     guides: {
       kicker: 'Wedding guides',
-      title: ['Where to get married', 'in Northern Italy'],
-      intro: 'Venues, light and practical tips for the places around Verona, from two wedding photographers and videographers who live and work here.',
+      title: ['Where to get married', 'in Italy'],
+      intro: 'Venues, light and practical tips for getting married in Verona and in some of the most beautiful places in Italy, from two wedding photographers and videographers based in Verona.',
       read: 'Read the guide',
       all: 'All the guides',
       ctaKicker: 'Getting married here?',
       ctaHeading: 'Tell us about your venue and your day',
-      servicesLink: 'Read our guides to Lake Garda and Valpolicella',
+      servicesLink: 'Read our wedding guides, from Verona to Venice',
     },
   },
   it: {
@@ -284,13 +284,13 @@ export const ui = {
     breadcrumbDiaries: 'Real Weddings',
     guides: {
       kicker: 'Guide al matrimonio',
-      title: ['Dove sposarsi', 'nel Nord Italia'],
-      intro: 'Location, luce e consigli pratici per i luoghi intorno a Verona, raccontati da due fotografi e videomaker che qui vivono e lavorano.',
+      title: ['Dove sposarsi', 'in Italia'],
+      intro: 'Location, luce e consigli pratici per sposarsi a Verona e in alcuni dei luoghi più belli d’Italia, raccontati da due fotografi e videomaker di Verona.',
       read: 'Leggi la guida',
       all: 'Tutte le guide',
       ctaKicker: 'Vi sposate qui?',
       ctaHeading: 'Raccontateci la vostra location e la vostra giornata',
-      servicesLink: 'Leggete le nostre guide al Lago di Garda e alla Valpolicella',
+      servicesLink: 'Leggete le nostre guide, da Verona a Venezia',
     },
   },
 } satisfies Record<Lang, unknown>;

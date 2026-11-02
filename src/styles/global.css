@@ -286,6 +286,13 @@ html {
 .prose-diary > p:first-child {
   color: var(--fg);
 }
+/* Link nel testo (es. da una guida all'altra): chiari e sottolineati, mai rosso piccolo */
+.prose-diary a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.2em;
+}
 
 /* CTA testuale stile Apple: rossa, con freccia, accanto o al posto del bottone */
 @layer components {
