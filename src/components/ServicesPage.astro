@@ -4,6 +4,7 @@ import Photo from './Photo.astro';
 import WhatsAppLink from './WhatsAppLink.astro';
 import BrochureLink from './BrochureLink.astro';
 import { services, servicesPath } from '../data/services';
+import { guidesPath } from '../data/guides';
 import { businessId } from '../data/schema';
 import { site } from '../data/site';
 import { getLang, localePath, ui } from '../i18n';
@@ -86,6 +87,9 @@ const schema = [
       <ul class="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm tracking-[0.18em] uppercase">
         {c.places.map((p) => <li>{p}</li>)}
       </ul>
+      <a href={guidesPath[lang]} class="cta-link mt-8" data-track="cta_click" data-label="guides" data-position="services">
+        {t.guides.servicesLink} <span class="chevron" aria-hidden="true">›</span>
+      </a>
     </section>
 
     <section class="mx-auto mt-24 max-w-3xl px-5 md:mt-36 md:px-10" aria-labelledby="faq-title">

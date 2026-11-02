@@ -1,0 +1,87 @@
+---
+import { getImage } from 'astro:assets';
+import { render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Photo from './Photo.astro';
+import WhatsAppLink from './WhatsAppLink.astro';
+import BrochureLink from './BrochureLink.astro';
+import { guidesPath, type Guide } from '../data/guides';
+import { businessId, websiteId } from '../data/schema';
+import { site } from '../data/site';
+import { localePath, ui } from '../i18n';
+
+// Pagina di una guida (una per lingua): stesso impaginato dei diari, per la SEO.
+interface Props {
+  guide: Guide;
+}
+const { guide } = Astro.props;
+const { lang } = guide;
+const t = ui[lang];
+const { title, excerpt, label, area, cover, coverAlt } = guide.entry.data;
+const { Content } = await render(guide.entry);
+const url = new URL(Astro.url.pathname, Astro.site).href;
+const coverUrl = new URL((await getImage({ src: cover, width: 1600, format: 'webp' })).src, Astro.site).href;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `${url}#article`,
+    headline: title,
+    description: excerpt,
+    url,
+    mainEntityOfPage: url,
+    inLanguage: t.schemaLocale,
+    image: [coverUrl],
+    about: { '@type': 'Place', name: area },
+    author: { '@id': businessId(Astro.site!) },
+    publisher: { '@id': businessId(Astro.site!) },
+    isPartOf: { '@id': websiteId(Astro.site!) },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: site.name, item: new URL(localePath(lang, '/'), Astro.site).href },
+      { '@type': 'ListItem', position: 2, name: t.guides.kicker, item: new URL(guidesPath[lang], Astro.site).href },
+      { '@type': 'ListItem', position: 3, name: area, item: url },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={excerpt} ogType="article" ogImage={cover} ogImageAlt={coverAlt} schema={schema} alternates={guide.alternates}>
+  <article class="mx-auto max-w-screen-lg px-5 pt-22 md:px-10 md:pt-32" data-lightbox-group>
+    <header>
+      <a href={guidesPath[lang]} class="label hover:text-fg">{t.guides.kicker}</a>
+      <p class="label mt-6 text-fg-muted!">{label}</p>
+      <h1 class="mt-4 text-title font-light tracking-title uppercase">{title}</h1>
+    </header>
+
+    <Photo src={cover} alt={coverAlt} ratio="3 / 2" sizes="(min-width: 1024px) 960px, 100vw" widths={[640, 960, 1280, 1600]} eager class="mt-10 md:mt-14" />
+
+    <div class="prose-diary mx-auto mt-12 max-w-2xl md:mt-16">
+      <Content />
+    </div>
+
+    <footer class="mx-auto mt-20 max-w-2xl border-t border-line pt-12 pb-20 text-center md:mt-28">
+      <p class="label">{t.guides.ctaKicker}</p>
+      <p class="mt-5 text-title font-light">{t.guides.ctaHeading}</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+        <a href={localePath(lang, '/#contatti')} class="btn" data-track="cta_click" data-label="get in touch" data-position="guide">
+          {t.cta.getInTouch} <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <WhatsAppLink position="guide" />
+      </div>
+      <BrochureLink position="guide" class="mt-4" />
+      <a href={guidesPath[lang]} class="cta-link mt-2" data-track="cta_click" data-label="all guides" data-position="guide">
+        {t.guides.all} <span class="chevron" aria-hidden="true">›</span>
+      </a>
+    </footer>
+  </article>
+</BaseLayout>
+
+<script>
+  import { prepareDiaryPhotos } from '../scripts/diary-photos';
+  prepareDiaryPhotos(document);
+</script>

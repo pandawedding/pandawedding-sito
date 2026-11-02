@@ -5,6 +5,7 @@ import Logo from './Logo.astro';
 import { site, navFor } from '../data/site';
 import { getLang, localePath, ui } from '../i18n';
 import { servicesPath } from '../data/services';
+import { guidesPath } from '../data/guides';
 
 const lang = getLang(Astro.currentLocale);
 const t = ui[lang];
@@ -54,7 +55,8 @@ const year = new Date().getFullYear();
     >
       <p>
         &copy; {year} {site.name} ·
-        <a href={servicesPath[lang]} class="underline-offset-2 hover:text-fg hover:underline">{t.footer.services}</a>
+        <a href={servicesPath[lang]} class="underline-offset-2 hover:text-fg hover:underline">{t.footer.services}</a> ·
+        <a href={guidesPath[lang]} class="underline-offset-2 hover:text-fg hover:underline">{t.footer.guides}</a>
       </p>
       <address class="not-italic md:text-right">
         {site.company.name}

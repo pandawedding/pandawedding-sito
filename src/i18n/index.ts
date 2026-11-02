@@ -130,7 +130,7 @@ export const ui = {
       sent: 'Thank you! We’ll send you the brochure personally, very soon.',
       privacy: 'We’ll only use your email to send you the brochure.',
     },
-    footer: { menu: 'Footer menu', claim: 'Stories made to be felt', services: 'Wedding photography & video services' },
+    footer: { menu: 'Footer menu', claim: 'Stories made to be felt', services: 'Wedding photography & video services', guides: 'Wedding guides' },
     sticky: 'Get in touch',
     player: {
       close: 'Close the video',
@@ -140,6 +140,16 @@ export const ui = {
     lightbox: { label: 'Enlarged photo', close: 'Close', prev: 'Previous photo', next: 'Next photo' },
     row: { prev: 'Scroll back', next: 'Scroll forward' },
     breadcrumbDiaries: 'Real Weddings',
+    guides: {
+      kicker: 'Wedding guides',
+      title: ['Where to get married', 'in Northern Italy'],
+      intro: 'Venues, light and practical tips for the places around Verona, from two wedding photographers and videographers who live and work here.',
+      read: 'Read the guide',
+      all: 'All the guides',
+      ctaKicker: 'Getting married here?',
+      ctaHeading: 'Tell us about your venue and your day',
+      servicesLink: 'Read our guides to Lake Garda and Valpolicella',
+    },
   },
   it: {
     htmlLocale: 'it_IT',
@@ -262,7 +272,7 @@ export const ui = {
       sent: 'Grazie! Vi mandiamo la brochure di persona, a brevissimo.',
       privacy: 'Useremo la vostra email solo per inviarvi la brochure.',
     },
-    footer: { menu: 'Menu footer', claim: 'Storie da vivere', services: 'Servizi foto e video per matrimoni' },
+    footer: { menu: 'Menu footer', claim: 'Storie da vivere', services: 'Servizi foto e video per matrimoni', guides: 'Guide al matrimonio' },
     sticky: 'Contattaci',
     player: {
       close: 'Chiudi il video',
@@ -272,6 +282,16 @@ export const ui = {
     lightbox: { label: 'Foto ingrandita', close: 'Chiudi', prev: 'Foto precedente', next: 'Foto successiva' },
     row: { prev: 'Scorri indietro', next: 'Scorri avanti' },
     breadcrumbDiaries: 'Real Weddings',
+    guides: {
+      kicker: 'Guide al matrimonio',
+      title: ['Dove sposarsi', 'nel Nord Italia'],
+      intro: 'Location, luce e consigli pratici per i luoghi intorno a Verona, raccontati da due fotografi e videomaker che qui vivono e lavorano.',
+      read: 'Leggi la guida',
+      all: 'Tutte le guide',
+      ctaKicker: 'Vi sposate qui?',
+      ctaHeading: 'Raccontateci la vostra location e la vostra giornata',
+      servicesLink: 'Leggete le nostre guide al Lago di Garda e alla Valpolicella',
+    },
   },
 } satisfies Record<Lang, unknown>;
 

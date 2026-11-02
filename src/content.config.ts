@@ -17,4 +17,22 @@ const diaries = defineCollection({
   }),
 });
 
-export const collections = { diaries };
+// Guide alle zone (Lago di Garda, Valpolicella...): stesso stile dei diari, per la SEO.
+// Un file per zona e lingua, in en/ e it/ (stesso nome file); `urlSlug` è il percorso nella lingua.
+const guides = defineCollection({
+  loader: glob({ pattern: '*/*.md', base: './src/content/guides' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      urlSlug: z.string(),
+      /** Titolo breve per card e breadcrumb, es. "Lago di Garda" */
+      area: z.string(),
+      label: z.string(),
+      excerpt: z.string(),
+      cover: image(),
+      coverAlt: z.string(),
+      order: z.number().default(0),
+    }),
+});
+
+export const collections = { diaries, guides };
