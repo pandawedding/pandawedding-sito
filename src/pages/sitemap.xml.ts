@@ -4,6 +4,7 @@ import { getImage } from 'astro:assets';
 import { portfolio } from '../data/portfolio';
 import { getFilms } from '../data/films';
 import { getDiaries } from '../data/diaries';
+import { services, servicesPath } from '../data/services';
 import { langs, localePath, type Lang } from '../i18n';
 
 // Sitemap con le due lingue collegate (hreflang) e le foto di ogni pagina (sitemap immagini di Google):
@@ -22,6 +23,15 @@ export const GET: APIRoute = async ({ site }) => {
   );
   const homeAlternates = Object.fromEntries(langs.map((l) => [l, abs(localePath(l, '/'))]));
   for (const lang of langs) pages.push({ loc: abs(localePath(lang, '/')), alternates: homeAlternates, images: homeImages });
+
+  const servicesAlternates = Object.fromEntries(langs.map((l) => [l, abs(servicesPath[l])]));
+  for (const lang of langs) {
+    pages.push({
+      loc: abs(servicesPath[lang]),
+      alternates: servicesAlternates,
+      images: await Promise.all(services[lang].services.map((s) => imageUrl(s.image))),
+    });
+  }
 
   for (const lang of langs) {
     for (const diary of await getDiaries(lang)) {

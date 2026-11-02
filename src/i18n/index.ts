@@ -130,7 +130,7 @@ export const ui = {
       sent: 'Thank you! We’ll send you the brochure personally, very soon.',
       privacy: 'We’ll only use your email to send you the brochure.',
     },
-    footer: { menu: 'Footer menu', claim: 'Stories made to be felt' },
+    footer: { menu: 'Footer menu', claim: 'Stories made to be felt', services: 'Wedding photography & video services' },
     sticky: 'Get in touch',
     player: {
       close: 'Close the video',
@@ -262,7 +262,7 @@ export const ui = {
       sent: 'Grazie! Vi mandiamo la brochure di persona, a brevissimo.',
       privacy: 'Useremo la vostra email solo per inviarvi la brochure.',
     },
-    footer: { menu: 'Menu footer', claim: 'Storie da vivere' },
+    footer: { menu: 'Menu footer', claim: 'Storie da vivere', services: 'Servizi foto e video per matrimoni' },
     sticky: 'Contattaci',
     player: {
       close: 'Chiudi il video',

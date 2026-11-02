@@ -4,6 +4,7 @@ import BrochureLink from './BrochureLink.astro';
 import Logo from './Logo.astro';
 import { site, navFor } from '../data/site';
 import { getLang, localePath, ui } from '../i18n';
+import { servicesPath } from '../data/services';
 
 const lang = getLang(Astro.currentLocale);
 const t = ui[lang];
@@ -51,7 +52,10 @@ const year = new Date().getFullYear();
     <div
       class="mt-6 flex flex-col gap-4 border-t border-line pt-6 text-xs leading-relaxed text-fg-muted md:flex-row md:items-end md:justify-between"
     >
-      <p>&copy; {year} {site.name}</p>
+      <p>
+        &copy; {year} {site.name} ·
+        <a href={servicesPath[lang]} class="underline-offset-2 hover:text-fg hover:underline">{t.footer.services}</a>
+      </p>
       <address class="not-italic md:text-right">
         {site.company.name}
         {site.company.vat && <> · P.IVA {site.company.vat}</>}
