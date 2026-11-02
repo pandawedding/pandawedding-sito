@@ -5,6 +5,7 @@ import WhatsAppLink from './WhatsAppLink.astro';
 import BrochureLink from './BrochureLink.astro';
 import { services, servicesPath } from '../data/services';
 import { guidesPath } from '../data/guides';
+import { planners, plannersPath } from '../data/planners';
 import { businessId } from '../data/schema';
 import { site } from '../data/site';
 import { getLang, localePath, ui } from '../i18n';
@@ -89,6 +90,10 @@ const schema = [
       </ul>
       <a href={guidesPath[lang]} class="cta-link mt-8" data-track="cta_click" data-label="guides" data-position="services">
         {t.guides.servicesLink} <span class="chevron" aria-hidden="true">›</span>
+      </a>
+      <br />
+      <a href={plannersPath[lang]} class="cta-link" data-track="cta_click" data-label="planners" data-position="services">
+        {planners[lang].footerLink} <span class="chevron" aria-hidden="true">›</span>
       </a>
     </section>
 

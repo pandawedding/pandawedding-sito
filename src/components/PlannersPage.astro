@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Photo from './Photo.astro';
+import WhatsAppLink from './WhatsAppLink.astro';
+import BrochureLink from './BrochureLink.astro';
+import { planners, plannersPath } from '../data/planners';
+import { guidesPath } from '../data/guides';
+import { businessId } from '../data/schema';
+import { site } from '../data/site';
+import { getLang, localePath, ui } from '../i18n';
+
+// Pagina per i wedding planner (una per lingua): stesso impaginato della pagina Servizi. Nessun prezzo.
+const lang = getLang(Astro.currentLocale);
+const t = ui[lang];
+const c = planners[lang];
+const url = new URL(Astro.url.pathname, Astro.site).href;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${url}#service`,
+    name: c.kicker,
+    description: c.description,
+    serviceType: 'Wedding photography and videography',
+    audience: { '@type': 'BusinessAudience', name: 'Wedding planners' },
+    provider: { '@id': businessId(Astro.site!) },
+    areaServed: [
+      { '@type': 'City', name: 'Verona' },
+      { '@type': 'Country', name: 'Italia' },
+    ],
+    inLanguage: t.schemaLocale,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: c.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: site.name, item: new URL(localePath(lang, '/'), Astro.site).href },
+      { '@type': 'ListItem', position: 2, name: c.kicker, item: url },
+    ],
+  },
+];
+---
+
+<BaseLayout title={c.title} description={c.description} ogImage={c.hero.image} ogImageAlt={c.hero.alt} schema={schema} alternates={plannersPath}>
+  <article class="pt-28 pb-20 md:pt-40 md:pb-28">
+    <header class="reveal mx-auto max-w-4xl px-5 text-center md:px-10">
+      <p class="label">{c.kicker}</p>
+      <h1 class="mt-4 text-title font-light tracking-title uppercase">
+        {c.h1[0]} <span class="text-accent">{c.h1[1]}</span>
+      </h1>
+      <p class="mx-auto mt-8 max-w-2xl text-lead font-light text-fg-muted">{c.intro}</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+        <a href={localePath(lang, '/#contatti')} class="btn" data-track="cta_click" data-label="get in touch" data-position="planners top">
+          {t.cta.getInTouch} <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <WhatsAppLink position="planners top" />
+      </div>
+    </header>
+
+    <div class="reveal mx-auto mt-16 max-w-screen-xl px-5 md:mt-24 md:px-10">
+      <Photo src={c.hero.image} alt={c.hero.alt} ratio="16 / 9" sizes="(min-width: 1280px) 1200px, 100vw" widths={[640, 960, 1280, 1600]} eager />
+    </div>
+
+    {
+      c.blocks.map((s, i) => (
+        <section
+          id={s.id}
+          class="mx-auto mt-24 grid max-w-screen-xl scroll-mt-24 items-center gap-10 px-5 md:mt-36 md:grid-cols-2 md:gap-16 md:px-10"
+          aria-labelledby={`${s.id}-title`}
+        >
+          <div class:list={['reveal', i % 2 === 1 && 'md:order-last']}>
+            <Photo src={s.image} alt={s.alt} ratio="4 / 5" sizes="(min-width: 768px) 45vw, 90vw" />
+          </div>
+          <div class="reveal">
+            <p class="label">{s.kicker}</p>
+            <h2 id={`${s.id}-title`} class="mt-4 text-title font-light tracking-title uppercase">
+              {s.title[0]} <span class="text-accent">{s.title[1]}</span>
+            </h2>
+            <p class="mt-6 text-lead font-light text-fg-muted">{s.text}</p>
+            <ul class="mt-8 space-y-3">
+              {s.points.map((p) => (
+                <li class="flex gap-3 leading-relaxed font-light">
+                  <span class="text-accent" aria-hidden="true">—</span>
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ))
+    }
+
+    <section class="reveal mx-auto mt-24 max-w-3xl px-5 text-center md:mt-36 md:px-10" aria-labelledby="venues-title">
+      <h2 id="venues-title" class="label">{c.venuesTitle}</h2>
+      <p class="mt-6 text-lead font-light text-fg-muted">{c.venuesText}</p>
+      <ul class="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm tracking-[0.18em] uppercase">
+        {c.venues.map((v) => <li>{v}</li>)}
+      </ul>
+      <div class="mt-8 flex flex-col items-center">
+        <a href={localePath(lang, '/#films')} class="cta-link" data-track="cta_click" data-label="films" data-position="planners">
+          {t.guides.explore.films} <span class="chevron" aria-hidden="true">›</span>
+        </a>
+        <a href={guidesPath[lang]} class="cta-link" data-track="cta_click" data-label="guides" data-position="planners">
+          {c.guidesLink} <span class="chevron" aria-hidden="true">›</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="mx-auto mt-24 max-w-3xl px-5 md:mt-36 md:px-10" aria-labelledby="faq-title">
+      <h2 id="faq-title" class="label reveal text-center">{c.faqTitle}</h2>
+      <div class="mt-10 divide-y divide-line border-y border-line">
+        {
+          c.faq.map(([q, a]) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-lg font-light">
+                {q}
+                <span class="text-accent transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+              </summary>
+              <p class="mt-4 leading-relaxed font-light text-fg-muted">{a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="reveal mx-auto mt-24 max-w-screen-md px-5 text-center md:mt-36 md:px-10">
+      <p class="text-title font-light">
+        {c.ctaTitle[0]} <span class="text-accent">{c.ctaTitle[1]}</span>
+      </p>
+      <p class="mt-4 text-lead font-light text-fg-muted">{c.ctaText}</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+        <a href={localePath(lang, '/#contatti')} class="btn" data-track="cta_click" data-label="get in touch" data-position="planners">
+          {t.cta.getInTouch} <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <WhatsAppLink position="planners" />
+      </div>
+      <BrochureLink position="planners" class="mt-5" />
+    </section>
+  </article>
+</BaseLayout>

@@ -6,6 +6,7 @@ import { getFilms } from '../data/films';
 import { getDiaries } from '../data/diaries';
 import { services, servicesPath } from '../data/services';
 import { getGuides, guidesAlternates } from '../data/guides';
+import { planners, plannersPath } from '../data/planners';
 import { langs, localePath, type Lang } from '../i18n';
 
 // Sitemap con le due lingue collegate (hreflang) e le foto di ogni pagina (sitemap immagini di Google):
@@ -47,6 +48,12 @@ export const GET: APIRoute = async ({ site }) => {
         images: await Promise.all(photos.map(imageUrl)),
       });
     }
+  }
+
+  const plannersAlternates = Object.fromEntries(langs.map((l) => [l, abs(plannersPath[l])]));
+  for (const lang of langs) {
+    const c = planners[lang];
+    pages.push({ loc: abs(plannersPath[lang]), alternates: plannersAlternates, images: await Promise.all([c.hero.image, ...c.blocks.map((b) => b.image)].map(imageUrl)) });
   }
 
   const guidesIndexAlternates = Object.fromEntries(langs.map((l) => [l, abs(guidesAlternates[l])]));
