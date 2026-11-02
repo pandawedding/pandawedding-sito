@@ -69,6 +69,6 @@ Disponibilità, capienza e regole per la cerimonia cambiano da location a locati
 
 ### Come lo raccontiamo noi
 
-Siamo a Verona, a meno di un’ora da ogni sponda del lago. Fotografia e cinema insieme, con un’unica visione: osservare la giornata senza forzarla, e lasciare che il lago faccia la sua parte, con la sua luce, il suo vento, i suoi colori.
+Siamo a Verona, a meno di un’ora da ogni sponda del lago. Fotografia e cinema insieme, con un’unica visione: osservare la giornata senza forzarla, e lasciare che il lago faccia la sua parte, con la sua luce, il suo vento, i suoi colori. Per farvi un’idea del nostro sguardo, guardate i nostri [wedding film](/it/#films), sfogliate il [portfolio](/it/#portfolio) e leggete i diari dei nostri [Real Weddings](/it/#real-weddings).
 
 Lavoriamo in contatto diretto con il vostro wedding planner e con la location, per costruire una timeline che segua la luce e lasci a voi solo il piacere di viverla.

@@ -17,7 +17,7 @@ Draft to be reviewed by the owner (see the Italian file for the full notes).
 
 Tuscany is the dream of so many couples marrying in Italy, and it is easy to see why. Hills rolling as far as the eye can see, rows of cypresses, stone villages and castles among the vineyards, and just a few kilometres away Florence, with its art and its palaces.
 
-We experienced it up close at Castello di Mugnana, in Chianti, where we told the story of Johanna and Côme’s wedding: a day of glances, smiles and real emotion, among ancient walls and the hills around them.
+We experienced it up close at Castello di Mugnana, in Chianti, where we told the story of Johanna and Côme’s wedding ([watch their film](/#films)): a day of glances, smiles and real emotion, among ancient walls and the hills around them.
 
 ### Florence or the countryside?
 
@@ -68,6 +68,6 @@ Availability, capacity and ceremony rules change from venue to venue: always che
 
 ### How we tell it
 
-We are based in Verona, an hour and a half by train from Florence. Photography and film together, with a single vision: to tell your day without forcing it.
+We are based in Verona, an hour and a half by train from Florence. Photography and film together, with a single vision: to tell your day without forcing it. To get a feel for how we see a wedding, watch our [wedding films](/#films), browse the [portfolio](/#portfolio) and read the diaries of our [Real Weddings](/#real-weddings).
 
 We work closely with your wedding planner and your venue to build a timeline that follows the light and leaves you free to simply live it.

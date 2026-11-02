@@ -67,6 +67,6 @@ Una nota importante: in Italia il matrimonio civile si celebra nelle sedi autori
 
 ### Come lo raccontiamo noi
 
-Siamo a Verona, a un paio d’ore dal Lago di Como. Fotografia e cinema insieme, con un’unica visione: raccontare la vostra giornata senza forzarla, lasciando spazio al lago, alla sua luce e alle sue ville.
+Siamo a Verona, a un paio d’ore dal Lago di Como. Fotografia e cinema insieme, con un’unica visione: raccontare la vostra giornata senza forzarla, lasciando spazio al lago, alla sua luce e alle sue ville. Per farvi un’idea del nostro sguardo, guardate i nostri [wedding film](/it/#films), sfogliate il [portfolio](/it/#portfolio) e leggete i diari dei nostri [Real Weddings](/it/#real-weddings).
 
 Lavoriamo in contatto diretto con il vostro wedding planner e con la location, per costruire una timeline che segua la luce e lasci a voi solo il piacere di viverla.

@@ -49,7 +49,7 @@ For portraits the best light comes in the last hour of the day, when the sun dro
 
 **The Pieve di San Giorgio di Valpolicella.** A Romanesque parish church at the top of the hill, in the village of San Giorgio: for a religious ceremony with a view over the whole valley.
 
-A little further east, in Valpantena, is **Villa Arvedi**, where we told the story of Imani and John’s wedding: another way to experience the hills around Verona, among cypresses and Italian gardens.
+A little further east, in Valpantena, is **Villa Arvedi**, where we told the story of Imani and John’s wedding ([watch their film](/#films)): another way to experience the hills around Verona, among cypresses and Italian gardens.
 
 Availability, capacity and ceremony rules change from venue to venue: always check directly with the venue or with your wedding planner.
 
@@ -70,6 +70,6 @@ Availability, capacity and ceremony rules change from venue to venue: always che
 
 ### How we tell it
 
-Valpolicella is home for us: we are based in Verona, just minutes from its hills. Photography and film together, with a single vision: to tell your day without forcing it, among the stone of the villas, the green of the vineyards and the evening light.
+Valpolicella is home for us: we are based in Verona, just minutes from its hills. Photography and film together, with a single vision: to tell your day without forcing it, among the stone of the villas, the green of the vineyards and the evening light. To get a feel for how we see a wedding, watch our [wedding films](/#films), browse the [portfolio](/#portfolio) and read the diaries of our [Real Weddings](/#real-weddings).
 
 We work closely with your wedding planner and your venue to build a timeline that follows the light and leaves you free to simply live it.

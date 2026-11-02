@@ -18,7 +18,7 @@ Bozza da rivedere con il proprietario.
 
 La Toscana è il sogno di chi si sposa in Italia, e non è difficile capire perché. Colline che si susseguono a perdita d’occhio, filari di cipressi, borghi di pietra e castelli tra i vigneti, e a pochi chilometri Firenze, con la sua arte e i suoi palazzi.
 
-L’abbiamo vissuta da vicino al Castello di Mugnana, nel Chianti, dove abbiamo raccontato il matrimonio di Johanna e Côme: una giornata di sguardi, sorrisi ed emozioni vere, tra le mura antiche e le colline intorno.
+L’abbiamo vissuta da vicino al Castello di Mugnana, nel Chianti, dove abbiamo raccontato il matrimonio di Johanna e Côme ([guardate il loro film](/it/#films)): una giornata di sguardi, sorrisi ed emozioni vere, tra le mura antiche e le colline intorno.
 
 ### Firenze o la campagna?
 
@@ -69,6 +69,6 @@ Disponibilità, capienza e regole per la cerimonia cambiano da location a locati
 
 ### Come lo raccontiamo noi
 
-Siamo a Verona, a un’ora e mezza di treno da Firenze. Fotografia e cinema insieme, con un’unica visione: raccontare la vostra giornata senza forzarla.
+Siamo a Verona, a un’ora e mezza di treno da Firenze. Fotografia e cinema insieme, con un’unica visione: raccontare la vostra giornata senza forzarla. Per farvi un’idea del nostro sguardo, guardate i nostri [wedding film](/it/#films), sfogliate il [portfolio](/it/#portfolio) e leggete i diari dei nostri [Real Weddings](/it/#real-weddings).
 
 Lavoriamo in contatto diretto con il vostro wedding planner e con la location, per costruire una timeline che segua la luce e lasci a voi solo il piacere di viverla.

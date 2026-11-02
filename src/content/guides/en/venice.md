@@ -58,6 +58,6 @@ For photos the most precious moment is sunrise: the city is still empty, the wat
 
 ### How we tell it
 
-We are based in Verona, just over an hour by train from Venice. Photography and film together, with a single vision: to tell your day without forcing it, following the slow rhythm of the city and its light.
+We are based in Verona, just over an hour by train from Venice. Photography and film together, with a single vision: to tell your day without forcing it, following the slow rhythm of the city and its light. To get a feel for how we see a wedding, watch our [wedding films](/#films), browse the [portfolio](/#portfolio) and read the diaries of our [Real Weddings](/#real-weddings).
 
 We work closely with your wedding planner to build a day where every boat, every bridge and every portrait arrives at the right moment.

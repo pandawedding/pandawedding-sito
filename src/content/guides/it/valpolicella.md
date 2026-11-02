@@ -50,7 +50,7 @@ Per i ritratti la luce migliore arriva nell’ultima ora del giorno, quando il s
 
 **La Pieve di San Giorgio di Valpolicella.** Una pieve romanica in cima alla collina, nel borgo di San Giorgio: per una cerimonia religiosa con una vista che abbraccia la valle.
 
-Poco più a est, in Valpantena, c’è **Villa Arvedi**, dove abbiamo raccontato il matrimonio di Imani e John: un altro modo di vivere le colline veronesi, tra cipressi e giardini all’italiana.
+Poco più a est, in Valpantena, c’è **Villa Arvedi**, dove abbiamo raccontato il matrimonio di Imani e John ([guardate il loro film](/it/#films)): un altro modo di vivere le colline veronesi, tra cipressi e giardini all’italiana.
 
 Disponibilità, capienza e regole per la cerimonia cambiano da location a location: verificatele sempre direttamente con la struttura o con il vostro wedding planner.
 
@@ -71,6 +71,6 @@ Disponibilità, capienza e regole per la cerimonia cambiano da location a locati
 
 ### Come lo raccontiamo noi
 
-La Valpolicella per noi è casa: siamo a Verona, a pochi minuti dalle sue colline. Fotografia e cinema insieme, con un’unica visione: raccontare la vostra giornata senza forzarla, tra la pietra delle ville, il verde dei vigneti e la luce della sera.
+La Valpolicella per noi è casa: siamo a Verona, a pochi minuti dalle sue colline. Fotografia e cinema insieme, con un’unica visione: raccontare la vostra giornata senza forzarla, tra la pietra delle ville, il verde dei vigneti e la luce della sera. Per farvi un’idea del nostro sguardo, guardate i nostri [wedding film](/it/#films), sfogliate il [portfolio](/it/#portfolio) e leggete i diari dei nostri [Real Weddings](/it/#real-weddings).
 
 Lavoriamo in contatto diretto con il vostro wedding planner e con la location, per costruire una timeline che segua la luce e lasci a voi solo il piacere di viverla.

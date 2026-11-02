@@ -149,6 +149,7 @@ export const ui = {
       ctaKicker: 'Getting married here?',
       ctaHeading: 'Tell us about your venue and your day',
       servicesLink: 'Read our wedding guides, from Verona to Venice',
+      explore: { kicker: 'Discover our work', films: 'Watch the wedding films', portfolio: 'See the portfolio', diaries: 'Read the Real Weddings' },
     },
   },
   it: {
@@ -291,6 +292,7 @@ export const ui = {
       ctaKicker: 'Vi sposate qui?',
       ctaHeading: 'Raccontateci la vostra location e la vostra giornata',
       servicesLink: 'Leggete le nostre guide, da Verona a Venezia',
+      explore: { kicker: 'Scoprite il nostro lavoro', films: 'Guardate i wedding film', portfolio: 'Sfogliate il portfolio', diaries: 'Leggete i Real Weddings' },
     },
   },
 } satisfies Record<Lang, unknown>;

@@ -64,7 +64,28 @@ const schema = [
       <Content />
     </div>
 
-    <footer class="mx-auto mt-20 max-w-2xl border-t border-line pt-12 pb-20 text-center md:mt-28">
+    <nav class="mx-auto mt-16 max-w-2xl text-center md:mt-20" aria-label={t.guides.explore.kicker}>
+      <p class="label">{t.guides.explore.kicker}</p>
+      <ul class="mt-4 flex flex-col items-center sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-8">
+        {
+          (
+            [
+              ['films', '/#films'],
+              ['portfolio', '/#portfolio'],
+              ['diaries', '/#real-weddings'],
+            ] as const
+          ).map(([key, href]) => (
+            <li>
+              <a href={localePath(lang, href)} class="cta-link" data-track="cta_click" data-label={key} data-position="guide explore">
+                {t.guides.explore[key]} <span class="chevron" aria-hidden="true">›</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <footer class="mx-auto mt-16 max-w-2xl border-t border-line pt-12 pb-20 text-center md:mt-20">
       <p class="label">{t.guides.ctaKicker}</p>
       <p class="mt-5 text-title font-light">{t.guides.ctaHeading}</p>
       <div class="mt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3">

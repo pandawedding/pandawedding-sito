@@ -58,6 +58,6 @@ Per le foto il momento più prezioso è l’alba: la città è ancora vuota, l�
 
 ### Come lo raccontiamo noi
 
-Siamo a Verona, a poco più di un’ora di treno da Venezia. Fotografia e cinema insieme, con un’unica visione: raccontare la vostra giornata senza forzarla, seguendo il ritmo lento della città e della sua luce.
+Siamo a Verona, a poco più di un’ora di treno da Venezia. Fotografia e cinema insieme, con un’unica visione: raccontare la vostra giornata senza forzarla, seguendo il ritmo lento della città e della sua luce. Per farvi un’idea del nostro sguardo, guardate i nostri [wedding film](/it/#films), sfogliate il [portfolio](/it/#portfolio) e leggete i diari dei nostri [Real Weddings](/it/#real-weddings).
 
 Lavoriamo in contatto diretto con il vostro wedding planner, per costruire una giornata in cui ogni barca, ogni ponte e ogni ritratto arrivino al momento giusto.

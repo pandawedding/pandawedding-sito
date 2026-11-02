@@ -45,9 +45,9 @@ Per i ritratti in centro il segreto è l’alba: piazze vuote, pietra che si acc
 
 ### Le location intorno alla città
 
-**Relais Fra Lorenzo.** Una villa sulla collina sopra il centro storico, con una terrazza panoramica sulla città. Prende il nome dal frate che, nella storia, sposò in segreto Romeo e Giulietta. Qui abbiamo raccontato il matrimonio di Daniel e Josiane.
+**Relais Fra Lorenzo.** Una villa sulla collina sopra il centro storico, con una terrazza panoramica sulla città. Prende il nome dal frate che, nella storia, sposò in segreto Romeo e Giulietta. Qui abbiamo raccontato il matrimonio di Daniel e Josiane: [guardate il loro film](/it/#films).
 
-**Villa Arvedi.** Una villa barocca sulle colline della Valpantena, a pochi minuti dalla città, tra cipressi e giardini all’italiana. Qui abbiamo raccontato i matrimoni di Imani e John e di Jasmine e Daniel.
+**Villa Arvedi.** Una villa barocca sulle colline della Valpantena, a pochi minuti dalla città, tra cipressi e giardini all’italiana. Qui abbiamo raccontato i matrimoni di Imani e John e di Jasmine e Daniel, che trovate tra i nostri [wedding film](/it/#films).
 
 Per chi cerca vigneti e ville venete c’è la [Valpolicella](/it/guide/valpolicella/), a venti minuti; per l’acqua e i tramonti, il [Lago di Garda](/it/guide/lago-di-garda/), a mezz’ora.
 
@@ -67,6 +67,6 @@ Per chi cerca vigneti e ville venete c’è la [Valpolicella](/it/guide/valpolic
 
 ### Come lo raccontiamo noi
 
-Verona la conosciamo come si conosce casa: le ore in cui le piazze si svuotano, gli angoli dove la luce arriva per prima, le strade per non perdere tempo tra cerimonia e festa. Fotografia e cinema insieme, con un’unica visione: raccontare la vostra giornata senza forzarla.
+Verona la conosciamo come si conosce casa: le ore in cui le piazze si svuotano, gli angoli dove la luce arriva per prima, le strade per non perdere tempo tra cerimonia e festa. Fotografia e cinema insieme, con un’unica visione: raccontare la vostra giornata senza forzarla. Per farvi un’idea del nostro sguardo, guardate i nostri [wedding film](/it/#films), sfogliate il [portfolio](/it/#portfolio) e leggete i diari dei nostri [Real Weddings](/it/#real-weddings).
 
 Lavoriamo in contatto diretto con il vostro wedding planner e con la location, per costruire una timeline che segua la luce e lasci a voi solo il piacere di viverla.

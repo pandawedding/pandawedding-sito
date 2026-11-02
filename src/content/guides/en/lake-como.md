@@ -66,6 +66,6 @@ An important note: in Italy civil weddings are celebrated in venues authorised b
 
 ### How we tell it
 
-We are based in Verona, a couple of hours from Lake Como. Photography and film together, with a single vision: to tell your day without forcing it, leaving room for the lake, its light and its villas.
+We are based in Verona, a couple of hours from Lake Como. Photography and film together, with a single vision: to tell your day without forcing it, leaving room for the lake, its light and its villas. To get a feel for how we see a wedding, watch our [wedding films](/#films), browse the [portfolio](/#portfolio) and read the diaries of our [Real Weddings](/#real-weddings).
 
 We work closely with your wedding planner and your venue to build a timeline that follows the light and leaves you free to simply live it.

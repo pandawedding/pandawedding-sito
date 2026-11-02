@@ -68,6 +68,6 @@ Availability, capacity and ceremony rules change from venue to venue: always che
 
 ### How we tell it
 
-We are based in Verona, less than an hour from every shore of the lake. Photography and film together, with a single vision: to observe the day without forcing it, and let the lake play its part, with its light, its wind and its colours.
+We are based in Verona, less than an hour from every shore of the lake. Photography and film together, with a single vision: to observe the day without forcing it, and let the lake play its part, with its light, its wind and its colours. To get a feel for how we see a wedding, watch our [wedding films](/#films), browse the [portfolio](/#portfolio) and read the diaries of our [Real Weddings](/#real-weddings).
 
 We work closely with your wedding planner and your venue to build a timeline that follows the light and leaves you free to simply live it.
