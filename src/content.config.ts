@@ -13,6 +13,8 @@ const diaries = defineCollection({
     excerpt: z.string(),
     /** Film collegato (slug in src/data/films.ts), usato come copertina se mancano le foto */
     film: z.string().optional(),
+    /** Lingua del diario: i diari in inglese sono scritti per le coppie straniere */
+    lang: z.enum(['it', 'en']).default('it'),
     order: z.number().default(0),
   }),
 });

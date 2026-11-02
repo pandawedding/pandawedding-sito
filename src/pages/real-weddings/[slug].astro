@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 }
 
 const { diary } = Astro.props;
-const { title, excerpt, couple, label } = diary.entry.data;
+const { title, excerpt, couple, label, lang } = diary.entry.data;
 const url = new URL(Astro.url.pathname, Astro.site).href;
 const coverAlt = `${couple}, ${label}`;
 const images = await Promise.all(
@@ -29,7 +29,7 @@ const schema = [
     description: excerpt,
     url,
     mainEntityOfPage: url,
-    inLanguage: 'it-IT',
+    inLanguage: lang === 'en' ? 'en-US' : 'it-IT',
     ...(images.length && { image: images }),
     author: { '@id': businessId(Astro.site!) },
     publisher: { '@id': businessId(Astro.site!) },
@@ -54,8 +54,9 @@ const schema = [
   ogImage={diary.cover}
   ogImageAlt={coverAlt}
   schema={schema}
+  lang={lang}
 >
   <div class="pt-16 md:pt-20">
-    <DiaryContent diary={diary} titleId="diary-title" headingLevel={1} />
+    <DiaryContent diary={diary} />
   </div>
 </BaseLayout>

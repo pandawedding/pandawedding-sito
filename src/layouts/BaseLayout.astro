@@ -20,6 +20,8 @@ interface Props {
   ogType?: 'website' | 'article';
   /** Dati strutturati aggiuntivi della pagina (JSON-LD) */
   schema?: object[];
+  /** Lingua della pagina: l'inglese solo per i diari scritti in inglese */
+  lang?: 'it' | 'en';
 }
 
 const {
@@ -30,6 +32,7 @@ const {
   ogImageAlt = 'Sposi che corrono mano nella mano su un prato al tramonto, davanti a una villa storica',
   ogType = 'website',
   schema = [],
+  lang = 'it',
 } = Astro.props;
 
 const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.tagline}`;
@@ -43,7 +46,7 @@ const jsonLd = [...baseSchema(Astro.site!, await ogUrl(defaultOgImage)), ...sche
 ---
 
 <!doctype html>
-<html lang="it" data-theme={theme === 'light' ? 'light' : undefined}>
+<html lang={lang} data-theme={theme === 'light' ? 'light' : undefined}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -66,7 +69,7 @@ const jsonLd = [...baseSchema(Astro.site!, await ogUrl(defaultOgImage)), ...sche
 
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={site.name} />
-    <meta property="og:locale" content="it_IT" />
+    <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'it_IT'} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />

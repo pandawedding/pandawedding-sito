@@ -1,7 +1,6 @@
 ---
 import WhatsAppLink from '../WhatsAppLink.astro';
 import Photo from '../Photo.astro';
-import DiaryContent from '../DiaryContent.astro';
 import { getDiaries } from '../../data/diaries';
 
 const diaries = await getDiaries();
@@ -27,7 +26,12 @@ const VISIBLE = 3;
   <ul class="mx-auto mt-12 flex max-w-screen-2xl flex-wrap justify-center gap-x-5 gap-y-16 px-5 md:mt-16 md:px-10">
     {
       diaries.map((diary, i) => (
-        <li class="reveal w-full max-w-[26rem] text-center md:w-[calc((100%-2.5rem)/3)]" hidden={i >= VISIBLE} data-story>
+        <li
+          class="reveal w-full max-w-[26rem] text-center md:w-[calc((100%-2.5rem)/3)]"
+          lang={diary.entry.data.lang === 'en' ? 'en' : undefined}
+          hidden={i >= VISIBLE}
+          data-story
+        >
           <Photo
             src={diary.cover}
             alt={`${diary.entry.data.couple}, ${diary.entry.data.label}`}
@@ -75,7 +79,8 @@ const VISIBLE = 3;
   </div>
 </section>
 
-<!-- Pannelli dei diari -->
+<!-- Pannelli dei diari: vuoti nella landing, il testo arriva dalla pagina statica all'apertura
+     (così Google non trova il diario due volte e la landing resta leggera) -->
 {
   diaries
     .filter((d) => d.hasStory)
@@ -83,7 +88,7 @@ const VISIBLE = 3;
       <dialog
         class="diary-panel m-0 h-dvh max-h-none w-screen max-w-none overflow-y-auto overscroll-contain bg-bg p-0 text-fg"
         data-diary-panel={diary.slug}
-        aria-labelledby={`diary-title-${diary.slug}`}
+        aria-label={diary.entry.data.title}
       >
         <div class="sticky top-0 z-10 flex justify-end bg-gradient-to-b from-bg to-transparent px-5 py-4 md:px-10">
           <button
@@ -95,7 +100,9 @@ const VISIBLE = 3;
             ✕
           </button>
         </div>
-        <DiaryContent diary={diary} titleId={`diary-title-${diary.slug}`} />
+        <div data-diary-body>
+          <p class="label py-32 text-center text-fg-muted" role="status">Loading…</p>
+        </div>
       </dialog>
     ))
 }
@@ -116,15 +123,45 @@ const VISIBLE = 3;
 </style>
 
 <script>
+  import { prepareDiaryPhotos } from '../../scripts/diary-photos';
+
   // Apertura dei diari nel pannello, con link condivisibile #diario/<slug>.
   // Il tasto indietro chiude il pannello; senza JS il link porta alla pagina statica.
   const HASH = '#diario/';
   const panel = (slug: string) => document.querySelector<HTMLDialogElement>(`[data-diary-panel="${slug}"]`);
   let pushed = false;
 
+  // Il diario si carica dalla sua pagina statica alla prima apertura
+  const load = async (dialog: HTMLDialogElement, slug: string) => {
+    if (dialog.dataset.loaded) return;
+    dialog.dataset.loaded = 'true';
+    try {
+      const res = await fetch(`/real-weddings/${slug}/`);
+      if (!res.ok) throw new Error(String(res.status));
+      const doc = new DOMParser().parseFromString(await res.text(), 'text/html');
+      const article = doc.querySelector<HTMLElement>('[data-diary-article]');
+      if (!article) throw new Error('article not found');
+      dialog.querySelector('[data-diary-body]')!.replaceChildren(document.adoptNode(article));
+      prepareDiaryPhotos(article);
+      // CTA del diario: chiude il pannello e scende alla sezione del link
+      article.querySelectorAll<HTMLAnchorElement>('[data-diary-cta]').forEach((link) =>
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = document.getElementById(link.hash.slice(1));
+          dialog.close();
+          setTimeout(() => target?.scrollIntoView({ behavior: 'smooth' }), 300);
+        }),
+      );
+    } catch {
+      // Senza rete o con un errore: si apre la pagina statica del diario
+      location.href = `/real-weddings/${slug}/`;
+    }
+  };
+
   const open = (slug: string, push: boolean) => {
     const dialog = panel(slug);
     if (!dialog || dialog.open) return;
+    load(dialog, slug);
     if (push) {
       history.pushState({ diary: slug }, '', HASH + slug);
       pushed = true;
@@ -149,15 +186,6 @@ const VISIBLE = 3;
       pushed = false;
     });
     dialog.querySelector('[data-diary-close]')?.addEventListener('click', () => dialog.close());
-    // CTA del diario: chiude il pannello e scende alla sezione del link
-    dialog.querySelectorAll<HTMLAnchorElement>('[data-diary-cta]').forEach((link) =>
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = document.getElementById(link.hash.slice(1));
-        dialog.close();
-        setTimeout(() => target?.scrollIntoView({ behavior: 'smooth' }), 300);
-      }),
-    );
   });
 
   document.addEventListener('click', (e) => {

@@ -1,98 +1,99 @@
 ---
-couple: Giada e Luca
-title: Giada e Luca
-label: Villa La Favorita · Estate
-excerpt: Il loro sì è nato tra i mattoni antichi e il parco secolare di Villa La Favorita, cornice perfetta per una festa che ha unito eleganza romantica e voglia di stare insieme senza freni.
+couple: Giada & Luca
+title: Giada & Luca
+label: Villa La Favorita · Summer
+excerpt: Old brick walls, a centuries-old park and a couple who simply wanted to celebrate with the people they love. Romantic, elegant and wonderfully unscripted.
+lang: en
 order: 1
 ---
 
-<!-- Testi e foto come sul diario Framer. La copertina è la foto 01; le foto su righe consecutive formano una griglia. -->
+<!-- Diario in inglese, scritto per un pubblico straniero (non una traduzione letterale). La copertina è la foto 01; le foto su righe consecutive formano una griglia. -->
 
-C’è un momento, in ogni matrimonio, in cui capisci che quella giornata non seguirà un copione: sarà unica, imprevedibile, vera. Con Giada e Luca quel momento è arrivato più volte — dalla prima carrellata di sguardi alla sorpresa che nessuno si aspettava, fino al taglio della torta.
+Every wedding has a moment when you realize the day isn't going to follow a script. It's going to be its own thing: unpredictable, a little wild, completely real. With Giada and Luca, that moment came again and again, from the very first glances to a surprise nobody saw coming, right in the middle of the cake cutting.
 
-Il loro sì è nato tra i mattoni antichi e il parco secolare di Villa La Favorita, cornice perfetta per una festa che ha unito eleganza romantica e voglia di stare insieme senza freni.
+They said yes among the old brick walls and the centuries-old park of Villa La Favorita, the perfect backdrop for a celebration that was equal parts romantic elegance and pure, joyful chaos.
 
-### Il tempo di Luca
+### Luca's morning
 
-Scarpe lucide, farfallino di seta, l’invito ancora sigillato: i dettagli di Luca raccontano un’attesa vissuta con calma, prima di incontrarsi lungo il viale della villa.
+Polished shoes, a silk bow tie, the invitation still sealed. Luca's morning was all calm anticipation, the quiet before he'd finally see Giada walking down the tree-lined drive of the villa.
 
-![Dettagli dello sposo e invito di nozze](../../assets/real-weddings/giada-luca/02.jpg)
+![Groom's details: polished shoes, silk bow tie and the wedding invitation](../../assets/real-weddings/giada-luca/02.jpg)
 
-### Giada, prima del sì
+### Giada, before the vows
 
-Un ultimo sguardo verso il giardino, la vestaglia di raso ancora addosso: prima che l’abito prendesse il suo posto, Giada si è concessa un momento di silenzio, sospesa tra l’emozione e la voglia di correre incontro alla giornata.
+One last look out at the garden, still in her satin robe. Before slipping into her dress, Giada took a moment just for herself, somewhere between butterflies and the urge to run straight into the day.
 
-![Dettagli delle scarpe da sposa](../../assets/real-weddings/giada-luca/03.jpg)
-![Scarpe da sposa con cinturino di strass](../../assets/real-weddings/giada-luca/04.jpg)
-![Damigelle brindano prima della cerimonia](../../assets/real-weddings/giada-luca/05.jpg)
-![Giada prima del sì](../../assets/real-weddings/giada-luca/06.jpg)
+![Bridal shoes laid out on the morning of the wedding](../../assets/real-weddings/giada-luca/03.jpg)
+![Bridal heels with a rhinestone strap](../../assets/real-weddings/giada-luca/04.jpg)
+![Bridesmaids raising a toast before the ceremony](../../assets/real-weddings/giada-luca/05.jpg)
+![Giada getting ready before the ceremony](../../assets/real-weddings/giada-luca/06.jpg)
 
-> Nessuna posa forzata, nessun imbarazzo davanti all’obiettivo: solo due persone sicure di dove vogliono andare.
+> No forced poses, no awkwardness in front of the camera. Just two people who knew exactly where they were going.
 
-### L’abito prende forma
+### The dress
 
-Maniche lunghe in pizzo ricamato e una gonna in organza leggerissima: l’abito di Giada è stato pensato per un giorno di fine maggio, romantico ma mai eccessivo.
+Long sleeves in embroidered lace and a skirt of the lightest organza: Giada's dress was made for a late-May day. Romantic, never over the top.
 
-![Dettaglio floreale della cerimonia](../../assets/real-weddings/giada-luca/07.jpg)
-![Navata della cerimonia tra gli alberi](../../assets/real-weddings/giada-luca/08.jpg)
-![L’abito prende forma](../../assets/real-weddings/giada-luca/09.jpg)
-![Ritratto di Giada](../../assets/real-weddings/giada-luca/10.jpg)
+![Floral details at the ceremony](../../assets/real-weddings/giada-luca/07.jpg)
+![The ceremony aisle lined with trees](../../assets/real-weddings/giada-luca/08.jpg)
+![Giada's wedding dress coming together](../../assets/real-weddings/giada-luca/09.jpg)
+![Portrait of Giada in her wedding dress](../../assets/real-weddings/giada-luca/10.jpg)
 
-Prima ancora di vedere Giada, Luca ha trovato un momento per sua madre: un abbraccio silenzioso, colto in bianco e nero, che dice più di qualsiasi discorso.
+Before he saw Giada, Luca made time for his mom. A quiet hug, caught in black and white, that says more than any speech could.
 
-![Emozione delle damigelle](../../assets/real-weddings/giada-luca/11.jpg)
+![Bridesmaids moved to tears](../../assets/real-weddings/giada-luca/11.jpg)
 
-### Verso l’altare
+### Down the aisle
 
-Mano nella mano con il padre, bouquet di peonie e lisianthus nei toni pastello: gli ultimi passi prima della cerimonia, tra il prato e il viale alberato del parco.
+Hand in hand with her dad, holding a bouquet of pastel peonies and lisianthus, Giada took the last few steps across the lawn and down the tree-lined aisle of the park.
 
-![Giada e il padre lungo la navata tra gli invitati e gli alberi](../../assets/real-weddings/giada-luca/12.jpg)
-![Rito civile a Villa La Favorita](../../assets/real-weddings/giada-luca/13.jpg)
-![Il bacio degli sposi dopo il sì](../../assets/real-weddings/giada-luca/14.jpg)
-![Festeggiamenti dopo la cerimonia](../../assets/real-weddings/giada-luca/15.jpg)
+![Giada and her father walking down the aisle between the guests and the trees](../../assets/real-weddings/giada-luca/12.jpg)
+![Civil ceremony at Villa La Favorita](../../assets/real-weddings/giada-luca/13.jpg)
+![The couple's first kiss after saying I do](../../assets/real-weddings/giada-luca/14.jpg)
+![Guests celebrating the newlyweds after the ceremony](../../assets/real-weddings/giada-luca/15.jpg)
 
-### Una festa vera
+### A real party
 
-Il ricevimento è stato tutto fuorché convenzionale. Amici, energia alle stelle e un ballo che non si è mai fermato hanno trasformato la serata in una festa memorabile.
+This was anything but a by-the-book reception. A crowd of close friends, sky-high energy and a dance floor that never emptied turned the evening into a night to remember.
 
-![Giada e Luca al tramonto](../../assets/real-weddings/giada-luca/16.jpg)
-![Ritratto degli sposi](../../assets/real-weddings/giada-luca/17.jpg)
-![Sposi sorridono insieme](../../assets/real-weddings/giada-luca/18.jpg)
-![Dettaglio del ricevimento](../../assets/real-weddings/giada-luca/19.jpg)
-![Villa La Favorita al tramonto](../../assets/real-weddings/giada-luca/20.jpg)
-![Tavoli del ricevimento](../../assets/real-weddings/giada-luca/21.jpg)
-![Momento della festa](../../assets/real-weddings/giada-luca/22.jpg)
-![Ritratto degli invitati](../../assets/real-weddings/giada-luca/23.jpg)
-![Conclusione della festa](../../assets/real-weddings/giada-luca/24.jpg)
+![Giada and Luca at sunset](../../assets/real-weddings/giada-luca/16.jpg)
+![Portrait of the bride and groom](../../assets/real-weddings/giada-luca/17.jpg)
+![The newlyweds laughing together](../../assets/real-weddings/giada-luca/18.jpg)
+![Reception details](../../assets/real-weddings/giada-luca/19.jpg)
+![Villa La Favorita at sunset](../../assets/real-weddings/giada-luca/20.jpg)
+![Reception tables set in the garden](../../assets/real-weddings/giada-luca/21.jpg)
+![A moment from the party](../../assets/real-weddings/giada-luca/22.jpg)
+![Wedding guests portrait](../../assets/real-weddings/giada-luca/23.jpg)
+![The party winding down](../../assets/real-weddings/giada-luca/24.jpg)
 
-> Villa La Favorita si è confermata la scelta perfetta per chi cerca uno scenario raffinato, capace di accogliere anche momenti di festa autentica e spontanea.
+> Villa La Favorita proved to be the perfect choice for couples who want a refined setting that still makes room for a genuine, spontaneous party.
 
-### Dalla cena alla notte
+### From dinner into the night
 
-Con il sole più basso, Villa La Favorita ha cambiato ritmo. Tra i tavoli nel giardino, i dettagli blu e le risate degli amici, la festa ha iniziato a prendere la sua forma più libera.
+As the sun dipped lower, the villa changed its pace. Between the garden tables, the touches of blue and friends laughing, the party started to loosen up and find its own rhythm.
 
-![Giada e Luca camminano insieme nel giardino](../../assets/real-weddings/giada-luca/25.jpg)
-![Giada e le sue amiche nel giardino della villa](../../assets/real-weddings/giada-luca/26.jpg)
-![Tavola apparecchiata nel giardino](../../assets/real-weddings/giada-luca/27.jpg)
-![Vista della villa e del giardino](../../assets/real-weddings/giada-luca/28.jpg)
-![Giada festeggia al tramonto](../../assets/real-weddings/giada-luca/29.jpg)
-![Festa degli sposi all’aperto](../../assets/real-weddings/giada-luca/30.jpg)
+![Giada and Luca walking together through the garden](../../assets/real-weddings/giada-luca/25.jpg)
+![Giada with her friends in the villa garden](../../assets/real-weddings/giada-luca/26.jpg)
+![Dinner table set in the garden](../../assets/real-weddings/giada-luca/27.jpg)
+![View of the villa and its garden](../../assets/real-weddings/giada-luca/28.jpg)
+![Giada celebrating at sunset](../../assets/real-weddings/giada-luca/29.jpg)
+![The newlyweds partying outdoors](../../assets/real-weddings/giada-luca/30.jpg)
 
-La luce si è fatta calda, poi morbida. Le tavole hanno accolto brindisi, piccoli gesti e quella naturale confidenza che rende una cena di nozze davvero personale.
+The light turned warm, then soft. Around the tables came toasts, small gestures and that easy closeness that makes a wedding dinner feel truly personal.
 
-![Scena del ricevimento al tramonto](../../assets/real-weddings/giada-luca/31.jpg)
+![Reception scene at sunset](../../assets/real-weddings/giada-luca/31.jpg)
 
-### Il taglio della torta — e non solo
+### The cake cutting (and a little more)
 
-Tra le luci degli sparkular e i brindisi degli invitati, il taglio della torta di Giada e Luca si è trasformato in molto più di un semplice rito: proprio in quel momento, un amico degli sposi ha scelto di fare la sua proposta di matrimonio, davanti a tutti. Un attimo di silenzio, poi l'esplosione di gioia collettiva: un momento magico, arrivato all'improvviso, che ha reso quella serata ancora più indimenticabile — per gli sposi e per chi c'era.
+With sparklers lighting up the night and glasses raised all around, Giada and Luca's cake cutting turned into something much bigger than a tradition. Right then, one of their friends got down on one knee and proposed, in front of everyone. A second of stunned silence, then the whole place erupted. A magical moment out of nowhere, and one that made the night even more unforgettable, for the couple and for everyone lucky enough to be there.
 
-![Giada e Luca durante il ricevimento](../../assets/real-weddings/giada-luca/32.jpg)
-![Momento di festa tra gli invitati](../../assets/real-weddings/giada-luca/33.jpg)
+![Giada and Luca during the reception](../../assets/real-weddings/giada-luca/32.jpg)
+![Guests celebrating together](../../assets/real-weddings/giada-luca/33.jpg)
 
-Quando è arrivata la notte, non è rimasto nulla di impostato: solo musica, abbracci, balli e la gioia di una giornata vissuta fino in fondo.
+By the time night fell, nothing felt staged anymore. Just music, hugs, dancing and the joy of a day lived to the fullest.
 
-![Festa serale degli sposi](../../assets/real-weddings/giada-luca/34.jpg)
-![Festa finale con gli amici](../../assets/real-weddings/giada-luca/35.jpg)
-![Un’amica balla sotto le volte in mattoni, in bianco e nero](../../assets/real-weddings/giada-luca/36.jpg)
-![Amici con gli occhiali da sole che ballano attorno agli sposi, in bianco e nero](../../assets/real-weddings/giada-luca/37.jpg)
-![Primo ballo di Giada e Luca tra gli invitati](../../assets/real-weddings/giada-luca/38.jpg)
+![The couple celebrating late into the evening](../../assets/real-weddings/giada-luca/34.jpg)
+![Last dances with friends](../../assets/real-weddings/giada-luca/35.jpg)
+![A friend dancing under the brick vaults, in black and white](../../assets/real-weddings/giada-luca/36.jpg)
+![Friends in sunglasses dancing around the couple, in black and white](../../assets/real-weddings/giada-luca/37.jpg)
+![Giada and Luca's first dance surrounded by their guests](../../assets/real-weddings/giada-luca/38.jpg)
