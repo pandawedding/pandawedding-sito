@@ -32,7 +32,7 @@ import { films } from '../../data/films';
             <div class="photo relative aspect-video">
               <Picture
                 src={film.poster}
-                alt=""
+                alt={`Wedding film di ${film.couple}, ${film.location}`}
                 formats={['avif', 'webp']}
                 fallbackFormat="webp"
                 widths={[640, 960, 1280]}

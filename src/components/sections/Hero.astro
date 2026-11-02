@@ -60,15 +60,18 @@ const featured = films.find((f) => f.slug === 'imani-john')!;
       <span>{featured.couple}</span>
     </button>
 
-    <h1 class="text-display font-light tracking-title text-white uppercase">
-      Stories made<br class="md:hidden" /> to be <span class="text-accent">felt,</span><br />
-      not simply <span class="text-accent">remembered</span>
+    <!-- Il titolo h1 comprende la tagline: è la frase con le parole chiave (fotografi, videomaker, Verona) -->
+    <h1 class="flex flex-col items-center">
+      <span class="block text-display font-light tracking-title text-white uppercase">
+        Stories made<br class="md:hidden" /> to be <span class="text-accent">felt,</span><br />
+        not simply <span class="text-accent">remembered</span>
+      </span>
+      <span class="mt-10 block max-w-xs text-[0.75rem] leading-relaxed font-medium tracking-label text-white/75 uppercase md:max-w-none">
+        {site.tagline}
+      </span>
     </h1>
 
-    <div class="mt-10 flex flex-col items-center gap-6">
-      <p class="max-w-xs text-[0.75rem] leading-relaxed font-medium tracking-label text-white/75 uppercase md:max-w-none">
-        {site.tagline}
-      </p>
+    <div class="mt-6 flex flex-col items-center gap-6">
       <div class="flex flex-wrap justify-center gap-x-8">
         <a href="#contatti" class="cta-link" data-track="cta_click" data-label="get in touch" data-position="hero">
           Get in touch <span class="chevron" aria-hidden="true">›</span>

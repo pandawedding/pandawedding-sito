@@ -8,10 +8,16 @@ export const site = {
   indexable: false,
   email: 'hello@pandafotovideo.it',
   whatsapp: 'https://wa.me/393489538074',
+  phone: '+393489538074',
+  // Profili social (Instagram, Facebook, Vimeo...) per i dati strutturati: da avere dal proprietario
+  sameAs: [] as string[],
   company: {
     name: 'Panda Bros. Productions di Molinaroli Alberto',
     street: 'Via Nazario Sauro 13',
     city: '37030 Colognola ai Colli (VR)',
+    postalCode: '37030',
+    locality: 'Colognola ai Colli',
+    region: 'VR',
     // P.IVA da verificare con il proprietario: non pubblicare finché non è confermata
     vat: null as string | null,
   },

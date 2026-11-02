@@ -39,7 +39,7 @@ const VISIBLE = 3;
           <p class="mt-3 leading-relaxed font-light text-fg-muted">{diary.entry.data.excerpt}</p>
           <div class="mt-4 flex flex-wrap justify-center gap-x-6">
             {diary.hasStory && (
-              <a href={`/real-weddings/${diary.slug}`} data-diary={diary.slug} class="cta-link">
+              <a href={`/real-weddings/${diary.slug}/`} data-diary={diary.slug} class="cta-link">
                 Leggi il diario <span class="chevron" aria-hidden="true">›</span>
               </a>
             )}

@@ -10,16 +10,19 @@ interface Props {
   diary: Diary;
   /** id del titolo, per aria-labelledby */
   titleId: string;
+  /** h1 nella pagina statica, h2 nel pannello della landing */
+  headingLevel?: 1 | 2;
 }
-const { diary, titleId } = Astro.props;
+const { diary, titleId, headingLevel = 2 } = Astro.props;
 const { Content } = await render(diary.entry);
 const { couple, title, label } = diary.entry.data;
+const Heading = `h${headingLevel}`;
 ---
 
 <article class="mx-auto max-w-screen-lg px-5 md:px-10" data-lightbox-group>
   <header class="pt-6 md:pt-12">
     <p class="label">{label}</p>
-    <h2 id={titleId} class="mt-4 text-display font-light tracking-title uppercase">{title}</h2>
+    <Heading id={titleId} class="mt-4 text-display font-light tracking-title uppercase">{title}</Heading>
   </header>
 
   <Photo
