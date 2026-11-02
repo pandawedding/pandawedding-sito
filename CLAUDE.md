@@ -109,7 +109,7 @@ Menu ad ancore (con evidenza della sezione corrente): Wedding Films · Portfolio
 
 Pagine separate: solo `/privacy`, `/cookie-policy` e le pagine statiche dei diari.
 
-**Brochure:** riquadro `#brochure` nei Contatti, sotto WhatsApp (solo email, tono leggero: "Just looking?"). Componente `BrochureLink` (`Just looking? Get the brochure ›`) sotto i `Get in touch` di Portfolio, Real Weddings e footer. Brochure e form contatti inviano a `/api/contact` con `type` (`brochure` / `inquiry`) e `lang`: **endpoint ancora da creare** (Resend); per `brochure` deve spedire il file della brochure.
+**Brochure:** riquadro `#brochure` nei Contatti, sotto WhatsApp (solo email, tono leggero: "Just looking?"). Componente `BrochureLink` (`Just looking? Get the brochure ›`) sotto i `Get in touch` di Portfolio, Real Weddings e footer. Brochure e form contatti inviano a `/api/contact` con `type` (`brochure` / `inquiry`) e `lang`: **endpoint ancora da creare** (Resend); per `brochure` avvisa i titolari con l’email del richiedente: la brochure (cartella `brochure/`, con il listino) si invia di persona e non va mai nel repository né sul sito.
 
 **Video:** i trailer originali stanno in `src/assets/trailers/` (esclusi da git, troppo pesanti). Le clip per il sito si generano con `node scripts/make-clips.mjs` (ffmpeg da `@ffmpeg-installer/ffmpeg`) in `public/videos/`: hero in loop (orizzontale 1080p e verticale per mobile) e anteprime delle card film al passaggio del mouse su desktop. Autoplay solo se non c'è "riduci movimento", risparmio dati o connessione lenta; il trailer completo con audio resta su Vimeo, al click.
 

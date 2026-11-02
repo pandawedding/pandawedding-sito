@@ -228,7 +228,7 @@ const fields = [
     button.disabled = true;
     brochureStatus.textContent = brochure.dataset.msgSending!;
     try {
-      // TODO: endpoint serverless (Resend) ancora da creare: invia la brochure all'indirizzo indicato
+      // TODO: endpoint serverless (Resend) ancora da creare: avvisa i titolari, che mandano la brochure di persona
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

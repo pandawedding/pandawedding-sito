@@ -24,3 +24,6 @@ font-sources/
 
 # trailer originali (pesanti): restano in locale, sul sito vanno le clip in public/videos
 src/assets/trailers/
+
+# brochure con listino prezzi: si invia di persona, mai nel repository né sul sito
+brochure/
