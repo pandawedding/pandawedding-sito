@@ -134,7 +134,7 @@ I testi di partenza vengono dal sito Framer: `https://delightful-plans-781348--b
 
 Inizializza con `api_host: "https://eu.i.posthog.com"`. Sul dominio si userà un reverse proxy (`/ingest`) per non perdere dati con gli ad-blocker.
 
-**Consenso:** al caricamento PostHog parte **disattivato** (`opt_out_capturing_by_default: true`). Si attiva solo dopo l'accettazione nel banner cookie. Il banner ha "Accetta" e "Rifiuta" con pari evidenza.
+**Consenso:** al caricamento PostHog parte **disattivato** (`opt_out_capturing_by_default: true`). Si attiva solo dopo l'accettazione nel banner cookie. Il banner ha "Accetta" e "Rifiuta" con pari evidenza. Implementato in `src/scripts/analytics.ts` + `src/components/CookieBanner.astro`: lo script di PostHog si carica **solo dopo** "Accetta" (prima nessuna richiesta), scelta in `localStorage` (`consent`), si riapre con `[data-cookie-settings]` (footer, cookie policy). Eventi da `data-track` e dai click su film/diari/email. Testi di privacy e cookie policy in `src/data/legal.ts`: bozza da far verificare a un consulente.
 
 **Eventi personalizzati:**
 

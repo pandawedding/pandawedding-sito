@@ -33,12 +33,17 @@ const VISIBLE = 3;
     </p>
   </header>
 
-  <!-- Storie centrate; oltre le prime VISIBLE si aprono con "Vedi altre storie" -->
-  <ul class="mx-auto mt-12 flex max-w-screen-2xl flex-wrap justify-center gap-x-5 gap-y-16 px-5 md:mt-16 md:px-10">
+  <!-- Storie centrate; oltre le prime VISIBLE si aprono con "Vedi altre storie".
+       Sul telefono sono una riga orizzontale da scorrere (stile Netflix), per non allungare la pagina -->
+  <ul
+    class="stories mx-auto mt-12 flex max-w-screen-2xl gap-x-4 px-5 max-md:snap-x max-md:snap-mandatory max-md:overflow-x-auto max-md:overscroll-x-contain md:mt-16 md:flex-wrap md:justify-center md:gap-x-5 md:gap-y-16 md:px-10"
+    aria-label={t.diaries.rowLabel}
+    data-row="real-weddings"
+  >
     {
       diaries.map((diary, i) => (
         <li
-          class="reveal w-full max-w-[26rem] text-center md:w-[calc((100%-2.5rem)/3)]"
+          class="reveal w-[82%] max-w-[26rem] shrink-0 snap-start text-center md:w-[calc((100%-2.5rem)/3)]"
           hidden={i >= VISIBLE}
           data-story
         >
@@ -122,6 +127,13 @@ const VISIBLE = 3;
 }
 
 <style>
+  .stories {
+    scrollbar-width: none;
+    scroll-padding-inline: 1.25rem;
+  }
+  .stories::-webkit-scrollbar {
+    display: none;
+  }
   .diary-panel[open] {
     animation: panel-in 0.6s var(--ease-out-soft);
   }

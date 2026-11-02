@@ -21,9 +21,10 @@ const find = (prefix) => {
 
 // start/durata in secondi, scelti dai provini dei trailer
 const clips = [
-  // Hero: orizzontale per desktop, verticale (ritaglio centrale 9:16) per mobile
-  { out: 'hero-imani-john-1080.mp4', src: 'imani_e_john', start: 28, dur: 16, scale: '1920:1080', crf: 29, audio: true },
-  { out: 'hero-imani-john-vertical.mp4', src: 'imani_e_john', start: 28, dur: 16, crop: 'ih*9/16:ih', scale: '720:1280', crf: 28, audio: true },
+  // Hero: orizzontale per desktop, verticale (ritaglio centrale 9:16) per mobile.
+  // Compressione alta (sta sotto un gradiente scuro): ~4 MB desktop, ~1,8 MB mobile
+  { out: 'hero-imani-john-1080.mp4', src: 'imani_e_john', start: 28, dur: 16, scale: '1920:1080', crf: 33, preset: 'veryslow', abr: '64k', audio: true },
+  { out: 'hero-imani-john-vertical.mp4', src: 'imani_e_john', start: 28, dur: 16, crop: 'ih*9/16:ih', scale: '720:1280', crf: 33, preset: 'veryslow', abr: '64k', audio: true },
   // Anteprime delle card film (desktop, al passaggio del mouse)
   { out: 'preview-imani-john.mp4', src: 'imani_e_john', start: 34, dur: 10, scale: '960:540', crf: 28 },
   { out: 'preview-johanna-come.mp4', src: 'johanna_e_c', start: 24, dur: 10, scale: '960:540', crf: 28 },
@@ -47,7 +48,7 @@ for (const clip of clips.filter((c) => !only || c.out.includes(only))) {
   ].filter(Boolean);
   const audio = clip.full
     ? ['-c:a', 'aac', '-b:a', '128k']
-    : ['-af', `afade=t=in:st=0:d=${fade},afade=t=out:st=${clip.dur - fade}:d=${fade}`, '-c:a', 'aac', '-b:a', '96k'];
+    : ['-af', `afade=t=in:st=0:d=${fade},afade=t=out:st=${clip.dur - fade}:d=${fade}`, '-c:a', 'aac', '-b:a', clip.abr ?? '96k'];
   const dest = path.join(OUT, clip.out);
   execFileSync(ffmpeg, [
     '-hide_banner', '-loglevel', 'error', '-y',
@@ -55,7 +56,7 @@ for (const clip of clips.filter((c) => !only || c.out.includes(only))) {
     '-i', find(clip.src),
     ...(clip.audio ? audio : ['-an']),
     '-vf', filters.join(','),
-    '-c:v', 'libx264', '-preset', 'slow', '-crf', String(clip.crf),
+    '-c:v', 'libx264', '-preset', clip.preset ?? 'slow', '-crf', String(clip.crf),
     '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
     dest,
   ]);

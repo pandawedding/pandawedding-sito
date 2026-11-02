@@ -75,6 +75,7 @@ export const ui = {
       next: ['Next chapter,', 'your story'],
     },
     diaries: {
+      rowLabel: 'Real Weddings, swipe to see more',
       lead: ['people brought together', 'places carved in memory', 'a story revealed'],
       more: 'See more stories',
       newPage: ['Start a new', 'page'],
@@ -131,6 +132,14 @@ export const ui = {
       privacy: 'We’ll only use your email to send you the brochure.',
     },
     footer: { menu: 'Footer menu', claim: 'Stories made to be felt', services: 'Wedding photography & video services', guides: 'Wedding guides' },
+    consent: {
+      title: 'Cookies',
+      text: 'We use essential tools to run the site and, only if you accept, anonymous statistics to improve it. Nothing for advertising. Read the',
+      policy: 'cookie policy',
+      accept: 'Accept',
+      reject: 'Decline',
+      settings: 'Cookie preferences',
+    },
     sticky: 'Get in touch',
     player: {
       close: 'Close the video',
@@ -218,6 +227,7 @@ export const ui = {
       next: ['Il prossimo capitolo,', 'la vostra storia'],
     },
     diaries: {
+      rowLabel: 'Real Weddings, scorrete per vederne altri',
       lead: ['persone che si incontrano', 'luoghi che restano nella memoria', 'una storia che si svela'],
       more: 'Vedi altre storie',
       newPage: ['Scriviamo una nuova', 'pagina'],
@@ -274,6 +284,14 @@ export const ui = {
       privacy: 'Useremo la vostra email solo per inviarvi la brochure.',
     },
     footer: { menu: 'Menu footer', claim: 'Storie da vivere', services: 'Servizi foto e video per matrimoni', guides: 'Guide al matrimonio' },
+    consent: {
+      title: 'Cookie',
+      text: 'Usiamo strumenti tecnici per far funzionare il sito e, solo se accettate, statistiche anonime per migliorarlo. Niente pubblicità. Leggete la',
+      policy: 'cookie policy',
+      accept: 'Accetta',
+      reject: 'Rifiuta',
+      settings: 'Preferenze cookie',
+    },
     sticky: 'Contattaci',
     player: {
       close: 'Chiudi il video',

@@ -1,10 +1,12 @@
 ---
 import WhatsAppLink from '../WhatsAppLink.astro';
 import { site } from '../../data/site';
-import { t as tr } from '../../i18n';
+import { legalPath } from '../../data/legal';
+import { getLang, t as tr } from '../../i18n';
 
 // Etichette e placeholder dal sito Framer (pagina Contatti), nella lingua della pagina
 const t = tr(Astro.currentLocale);
+const lang = getLang(Astro.currentLocale);
 const f = t.contact.fields;
 const fields = [
   { name: 'names', label: f.names[0], placeholder: f.names[1], type: 'text', required: true, autocomplete: 'name' },
@@ -123,7 +125,7 @@ const fields = [
       <div class="flex flex-col items-start gap-4 sm:col-span-2">
         <p class="text-xs text-fg-muted">
           {t.contact.privacy[0]}
-          <a href="/privacy" class="underline underline-offset-2 hover:text-fg">{t.contact.privacy[1]}</a>.
+          <a href={legalPath.privacy[lang]} class="underline underline-offset-2 hover:text-fg">{t.contact.privacy[1]}</a>.
         </p>
         <button type="submit" class="btn">
           {t.contact.submit} <span class="arrow" aria-hidden="true">→</span>

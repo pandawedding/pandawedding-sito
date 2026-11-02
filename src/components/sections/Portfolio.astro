@@ -11,6 +11,8 @@ const t = ui[lang];
 // Prima la selezione, poi blocchi da 18 aperti con "Vedi altre foto".
 // Ogni blocco ha la sua griglia: aprirne uno non sposta le foto già viste.
 const BATCH = 18;
+// Sul telefono la selezione è più corta: le altre foto della selezione arrivano con il primo "Vedi altre foto"
+const MOBILE_FIRST = 5;
 
 // Impaginazione editoriale: dimensioni e posizioni sfalsate che si ripetono ogni 9 foto.
 // Ogni riga ha una o due foto; una colonna di partenza più a sinistra manda a capo.
@@ -66,7 +68,7 @@ for (let i = PORTFOLIO_FIRST; i < photos.length; i += BATCH) batches.push(photos
           {batch.map((photo, i) => (
             <button
               type="button"
-              class:list={['group block w-full', layout[i % layout.length]]}
+              class:list={['group block w-full', layout[i % layout.length], b === 0 && i >= MOBILE_FIRST && 'mobile-extra max-md:hidden']}
               data-lightbox={photo.index}
               data-full={photo.full}
               data-alt={photo.alt}
@@ -97,6 +99,7 @@ for (let i = PORTFOLIO_FIRST; i < photos.length; i += BATCH) batches.push(photos
         id="portfolio-more"
         class="btn btn-ghost"
         data-remaining={photos.length - PORTFOLIO_FIRST}
+        data-mobile-extra={PORTFOLIO_FIRST - MOBILE_FIRST}
       >
         {t.portfolio.more} <span class="text-fg-muted" data-count>({photos.length - PORTFOLIO_FIRST})</span>
       </button>
@@ -121,13 +124,24 @@ for (let i = PORTFOLIO_FIRST; i < photos.length; i += BATCH) batches.push(photos
   const more = document.getElementById('portfolio-more') as HTMLButtonElement;
   const count = more.querySelector('[data-count]')!;
   let remaining = Number(more.dataset.remaining);
+  const mobile = window.matchMedia('(max-width: 767px)');
+  const extras = () => document.querySelectorAll<HTMLElement>('#portfolio .mobile-extra');
+  const showCount = () => (count.textContent = `(${remaining + (mobile.matches ? extras().length : 0)})`);
+  showCount();
+  mobile.addEventListener('change', showCount);
 
   more.addEventListener('click', () => {
+    // Telefono: prima le foto della selezione nascoste
+    if (mobile.matches && extras().length) {
+      extras().forEach((el) => el.classList.remove('mobile-extra', 'max-md:hidden'));
+      showCount();
+      return;
+    }
     const next = document.querySelector<HTMLElement>('.portfolio-batch[hidden]');
     if (!next) return;
     next.hidden = false;
     remaining -= next.querySelectorAll('[data-lightbox]').length;
-    count.textContent = `(${remaining})`;
+    showCount();
     if (!document.querySelector('.portfolio-batch[hidden]')) more.parentElement!.hidden = true;
   });
 </script>

@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 import Lightbox from '../components/Lightbox.astro';
 import { getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
@@ -129,6 +130,7 @@ const itPath = lang === 'en' ? alternates.it : undefined;
     </main>
     <Footer />
     <Lightbox />
+    <CookieBanner />
 
     <script>
       // Fade-in allo scroll per gli elementi .reveal

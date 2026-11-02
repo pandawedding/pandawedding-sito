@@ -6,6 +6,7 @@ import { site, navFor } from '../data/site';
 import { getLang, localePath, ui } from '../i18n';
 import { servicesPath } from '../data/services';
 import { guidesPath } from '../data/guides';
+import { legalPath } from '../data/legal';
 
 const lang = getLang(Astro.currentLocale);
 const t = ui[lang];
@@ -57,6 +58,10 @@ const year = new Date().getFullYear();
         &copy; {year} {site.name} ·
         <a href={servicesPath[lang]} class="underline-offset-2 hover:text-fg hover:underline">{t.footer.services}</a> ·
         <a href={guidesPath[lang]} class="underline-offset-2 hover:text-fg hover:underline">{t.footer.guides}</a>
+        <br />
+        <a href={legalPath.privacy[lang]} class="underline-offset-2 hover:text-fg hover:underline">Privacy policy</a> ·
+        <a href={legalPath.cookies[lang]} class="underline-offset-2 hover:text-fg hover:underline">Cookie policy</a> ·
+        <button type="button" class="underline-offset-2 hover:text-fg hover:underline" data-cookie-settings>{t.consent.settings}</button>
       </p>
       <address class="not-italic md:text-right">
         {site.company.name}

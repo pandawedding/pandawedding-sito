@@ -2,6 +2,7 @@
 import { getImage } from 'astro:assets';
 import { getFilms, vimeoEmbedUrl } from '../data/films';
 import { getLang, ui } from '../i18n';
+import { legalPath } from '../data/legal';
 
 const lang = getLang(Astro.currentLocale);
 const t = ui[lang];
@@ -61,7 +62,7 @@ const data = Object.fromEntries(
           </button>
           <p class="max-w-sm text-xs leading-relaxed text-white/80">
             {t.player.consent}
-            <a href="/cookie-policy" class="underline underline-offset-2">Cookie policy</a>
+            <a href={legalPath.cookies[lang]} class="underline underline-offset-2">Cookie policy</a>
           </p>
         </div>
         <div data-player-frame class="absolute inset-0"></div>

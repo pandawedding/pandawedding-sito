@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { legal, legalPath, type LegalPage } from '../data/legal';
+import { getLang, ui } from '../i18n';
+
+// Privacy policy e cookie policy: testo semplice, leggibile, nella lingua della pagina
+interface Props {
+  page: LegalPage;
+}
+const { page } = Astro.props;
+const lang = getLang(Astro.currentLocale);
+const t = ui[lang];
+const c = legal[page][lang];
+const other: LegalPage = page === 'privacy' ? 'cookies' : 'privacy';
+const list = (p: string) => p.startsWith('— ');
+---
+
+<BaseLayout title={c.title} description={c.description} alternates={legalPath[page]}>
+  <article class="mx-auto max-w-2xl px-5 pt-28 pb-24 md:px-10 md:pt-40">
+    <h1 class="text-title font-light tracking-title uppercase">{c.title}</h1>
+    <p class="label mt-4 text-fg-muted!">{c.updated}</p>
+    <p class="mt-10 text-lead font-light">{c.intro}</p>
+
+    {
+      c.sections.map((s) => (
+        <section class="mt-12">
+          <h2 class="label">{s.title}</h2>
+          {s.body.some(list) ? (
+            <>
+              {s.body.filter((p) => !list(p)).slice(0, 1).map((p) => <p class="mt-4 leading-relaxed font-light text-fg-muted">{p}</p>)}
+              <ul class="mt-4 space-y-3">
+                {s.body.filter(list).map((p) => (
+                  <li class="flex gap-3 leading-relaxed font-light text-fg-muted">
+                    <span class="text-accent" aria-hidden="true">—</span>
+                    {p.slice(2)}
+                  </li>
+                ))}
+              </ul>
+              {s.body.filter((p) => !list(p)).slice(1).map((p) => <p class="mt-4 leading-relaxed font-light text-fg-muted">{p}</p>)}
+            </>
+          ) : (
+            s.body.map((p) => <p class="mt-4 leading-relaxed font-light text-fg-muted">{p}</p>)
+          )}
+        </section>
+      ))
+    }
+
+    <div class="mt-16 flex flex-wrap gap-x-8 border-t border-line pt-8">
+      <a href={legalPath[other][lang]} class="cta-link">
+        {legal[other][lang].title} <span class="chevron" aria-hidden="true">›</span>
+      </a>
+      <button type="button" class="cta-link" data-cookie-settings>
+        {t.consent.settings} <span class="chevron" aria-hidden="true">›</span>
+      </button>
+    </div>
+  </article>
+</BaseLayout>
