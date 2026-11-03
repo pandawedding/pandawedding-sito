@@ -69,7 +69,7 @@ export const ui = {
     },
     portfolio: {
       kicker: 'Portfolio Photo',
-      text: 'shaped by real stories, refined aesthetics and authentic moments.',
+      text: ['shaped by real stories,', 'refined aesthetics', 'and authentic moments.'],
       enlarge: 'Enlarge',
       more: 'See more photos',
       next: ['Next chapter,', 'your story'],
@@ -221,7 +221,7 @@ export const ui = {
     },
     portfolio: {
       kicker: 'Portfolio foto',
-      text: 'nate da storie vere, estetica curata e momenti autentici.',
+      text: ['nate da storie vere,', 'estetica curata', 'e momenti autentici.'],
       enlarge: 'Ingrandisci',
       more: 'Vedi altre foto',
       next: ['Il prossimo capitolo,', 'la vostra storia'],
