@@ -18,9 +18,9 @@ const year = new Date().getFullYear();
 
 <footer class="border-t border-line bg-bg">
   <div class="mx-auto max-w-screen-2xl px-5 pt-20 pb-10 md:px-10 md:pt-28">
-    <div class="grid gap-14 md:grid-cols-[1.4fr_1fr] md:gap-10">
+    <div class="grid grid-cols-[minmax(0,1fr)] gap-14 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:gap-10">
       <div>
-        <a href={localePath(lang, '/#top')} class="inline-block text-[2rem] md:text-6xl" aria-label={t.header.home}>
+        <a href={localePath(lang, '/#top')} class="inline-block text-[min(2rem,7.6vw)] md:text-[2.75rem] lg:text-6xl" aria-label={t.header.home}>
           <Logo />
         </a>
         <div class="mt-8 flex flex-wrap gap-2 sm:gap-3">
