@@ -72,6 +72,7 @@ export const ui = {
       text: ['shaped by real stories,', 'refined aesthetics', 'and authentic moments.'],
       enlarge: 'Enlarge',
       more: 'See more photos',
+      less: 'Show fewer photos',
       next: ['Next chapter,', 'your story'],
     },
     diaries: {
@@ -224,6 +225,7 @@ export const ui = {
       text: ['nate da storie vere,', 'estetica curata', 'e momenti autentici.'],
       enlarge: 'Ingrandisci',
       more: 'Vedi altre foto',
+      less: 'Mostra meno foto',
       next: ['Il prossimo capitolo,', 'la vostra storia'],
     },
     diaries: {

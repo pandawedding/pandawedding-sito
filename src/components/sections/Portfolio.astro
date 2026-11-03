@@ -93,7 +93,7 @@ for (let i = PORTFOLIO_FIRST; i < photos.length; i += BATCH) batches.push(photos
       ))
     }
 
-    <div class="mt-20 flex justify-center md:mt-28">
+    <div id="portfolio-actions" class="mt-20 flex scroll-mt-28 flex-wrap justify-center gap-3 md:mt-28">
       <button
         type="button"
         id="portfolio-more"
@@ -102,6 +102,9 @@ for (let i = PORTFOLIO_FIRST; i < photos.length; i += BATCH) batches.push(photos
         data-mobile-extra={PORTFOLIO_FIRST - MOBILE_FIRST}
       >
         {t.portfolio.more} <span class="text-fg-muted" data-count>({photos.length - PORTFOLIO_FIRST})</span>
+      </button>
+      <button type="button" id="portfolio-less" class="btn btn-ghost" hidden>
+        {t.portfolio.less} <span aria-hidden="true">↑</span>
       </button>
     </div>
   </div>
@@ -122,15 +125,20 @@ for (let i = PORTFOLIO_FIRST; i < photos.length; i += BATCH) batches.push(photos
 
 <script>
   const more = document.getElementById('portfolio-more') as HTMLButtonElement;
+  const less = document.getElementById('portfolio-less') as HTMLButtonElement;
+  const actions = document.getElementById('portfolio-actions')!;
   const count = more.querySelector('[data-count]')!;
-  let remaining = Number(more.dataset.remaining);
+  const total = Number(more.dataset.remaining);
+  let remaining = total;
   const mobile = window.matchMedia('(max-width: 767px)');
   const extras = () => document.querySelectorAll<HTMLElement>('#portfolio .mobile-extra');
+  const extraItems = [...extras()];
   const showCount = () => (count.textContent = `(${remaining + (mobile.matches ? extras().length : 0)})`);
   showCount();
   mobile.addEventListener('change', showCount);
 
   more.addEventListener('click', () => {
+    less.hidden = false;
     // Telefono: prima le foto della selezione nascoste
     if (mobile.matches && extras().length) {
       extras().forEach((el) => el.classList.remove('mobile-extra', 'max-md:hidden'));
@@ -142,6 +150,18 @@ for (let i = PORTFOLIO_FIRST; i < photos.length; i += BATCH) batches.push(photos
     next.hidden = false;
     remaining -= next.querySelectorAll('[data-lightbox]').length;
     showCount();
-    if (!document.querySelector('.portfolio-batch[hidden]')) more.parentElement!.hidden = true;
+    if (!document.querySelector('.portfolio-batch[hidden]')) more.hidden = true;
+  });
+
+  // Richiude tutto e riporta la vista sui bottoni, così chi legge non si perde
+  less.addEventListener('click', () => {
+    document.querySelectorAll<HTMLElement>('.portfolio-batch:not([data-batch="0"])').forEach((b) => (b.hidden = true));
+    extraItems.forEach((el) => el.classList.add('mobile-extra', 'max-md:hidden'));
+    remaining = total;
+    showCount();
+    more.hidden = false;
+    less.hidden = true;
+    actions.scrollIntoView({ block: 'center', behavior: 'instant' });
+    more.focus({ preventScroll: true });
   });
 </script>
