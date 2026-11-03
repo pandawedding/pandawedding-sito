@@ -104,7 +104,7 @@ export const services: Record<Lang, ServicesCopy> = {
         lead: 'A few additions to shape the service around your day.',
         text: 'From the printed album to a second photographer or videographer, analogue film footage and a photobooth for your guests.',
         points: [
-          'Wedding album',
+          'Wedding album or photobook',
           'Second photographer, for a second point of view on the day',
           'Second videographer, for more angles during the ceremony and speeches',
           'Analogue film footage, with a warm, timeless grain, edited into your film',
@@ -234,7 +234,7 @@ export const services: Record<Lang, ServicesCopy> = {
         lead: 'Qualche aggiunta per costruire il servizio intorno alla vostra giornata.',
         text: 'Dall’album stampato al secondo fotografo o videomaker, dalle riprese in analogico al photobooth per i vostri ospiti.',
         points: [
-          'Album di matrimonio',
+          'Album di matrimonio o fotolibro',
           'Secondo fotografo, per un secondo punto di vista sulla giornata',
           'Secondo videomaker, per più angolazioni durante cerimonia e discorsi',
           'Riprese in analogico su pellicola, dalla grana calda e senza tempo, montate nel vostro film',
