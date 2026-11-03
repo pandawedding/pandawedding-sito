@@ -132,7 +132,7 @@ export const ui = {
       sent: 'Thank you! We’ll send you the brochure personally, very soon.',
       privacy: 'We’ll only use your email to send you the brochure.',
     },
-    footer: { menu: 'Footer menu', claim: 'Stories made to be felt', services: 'Wedding photography & video services', guides: 'Wedding guides' },
+    footer: { menu: 'Footer menu', claim: 'Stories made to be felt', services: 'Wedding photography & video services', guides: 'Wedding guides', vat: 'VAT no.' },
     consent: {
       title: 'Cookies',
       text: 'We use essential tools to run the site and, only if you accept, anonymous statistics to improve it. Nothing for advertising. Read the',
@@ -285,7 +285,7 @@ export const ui = {
       sent: 'Grazie! Vi mandiamo la brochure di persona, a brevissimo.',
       privacy: 'Useremo la vostra email solo per inviarvi la brochure.',
     },
-    footer: { menu: 'Menu footer', claim: 'Storie da vivere', services: 'Servizi foto e video per matrimoni', guides: 'Guide al matrimonio' },
+    footer: { menu: 'Menu footer', claim: 'Storie da vivere', services: 'Servizi foto e video per matrimoni', guides: 'Guide al matrimonio', vat: 'P.IVA' },
     consent: {
       title: 'Cookie',
       text: 'Usiamo strumenti tecnici per far funzionare il sito e, solo se accettate, statistiche anonime per migliorarlo. Niente pubblicità. Leggete la',

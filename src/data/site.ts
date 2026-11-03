@@ -12,13 +12,13 @@ export const site = {
   sameAs: [] as string[],
   company: {
     name: 'Panda Bros. Productions di Molinaroli Alberto',
-    street: 'Via Nazario Sauro 13',
+    street: 'Via Pontesello 9',
     city: '37030 Colognola ai Colli (VR)',
     postalCode: '37030',
     locality: 'Colognola ai Colli',
     region: 'VR',
-    // P.IVA da verificare con il proprietario: non pubblicare finché non è confermata
-    vat: null as string | null,
+    // P.IVA confermata dal proprietario il 03/11/2026
+    vat: '04207220239' as string | null,
   },
 };
 

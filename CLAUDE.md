@@ -156,7 +156,7 @@ Attiva anche pageview automatica, UTM e scroll depth. Funnel da configurare: vis
 
 - Pagine `/privacy` e `/cookie-policy`.
 - I video Vimeo impostano cookie e tracker: mostra prima un'**anteprima statica** e carica l'iframe (con `dnt=1`) solo al click, previo consenso.
-- Dati societari nel footer: *Panda Bros. Productions di Molinaroli Alberto*, Via Nazario Sauro 13, 37030 Colognola ai Colli (VR). **P.IVA: da verificare.** Il numero nel sito Framer ha 12 cifre, una partita IVA italiana ne ha 11. Non pubblicarla finché non è confermata.
+- Dati societari nel footer (in `src/data/site.ts`): *Panda Bros. Productions di Molinaroli Alberto*, Via Pontesello 9, 37030 Colognola ai Colli (VR), P.IVA 04207220239 (confermati dal proprietario il 03/11/2026). Compaiono anche nei dati strutturati e nella privacy policy.
 
 ## Da definire con il proprietario
 

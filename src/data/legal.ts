@@ -27,7 +27,7 @@ interface LegalCopy {
 }
 
 const c = site.company;
-const controller = `${c.name}, ${c.street}, ${c.city}`;
+const controller = `${c.name}, ${c.street}, ${c.city}${c.vat ? ` (P.IVA / VAT no. ${c.vat})` : ''}`;
 
 export const legal: Record<LegalPage, Record<Lang, LegalCopy>> = {
   privacy: {

@@ -67,7 +67,7 @@ const year = new Date().getFullYear();
       </p>
       <address class="not-italic md:text-right">
         {site.company.name}
-        {site.company.vat && <> · P.IVA {site.company.vat}</>}
+        {site.company.vat && <> · {t.footer.vat} {site.company.vat}</>}
         <br />
         {site.company.street}, {site.company.city}
       </address>
