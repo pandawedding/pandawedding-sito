@@ -47,12 +47,24 @@ const VISIBLE = 3;
           hidden={i >= VISIBLE}
           data-story
         >
-          <Photo
-            src={diary.cover}
-            alt={`${diary.entry.data.couple}, ${diary.entry.data.label}`}
-            ratio="4 / 5"
-            sizes="(min-width: 768px) 30vw, 90vw"
-          />
+          {diary.hasStory ? (
+            // Anche la copertina apre il diario; per i lettori di schermo basta il link testuale sotto
+            <a href={diaryPath(diary.slug)} data-diary={diary.slug} class="cover-link block" tabindex="-1" aria-hidden="true">
+              <Photo
+                src={diary.cover}
+                alt={`${diary.entry.data.couple}, ${diary.entry.data.label}`}
+                ratio="4 / 5"
+                sizes="(min-width: 768px) 30vw, 90vw"
+              />
+            </a>
+          ) : (
+            <Photo
+              src={diary.cover}
+              alt={`${diary.entry.data.couple}, ${diary.entry.data.label}`}
+              ratio="4 / 5"
+              sizes="(min-width: 768px) 30vw, 90vw"
+            />
+          )}
           <p class="label mt-6">{diary.entry.data.label}</p>
           <h3 class="mt-3 text-title font-light">{diary.entry.data.title}</h3>
           <p class="mt-3 leading-relaxed font-light text-fg-muted">{diary.entry.data.excerpt}</p>
@@ -127,6 +139,14 @@ const VISIBLE = 3;
 }
 
 <style>
+  .cover-link :global(img) {
+    transition: transform 0.7s var(--ease-out-soft, ease-out);
+  }
+  @media (hover: hover) {
+    .cover-link:hover :global(img) {
+      transform: scale(1.03);
+    }
+  }
   .stories {
     scrollbar-width: none;
     scroll-padding-inline: 1.25rem;
