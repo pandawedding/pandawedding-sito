@@ -43,7 +43,7 @@ export const services: Record<Lang, ServicesCopy> = {
   en: {
     title: 'Wedding Photo & Video Services in Verona',
     description:
-      'Wedding photography in digital and analogue film, cinematic wedding films and photo + video coverage, from getting ready to the party. Based in Verona, across Italy and abroad.',
+      'Wedding photo and video reportage from the preparations to the end of the day: couple shoot, private online gallery, drone footage and a wedding film edited to music. Based in Verona, across Italy and abroad.',
     kicker: 'Services',
     h1: ['Wedding photography and films', 'in Verona, across Italy and abroad'],
     intro:
@@ -55,13 +55,14 @@ export const services: Record<Lang, ServicesCopy> = {
         alt: 'Black and white portrait of the bride putting on her earrings',
         kicker: '01 · Wedding photography',
         title: ['Photography captures', 'the moment'],
-        lead: 'We follow your day from getting ready to the party, using both digital and analogue film photography.',
-        text: 'Documentary spontaneity and editorial aesthetics: images shaped by real stories, refined details and authentic moments, without forced poses.',
+        lead: 'A wedding reportage that follows your day from the couple’s preparations to the very end of the celebration, in both digital and analogue film.',
+        text: 'Documentary spontaneity and editorial aesthetics, plus a shoot dedicated just to the two of you. Every selected image is carefully edited and gathered in your own private online gallery.',
         points: [
-          'Coverage from getting ready to the party',
+          'Wedding reportage from the couple’s preparations to the end of the day',
+          'A dedicated photo shoot for the couple',
+          'Editing and delivery of all selected photographs',
+          'Private online gallery: quick sharing and high-resolution downloads, optimised for print',
           'Digital and analogue (film) wedding photography',
-          'Reportage of the ceremony, portraits of the couple and the celebration',
-          'Weddings in villas, castles, churches and destination venues',
         ],
       },
       {
@@ -70,13 +71,14 @@ export const services: Record<Lang, ServicesCopy> = {
         alt: 'Wedding film of Johanna & Côme at Castello di Mugnana, Florence',
         kicker: '02 · Wedding films',
         title: ['Cinema brings you', 'back to it'],
-        lead: 'Frame by frame a day becomes a story, crafted from real moments, cinematic vision and genuine emotion.',
-        text: 'Every wedding film starts with a trailer and can be completed with the full film of your day, to relive it with the same intensity every time.',
+        lead: 'A video reportage from the couple’s preparations to the end of the day: frame by frame, your wedding becomes a story of real moments and genuine emotion.',
+        text: 'Aerial footage, professional stabilisers and carefully recorded sound come together in a film of about 15 minutes, edited to music, to relive with the same intensity every time.',
         points: [
-          'Cinematic wedding trailer',
-          'Full wedding film of the day, on request',
-          'Real sound of vows, speeches and the party',
-          'Videography across Italy and for destination weddings',
+          'Video reportage from the couple’s preparations to the end of the day',
+          'Aerial drone footage (weather permitting)',
+          'Professional electronic stabilisers for smooth, dynamic movement',
+          'Professional audio recording of vows, speeches and the party',
+          'Final edit of about 15 minutes, set to music',
         ],
       },
       {
@@ -89,8 +91,8 @@ export const services: Record<Lang, ServicesCopy> = {
         text: 'We personally guide every wedding, working seamlessly together or alongside our trusted team. One team for the whole day means one way of looking at it, and more freedom for you.',
         points: [
           'Photographer and videographer working as one team',
-          'A single vision from getting ready to the party',
-          'Photos and film that tell the same story',
+          'Photo and video reportage from the preparations to the end of the day',
+          'An online gallery and a wedding film that tell the same story',
         ],
       },
       {
@@ -100,10 +102,9 @@ export const services: Record<Lang, ServicesCopy> = {
         kicker: '04 · Extras',
         title: ['To complete', 'your story'],
         lead: 'A few additions to shape the service around your day.',
-        text: 'From the printed album to the full film, a second photographer or videographer, analogue film footage and a photobooth for your guests.',
+        text: 'From the printed album to a second photographer or videographer, analogue film footage and a photobooth for your guests.',
         points: [
           'Wedding album',
-          'Full wedding film, in addition to the trailer',
           'Second photographer, for a second point of view on the day',
           'Second videographer, for more angles during the ceremony and speeches',
           'Analogue film footage, with a warm, timeless grain, edited into your film',
@@ -142,6 +143,14 @@ export const services: Record<Lang, ServicesCopy> = {
         'Yes. Our wedding photography combines digital and analogue film photography.',
       ],
       [
+        'How do we receive our photos?',
+        'In a private online gallery dedicated to your wedding, with quick sharing and high-resolution downloads optimised for print.',
+      ],
+      [
+        'Do you film with a drone?',
+        'Yes, our wedding films include aerial drone footage, weather permitting.',
+      ],
+      [
         'Can we book photography and video together?',
         'Yes. We work as one team for photography and film, with a single vision for the whole day.',
       ],
@@ -164,7 +173,7 @@ export const services: Record<Lang, ServicesCopy> = {
   it: {
     title: 'Servizi Foto e Video Matrimonio a Verona',
     description:
-      'Servizio fotografico di matrimonio in digitale e analogico, wedding film e foto + video, dalla vestizione alla festa. Fotografi e videomaker a Verona, in tutta Italia e all’estero.',
+      'Reportage foto e video di matrimonio dalla preparazione al termine della giornata: shooting di coppia, gallery online, riprese con drone e film montato sulla musica. Fotografi e videomaker a Verona, in tutta Italia e all’estero.',
     kicker: 'Servizi',
     h1: ['Fotografo e videomaker di matrimonio', 'a Verona, in Italia e all’estero'],
     intro:
@@ -176,13 +185,14 @@ export const services: Record<Lang, ServicesCopy> = {
         alt: 'Ritratto in bianco e nero della sposa che indossa gli orecchini',
         kicker: '01 · Servizio fotografico',
         title: ['La fotografia cattura', 'il momento'],
-        lead: 'Seguiamo la giornata dalla vestizione alla festa, con l’utilizzo di foto digitali e analogiche.',
-        text: 'La spontaneità del reportage e l’estetica editoriale: immagini nate da storie vere, dettagli curati e momenti autentici, senza pose forzate.',
+        lead: 'Un reportage che segue la vostra giornata dalla preparazione degli sposi fino al termine della festa, con foto digitali e analogiche.',
+        text: 'La spontaneità del reportage e l’estetica editoriale, più uno shooting dedicato solo a voi due. Ogni scatto selezionato viene post-prodotto e raccolto nella vostra gallery online privata.',
         points: [
-          'Copertura dalla vestizione alla festa',
+          'Reportage del matrimonio dalla preparazione degli sposi fino al termine della giornata',
+          'Shooting fotografico dedicato agli sposi',
+          'Post-produzione e consegna di tutti gli scatti selezionati',
+          'Gallery online dedicata: condivisione veloce e download in alta risoluzione, ottimizzato per la stampa',
           'Fotografia di matrimonio digitale e analogica (su pellicola)',
-          'Reportage della cerimonia, ritratti degli sposi e della festa',
-          'Matrimoni in ville, castelli, chiese e location all’estero',
         ],
       },
       {
@@ -191,13 +201,14 @@ export const services: Record<Lang, ServicesCopy> = {
         alt: 'Wedding film di Johanna e Côme al Castello di Mugnana, Firenze',
         kicker: '02 · Wedding film',
         title: ['Il cinema', 'vi riporta lì'],
-        lead: 'Fotogramma dopo fotogramma, un giorno diventa una storia, fatta di momenti veri, sguardo cinematografico ed emozioni sincere.',
-        text: 'Ogni video di matrimonio nasce con un trailer e si può completare con il film completo della vostra giornata, da rivivere ogni volta con la stessa intensità.',
+        lead: 'Un video reportage dalla preparazione degli sposi al termine della giornata: fotogramma dopo fotogramma, il vostro matrimonio diventa una storia fatta di momenti veri ed emozioni sincere.',
+        text: 'Riprese aeree, stabilizzatori professionali e un audio registrato con cura, per un film di circa 15 minuti montato sulla musica, da rivivere ogni volta con la stessa intensità.',
         points: [
-          'Trailer cinematografico del matrimonio',
-          'Film completo della giornata, su richiesta',
-          'Il suono vero delle promesse, dei discorsi e della festa',
-          'Videomaker in tutta Italia e per i matrimoni all’estero',
+          'Video reportage dalla preparazione degli sposi al termine della giornata',
+          'Riprese aeree con drone (meteo permettendo)',
+          'Stabilizzatori elettronici professionali per scene in movimento dinamiche',
+          'Registrazione audio professionale di promesse, discorsi e festa',
+          'Montaggio finale di circa 15 minuti con sottofondo musicale',
         ],
       },
       {
@@ -210,8 +221,8 @@ export const services: Record<Lang, ServicesCopy> = {
         text: 'Seguiamo di persona ogni matrimonio, insieme o con il nostro team di fiducia. Un solo team per tutta la giornata vuol dire un solo sguardo, e più libertà per voi.',
         points: [
           'Fotografo e videomaker che lavorano come un’unica squadra',
-          'Un’unica visione dalla vestizione alla festa',
-          'Foto e film che raccontano la stessa storia',
+          'Reportage foto e video dalla preparazione al termine della giornata',
+          'Una gallery online e un film che raccontano la stessa storia',
         ],
       },
       {
@@ -221,10 +232,9 @@ export const services: Record<Lang, ServicesCopy> = {
         kicker: '04 · Extra',
         title: ['Per completare', 'la vostra storia'],
         lead: 'Qualche aggiunta per costruire il servizio intorno alla vostra giornata.',
-        text: 'Dall’album stampato al film completo, dal secondo fotografo o videomaker alle riprese in analogico, fino al photobooth per i vostri ospiti.',
+        text: 'Dall’album stampato al secondo fotografo o videomaker, dalle riprese in analogico al photobooth per i vostri ospiti.',
         points: [
           'Album di matrimonio',
-          'Film completo, oltre al trailer',
           'Secondo fotografo, per un secondo punto di vista sulla giornata',
           'Secondo videomaker, per più angolazioni durante cerimonia e discorsi',
           'Riprese in analogico su pellicola, dalla grana calda e senza tempo, montate nel vostro film',
@@ -258,6 +268,14 @@ export const services: Record<Lang, ServicesCopy> = {
       [
         'Fotografate in digitale o in analogico?',
         'Entrambi: il nostro servizio fotografico unisce foto digitali e fotografia analogica su pellicola.',
+      ],
+      [
+        'Come riceviamo le foto?',
+        'In una gallery online dedicata al vostro matrimonio, con condivisione veloce e download in alta risoluzione ottimizzato per la stampa.',
+      ],
+      [
+        'Usate il drone?',
+        'Sì, nei nostri film di matrimonio sono incluse le riprese aeree con drone, meteo permettendo.',
       ],
       [
         'Possiamo avere foto e video insieme?',
