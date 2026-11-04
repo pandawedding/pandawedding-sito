@@ -60,7 +60,7 @@ const schema = [
           aria-labelledby={`${s.id}-title`}
         >
           <div class:list={['reveal', i % 2 === 1 && 'md:order-last']}>
-            <Photo src={s.image} alt={s.alt} ratio="4 / 5" sizes="(min-width: 768px) 45vw, 90vw" />
+            <Photo src={s.image} alt={s.alt} ratio="4 / 5" sizes="(min-width: 768px) 45vw, 90vw" eager={i === 0} />
           </div>
           <div class="reveal">
             <p class="label">{s.kicker}</p>
