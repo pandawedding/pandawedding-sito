@@ -34,16 +34,16 @@ const VISIBLE = 3;
   </header>
 
   <!-- Storie centrate; oltre le prime VISIBLE si aprono con "Vedi altre storie".
-       Sul telefono sono una riga orizzontale da scorrere (stile Netflix), per non allungare la pagina -->
+       Su telefono e tablet sono una riga orizzontale da scorrere (stile Netflix), per non allungare la pagina -->
   <ul
-    class="stories mx-auto mt-12 flex max-w-screen-2xl gap-x-4 px-5 max-md:snap-x max-md:snap-mandatory max-md:overflow-x-auto max-md:overflow-y-hidden max-md:overscroll-x-contain md:mt-16 md:flex-wrap md:justify-center md:gap-x-5 md:gap-y-16 md:px-10"
+    class="stories mx-auto mt-12 flex max-w-screen-2xl gap-x-4 px-5 max-lg:snap-x max-lg:snap-mandatory max-lg:overflow-x-auto max-lg:overflow-y-hidden max-lg:overscroll-x-contain md:mt-16 md:gap-x-5 md:px-10 lg:flex-wrap lg:justify-center lg:gap-y-16"
     aria-label={t.diaries.rowLabel}
     data-row="real-weddings"
   >
     {
       diaries.map((diary, i) => (
         <li
-          class="reveal w-[82%] max-w-[26rem] shrink-0 snap-start text-center md:w-[calc((100%-2.5rem)/3)]"
+          class="reveal w-[82%] max-w-[26rem] shrink-0 snap-start text-center lg:w-[calc((100%-2.5rem)/3)]"
           hidden={i >= VISIBLE}
           data-story
         >
@@ -54,7 +54,7 @@ const VISIBLE = 3;
                 src={diary.cover}
                 alt={`${diary.entry.data.couple}, ${diary.entry.data.label}`}
                 ratio="4 / 5"
-                sizes="(min-width: 768px) 30vw, 90vw"
+                sizes="(min-width: 1024px) 30vw, (min-width: 520px) 416px, 90vw"
               />
             </a>
           ) : (
@@ -62,7 +62,7 @@ const VISIBLE = 3;
               src={diary.cover}
               alt={`${diary.entry.data.couple}, ${diary.entry.data.label}`}
               ratio="4 / 5"
-              sizes="(min-width: 768px) 30vw, 90vw"
+              sizes="(min-width: 1024px) 30vw, (min-width: 520px) 416px, 90vw"
             />
           )}
           <p class="label mt-6">{diary.entry.data.label}</p>
@@ -150,6 +150,11 @@ const VISIBLE = 3;
   .stories {
     scrollbar-width: none;
     scroll-padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .stories {
+      scroll-padding-inline: 2.5rem;
+    }
   }
   .stories::-webkit-scrollbar {
     display: none;
