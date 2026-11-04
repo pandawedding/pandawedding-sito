@@ -230,7 +230,11 @@ const VISIBLE = 3;
       unlockScroll();
       if (diaryHash()) {
         if (pushed) history.back();
-        else history.replaceState(null, '', location.pathname + location.search);
+        else {
+          history.replaceState(null, '', location.pathname + location.search);
+          // Arrivati da un link condiviso non c'è un punto a cui tornare: meglio le storie che la hero
+          if (scrollY === 0) document.getElementById('real-weddings')?.scrollIntoView({ behavior: 'instant' });
+        }
       }
       pushed = false;
     });
