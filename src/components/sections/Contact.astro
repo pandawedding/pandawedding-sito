@@ -37,11 +37,69 @@ const fields = [
         </a>
         <WhatsAppLink position="contact" />
       </div>
+    </div>
 
-      <!-- Brochure: per chi non è ancora pronto a scrivere, basta l'email -->
+    <div class="min-w-0">
+      <form
+        id="contact-form"
+        class="reveal grid gap-x-5 gap-y-6 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2"
+        novalidate
+        data-msg-required={t.contact.required}
+        data-msg-sending={t.contact.sending}
+        data-msg-sent={t.contact.sent}
+        data-msg-failed={t.contact.failed(site.email)}
+      >
+        {
+          fields.map((field) => (
+            <label class="flex flex-col gap-2">
+              <span class="text-[0.6875rem] font-semibold tracking-[0.2em] text-fg-muted uppercase">
+                {field.label}
+                {field.required && <span class="text-accent"> *</span>}
+              </span>
+              <input
+                name={field.name}
+                type={field.type}
+                required={field.required}
+                placeholder={field.placeholder}
+                autocomplete={field.autocomplete}
+                class="field"
+              />
+            </label>
+          ))
+        }
+        <label class="flex flex-col gap-2 sm:col-span-2 md:col-span-1 xl:col-span-2">
+          <span class="text-[0.6875rem] font-semibold tracking-[0.2em] text-fg-muted uppercase">
+            {f.message[0]} <span class="text-accent">*</span>
+          </span>
+          <textarea
+            name="message"
+            required
+            rows="5"
+            placeholder={f.message[1]}
+            class="field resize-y"></textarea>
+        </label>
+
+        <!-- Honeypot antispam: invisibile alle persone -->
+        <label class="absolute -left-[9999px]" aria-hidden="true">
+          Company <input name="company" type='text' tabindex="-1" autocomplete='off' />
+        </label>
+
+        <div class="flex flex-col items-start gap-4 sm:col-span-2 md:col-span-1 xl:col-span-2">
+          <p class="text-xs text-fg-muted">
+            {t.contact.privacy[0]}
+            <a href={legalPath.privacy[lang]} class="underline underline-offset-2 hover:text-fg">{t.contact.privacy[1]}</a>.
+          </p>
+          <button type="submit" class="btn">
+            {t.contact.submit} <span class="arrow" aria-hidden="true">→</span>
+          </button>
+          <p data-form-status class="text-sm" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+
+      <!-- Brochure: dopo il form, per chi non è ancora pronto a scrivere; basta l'email -->
       <form
         id="brochure"
-        class="mt-14 scroll-mt-28 rounded-[6px] bg-bg p-6 md:p-8"
+        class="reveal mt-14 scroll-mt-28 rounded-[6px] bg-bg p-6 md:p-8"
         novalidate
         data-msg-sending={t.contact.sending}
         data-msg-sent={t.brochure.sent}
@@ -69,7 +127,7 @@ const fields = [
           <label class="absolute -left-[9999px]" aria-hidden="true">
             Company <input name="company" type="text" tabindex="-1" autocomplete="off" />
           </label>
-          <button type="submit" class="btn justify-center" data-track="cta_click" data-label="brochure" data-position="contact">
+          <button type="submit" class="btn btn-ghost justify-center" data-track="cta_click" data-label="brochure" data-position="contact">
             {t.brochure.submit} <span class="arrow" aria-hidden="true">→</span>
           </button>
         </div>
@@ -77,62 +135,6 @@ const fields = [
         <p data-form-status class="mt-2 text-sm" role="status" aria-live="polite"></p>
       </form>
     </div>
-
-    <form
-      id="contact-form"
-      class="reveal grid gap-x-5 gap-y-6 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2"
-      novalidate
-      data-msg-required={t.contact.required}
-      data-msg-sending={t.contact.sending}
-      data-msg-sent={t.contact.sent}
-      data-msg-failed={t.contact.failed(site.email)}
-    >
-      {
-        fields.map((field) => (
-          <label class="flex flex-col gap-2">
-            <span class="text-[0.6875rem] font-semibold tracking-[0.2em] text-fg-muted uppercase">
-              {field.label}
-              {field.required && <span class="text-accent"> *</span>}
-            </span>
-            <input
-              name={field.name}
-              type={field.type}
-              required={field.required}
-              placeholder={field.placeholder}
-              autocomplete={field.autocomplete}
-              class="field"
-            />
-          </label>
-        ))
-      }
-      <label class="flex flex-col gap-2 sm:col-span-2 md:col-span-1 xl:col-span-2">
-        <span class="text-[0.6875rem] font-semibold tracking-[0.2em] text-fg-muted uppercase">
-          {f.message[0]} <span class="text-accent">*</span>
-        </span>
-        <textarea
-          name="message"
-          required
-          rows="5"
-          placeholder={f.message[1]}
-          class="field resize-y"></textarea>
-      </label>
-
-      <!-- Honeypot antispam: invisibile alle persone -->
-      <label class="absolute -left-[9999px]" aria-hidden="true">
-        Company <input name="company" type='text' tabindex="-1" autocomplete='off' />
-      </label>
-
-      <div class="flex flex-col items-start gap-4 sm:col-span-2 md:col-span-1 xl:col-span-2">
-        <p class="text-xs text-fg-muted">
-          {t.contact.privacy[0]}
-          <a href={legalPath.privacy[lang]} class="underline underline-offset-2 hover:text-fg">{t.contact.privacy[1]}</a>.
-        </p>
-        <button type="submit" class="btn">
-          {t.contact.submit} <span class="arrow" aria-hidden="true">→</span>
-        </button>
-        <p data-form-status class="text-sm" role="status" aria-live="polite"></p>
-      </div>
-    </form>
   </div>
 </section>
 
