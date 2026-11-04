@@ -275,8 +275,8 @@ export const ui = {
       sending: 'Invio in corso…',
       sent: 'Grazie! Vi risponderemo al più presto.',
       failed: (email: string) => `Invio non riuscito. Scriveteci a ${email}.`,
-      outro: ['Su misura', 'per la vostra storia,', 'insieme'],
-      outroLabel: 'Su misura per la vostra storia',
+      outro: ['La vostra storia,', 'su misura.', 'Insieme.'],
+      outroLabel: 'La vostra storia, su misura',
     },
     brochure: {
       teaser: 'Solo curiosi? Richiedete la brochure',
