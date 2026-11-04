@@ -2,8 +2,12 @@
 // Usato dalla pagina statica e dal pannello, che carica il diario solo all'apertura.
 export function prepareDiaryPhotos(root: ParentNode) {
   root.querySelectorAll<HTMLImageElement>('.prose-diary img').forEach((img, i) => {
+    // Spazio reale: su telefono stanno in griglia, su desktop la colonna è larga 672px.
+    // Le foto sono lazy, quindi il browser sceglie la misura dopo questa riga
+    img.sizes = '(min-width: 768px) 672px, 62vw';
     img.dataset.lightbox = String(i);
-    img.dataset.full = img.currentSrc || img.src;
+    // src è la misura grande; currentSrc sul telefono sarebbe quella ridotta
+    img.dataset.full = img.src;
     img.dataset.alt = img.alt;
     img.tabIndex = 0;
     img.setAttribute('role', 'button');
