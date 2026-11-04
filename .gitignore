@@ -27,3 +27,7 @@ src/assets/trailers/
 
 # brochure con listino prezzi: si invia di persona, mai nel repository né sul sito
 brochure/
+
+# skill per l'agente: restano in locale, nel repository solo skills-lock.json
+.agents/
+.claude/skills/
