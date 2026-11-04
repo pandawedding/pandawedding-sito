@@ -26,7 +26,7 @@ export const ui = {
       mobileMenu: 'Mobile menu',
       openMenu: 'Open menu',
       closeMenu: 'Close menu',
-      switchLabel: 'Leggi il sito in italiano',
+      switchLabel: 'IT, leggi il sito in italiano',
     },
     cta: {
       getInTouch: 'Get in touch',
@@ -179,7 +179,7 @@ export const ui = {
       mobileMenu: 'Menu mobile',
       openMenu: 'Apri il menu',
       closeMenu: 'Chiudi il menu',
-      switchLabel: 'Read the site in English',
+      switchLabel: 'EN, read the site in English',
     },
     cta: {
       getInTouch: 'Contattaci',
