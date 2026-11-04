@@ -37,7 +37,8 @@ export const ui = {
       whatsappLabel: 'Message us on WhatsApp',
     },
     hero: {
-      alt: 'Bride and groom running hand in hand across a lawn at sunset, in front of a historic villa',
+      alt: 'Outdoor wedding ceremony at the foot of a villa staircase, the bride seen from behind facing the groom in a burgundy jacket, against red drapes',
+      ogAlt: 'Bride and groom running hand in hand across a lawn at sunset, in front of a historic villa',
       title: ['Stories made', 'to be', 'felt,', 'not simply', 'remembered'],
       soundOn: 'Sound on',
       soundOff: 'Sound off',
@@ -189,7 +190,8 @@ export const ui = {
       whatsappLabel: 'Scrivici su WhatsApp',
     },
     hero: {
-      alt: 'Sposi che corrono mano nella mano su un prato al tramonto, davanti a una villa storica',
+      alt: 'Cerimonia all’aperto ai piedi dello scalone di una villa, la sposa di spalle davanti allo sposo in giacca bordeaux, con drappi rossi sullo sfondo',
+      ogAlt: 'Sposi che corrono mano nella mano su un prato al tramonto, davanti a una villa storica',
       title: ['Storie', 'da', 'vivere,', 'non solo da', 'ricordare'],
       soundOn: 'Audio',
       soundOff: 'Muto',

@@ -35,7 +35,12 @@ const clips = [
 ];
 
 // Poster delle card film (fotogramma a "at" secondi)
-const posters = [{ out: 'src/assets/films/jasmine-daniel.jpg', src: 'jasmine', at: 30 }];
+const posters = [
+  { out: 'src/assets/films/jasmine-daniel.jpg', src: 'jasmine', at: 30 },
+  // Fermo immagine dell'hero: primo stacco della clip, stesso ritaglio, così il video parte senza salti
+  { out: 'src/assets/hero/hero-poster-desktop.jpg', src: 'imani_e_john', at: 28.8, vf: 'scale=1920:1080:flags=lanczos' },
+  { out: 'src/assets/hero/hero-poster-mobile.jpg', src: 'imani_e_john', at: 28.8, vf: 'crop=ih*9/16:ih,scale=1080:1920:flags=lanczos' },
+];
 
 fs.mkdirSync(OUT, { recursive: true });
 for (const clip of clips.filter((c) => !only || c.out.includes(only))) {
@@ -64,9 +69,10 @@ for (const clip of clips.filter((c) => !only || c.out.includes(only))) {
 }
 
 for (const poster of posters.filter((p) => !only || p.out.includes(only))) {
+  fs.mkdirSync(path.dirname(poster.out), { recursive: true });
   execFileSync(ffmpeg, [
     '-hide_banner', '-loglevel', 'error', '-y',
-    '-ss', String(poster.at), '-i', find(poster.src), '-frames:v', '1', '-q:v', '2', poster.out,
+    '-ss', String(poster.at), '-i', find(poster.src), ...(poster.vf ? ['-vf', poster.vf] : []), '-frames:v', '1', '-q:v', '2', poster.out,
   ]);
   console.log(poster.out);
 }

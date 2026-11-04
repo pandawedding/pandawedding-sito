@@ -6,19 +6,19 @@ import { getFilms } from '../../data/films';
 
 const t = tr(Astro.currentLocale);
 const films = getFilms(Astro.currentLocale === 'it' ? 'it' : 'en');
-import mobileSrc from '../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0043.jpg';
-import desktopSrc from '../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0050.jpg';
+import mobileSrc from '../../assets/hero/hero-poster-mobile.jpg';
+import desktopSrc from '../../assets/hero/hero-poster-desktop.jpg';
 
-// Foto diversa per verticale (mobile) e orizzontale (desktop)
+// Fotogramma della clip, verticale (mobile) e orizzontale (desktop): si vede finché il video non parte
 const srcset = async (src: ImageMetadata, widths: number[], format: 'avif' | 'webp') =>
   (await getImage({ src, widths, format })).srcSet.attribute;
 
 const mobile = { avif: await srcset(mobileSrc, [640, 960], 'avif'), webp: await srcset(mobileSrc, [640, 960], 'webp') };
 const desktop = {
-  avif: await srcset(desktopSrc, [1280, 1600], 'avif'),
-  webp: await srcset(desktopSrc, [1280, 1600], 'webp'),
+  avif: await srcset(desktopSrc, [1280, 1920], 'avif'),
+  webp: await srcset(desktopSrc, [1280, 1920], 'webp'),
 };
-const fallback = await getImage({ src: desktopSrc, width: 1600, format: 'jpg' });
+const fallback = await getImage({ src: desktopSrc, width: 1920, format: 'jpg' });
 
 const featured = films.find((f) => f.slug === 'imani-john')!;
 ---
@@ -35,7 +35,7 @@ const featured = films.find((f) => f.slug === 'imani-john')!;
         alt={t.hero.alt}
         fetchpriority="high"
         decoding="async"
-        class="size-full object-cover object-[50%_60%]"
+        class="size-full object-cover"
       />
     </picture>
     <!-- Clip in loop dal trailer di Imani e John: compare sopra la foto quando parte -->

@@ -16,7 +16,7 @@ interface Props {
   description?: string;
   /** Solo il Portfolio usa il tema chiaro */
   theme?: 'dark' | 'light';
-  /** Immagine per la condivisione (Open Graph): di default la foto della hero */
+  /** Immagine per la condivisione (Open Graph): di default una foto del portfolio */
   ogImage?: ImageMetadata;
   ogImageAlt?: string;
   ogType?: 'website' | 'article';
@@ -33,7 +33,7 @@ const {
   description = t.description,
   theme = 'dark',
   ogImage = defaultOgImage,
-  ogImageAlt = t.hero.alt,
+  ogImageAlt = t.hero.ogAlt,
   ogType = 'website',
   schema = [],
   alternates = { en: '/', it: localePath('it', '/') },
