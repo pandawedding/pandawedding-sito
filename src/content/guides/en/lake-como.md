@@ -19,7 +19,7 @@ Lake Como is narrow and deep, framed by mountains that drop steeply into the wat
 
 It is one of the most loved places in the world to get married, and it is easy to see why: here the landscape already tells half the story.
 
-### The lake and its villages
+## The lake and its villages
 
 The lake is shaped like an upside-down Y, with three branches meeting in front of Bellagio. The **central lake**, between Bellagio, Varenna, Tremezzo and Menaggio, is the heart of weddings: colourful villages, villas and ferries linking one shore to the other in minutes.
 
@@ -27,7 +27,7 @@ The **Como branch**, to the south, is the closest to Milan, with large villas an
 
 ![The frescoed ceiling of a historic villa](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0063.jpg)
 
-### Light and seasons
+## Light and seasons
 
 May, June and September are the best months: gardens in bloom, pleasant temperatures and long days. In summer the lake is beautiful but busy, and the ferries are full.
 
@@ -35,7 +35,7 @@ Here light needs more planning than elsewhere. The mountains are high and close:
 
 > On Lake Como the sun plays hide and seek with the mountains: the portrait timeline is built around it.
 
-### Venues to know
+## Venues to know
 
 **Villa del Balbianello, Lenno.** A villa on a wooded headland reaching into the lake, with terraced gardens. You arrive by boat, or on foot along a path.
 
@@ -52,7 +52,7 @@ An important note: in Italy civil weddings are celebrated in venues authorised b
 ![Bride and groom embracing against the light, her veil lifting](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0067.jpg)
 ![Bride and groom kissing among flowers and climbing plants](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0070.jpg)
 
-### Practical tips
+## Practical tips
 
 **Everything by boat.** Water taxis and ferries are the most beautiful and often the fastest way to get around: book them early, for your guests too.
 
@@ -64,7 +64,7 @@ An important note: in Italy civil weddings are celebrated in venues authorised b
 
 ![Bride and groom walking hand in hand along an avenue](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0058.jpg)
 
-### How we tell it
+## How we tell it
 
 We are based in Verona, a couple of hours from Lake Como. Photography and film together, with a single vision: to tell your day without forcing it, leaving room for the lake, its light and its villas. To get a feel for how we see a wedding, watch our [wedding films](/#films), browse the [portfolio](/#portfolio) and read the diaries of our [Real Weddings](/#real-weddings).
 

@@ -20,7 +20,7 @@ Il Lago di Como è stretto e profondo, chiuso tra montagne che scendono ripide f
 
 È uno dei luoghi più amati al mondo per sposarsi, ed è facile capire perché: qui il paesaggio fa già metà del racconto.
 
-### Il lago e i suoi paesi
+## Il lago e i suoi paesi
 
 Il lago ha la forma di una Y rovesciata, con tre rami che si incontrano davanti a Bellagio. Il **centro lago**, tra Bellagio, Varenna, Tremezzo e Menaggio, è il cuore dei matrimoni: paesi colorati, ville e traghetti che collegano una sponda all’altra in pochi minuti.
 
@@ -28,7 +28,7 @@ Il **ramo di Como**, verso sud, è quello più vicino a Milano, con ville grandi
 
 ![Soffitto affrescato di una villa storica](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0063.jpg)
 
-### La luce e le stagioni
+## La luce e le stagioni
 
 Maggio, giugno e settembre sono i mesi migliori: giardini in fiore, temperature piacevoli e giornate lunghe. In estate il lago è bellissimo ma affollato, e i traghetti sono pieni.
 
@@ -36,7 +36,7 @@ Qui la luce va studiata più che altrove. Le montagne sono alte e vicine: in mol
 
 > Sul Lago di Como il sole gioca a nascondino con le montagne: la timeline dei ritratti si costruisce intorno a lui.
 
-### Location da conoscere
+## Location da conoscere
 
 **Villa del Balbianello, Lenno.** Una villa su un promontorio boscoso che si allunga nel lago, con giardini a terrazze. Si arriva in barca, oppure a piedi lungo un sentiero.
 
@@ -53,7 +53,7 @@ Una nota importante: in Italia il matrimonio civile si celebra nelle sedi autori
 ![Sposi abbracciati controluce, con il velo che si alza](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0067.jpg)
 ![Bacio degli sposi tra fiori e rampicanti](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0070.jpg)
 
-### Consigli pratici
+## Consigli pratici
 
 **Tutto in barca.** Taxi boat e traghetti sono il modo più bello e spesso più veloce per spostarsi: prenotateli per tempo, anche per gli ospiti.
 
@@ -65,7 +65,7 @@ Una nota importante: in Italia il matrimonio civile si celebra nelle sedi autori
 
 ![Sposi che camminano mano nella mano in un viale](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0058.jpg)
 
-### Come lo raccontiamo noi
+## Come lo raccontiamo noi
 
 Siamo a Verona, a un paio d’ore dal Lago di Como. Fotografia e cinema insieme, con un’unica visione: raccontare la vostra giornata senza forzarla, lasciando spazio al lago, alla sua luce e alle sue ville. Per farvi un’idea del nostro sguardo, guardate i nostri [wedding film](/it/#films), sfogliate il [portfolio](/it/#portfolio) e leggete i diari dei nostri [Real Weddings](/it/#real-weddings).
 

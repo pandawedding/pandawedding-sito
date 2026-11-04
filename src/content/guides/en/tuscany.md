@@ -19,7 +19,7 @@ Tuscany is the dream of so many couples marrying in Italy, and it is easy to see
 
 We experienced it up close at Castello di Mugnana, in Chianti, where we told the story of Johanna and Côme’s wedding ([watch their film](/#films)): a day of glances, smiles and real emotion, among ancient walls and the hills around them.
 
-### Florence or the countryside?
+## Florence or the countryside?
 
 This is the first choice to make. **Florence** is for couples who dream of art and the city: the Comune also celebrates civil weddings in Palazzo Vecchio, and the centre offers unique portraits, from Ponte Vecchio at sunrise to Piazzale Michelangelo at sunset. Above the city, the hills of **Fiesole** offer villas and castles with Florence at their feet.
 
@@ -27,7 +27,7 @@ This is the first choice to make. **Florence** is for couples who dream of art a
 
 ![Bride and groom in front of a historic villa and its garden](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0059.jpg)
 
-### Light and seasons
+## Light and seasons
 
 May, June, September and October are the most beautiful months. In spring the hills are green and full of flowers; in autumn the harvest arrives and the vineyards turn yellow and red. July and August are very hot: better to move the ceremony towards the evening.
 
@@ -35,7 +35,7 @@ Late-afternoon light in Tuscany has something special: it slides across the hill
 
 > On the Tuscan hills the evening light stretches the shadows of the cypresses: it is the moment when everything becomes a story.
 
-### Venues to know
+## Venues to know
 
 **Castello di Mugnana, Chianti.** A medieval castle in the Chianti hills, near Greve, with gardens, vineyards and views over the countryside. This is where we told the story of Johanna and Côme’s wedding.
 
@@ -54,7 +54,7 @@ Availability, capacity and ceremony rules change from venue to venue: always che
 ![Wedding cake next to a stone fountain in a garden](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0074.jpg)
 ![Arrangement of roses and hydrangeas](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0075.jpg)
 
-### Practical tips
+## Practical tips
 
 **The roads.** In the hills roads are narrow and often unpaved: a shuttle for your guests is almost always the best choice, especially for the ride home.
 
@@ -66,7 +66,7 @@ Availability, capacity and ceremony rules change from venue to venue: always che
 
 ![Bride and groom dancing at sunset in a garden](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0052.jpg)
 
-### How we tell it
+## How we tell it
 
 We are based in Verona, an hour and a half by train from Florence. Photography and film together, with a single vision: to tell your day without forcing it. To get a feel for how we see a wedding, watch our [wedding films](/#films), browse the [portfolio](/#portfolio) and read the diaries of our [Real Weddings](/#real-weddings).
 

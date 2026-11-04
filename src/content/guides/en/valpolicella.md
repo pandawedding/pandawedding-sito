@@ -19,7 +19,7 @@ Valpolicella begins where Verona ends. Twenty minutes are enough to go from the 
 
 This is the land of Amarone, and you can feel it: a wedding here means a celebration that tastes of wine, stone and countryside, with the elegance of historic villas and the city close by.
 
-### Why Valpolicella
+## Why Valpolicella
 
 If you are looking for a historic villa without giving up convenience, it is hard to do better. Verona, the airport and Lake Garda are close, venues are often surrounded by vineyards, and many villas have a wine cellar where guests can gather for an aperitivo or a tasting.
 
@@ -27,7 +27,7 @@ It is also a compact area: Negrar, Fumane, Marano, Sant’Ambrogio and San Pietr
 
 ![Bride and groom in a formal hedge garden, in black and white](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0028.jpg)
 
-### Light and seasons
+## Light and seasons
 
 In spring the hills are green and the cherry trees in bloom; in June the days are long and the evening light slides golden across the vines. September and October are harvest months: colours warm up, the air is cool and the vineyards are at their most beautiful.
 
@@ -35,7 +35,7 @@ For portraits the best light comes in the last hour of the day, when the sun dro
 
 > Among the vines the sunset light comes in from the side, and everything takes on a warm colour, almost like wine.
 
-### Venues to know
+## Venues to know
 
 **Villa della Torre, Fumane.** A 16th-century Renaissance villa, with a peristyle courtyard and its famous mask-shaped fireplaces. Today it belongs to a historic winemaking family, and brings together art, gardens and wine.
 
@@ -56,7 +56,7 @@ Availability, capacity and ceremony rules change from venue to venue: always che
 ![A toast in front of a tower of champagne glasses](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0020.jpg)
 ![The groom with his groomsmen in the garden of a villa](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0014.jpg)
 
-### Practical tips
+## Practical tips
 
 **Hill roads.** They are narrow and sometimes unlit: a shuttle for your guests between ceremony, reception and hotel is almost always the best choice.
 
@@ -68,7 +68,7 @@ Availability, capacity and ceremony rules change from venue to venue: always che
 
 ![Bride and groom next to a vintage car, in black and white](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0035.jpg)
 
-### How we tell it
+## How we tell it
 
 Valpolicella is home for us: we are based in Verona, just minutes from its hills. Photography and film together, with a single vision: to tell your day without forcing it, among the stone of the villas, the green of the vineyards and the evening light. To get a feel for how we see a wedding, watch our [wedding films](/#films), browse the [portfolio](/#portfolio) and read the diaries of our [Real Weddings](/#real-weddings).
 

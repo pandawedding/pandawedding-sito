@@ -12,13 +12,13 @@ Every wedding has a moment when you realize the day isn't going to follow a scri
 
 They said yes among the old brick walls and the centuries-old park of Villa La Favorita, the perfect backdrop for a celebration that was equal parts romantic elegance and pure, joyful chaos.
 
-### Luca's morning
+## Luca's morning
 
 Polished shoes, a silk bow tie, the invitation still sealed. Luca's morning was all calm anticipation, the quiet before he'd finally see Giada walking down the tree-lined drive of the villa.
 
 ![Groom's details: polished shoes, silk bow tie and the wedding invitation](../../../assets/real-weddings/giada-luca/02.jpg)
 
-### Giada, before the vows
+## Giada, before the vows
 
 One last look out at the garden, still in her satin robe. Before slipping into her dress, Giada took a moment just for herself, somewhere between butterflies and the urge to run straight into the day.
 
@@ -29,7 +29,7 @@ One last look out at the garden, still in her satin robe. Before slipping into h
 
 > No forced poses, no awkwardness in front of the camera. Just two people who knew exactly where they were going.
 
-### The dress
+## The dress
 
 Long sleeves in embroidered lace and a skirt of the lightest organza: Giada's dress was made for a late-May day. Romantic, never over the top.
 
@@ -42,7 +42,7 @@ Before he saw Giada, Luca made time for his mom. A quiet hug, caught in black an
 
 ![Bridesmaids moved to tears](../../../assets/real-weddings/giada-luca/11.jpg)
 
-### Down the aisle
+## Down the aisle
 
 Hand in hand with her dad, holding a bouquet of pastel peonies and lisianthus, Giada took the last few steps across the lawn and down the tree-lined aisle of the park.
 
@@ -51,7 +51,7 @@ Hand in hand with her dad, holding a bouquet of pastel peonies and lisianthus, G
 ![The couple's first kiss after saying I do](../../../assets/real-weddings/giada-luca/14.jpg)
 ![Guests celebrating the newlyweds after the ceremony](../../../assets/real-weddings/giada-luca/15.jpg)
 
-### A real party
+## A real party
 
 This was anything but a by-the-book reception. A crowd of close friends, sky-high energy and a dance floor that never emptied turned the evening into a night to remember.
 
@@ -67,7 +67,7 @@ This was anything but a by-the-book reception. A crowd of close friends, sky-hig
 
 > Villa La Favorita proved to be the perfect choice for couples who want a refined setting that still makes room for a genuine, spontaneous party.
 
-### From dinner into the night
+## From dinner into the night
 
 As the sun dipped lower, the villa changed its pace. Between the garden tables, the touches of blue and friends laughing, the party started to loosen up and find its own rhythm.
 
@@ -82,7 +82,7 @@ The light turned warm, then soft. Around the tables came toasts, small gestures 
 
 ![Reception scene at sunset](../../../assets/real-weddings/giada-luca/31.jpg)
 
-### The cake cutting (and a little more)
+## The cake cutting (and a little more)
 
 With sparklers lighting up the night and glasses raised all around, Giada and Luca's cake cutting turned into something much bigger than a tradition. Right then, one of their friends got down on one knee and proposed, in front of everyone. A second of stunned silence, then the whole place erupted. A magical moment out of nowhere, and one that made the night even more unforgettable, for the couple and for everyone lucky enough to be there.
 

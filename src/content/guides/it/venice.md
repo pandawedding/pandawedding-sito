@@ -19,7 +19,7 @@ Venezia non assomiglia a nessun altro posto. Non ci sono auto, solo acqua, ponti
 
 È la città perfetta per un matrimonio intimo, con pochi ospiti, o per una fuga d’amore a due: un *elopement*, come si dice oggi. Ma con la giusta organizzazione può ospitare anche feste più grandi, nei palazzi sull’acqua o sulle isole della laguna.
 
-### Il matrimonio civile
+## Il matrimonio civile
 
 Il Comune di Venezia celebra i matrimoni civili a **Palazzo Cavalli**, un palazzo storico affacciato sul Canal Grande, e in alcune altre sedi storiche della città. Si arriva in barca, e si esce sposati sul canale: difficile immaginare un inizio più veneziano.
 
@@ -27,7 +27,7 @@ Per una cerimonia simbolica le possibilità si moltiplicano: terrazze e giardini
 
 ![Sposi abbracciati, con il velo mosso dal vento, in bianco e nero](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0071.jpg)
 
-### Un matrimonio intimo, o una fuga a due
+## Un matrimonio intimo, o una fuga a due
 
 Venezia dà il meglio quando la si vive senza fretta. Una passeggiata all’alba in una Piazza San Marco quasi vuota, un giro in gondola tra i canali, la luce sulle facciate del Canal Grande.
 
@@ -35,7 +35,7 @@ Fuori dal centro, la laguna ha un’altra anima: **Burano** con le sue case colo
 
 > A Venezia ogni tragitto è un racconto: si parte in barca, si arriva sposati.
 
-### La luce e le stagioni
+## La luce e le stagioni
 
 Primavera e settembre sono i mesi migliori: luce morbida, temperature piacevoli e una città meno affollata che in piena estate. L’inverno ha il suo fascino, con la nebbia sulla laguna, ma in autunno e in inverno può arrivare l’acqua alta.
 
@@ -44,7 +44,7 @@ Per le foto il momento più prezioso è l’alba: la città è ancora vuota, l�
 ![Sposi abbracciati controluce in un interno](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0053.jpg)
 ![Bacio degli sposi tra gli ospiti, in bianco e nero](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0046.jpg)
 
-### Consigli pratici
+## Consigli pratici
 
 **Tutto in barca.** Taxi acquei, barche private e facchini per i bagagli vanno prenotati con anticipo; in un matrimonio veneziano la logistica è metà della festa.
 
@@ -56,7 +56,7 @@ Per le foto il momento più prezioso è l’alba: la città è ancora vuota, l�
 
 ![Brindisi con i calici di champagne](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0066.jpg)
 
-### Come lo raccontiamo noi
+## Come lo raccontiamo noi
 
 Siamo a Verona, a poco più di un’ora di treno da Venezia. Fotografia e cinema insieme, con un’unica visione: raccontare la vostra giornata senza forzarla, seguendo il ritmo lento della città e della sua luce. Per farvi un’idea del nostro sguardo, guardate i nostri [wedding film](/it/#films), sfogliate il [portfolio](/it/#portfolio) e leggete i diari dei nostri [Real Weddings](/it/#real-weddings).
 

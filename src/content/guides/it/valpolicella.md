@@ -20,7 +20,7 @@ La Valpolicella comincia dove finisce Verona. Bastano venti minuti per passare d
 
 È la terra dell’Amarone, e si sente: sposarsi qui vuol dire una festa che sa di vino, di pietra e di campagna, con l’eleganza delle dimore storiche e la città a un passo.
 
-### Perché la Valpolicella
+## Perché la Valpolicella
 
 Per chi cerca una villa storica senza rinunciare alla comodità, è difficile trovare di meglio. Verona, l’aeroporto e il Lago di Garda sono vicini, le location sono spesso circondate dai vigneti, e molte ville hanno una cantina dove accogliere gli ospiti per un aperitivo o una degustazione.
 
@@ -28,7 +28,7 @@ Per chi cerca una villa storica senza rinunciare alla comodità, è difficile tr
 
 ![Sposi in un giardino all’italiana di siepi, in bianco e nero](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0028.jpg)
 
-### La luce e le stagioni
+## La luce e le stagioni
 
 In primavera le colline sono verdi e i ciliegi in fiore; a giugno le giornate sono lunghe e la luce della sera scivola dorata sui filari. Settembre e ottobre sono i mesi della vendemmia: i colori si scaldano, l’aria è fresca e i vigneti sono al loro momento più bello.
 
@@ -36,7 +36,7 @@ Per i ritratti la luce migliore arriva nell’ultima ora del giorno, quando il s
 
 > Tra i filari la luce del tramonto arriva di traverso, e ogni cosa prende un colore caldo, quasi di vino.
 
-### Location da conoscere
+## Location da conoscere
 
 **Villa della Torre, Fumane.** Una villa rinascimentale del Cinquecento, con il cortile a peristilio e i celebri camini a forma di mascherone. Oggi appartiene a una storica famiglia di produttori, e unisce arte, giardini e vino.
 
@@ -57,7 +57,7 @@ Disponibilità, capienza e regole per la cerimonia cambiano da location a locati
 ![Brindisi davanti a una piramide di calici di champagne](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0020.jpg)
 ![Lo sposo con i testimoni nel giardino di una villa](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0014.jpg)
 
-### Consigli pratici
+## Consigli pratici
 
 **Le strade di collina.** Sono strette e a volte senza illuminazione: per gli ospiti una navetta tra cerimonia, ricevimento e hotel è quasi sempre la scelta migliore.
 
@@ -69,7 +69,7 @@ Disponibilità, capienza e regole per la cerimonia cambiano da location a locati
 
 ![Sposi in bianco e nero accanto a un’auto d’epoca](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0035.jpg)
 
-### Come lo raccontiamo noi
+## Come lo raccontiamo noi
 
 La Valpolicella per noi è casa: siamo a Verona, a pochi minuti dalle sue colline. Fotografia e cinema insieme, con un’unica visione: raccontare la vostra giornata senza forzarla, tra la pietra delle ville, il verde dei vigneti e la luce della sera. Per farvi un’idea del nostro sguardo, guardate i nostri [wedding film](/it/#films), sfogliate il [portfolio](/it/#portfolio) e leggete i diari dei nostri [Real Weddings](/it/#real-weddings).
 

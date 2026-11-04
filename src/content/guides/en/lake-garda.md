@@ -19,7 +19,7 @@ Lake Garda has something few places have: water that changes colour from one hou
 
 When you get married here, the question is not only “which venue” but “which Garda”. This guide starts from there: how the light, the villages and the distances change from one shore to another.
 
-### Three shores, three characters
+## Three shores, three characters
 
 The **Verona shore**, to the east, is Bardolino, Garda, Torri del Benaco and Malcesine, with Monte Baldo behind. It faces west, which is why it gets sunsets over the water.
 
@@ -29,7 +29,7 @@ The **southern lake**, between Sirmione, Desenzano and Peschiera, is more open a
 
 ![Bride and groom walking among cypress trees in a garden](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0040.jpg)
 
-### Light and seasons
+## Light and seasons
 
 The best months for a Lake Garda wedding are May, June and September: long days, pleasant temperatures and clean light. July and August are beautiful but hot, with a busier lake and a light haze in the middle of the day.
 
@@ -37,7 +37,7 @@ For photos, the best moment is the last hour before sunset. On the Verona shore 
 
 > On the lake the light changes every ten minutes: it is the light that writes the portrait timeline.
 
-### Venues to know
+## Venues to know
 
 **Isola del Garda.** The largest island on the lake, off San Felice del Benaco. A neo-Gothic villa in Venetian style, terraced Italian gardens and an English park. You arrive by boat, and the arrival is already part of the story.
 
@@ -54,7 +54,7 @@ Availability, capacity and ceremony rules change from venue to venue: always che
 ![Bride and groom kissing in an avenue of hedges](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0034.jpg)
 ![A glass of champagne in the bride’s hand](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0011.jpg)
 
-### Practical tips
+## Practical tips
 
 **Getting around.** In summer the road around the lake is busy, especially at weekends. Allow plenty of time between ceremony and reception, and consider a shuttle or a boat for your guests.
 
@@ -66,7 +66,7 @@ Availability, capacity and ceremony rules change from venue to venue: always che
 
 ![Bride and groom next to a red vintage convertible](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0030.jpg)
 
-### How we tell it
+## How we tell it
 
 We are based in Verona, less than an hour from every shore of the lake. Photography and film together, with a single vision: to observe the day without forcing it, and let the lake play its part, with its light, its wind and its colours. To get a feel for how we see a wedding, watch our [wedding films](/#films), browse the [portfolio](/#portfolio) and read the diaries of our [Real Weddings](/#real-weddings).
 

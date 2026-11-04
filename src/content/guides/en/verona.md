@@ -19,13 +19,13 @@ Verona is home for us. To the world it is the city of Romeo and Juliet, and when
 
 It is a city to explore on foot, where a few steps take you from a medieval square to a Roman bridge. For a wedding that means one thing: every corner can become a portrait.
 
-### A city to walk through
+## A city to walk through
 
 The historic centre is a UNESCO World Heritage Site, and it is compact: Piazza delle Erbe with its frescoed palaces, Piazza dei Signori, the Arena, Ponte Pietra over the Adige. Across the river, the steps up to Castel San Pietro lead to the viewpoint over the whole city, one of the most beautiful places for sunset portraits.
 
 ![Bride and groom kissing in front of a stone doorway, in black and white](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0042.jpg)
 
-### Civil ceremonies in Juliet’s places
+## Civil ceremonies in Juliet’s places
 
 The Comune di Verona celebrates civil weddings in some of the city’s historic places: Juliet’s House, the frescoed hall of the Fresco Museum next to Juliet’s Tomb, the Tapestry Hall of Palazzo Barbieri, steps from the Arena, and the Notaries’ Chapel.
 
@@ -35,13 +35,13 @@ These are intimate ceremonies for a small number of guests, often followed by a 
 
 ![Bride in the frescoed hall of a historic palace](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0068.jpg)
 
-### Light and seasons
+## Light and seasons
 
 Spring and September are the most beautiful times: mild air, soft light and a lively but not crowded city. Summer is hot and, during the Arena opera season, the centre is full of visitors.
 
 For portraits in the old town, the secret is sunrise: empty squares, stone glowing pink, the river still. In the evening, head up to Castel San Pietro and watch the sun go down over the rooftops.
 
-### Venues around the city
+## Venues around the city
 
 **Relais Fra Lorenzo.** A villa on the hill above the historic centre, with a panoramic terrace over the city. It is named after the friar who, in the story, secretly married Romeo and Juliet. This is where we told the story of Daniel and Josiane’s wedding: [watch their film](/#films).
 
@@ -51,7 +51,7 @@ If you are looking for vineyards and Venetian villas, [Valpolicella](/guides/val
 
 ![Bride and groom under the arches of a cloister](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0064.jpg)
 
-### Practical tips
+## Practical tips
 
 **The ZTL.** The old town is a limited traffic zone: vintage cars, shuttles and suppliers need permits, to be requested well in advance.
 
@@ -63,7 +63,7 @@ If you are looking for vineyards and Venetian villas, [Valpolicella](/guides/val
 
 ![Bride and groom embracing in a lit garden in the evening](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0080.jpg)
 
-### How we tell it
+## How we tell it
 
 We know Verona the way you know home: the hours when the squares empty out, the corners where the light arrives first, the roads that save time between ceremony and party. Photography and film together, with a single vision: to tell your day without forcing it. To get a feel for how we see a wedding, watch our [wedding films](/#films), browse the [portfolio](/#portfolio) and read the diaries of our [Real Weddings](/#real-weddings).
 

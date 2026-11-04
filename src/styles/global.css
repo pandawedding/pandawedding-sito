@@ -303,7 +303,7 @@ html {
 .prose-diary > * + * {
   margin-top: 1.25em;
 }
-.prose-diary h3 {
+.prose-diary h2 {
   margin-top: 2.5em;
   color: var(--fg);
   font-size: 0.8125rem;
@@ -311,7 +311,7 @@ html {
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
 }
-.prose-diary h3 + p {
+.prose-diary h2 + p {
   margin-top: 0.75em;
 }
 .prose-diary blockquote {

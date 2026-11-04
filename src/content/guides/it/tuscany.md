@@ -20,7 +20,7 @@ La Toscana è il sogno di chi si sposa in Italia, e non è difficile capire perc
 
 L’abbiamo vissuta da vicino al Castello di Mugnana, nel Chianti, dove abbiamo raccontato il matrimonio di Johanna e Côme ([guardate il loro film](/it/#films)): una giornata di sguardi, sorrisi ed emozioni vere, tra le mura antiche e le colline intorno.
 
-### Firenze o la campagna?
+## Firenze o la campagna?
 
 È la prima scelta da fare. **Firenze** è per chi sogna l’arte e la città: il Comune celebra i matrimoni civili anche a Palazzo Vecchio, e il centro offre ritratti unici, da Ponte Vecchio all’alba al Piazzale Michelangelo al tramonto. Sopra la città, le colline di **Fiesole** regalano ville e castelli con Firenze ai piedi.
 
@@ -28,7 +28,7 @@ Il **Chianti**, tra Firenze e Siena, è per chi cerca la campagna: castelli, bor
 
 ![Sposi davanti a una villa storica con il giardino](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0059.jpg)
 
-### La luce e le stagioni
+## La luce e le stagioni
 
 Maggio, giugno, settembre e ottobre sono i mesi più belli. In primavera le colline sono verdi e piene di fiori; in autunno arriva la vendemmia, e i vigneti si colorano di giallo e rosso. Luglio e agosto sono molto caldi: meglio spostare la cerimonia verso sera.
 
@@ -36,7 +36,7 @@ La luce del tardo pomeriggio in Toscana ha qualcosa di speciale: scivola sulle c
 
 > Sulle colline toscane la luce della sera allunga le ombre dei cipressi: è il momento in cui tutto diventa racconto.
 
-### Location da conoscere
+## Location da conoscere
 
 **Castello di Mugnana, Chianti.** Un castello medievale tra le colline del Chianti, vicino a Greve, con giardini, vigneti e la vista sulla campagna. Qui abbiamo raccontato il matrimonio di Johanna e Côme.
 
@@ -55,7 +55,7 @@ Disponibilità, capienza e regole per la cerimonia cambiano da location a locati
 ![Torta nuziale accanto a una fontana in pietra in un giardino](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0074.jpg)
 ![Composizione di rose e ortensie](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0075.jpg)
 
-### Consigli pratici
+## Consigli pratici
 
 **Le strade.** In collina le strade sono strette e spesso bianche, cioè sterrate: una navetta per gli ospiti è quasi sempre la scelta migliore, anche per rientrare la sera.
 
@@ -67,7 +67,7 @@ Disponibilità, capienza e regole per la cerimonia cambiano da location a locati
 
 ![Sposi che ballano al tramonto in un giardino](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0052.jpg)
 
-### Come lo raccontiamo noi
+## Come lo raccontiamo noi
 
 Siamo a Verona, a un’ora e mezza di treno da Firenze. Fotografia e cinema insieme, con un’unica visione: raccontare la vostra giornata senza forzarla. Per farvi un’idea del nostro sguardo, guardate i nostri [wedding film](/it/#films), sfogliate il [portfolio](/it/#portfolio) e leggete i diari dei nostri [Real Weddings](/it/#real-weddings).
 
