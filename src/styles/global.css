@@ -246,6 +246,19 @@ html:not(.js) .reveal {
   }
 }
 
+/* Player e visore: dissolvenza breve in apertura */
+@media (prefers-reduced-motion: no-preference) {
+  .overlay-fade[open],
+  .overlay-fade[open]::backdrop {
+    animation: overlay-in 0.2s var(--ease-out-soft);
+  }
+}
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+}
+
 /* ---------- Landing: ancore e passaggi di tema tra sezioni ---------- */
 
 html {
