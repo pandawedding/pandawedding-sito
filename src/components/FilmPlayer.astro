@@ -65,7 +65,8 @@ const data = Object.fromEntries(
             <a href={legalPath.cookies[lang]} class="underline underline-offset-2">Cookie policy</a>
           </p>
         </div>
-        <div data-player-frame class="absolute inset-0"></div>
+        <!-- Da vuoto non deve coprire il bottone Play -->
+        <div data-player-frame class="absolute inset-0 empty:hidden"></div>
       </div>
     </div>
   </div>
