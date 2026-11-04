@@ -20,7 +20,8 @@ const fields = [
 
 <section id="contatti" class="bg-bg-raised py-24 md:py-40" aria-labelledby="contact-title">
   <div class="mx-auto grid max-w-screen-2xl gap-16 px-5 md:grid-cols-[1fr_1.1fr] md:gap-20 md:px-10">
-    <div class="reveal">
+    <!-- Da tablet in su resta in vista mentre si scorrono form e brochure -->
+    <div class="reveal md:sticky md:top-28 md:self-start">
       <p class="label">{t.contact.kicker}</p>
       <h2 id="contact-title" class="mt-4 text-title font-light">
         {t.contact.title[0]} <span class="text-accent">{t.contact.title[1]}</span>
