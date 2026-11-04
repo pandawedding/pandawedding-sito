@@ -133,6 +133,9 @@ const itPath = lang === 'en' ? alternates.it : undefined;
     <CookieBanner />
 
     <script>
+      // Safari su iOS applica :active solo se la pagina ascolta il tocco
+      document.addEventListener('touchstart', () => {}, { passive: true });
+
       // Fade-in allo scroll per gli elementi .reveal
       const items = document.querySelectorAll<HTMLElement>('.reveal');
       if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {

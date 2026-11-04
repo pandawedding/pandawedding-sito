@@ -10,18 +10,18 @@ const t = ui[lang].consent;
 
 <div
   id="cookie-banner"
-  class="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-xl rounded-xl border border-line bg-bg-raised p-5 text-fg shadow-2xl md:bottom-6 md:p-6"
+  class="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-xl rounded-xl border border-line bg-bg-raised p-4 text-fg shadow-2xl md:bottom-6 md:p-6"
   role="dialog"
   aria-labelledby="cookie-title"
   aria-describedby="cookie-text"
   hidden
 >
   <p id="cookie-title" class="label">{t.title}</p>
-  <p id="cookie-text" class="mt-3 text-sm leading-relaxed font-light text-fg-muted">
+  <p id="cookie-text" class="mt-2 text-[0.8125rem] leading-snug font-light text-fg-muted md:mt-3 md:text-sm md:leading-relaxed">
     {t.text}{" "}
     <a href={legalPath.cookies[lang]} class="text-fg underline underline-offset-2">{t.policy}</a>.
   </p>
-  <div class="mt-5 grid grid-cols-2 gap-3">
+  <div class="mt-3 grid grid-cols-2 gap-2 md:mt-5 md:gap-3">
     <button type="button" class="btn btn-ghost justify-center" data-consent="denied">{t.reject}</button>
     <button type="button" class="btn btn-ghost justify-center" data-consent="granted">{t.accept}</button>
   </div>

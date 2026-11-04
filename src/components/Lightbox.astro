@@ -7,8 +7,8 @@ const t = tr(Astro.currentLocale);
 
 <dialog id="lightbox" class="m-0 h-dvh max-h-none w-screen max-w-none bg-black/95 p-0 text-white" aria-label={t.lightbox.label}>
   <div class="relative flex h-full items-center justify-center">
-    <figure class="flex h-full w-full items-center justify-center px-3 py-16 md:px-20">
-      <img data-lb-img alt="" class="max-h-full max-w-full rounded-[6px] object-contain transition-opacity duration-300" />
+    <figure class="flex h-full w-full touch-pan-y touch-pinch-zoom items-center justify-center px-3 py-16 md:px-20">
+      <img data-lb-img alt="" class="max-h-full max-w-full rounded-[6px] object-contain transition-[opacity,transform] duration-300 ease-out-soft" />
     </figure>
 
     <p class="absolute top-5 left-5 text-xs tracking-[0.2em] text-white/70" data-lb-count aria-live="polite"></p>
@@ -40,7 +40,10 @@ const t = tr(Astro.currentLocale);
 </dialog>
 
 <script>
+  import { historyModal } from '../scripts/modal';
+
   const dialog = document.getElementById('lightbox') as HTMLDialogElement;
+  const openDialog = historyModal(dialog);
   const img = dialog.querySelector<HTMLImageElement>('[data-lb-img]')!;
   const counter = dialog.querySelector<HTMLElement>('[data-lb-count]')!;
   let items: HTMLElement[] = [];
@@ -69,7 +72,7 @@ const t = tr(Astro.currentLocale);
     const trigger = (e.target as HTMLElement).closest<HTMLElement>('[data-lightbox]');
     if (!trigger) return;
     items = visibleItems(trigger);
-    dialog.showModal();
+    openDialog();
     show(items.indexOf(trigger));
   });
 
@@ -85,15 +88,52 @@ const t = tr(Astro.currentLocale);
     if (e.key === 'ArrowLeft') show(pos - 1);
   });
 
-  // Swipe orizzontale su touch
+  // Swipe orizzontale su touch: la foto segue il dito.
+  // Con due dita, o a pagina già ingrandita, il gesto resta allo zoom del browser.
   let startX = 0;
-  dialog.addEventListener('touchstart', (e) => (startX = e.touches[0].clientX), { passive: true });
+  let dragging = false;
+  const zoomed = () => (window.visualViewport?.scale ?? 1) > 1.01;
+  const release = () => {
+    dragging = false;
+    img.style.transition = '';
+    img.style.transform = '';
+  };
+
   dialog.addEventListener(
-    'touchend',
+    'touchstart',
     (e) => {
-      const dx = e.changedTouches[0].clientX - startX;
-      if (Math.abs(dx) > 50) show(pos + (dx < 0 ? 1 : -1));
+      if (e.touches.length > 1 || zoomed()) return release();
+      dragging = true;
+      startX = e.touches[0].clientX;
+      img.style.transition = 'none';
     },
     { passive: true },
   );
+  dialog.addEventListener(
+    'touchmove',
+    (e) => {
+      if (!dragging) return;
+      if (e.touches.length > 1) return release();
+      img.style.transform = `translateX(${e.touches[0].clientX - startX}px)`;
+    },
+    { passive: true },
+  );
+  dialog.addEventListener(
+    'touchend',
+    (e) => {
+      if (!dragging) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 50) {
+        // La foto cambia senza tornare indietro: quella nuova entra in dissolvenza
+        dragging = false;
+        img.style.transform = '';
+        show(pos + (dx < 0 ? 1 : -1));
+        requestAnimationFrame(() => (img.style.transition = ''));
+      } else {
+        release();
+      }
+    },
+    { passive: true },
+  );
+  dialog.addEventListener('touchcancel', release, { passive: true });
 </script>

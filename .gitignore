@@ -34,3 +34,4 @@ brochure/
 .claude/agents/
 .claude/settings.local.json
 .codex/
+.impeccable/

@@ -53,7 +53,7 @@ const fields = [
           {t.brochure.title[0]} <span class="text-accent">{t.brochure.title[1]}</span>
         </h3>
         <p class="mt-3 leading-relaxed font-light text-fg-muted">{t.brochure.text}</p>
-        <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row md:flex-col xl:flex-row">
           <label class="flex-1">
             <span class="sr-only">Email</span>
             <input
@@ -80,7 +80,7 @@ const fields = [
 
     <form
       id="contact-form"
-      class="reveal grid gap-x-5 gap-y-6 sm:grid-cols-2"
+      class="reveal grid gap-x-5 gap-y-6 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2"
       novalidate
       data-msg-required={t.contact.required}
       data-msg-sending={t.contact.sending}
@@ -105,7 +105,7 @@ const fields = [
           </label>
         ))
       }
-      <label class="flex flex-col gap-2 sm:col-span-2">
+      <label class="flex flex-col gap-2 sm:col-span-2 md:col-span-1 xl:col-span-2">
         <span class="text-[0.6875rem] font-semibold tracking-[0.2em] text-fg-muted uppercase">
           {f.message[0]} <span class="text-accent">*</span>
         </span>
@@ -122,7 +122,7 @@ const fields = [
         Company <input name="company" type='text' tabindex="-1" autocomplete='off' />
       </label>
 
-      <div class="flex flex-col items-start gap-4 sm:col-span-2">
+      <div class="flex flex-col items-start gap-4 sm:col-span-2 md:col-span-1 xl:col-span-2">
         <p class="text-xs text-fg-muted">
           {t.contact.privacy[0]}
           <a href={legalPath.privacy[lang]} class="underline underline-offset-2 hover:text-fg">{t.contact.privacy[1]}</a>.
@@ -157,7 +157,7 @@ const fields = [
   }
   .field::placeholder {
     color: var(--fg-muted);
-    opacity: 0.6;
+    opacity: 0.8; /* ~5:1 sullo sfondo del campo */
   }
   .field:focus {
     outline: none;

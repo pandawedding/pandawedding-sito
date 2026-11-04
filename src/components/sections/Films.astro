@@ -104,7 +104,7 @@ const films = getFilms(lang);
         id="full-film-form"
         data-request={t.films.request}
         data-request-template={t.films.requestWithFilm("{film}")}
-        class="grid gap-4 sm:grid-cols-2" novalidate>
+        class="grid gap-4 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2" novalidate>
         <input type="hidden" name="film" />
         <label class="flex flex-col gap-2">
           <span class="text-[0.6875rem] font-semibold tracking-[0.2em] text-fg-muted uppercase">
@@ -125,7 +125,7 @@ const films = getFilms(lang);
             class="request-field"
           />
         </label>
-        <div class="flex flex-wrap items-center justify-center gap-2 sm:col-span-2 sm:justify-start sm:gap-3">
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:col-span-2 sm:justify-start sm:gap-3 md:col-span-1 lg:col-span-2">
           <button
             type="submit"
             class="btn"
@@ -137,7 +137,7 @@ const films = getFilms(lang);
           </button>
           <WhatsAppLink position="full film" />
         </div>
-        <p data-film-note class="text-sm text-fg-muted sm:col-span-2" hidden></p>
+        <p data-film-note class="text-sm text-fg-muted sm:col-span-2 md:col-span-1 lg:col-span-2" hidden></p>
       </form>
     </div>
   </div>
@@ -157,7 +157,7 @@ const films = getFilms(lang);
   }
   .request-field::placeholder {
     color: var(--fg-muted);
-    opacity: 0.6;
+    opacity: 0.8; /* ~5:1 sullo sfondo del campo */
   }
   .request-field:focus,
   .request-field[aria-invalid='true'] {

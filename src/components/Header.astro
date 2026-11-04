@@ -58,7 +58,7 @@ const otherHref = alternates[other] ?? localePath(other, '/');
                 lang={code}
                 data-lang-switch={code}
                 aria-label={t.header.switchLabel}
-                class="py-2 text-fg-muted transition-colors hover:text-fg"
+                class="relative py-2 text-fg-muted transition-colors after:absolute after:-inset-x-3 after:-inset-y-1.5 hover:text-fg"
               >
                 {code.toUpperCase()}
               </a>
@@ -87,7 +87,7 @@ const otherHref = alternates[other] ?? localePath(other, '/');
      dell'header renderebbe `fixed` relativo all'header invece che allo schermo -->
 <div
   id="mobile-menu"
-  class="fixed inset-0 z-40 flex flex-col bg-bg px-5 pt-24 pb-10 opacity-0 invisible transition-[opacity,visibility] duration-500 data-[open]:visible data-[open]:opacity-100 xl:hidden"
+  class="fixed inset-0 z-40 flex flex-col bg-bg px-5 pt-24 pb-10 opacity-0 invisible transition-[opacity,visibility] duration-200 data-[open]:visible data-[open]:opacity-100 data-[open]:duration-300 xl:hidden"
   hidden
 >
   <nav aria-label={t.header.mobileMenu} class="flex-1">
@@ -149,14 +149,18 @@ const otherHref = alternates[other] ?? localePath(other, '/');
   .menu-item {
     opacity: 0;
     transform: translateY(16px);
+    /* In chiusura sparisce subito, senza scaletta */
     transition:
-      opacity 0.5s var(--ease-out-soft),
-      transform 0.5s var(--ease-out-soft);
-    transition-delay: calc(var(--i) * 60ms + 120ms);
+      opacity 0.12s ease,
+      transform 0.12s ease;
   }
   [data-open] .menu-item {
     opacity: 1;
     transform: none;
+    transition:
+      opacity 0.32s var(--ease-out-soft),
+      transform 0.32s var(--ease-out-soft);
+    transition-delay: calc(var(--i) * 30ms + 40ms);
   }
 </style>
 
@@ -177,6 +181,13 @@ const otherHref = alternates[other] ?? localePath(other, '/');
   const header = document.getElementById('site-header')!;
   const toggle = document.getElementById('menu-toggle')!;
   const menu = document.getElementById('mobile-menu')!;
+
+  // Nasconde il menu a dissolvenza finita; le voci hanno transizioni proprie, più brevi
+  const hideMenu = (e: TransitionEvent) => {
+    if (e.target !== menu) return;
+    menu.removeEventListener('transitionend', hideMenu);
+    if (!menu.hasAttribute('data-open')) menu.hidden = true;
+  };
 
   // Sfondo sfumato dopo il primo scroll; tema chiaro quando l'header
   // passa sopra una sezione bianca (data-theme="light")
@@ -207,7 +218,7 @@ const otherHref = alternates[other] ?? localePath(other, '/');
     } else {
       onScroll();
       menu.removeAttribute('data-open');
-      menu.addEventListener('transitionend', () => (menu.hidden = true), { once: true });
+      menu.addEventListener('transitionend', hideMenu);
     }
   };
   toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));

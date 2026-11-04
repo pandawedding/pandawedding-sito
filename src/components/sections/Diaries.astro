@@ -170,6 +170,7 @@ const VISIBLE = 3;
 
 <script>
   import { prepareDiaryPhotos } from '../../scripts/diary-photos';
+  import { lockScroll, unlockScroll } from '../../scripts/modal';
 
   // Apertura dei diari nel pannello, con link condivisibile #diary/<slug> (#diario/<slug> in italiano).
   // Il tasto indietro chiude il pannello; senza JS il link porta alla pagina statica.
@@ -216,7 +217,7 @@ const VISIBLE = 3;
     }
     dialog.showModal();
     dialog.scrollTop = 0;
-    document.documentElement.style.overflow = 'hidden';
+    lockScroll();
     document.dispatchEvent(new CustomEvent('diary_open', { detail: { slug } }));
   };
 
@@ -226,7 +227,7 @@ const VISIBLE = 3;
 
   document.querySelectorAll<HTMLDialogElement>('[data-diary-panel]').forEach((dialog) => {
     dialog.addEventListener('close', () => {
-      document.documentElement.style.overflow = '';
+      unlockScroll();
       if (diaryHash()) {
         if (pushed) history.back();
         else history.replaceState(null, '', location.pathname + location.search);
