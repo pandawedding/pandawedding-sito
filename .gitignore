@@ -31,3 +31,6 @@ brochure/
 # skill per l'agente: restano in locale, nel repository solo skills-lock.json
 .agents/
 .claude/skills/
+.claude/agents/
+.claude/settings.local.json
+.codex/
