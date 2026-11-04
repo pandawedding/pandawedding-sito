@@ -93,6 +93,11 @@ const t = tr(Astro.currentLocale);
   let startX = 0;
   let dragging = false;
   const zoomed = () => (window.visualViewport?.scale ?? 1) > 1.01;
+  // A foto ingrandita il dito deve potersi muovere in ogni direzione per esplorarla
+  const figure = dialog.querySelector('figure')!;
+  const syncTouch = () => (figure.style.touchAction = zoomed() ? 'auto' : '');
+  window.visualViewport?.addEventListener('resize', syncTouch);
+  syncTouch();
   const release = () => {
     dragging = false;
     img.style.transition = '';
