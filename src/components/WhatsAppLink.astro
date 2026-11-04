@@ -21,7 +21,7 @@ const t = tr(Astro.currentLocale);
   data-track="click_whatsapp"
   data-position={position}
   aria-label={t.cta.whatsappLabel}
-  class:list={[variant === 'button' ? 'btn btn-ghost' : 'cta-link', className]}
+  class:list={[variant === 'button' ? 'btn btn-ghost' : 'cta-link inline-flex items-center gap-[0.4em] py-0', className]}
 >
   <svg class="size-[1.15em] shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
     <path
