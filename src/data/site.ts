@@ -5,7 +5,7 @@ export const site = {
   // Versione di prova: i motori di ricerca non devono indicizzarla.
   // Mettere true al lancio sul dominio definitivo.
   indexable: false,
-  email: 'hello@pandafotovideo.it',
+  email: 'info@pandawedding.it',
   whatsapp: 'https://wa.me/393489538074',
   phone: '+393489538074',
   // Profili social (Instagram, Facebook, Vimeo...) per i dati strutturati: da avere dal proprietario

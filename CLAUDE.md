@@ -19,7 +19,7 @@ Il sito esiste già su Framer: questo progetto lo **ricostruisce da zero in codi
 - **Astro** + **Tailwind CSS**, sito statico, JavaScript solo dove serve (carosello, menu, animazioni, form).
 - Contenuti dei Real Weddings come **content collection** (Markdown/MDX), una pagina per ogni "diario".
 - Hosting: Vercel o Cloudflare Pages, deploy automatico da GitHub.
-- Form contatti: endpoint serverless che invia email a `hello@pandafotovideo.it` (es. Resend), con protezione antispam (honeypot, o Cloudflare Turnstile).
+- Form contatti: endpoint serverless che invia email a `info@pandawedding.it` (es. Resend), con protezione antispam (honeypot, o Cloudflare Turnstile).
 - Analytics: **PostHog Cloud EU** (`https://eu.i.posthog.com`), chiave in variabile d'ambiente `PUBLIC_POSTHOG_KEY`.
 
 ## Identità visiva
