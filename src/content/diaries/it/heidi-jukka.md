@@ -73,6 +73,10 @@ Per i ritratti abbiamo scelto l’esterno e pose moderne, mai rigide: la loggia 
 
 ![Gli sposi davanti al portico ad archi di Villa La Zambonina](../../../assets/real-weddings/heidi-jukka/25-bride-groom-arcade-villa-la-zambonina.jpg)
 
+E poi la foto di gruppo in stile gangster: occhiali da sole, ventagli, sguardi seri e lo sposo seduto al centro con il sigaro in mano.
+
+![Foto di gruppo in stile gangster davanti alla porta della villa: invitati con occhiali da sole, gli sposi seduti al centro e lo sposo con il sigaro](../../../assets/real-weddings/heidi-jukka/25-1-bride-groom-guests-gangster-group-photo.jpg)
+
 ![Il casquè degli sposi tra le siepi del giardino](../../../assets/real-weddings/heidi-jukka/26-bride-groom-dip-kiss-garden.jpg)
 ![La sposa di spalle con il velo, mentre le amiche esultano nel giardino all’italiana](../../../assets/real-weddings/heidi-jukka/27-bride-bridesmaids-cheering-italian-garden.jpg)
 

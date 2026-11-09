@@ -73,6 +73,10 @@ For the portraits we chose the outdoors and modern poses, never stiff: the fresc
 
 ![The couple in front of the arcade of Villa La Zambonina](../../../assets/real-weddings/heidi-jukka/25-bride-groom-arcade-villa-la-zambonina.jpg)
 
+Then the group photo, gangster style: sunglasses, fans, straight faces and the groom seated in the middle, cigar in hand.
+
+![Gangster-style group photo in front of the villa door: guests in sunglasses, the couple seated in the middle and the groom holding a cigar](../../../assets/real-weddings/heidi-jukka/25-1-bride-groom-guests-gangster-group-photo.jpg)
+
 ![The groom dipping the bride for a kiss among the garden hedges](../../../assets/real-weddings/heidi-jukka/26-bride-groom-dip-kiss-garden.jpg)
 ![The bride from behind in her veil while her friends cheer in the Italian garden](../../../assets/real-weddings/heidi-jukka/27-bride-bridesmaids-cheering-italian-garden.jpg)
 
