@@ -406,7 +406,8 @@ html {
     margin-block: 4rem;
   }
   /* I gruppi escono dalla colonna del testo, larghi come la griglia di Inspirations */
-  .prose-diary p:has(> img:nth-child(2)) {
+  .prose-diary p:has(> img:nth-child(2)),
+  .prose-diary p:has(> img.photo-wide) {
     --photos-w: min(64rem, calc(100vw - 5rem));
     width: var(--photos-w);
     margin-inline: calc((100% - var(--photos-w)) / 2);

@@ -47,20 +47,22 @@ Then on to Villa Arvedi, a historic villa in the Valpantena hills, surrounded by
 Before the ceremony we took Alina into the Hall of the Titans (Sala dei Titani), already set for dinner: monumental frescoes, crystal chandeliers, burgundy velvet tablecloths and gilded chairs. For a wedding photographer at Villa Arvedi, no room tells the regal character of the day better.
 
 ![Alina in the Hall of the Titans at Villa Arvedi, among the tables set for dinner](../../../assets/real-weddings/alina-omrane/14.jpg)
+
 ![Alina from behind, veil and train beneath the chandelier of the Hall of the Titans](../../../assets/real-weddings/alina-omrane/15.jpg)
-![The train of Alina's gown spread across the floor of the hall, in black and white](../../../assets/real-weddings/alina-omrane/16.jpg)
 
 ## The vows
 
 The ceremony took place at the foot of the staircase of the villa's small Baroque church, framed by columns of white and burgundy roses, with gilded chairs set out on the lawn. From above, the drone captured the whole courtyard as the guests took their seats.
 
 ![The staircase of the church at Villa Arvedi decorated with white and burgundy flowers](../../../assets/real-weddings/alina-omrane/17.jpg)
+
 ![Drone view of the Villa Arvedi courtyard during the ceremony, among cypresses and vineyards](../../../assets/real-weddings/alina-omrane/18.jpg)
 
 Alina arrived with her bridesmaids while Omrane waited by the steps. Then came the vows, beneath the arch of flowers.
 
 ![Alina arriving at the ceremony with her bridesmaids in emerald green](../../../assets/real-weddings/alina-omrane/19.jpg)
 ![Omrane waiting for Alina in front of the flower-lined staircase](../../../assets/real-weddings/alina-omrane/20.jpg)
+
 ![Alina and Omrane exchanging vows at the top of the staircase](../../../assets/real-weddings/alina-omrane/21.jpg)
 
 On the way out, a cloud of color: smoke bombs lit up the aisle as they walked it for the first time as husband and wife.
@@ -72,13 +74,15 @@ On the way out, a cloud of color: smoke bombs lit up the aisle as they walked it
 During the cocktail hour we took our time with the couple's portraits in the garden of Villa Arvedi. The avenue with the villa in the background, the boxwood maze, the cypresses, the fountain, the grotto with its statues: every corner offers a different composition, and we sought them out one by one with Alina and Omrane.
 
 ![Alina and Omrane on the garden avenue, with Villa Arvedi in the background](../../../assets/real-weddings/alina-omrane/24.jpg)
-![Portrait of Alina and Omrane among the cypresses](../../../assets/real-weddings/alina-omrane/25.jpg)
-![The couple kissing in the garden, in black and white](../../../assets/real-weddings/alina-omrane/26.jpg)
 ![Alina with a parasol and Omrane on the avenue of Villa Arvedi](../../../assets/real-weddings/alina-omrane/27.jpg)
-![Alina and Omrane with the parasol, in black and white](../../../assets/real-weddings/alina-omrane/28.jpg)
+
 ![The couple in the boxwood maze of the Italian garden, from above](../../../assets/real-weddings/alina-omrane/29.jpg)
+
+![The couple kissing in the garden, in black and white](../../../assets/real-weddings/alina-omrane/26.jpg)
 ![Omrane kissing Alina's temple among the boxwood hedges](../../../assets/real-weddings/alina-omrane/30.jpg)
+
 ![The couple at the garden fountain, among sculpted hedges and vineyards](../../../assets/real-weddings/alina-omrane/31.jpg)
+
 ![Alina and Omrane in front of the grotto and its statue in the garden](../../../assets/real-weddings/alina-omrane/32.jpg)
 
 > A great photograph never happens by chance: it's light, composition, timing. And above all, listening.
@@ -87,9 +91,10 @@ During the cocktail hour we took our time with the couple's portraits in the gar
 
 Dinner was served in the Hall of the Titans. In the warm evening light, the frescoes and chandeliers took on a new depth. The table settings, the menus and the flowers were the wedding planner's work, and they deserved to be captured with the same care that went into creating them.
 
+![The Hall of the Titans set for dinner in the evening light](../../../assets/real-weddings/alina-omrane/35.jpg)
+
 ![Table set in front of the Titans fresco, beneath a crystal chandelier](../../../assets/real-weddings/alina-omrane/33.jpg)
 ![Table details: burgundy velvet, crystal plates, gold cutlery and the menu](../../../assets/real-weddings/alina-omrane/34.jpg)
-![The Hall of the Titans set for dinner in the evening light](../../../assets/real-weddings/alina-omrane/35.jpg)
 
 The couple made their entrance down the grand candlelit staircase, and from there the evening found its rhythm.
 
@@ -105,7 +110,7 @@ We recorded every speech of the evening in full: the words of family and friends
 After dinner the couple stepped out onto the balustrade for the fireworks. It's one of the hardest and most beautiful moments to photograph: darkness, light that changes with every burst, and two people who always have to stay at the center.
 
 ![Alina and Omrane embracing at the balustrade in front of the fireworks](../../../assets/real-weddings/alina-omrane/39.jpg)
-![The couple looking at each other beneath golden fireworks](../../../assets/real-weddings/alina-omrane/40.jpg)
+
 ![Alina and Omrane kissing beneath the fireworks](../../../assets/real-weddings/alina-omrane/41.jpg)
 
 ## Cake and dancing
@@ -113,8 +118,10 @@ After dinner the couple stepped out onto the balustrade for the fireworks. It's 
 Then the cake cutting, under a chandelier suspended between columns of flowers and candles. Alina changed into a short dress with long gloves, and the party moved to the dance floor until late into the night.
 
 ![The wedding cake among columns of flowers, candles and a suspended chandelier](../../../assets/real-weddings/alina-omrane/42.jpg)
+
 ![Cutting the cake among the sparklers, in black and white](../../../assets/real-weddings/alina-omrane/43.jpg)
 ![Alina in her second dress with Omrane under the lit portico](../../../assets/real-weddings/alina-omrane/44.jpg)
+
 ![Alina and Omrane dancing among the dance floor lights](../../../assets/real-weddings/alina-omrane/45.jpg)
+
 ![Alina dancing and laughing among the light beams](../../../assets/real-weddings/alina-omrane/46.jpg)
-![Alina laughing on the dance floor with Omrane, in black and white](../../../assets/real-weddings/alina-omrane/47.jpg)
