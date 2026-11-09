@@ -3,7 +3,7 @@ couple: Giada & Luca
 title: Giada & Luca, Villa La Favorita
 label: Villa La Favorita · Summer
 excerpt: Old brick walls, a centuries-old park and a couple who simply wanted to celebrate with the people they love. Romantic, elegant and wonderfully unscripted.
-coverAlt: Drone view of Villa La Favorita and its park during the wedding
+coverAlt: The newlyweds reflected in the rearview mirror of a car, in front of friends filming them on their phones
 order: 1
 ---
 
@@ -58,7 +58,7 @@ This was anything but a by-the-book reception. A crowd of close friends, sky-hig
 
 ![Bride and groom at sunset at Villa La Favorita](../../../assets/real-weddings/giada-luca/16-bride-groom-sunset.jpg)
 ![Portrait of the bride and groom](../../../assets/real-weddings/giada-luca/17-bride-groom-portrait.jpg)
-![The newlyweds laughing together](../../../assets/real-weddings/giada-luca/18-bride-groom-laughing-together.jpg)
+![Drone view of Villa La Favorita and its park during the wedding](../../../assets/real-weddings/giada-luca/18-drone-view-villa-la-favorita-wedding.jpg)
 ![Reception details](../../../assets/real-weddings/giada-luca/19-wedding-reception-details.jpg)
 ![Villa La Favorita at sunset](../../../assets/real-weddings/giada-luca/20-villa-la-favorita-sunset.jpg)
 ![Reception tables set in the garden](../../../assets/real-weddings/giada-luca/21-reception-tables-garden.jpg)

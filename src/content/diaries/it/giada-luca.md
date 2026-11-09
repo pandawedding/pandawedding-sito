@@ -3,7 +3,7 @@ couple: Giada e Luca
 title: Giada e Luca, Villa La Favorita
 label: Villa La Favorita · Estate
 excerpt: Il loro sì è nato tra i mattoni antichi e il parco secolare di Villa La Favorita, cornice perfetta per una festa che ha unito eleganza romantica e voglia di stare insieme senza freni.
-coverAlt: Vista dal drone di Villa La Favorita e del suo parco durante il matrimonio
+coverAlt: Gli sposi riflessi nello specchietto di un’auto, davanti agli amici che li fotografano con il telefono
 order: 1
 ---
 
@@ -58,7 +58,7 @@ Il ricevimento è stato tutto fuorché convenzionale. Amici, energia alle stelle
 
 ![Gli sposi al tramonto a Villa La Favorita](../../../assets/real-weddings/giada-luca/16-bride-groom-sunset.jpg)
 ![Ritratto degli sposi](../../../assets/real-weddings/giada-luca/17-bride-groom-portrait.jpg)
-![Sposi sorridono insieme](../../../assets/real-weddings/giada-luca/18-bride-groom-laughing-together.jpg)
+![Vista dal drone di Villa La Favorita e del suo parco durante il matrimonio](../../../assets/real-weddings/giada-luca/18-drone-view-villa-la-favorita-wedding.jpg)
 ![Dettaglio del ricevimento](../../../assets/real-weddings/giada-luca/19-wedding-reception-details.jpg)
 ![Villa La Favorita al tramonto](../../../assets/real-weddings/giada-luca/20-villa-la-favorita-sunset.jpg)
 ![Tavoli del ricevimento](../../../assets/real-weddings/giada-luca/21-reception-tables-garden.jpg)
