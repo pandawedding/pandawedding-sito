@@ -18,7 +18,13 @@ const fields = [
 ];
 ---
 
-<section id="contatti" class="bg-bg-raised py-24 md:py-40" aria-labelledby="contact-title">
+<!-- Sezione chiara come il Portfolio: sfondo bianco, testi scuri e rossi -->
+<section
+  id="contatti"
+  data-theme="light"
+  class="fade-from-dark bg-bg py-24 text-fg md:py-40"
+  aria-labelledby="contact-title"
+>
   <div class="mx-auto grid max-w-screen-2xl gap-16 px-5 md:grid-cols-[1fr_1.1fr] md:gap-20 md:px-10">
     <!-- Da tablet in su resta in vista mentre si scorrono form e brochure -->
     <div class="reveal md:sticky md:top-28 md:self-start">
@@ -100,7 +106,7 @@ const fields = [
       <!-- Brochure: dopo il form, per chi non è ancora pronto a scrivere; basta l'email -->
       <form
         id="brochure"
-        class="reveal mt-14 scroll-mt-28 rounded-[6px] bg-bg p-6 md:p-8"
+        class="reveal mt-14 scroll-mt-28 rounded-[6px] bg-bg-raised p-6 md:p-8"
         novalidate
         data-msg-sending={t.contact.sending}
         data-msg-sent={t.brochure.sent}
@@ -140,7 +146,7 @@ const fields = [
 </section>
 
 <!-- Chiusura dopo i contatti, prima del footer -->
-<section data-sticky-end class="flex min-h-[50svh] items-center justify-center px-5 py-24" aria-label={t.contact.outroLabel}>
+<section data-sticky-end class="fade-from-light bg-bg flex min-h-[50svh] items-center justify-center px-5 py-24" aria-label={t.contact.outroLabel}>
   <p class="reveal text-center text-display font-light tracking-title uppercase">
     {t.contact.outro[0]}<br />{t.contact.outro[1]}<br /><span class="text-accent">{t.contact.outro[2]}</span>
   </p>
@@ -157,6 +163,10 @@ const fields = [
     box-shadow: inset 0 0 0 1px var(--line);
     font-size: 1rem; /* evita lo zoom automatico su iOS */
     transition: box-shadow 0.2s;
+  }
+  /* Sul bianco il bordo standard quasi sparisce: più marcato (~3:1) */
+  :global([data-theme='light']) .field {
+    box-shadow: inset 0 0 0 1px rgb(23 21 19 / 0.45);
   }
   .field::placeholder {
     color: var(--fg-muted);
