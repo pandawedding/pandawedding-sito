@@ -37,7 +37,7 @@ const films = getFilms(lang);
             <div class="photo relative aspect-video">
               <Picture
                 src={film.poster}
-                alt={t.films.posterAlt(film.couple, film.location)}
+                alt={t.films.posterAlt(film.location)}
                 formats={['avif', 'webp']}
                 fallbackFormat="webp"
                 widths={[640, 960, 1280]}

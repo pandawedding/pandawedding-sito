@@ -13,10 +13,10 @@ interface Props {
 }
 const { diary } = Astro.props;
 const { Content } = await render(diary.entry);
-const { couple, title, label } = diary.entry.data;
+const { title, label } = diary.entry.data;
 const { lang } = diary;
 const ui_ = ui[lang];
-const t = { ...ui_.diary, enlarge: (n: number) => ui_.diary.enlarge(n, couple) };
+const t = ui_.diary;
 ---
 
 <article class="mx-auto max-w-screen-lg px-5 md:px-10" data-lightbox-group data-diary-article>
@@ -27,7 +27,7 @@ const t = { ...ui_.diary, enlarge: (n: number) => ui_.diary.enlarge(n, couple) }
 
   <Photo
     src={diary.cover}
-    alt={`${couple}, ${label}`}
+    alt={diary.coverAlt}
     ratio="3 / 2"
     sizes="(min-width: 1024px) 960px, 100vw"
     widths={[640, 960, 1280, 1600]}
@@ -47,13 +47,13 @@ const t = { ...ui_.diary, enlarge: (n: number) => ui_.diary.enlarge(n, couple) }
             class="mb-3 block w-full break-inside-avoid md:mb-4"
             data-lightbox={i}
             data-full={src.src}
-            data-alt={`${couple}, ${t.photo} ${i + 2}`}
+            data-alt={t.photoAlt(label, i + 2)}
             aria-label={t.enlarge(i + 2)}
           >
             <span class="photo block">
               <Picture
                 src={src}
-                alt={`${couple}, ${t.photo} ${i + 2}`}
+                alt={t.photoAlt(label, i + 2)}
                 formats={['avif', 'webp']}
                 fallbackFormat="webp"
                 widths={[400, 640, 960]}

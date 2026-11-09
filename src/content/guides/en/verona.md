@@ -48,7 +48,7 @@ For portraits in the old town, the secret is sunrise: empty squares, stone glowi
 **Villa Arvedi.** A Baroque villa in the hills of Valpantena, a few minutes from the city, among cypresses and Italian gardens, with the frescoed Hall of the Titans for the most spectacular dinners. This is where we told the weddings of Imani and John and of Jasmine and Daniel, which you can find among our [wedding films](/#films), and that of Alina and Omrane: [read their diary](/real-weddings/alina-omrane/).
 
 ![Drone view of the Villa Arvedi courtyard during a ceremony, among cypresses and vineyards](../../../assets/real-weddings/alina-omrane/18-drone-view-ceremony-villa-arvedi-courtyard.jpg)
-![Alina in the Hall of the Titans at Villa Arvedi, among the tables set for dinner](../../../assets/real-weddings/alina-omrane/14-bride-hall-of-titans-villa-arvedi.jpg)
+![The bride in the Hall of the Titans at Villa Arvedi, among the tables set for dinner](../../../assets/real-weddings/alina-omrane/14-bride-hall-of-titans-villa-arvedi.jpg)
 
 If you are looking for vineyards and Venetian villas, [Valpolicella](/guides/valpolicella/) is twenty minutes away; for water and sunsets, [Lake Garda](/guides/lake-garda/) is half an hour.
 

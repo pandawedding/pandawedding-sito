@@ -1,7 +1,7 @@
 import type { ImageMetadata } from 'astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { getFilms } from './films';
-import { langs, type Lang } from '../i18n';
+import { langs, ui, type Lang } from '../i18n';
 
 // Foto dei diari: src/assets/real-weddings/<slug>/*.jpg, in ordine di nome file
 const photoFiles = import.meta.glob<{ default: ImageMetadata }>(
@@ -15,6 +15,8 @@ export interface Diary {
   lang: Lang;
   photos: ImageMetadata[];
   cover?: ImageMetadata;
+  /** Testo alternativo della copertina, senza i nomi degli sposi */
+  coverAlt: string;
   /** Diario completo (non solo l'anteprima) */
   hasStory: boolean;
   /** Le foto sono già inserite nel testo: niente galleria automatica in fondo */
@@ -48,6 +50,7 @@ export async function getDiaries(lang: Lang): Promise<Diary[]> {
         lang,
         photos,
         cover: photos[0] ?? film?.poster,
+        coverAlt: entry.data.coverAlt ?? ui[lang].diary.coverAlt(entry.data.label),
         hasStory: !!entry.body?.trim(),
         inlinePhotos: !!entry.body?.includes('!['),
         storyLangs,

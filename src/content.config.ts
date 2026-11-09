@@ -13,6 +13,8 @@ const diaries = defineCollection({
     excerpt: z.string(),
     /** Film collegato (slug in src/data/films.ts), usato come copertina se mancano le foto */
     film: z.string().optional(),
+    /** Testo alternativo della copertina (foto 01), senza i nomi degli sposi */
+    coverAlt: z.string().optional(),
     order: z.number().default(0),
   }),
 });

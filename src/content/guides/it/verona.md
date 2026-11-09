@@ -50,7 +50,7 @@ Per i ritratti in centro il segreto è l’alba: piazze vuote, pietra che si acc
 **Villa Arvedi.** Una villa barocca sulle colline della Valpantena, a pochi minuti dalla città, tra cipressi e giardini all’italiana, con la Sala dei Titani affrescata per le cene più scenografiche. Qui abbiamo raccontato i matrimoni di Imani e John e di Jasmine e Daniel, che trovate tra i nostri [wedding film](/it/#films), e quello di Alina e Omrane: [leggete il loro diario](/it/real-weddings/alina-omrane/).
 
 ![Il cortile di Villa Arvedi visto dal drone durante una cerimonia, tra cipressi e vigneti](../../../assets/real-weddings/alina-omrane/18-drone-view-ceremony-villa-arvedi-courtyard.jpg)
-![Alina nella Sala dei Titani di Villa Arvedi, tra i tavoli allestiti per la cena](../../../assets/real-weddings/alina-omrane/14-bride-hall-of-titans-villa-arvedi.jpg)
+![La sposa nella Sala dei Titani di Villa Arvedi, tra i tavoli allestiti per la cena](../../../assets/real-weddings/alina-omrane/14-bride-hall-of-titans-villa-arvedi.jpg)
 
 Per chi cerca vigneti e ville venete c’è la [Valpolicella](/it/guide/valpolicella/), a venti minuti; per l’acqua e i tramonti, il [Lago di Garda](/it/guide/lago-di-garda/), a mezz’ora.
 

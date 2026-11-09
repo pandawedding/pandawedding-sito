@@ -68,7 +68,7 @@ export const services: Record<Lang, ServicesCopy> = {
       {
         id: 'films',
         image: filmImg,
-        alt: 'Wedding film of Johanna & Côme at Castello di Mugnana, Florence',
+        alt: 'Wedding film at Castello di Mugnana, Florence',
         kicker: '02 · Wedding films',
         title: ['Cinema brings you', 'back to it'],
         lead: 'A video reportage from the couple’s preparations to the end of the day: frame by frame, your wedding becomes a story of real moments and genuine emotion.',
@@ -198,7 +198,7 @@ export const services: Record<Lang, ServicesCopy> = {
       {
         id: 'video',
         image: filmImg,
-        alt: 'Wedding film di Johanna e Côme al Castello di Mugnana, Firenze',
+        alt: 'Wedding film al Castello di Mugnana, Firenze',
         kicker: '02 · Wedding film',
         title: ['Il cinema', 'vi riporta lì'],
         lead: 'Un video reportage dalla preparazione degli sposi al termine della giornata: fotogramma dopo fotogramma, il vostro matrimonio diventa una storia fatta di momenti veri ed emozioni sincere.',

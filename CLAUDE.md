@@ -138,7 +138,7 @@ Ogni foto caricata nel sito (diari, portfolio, guide, pagine) ha un **nome descr
 - **Versione di prova non indicizzata:** finché `site.indexable` in `src/data/site.ts` è `false`, ogni pagina ha `<meta name="robots" content="noindex, nofollow">`. Metterlo a `true` solo al lancio sul dominio definitivo.
 - Una sola `<title>` e meta description per pagina, in coerenza con il brand "PandA Wedding" (il sito Framer usa "Panda Foto Video Molinaroli": da decidere con il proprietario).
 - Open Graph e Twitter card con immagine dedicata, `sitemap.xml`, `robots.txt`, dati strutturati `LocalBusiness` / `Photographer`.
-- Testi alternativi (`alt`) descrittivi su tutte le immagini.
+- Testi alternativi (`alt`) descrittivi su tutte le immagini. **Mai i nomi degli sposi** né negli alt né nei nomi dei file (vedi "Nomi delle foto"): `bride` / `groom` / `bride and groom`, in italiano `la sposa` / `lo sposo` / `gli sposi`; la location quando si vede, frasi naturali, niente elenchi di parole chiave. I nomi restano nei titoli e nel testo dei diari. Unica eccezione: Pierluigi e Alberto. La copertina di un diario ha il suo alt nel campo `coverAlt` del Markdown.
 - Lingue: vedi "Lingue" (inglese su `/`, italiano su `/it/`, hreflang).
 
 ## PostHog
