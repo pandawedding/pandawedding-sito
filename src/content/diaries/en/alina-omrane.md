@@ -37,7 +37,6 @@ For Alina, soft light and white everywhere. Her shoes, her perfume, the gown han
 Long lace sleeves and a train that seemed to go on forever: her bridesmaids in emerald green helped Alina into her gown beneath a crystal chandelier.
 
 ![Bridesmaids helping Alina with her gown in a room with a crystal chandelier](../../../assets/real-weddings/alina-omrane/11.jpg)
-![Bridesmaids arranging the train of Alina's gown](../../../assets/real-weddings/alina-omrane/12.jpg)
 
 ## Villa Arvedi and the Hall of the Titans
 

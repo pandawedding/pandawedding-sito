@@ -37,7 +37,6 @@ Per Alina, luce morbida e bianco ovunque. Le scarpe, il profumo, l’abito appes
 Maniche lunghe in pizzo e uno strascico che sembrava non finire mai: le damigelle in verde smeraldo hanno aiutato Alina a indossare l’abito, sotto un lampadario di cristallo.
 
 ![Le damigelle aiutano Alina con l’abito in una sala con lampadario di cristallo](../../../assets/real-weddings/alina-omrane/11.jpg)
-![Le damigelle sistemano lo strascico dell’abito di Alina](../../../assets/real-weddings/alina-omrane/12.jpg)
 
 ## Villa Arvedi e la Sala dei Titani
 
