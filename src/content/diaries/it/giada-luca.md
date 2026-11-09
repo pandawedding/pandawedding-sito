@@ -3,7 +3,7 @@ couple: Giada e Luca
 title: Giada e Luca, Villa La Favorita
 label: Villa La Favorita · Estate
 excerpt: Il loro sì è nato tra i mattoni antichi e il parco secolare di Villa La Favorita, cornice perfetta per una festa che ha unito eleganza romantica e voglia di stare insieme senza freni.
-coverAlt: Gli sposi riflessi nello specchietto di un’auto, davanti agli amici che li fotografano con il telefono
+coverAlt: Gli sposi appoggiati a una Mercedes rossa d’epoca nel cortile di Villa La Favorita
 order: 1
 ---
 
@@ -12,6 +12,8 @@ order: 1
 C’è un momento, in ogni matrimonio, in cui capisci che quella giornata non seguirà un copione: sarà unica, imprevedibile, vera. Con Giada e Luca quel momento è arrivato più volte — dalla prima carrellata di sguardi alla sorpresa che nessuno si aspettava, fino al taglio della torta.
 
 Il loro sì è nato tra i mattoni antichi e il parco secolare di Villa La Favorita, cornice perfetta per una festa che ha unito eleganza romantica e voglia di stare insieme senza freni.
+
+![Vista dal drone di Villa La Favorita e del suo parco durante il matrimonio](../../../assets/real-weddings/giada-luca/02-0-drone-view-villa-la-favorita-wedding.jpg)
 
 ## Il tempo di Luca
 
@@ -58,8 +60,7 @@ Il ricevimento è stato tutto fuorché convenzionale. Amici, energia alle stelle
 
 ![Gli sposi al tramonto a Villa La Favorita](../../../assets/real-weddings/giada-luca/16-bride-groom-sunset.jpg)
 ![Ritratto degli sposi](../../../assets/real-weddings/giada-luca/17-bride-groom-portrait.jpg)
-![Vista dal drone di Villa La Favorita e del suo parco durante il matrimonio](../../../assets/real-weddings/giada-luca/18-drone-view-villa-la-favorita-wedding.jpg)
-![Dettaglio del ricevimento](../../../assets/real-weddings/giada-luca/19-wedding-reception-details.jpg)
+![Gli sposi riflessi nello specchietto di un’auto, davanti agli amici che li fotografano con il telefono](../../../assets/real-weddings/giada-luca/18-bride-groom-rearview-mirror-guests.jpg)
 ![Villa La Favorita al tramonto](../../../assets/real-weddings/giada-luca/20-villa-la-favorita-sunset.jpg)
 ![Tavoli del ricevimento](../../../assets/real-weddings/giada-luca/21-reception-tables-garden.jpg)
 ![Momento della festa](../../../assets/real-weddings/giada-luca/22-wedding-party-moment.jpg)
