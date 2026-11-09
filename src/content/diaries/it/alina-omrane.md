@@ -66,7 +66,6 @@ Alina è arrivata con le damigelle, Omrane la aspettava davanti ai gradini. Poi 
 All’uscita, una nuvola di colori: le smoke bomb hanno acceso la navata mentre gli sposi la percorrevano per la prima volta da marito e moglie.
 
 ![Smoke bomb colorate sopra gli sposi e gli invitati, viste dal drone](../../../assets/real-weddings/alina-omrane/22.jpg)
-![Alina e Omrane si baciano tra il fumo colorato e gli invitati](../../../assets/real-weddings/alina-omrane/23.jpg)
 
 ## Il giardino all’italiana
 

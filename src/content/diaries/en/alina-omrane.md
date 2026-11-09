@@ -66,7 +66,6 @@ Alina arrived with her bridesmaids while Omrane waited by the steps. Then came t
 On the way out, a cloud of color: smoke bombs lit up the aisle as they walked it for the first time as husband and wife.
 
 ![Colored smoke bombs over the couple and their guests, seen from the drone](../../../assets/real-weddings/alina-omrane/22.jpg)
-![Alina and Omrane kissing among the colored smoke and their guests](../../../assets/real-weddings/alina-omrane/23.jpg)
 
 ## The Italian garden
 
