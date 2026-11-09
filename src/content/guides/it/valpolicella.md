@@ -13,7 +13,7 @@ order: 2
 Bozza da rivedere con il proprietario.
 - FOTO: segnaposto dal portfolio, non scattate in Valpolicella. Sostituirle con foto vere della zona appena disponibili, e non scrivere nelle didascalie dove sono state fatte se non è vero.
 - LOCATION: informazioni generali, raccolte da fonti pubbliche (siti delle location e portali di settore, novembre 2026). Prima del lancio verificare con ogni location che ospiti ancora matrimoni.
-- Villa Arvedi è in Valpantena, non in Valpolicella: citata come zona vicina, dove abbiamo davvero lavorato (film di Imani e John).
+- Villa Arvedi è in Valpantena, non in Valpolicella: citata come zona vicina, dove abbiamo davvero lavorato (film di Imani e John, diario di Alina e Omrane). Le due foto della villa vengono da quel diario.
 -->
 
 La Valpolicella comincia dove finisce Verona. Bastano venti minuti per passare dalla città alle colline: vigneti a terrazze, muretti a secco che qui chiamano *marogne*, ciliegi, pievi romaniche e ville venete affacciate sulla pianura.
@@ -50,7 +50,10 @@ Per i ritratti la luce migliore arriva nell’ultima ora del giorno, quando il s
 
 **La Pieve di San Giorgio di Valpolicella.** Una pieve romanica in cima alla collina, nel borgo di San Giorgio: per una cerimonia religiosa con una vista che abbraccia la valle.
 
-Poco più a est, in Valpantena, c’è **Villa Arvedi**, dove abbiamo raccontato il matrimonio di Imani e John ([guardate il loro film](/it/#films)): un altro modo di vivere le colline veronesi, tra cipressi e giardini all’italiana.
+Poco più a est, in Valpantena, c’è **Villa Arvedi**, dove abbiamo raccontato i matrimoni di Imani e John ([guardate il loro film](/it/#films)) e di Alina e Omrane ([leggete il loro diario](/it/real-weddings/alina-omrane/)): un altro modo di vivere le colline veronesi, tra cipressi, vigneti e un giardino all’italiana con le siepi di bosso disegnate come un labirinto.
+
+![Gli sposi nel labirinto di bosso del giardino all’italiana di Villa Arvedi, dall’alto](../../../assets/real-weddings/alina-omrane/29.jpg)
+![Gli sposi lungo il viale del giardino, con Villa Arvedi sullo sfondo](../../../assets/real-weddings/alina-omrane/24.jpg)
 
 Disponibilità, capienza e regole per la cerimonia cambiano da location a location: verificatele sempre direttamente con la struttura o con il vostro wedding planner.
 

@@ -49,7 +49,10 @@ For portraits the best light comes in the last hour of the day, when the sun dro
 
 **The Pieve di San Giorgio di Valpolicella.** A Romanesque parish church at the top of the hill, in the village of San Giorgio: for a religious ceremony with a view over the whole valley.
 
-A little further east, in Valpantena, is **Villa Arvedi**, where we told the story of Imani and John’s wedding ([watch their film](/#films)): another way to experience the hills around Verona, among cypresses and Italian gardens.
+A little further east, in Valpantena, is **Villa Arvedi**, where we told the weddings of Imani and John ([watch their film](/#films)) and of Alina and Omrane ([read their diary](/real-weddings/alina-omrane/)): another way to experience the hills around Verona, among cypresses, vineyards and an Italian garden of boxwood hedges shaped like a maze.
+
+![The couple in the boxwood maze of the Italian garden at Villa Arvedi, from above](../../../assets/real-weddings/alina-omrane/29.jpg)
+![The couple on the garden avenue, with Villa Arvedi in the background](../../../assets/real-weddings/alina-omrane/24.jpg)
 
 Availability, capacity and ceremony rules change from venue to venue: always check directly with the venue or with your wedding planner.
 

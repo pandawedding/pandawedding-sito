@@ -13,7 +13,7 @@ order: 0
 Bozza da rivedere con il proprietario.
 - FOTO: segnaposto dal portfolio. Sostituirle con foto vere di Verona e non scrivere nelle didascalie dove sono state fatte se non è vero.
 - CERIMONIE CIVILI: informazioni dal Comune di Verona e da blog di settore (novembre 2026). Sale, tariffe e requisiti cambiano: verificare sul sito del Comune prima del lancio.
-- Relais Fra Lorenzo e Villa Arvedi: location dove abbiamo lavorato davvero (film di Daniel e Josiane, Imani e John, Jasmine e Daniel).
+- Relais Fra Lorenzo e Villa Arvedi: location dove abbiamo lavorato davvero (film di Daniel e Josiane, Imani e John, Jasmine e Daniel; diario di Alina e Omrane, con le sue foto vere di Villa Arvedi).
 - Villa La Favorita (diario di Giada e Luca) non è citata: secondo le fonti si trova nel mantovano, da confermare.
 -->
 
@@ -47,7 +47,10 @@ Per i ritratti in centro il segreto è l’alba: piazze vuote, pietra che si acc
 
 **Relais Fra Lorenzo.** Una villa sulla collina sopra il centro storico, con una terrazza panoramica sulla città. Prende il nome dal frate che, nella storia, sposò in segreto Romeo e Giulietta. Qui abbiamo raccontato il matrimonio di Daniel e Josiane: [guardate il loro film](/it/#films).
 
-**Villa Arvedi.** Una villa barocca sulle colline della Valpantena, a pochi minuti dalla città, tra cipressi e giardini all’italiana. Qui abbiamo raccontato i matrimoni di Imani e John e di Jasmine e Daniel, che trovate tra i nostri [wedding film](/it/#films).
+**Villa Arvedi.** Una villa barocca sulle colline della Valpantena, a pochi minuti dalla città, tra cipressi e giardini all’italiana, con la Sala dei Titani affrescata per le cene più scenografiche. Qui abbiamo raccontato i matrimoni di Imani e John e di Jasmine e Daniel, che trovate tra i nostri [wedding film](/it/#films), e quello di Alina e Omrane: [leggete il loro diario](/it/real-weddings/alina-omrane/).
+
+![Il cortile di Villa Arvedi visto dal drone durante una cerimonia, tra cipressi e vigneti](../../../assets/real-weddings/alina-omrane/18.jpg)
+![Alina nella Sala dei Titani di Villa Arvedi, tra i tavoli allestiti per la cena](../../../assets/real-weddings/alina-omrane/14.jpg)
 
 Per chi cerca vigneti e ville venete c’è la [Valpolicella](/it/guide/valpolicella/), a venti minuti; per l’acqua e i tramonti, il [Lago di Garda](/it/guide/lago-di-garda/), a mezz’ora.
 
