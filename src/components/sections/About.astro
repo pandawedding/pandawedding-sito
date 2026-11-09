@@ -17,24 +17,24 @@ const t = tr(Astro.currentLocale);
       </h2>
     </header>
 
-    <!-- Le due foto vicine, piccole e inclinate, accanto al testo (su mobile sopra) -->
-    <div class="mt-14 grid items-center gap-14 md:mt-24 md:grid-cols-[5fr_7fr] md:gap-16">
+    <!-- Le due foto vicine e inclinate, accanto al testo (su mobile sopra) -->
+    <div class="mt-14 grid items-center gap-14 md:mt-24 md:grid-cols-[6fr_6fr] md:gap-16 lg:grid-cols-[7fr_6fr]">
       <div class="reveal flex items-start justify-center">
         <Photo
           src={pierluigi}
           alt={t.about.photoAlts.pierluigi}
           ratio="4 / 5"
-          sizes="(min-width: 768px) 14rem, 40vw"
-          widths={[320, 480, 640]}
-          class="w-[40%] max-w-56 -rotate-3 shadow-2xl shadow-black/50"
+          sizes="(min-width: 768px) 22rem, 48vw"
+          widths={[480, 720, 960]}
+          class="w-[48%] max-w-[22rem] -rotate-3 shadow-2xl shadow-black/50"
         />
         <Photo
           src={alberto}
           alt={t.about.photoAlts.alberto}
           ratio="4 / 5"
-          sizes="(min-width: 768px) 14rem, 40vw"
-          widths={[320, 480, 640]}
-          class="-ml-4 mt-12 w-[40%] max-w-56 rotate-[2.5deg] shadow-2xl shadow-black/50 md:-ml-6 md:mt-16"
+          sizes="(min-width: 768px) 22rem, 48vw"
+          widths={[480, 720, 960]}
+          class="-ml-4 mt-12 w-[48%] max-w-[22rem] rotate-[2.5deg] shadow-2xl shadow-black/50 md:-ml-6 md:mt-16"
         />
       </div>
 
