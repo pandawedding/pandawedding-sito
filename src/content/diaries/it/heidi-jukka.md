@@ -3,7 +3,7 @@ couple: Heidi e Jukka
 title: Heidi e Jukka, Villa La Zambonina
 label: Villa La Zambonina · Inizio autunno
 excerpt: Dalla Finlandia a Verona per un luxury wedding vissuto tutto in villa, tra giardino all’italiana, loggia affrescata e cena sotto le luci. E il giorno dopo, brunch a bordo piscina.
-coverAlt: Villa La Zambonina e il suo giardino all’italiana visti dal drone
+coverAlt: La mano della sposa con l’anello di fidanzamento e un calice di bollicine, durante la vestizione
 order: 3
 ---
 
@@ -58,6 +58,8 @@ Appena finita la cerimonia, le amiche della sposa l’hanno circondata per il br
 ## Villa La Zambonina dall’alto
 
 Il drone racconta la villa come nessun’altra inquadratura: il giardino all’italiana disegnato dalle siepi di bosso, la facciata, la campagna tutto intorno. Per chi cerca una delle migliori location per matrimoni a Verona, è difficile immaginare una cornice più completa: dalla villa al giardino, fino alla piscina, tutto è a pochi passi.
+
+![Villa La Zambonina e il suo giardino all’italiana visti dal drone](../../../assets/real-weddings/heidi-jukka/22-0-drone-view-villa-la-zambonina-italian-garden.jpg)
 
 ![Il giardino all’italiana di Villa La Zambonina visto dall’alto, con le geometrie di bosso](../../../assets/real-weddings/heidi-jukka/22-drone-view-italian-garden-from-above.jpg)
 
