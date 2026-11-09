@@ -102,7 +102,10 @@ export const ui = {
       p1: 'Our work lives at the intersection of documentary spontaneity, editorial aesthetics, and cinematic emotion.',
       p2: 'We believe in elegance without artifice, and spontaneity with intention.',
       p3: 'We personally guide every wedding, working seamlessly together or alongside our trusted team—all united by a single vision: to observe, interpret, and craft an authentic story of your day.',
-      placeholderAlt: 'Placeholder photo, to be replaced',
+      photoAlts: {
+        pierluigi: 'Pierluigi looking over his camera, in black and white',
+        alberto: 'Alberto sitting on a chair in a black jacket, in black and white',
+      },
     },
     contact: {
       kicker: 'Contact',
@@ -257,7 +260,10 @@ export const ui = {
       p1: 'Il nostro lavoro nasce dove si incontrano la spontaneità del reportage, l’estetica editoriale e l’emozione del cinema.',
       p2: 'Crediamo in un’eleganza senza artifici e in una spontaneità con intenzione.',
       p3: 'Seguiamo di persona ogni matrimonio, insieme o con il nostro team di fiducia, tutti uniti da un’unica visione: osservare, interpretare e costruire un racconto autentico del vostro giorno.',
-      placeholderAlt: 'Foto segnaposto, da sostituire',
+      photoAlts: {
+        pierluigi: 'Pierluigi guarda oltre la macchina fotografica, in bianco e nero',
+        alberto: 'Alberto seduto su una sedia in giacca nera, in bianco e nero',
+      },
     },
     contact: {
       kicker: 'Contatti',

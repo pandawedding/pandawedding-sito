@@ -1,7 +1,7 @@
 ---
 import Photo from '../Photo.astro';
-// TODO: sostituire con i due ritratti definitivi di Pierluigi e Alberto (per ora segnaposto con la foto del team)
-import placeholder from '../../assets/team/pierluigi-alberto.jpg';
+import pierluigi from '../../assets/team/pierluigi-portrait-camera-black-white.jpg';
+import alberto from '../../assets/team/alberto-portrait-black-white.jpg';
 import { t as tr } from '../../i18n';
 
 const t = tr(Astro.currentLocale);
@@ -21,25 +21,21 @@ const t = tr(Astro.currentLocale);
     <div class="mt-14 grid items-center gap-14 md:mt-24 md:grid-cols-[5fr_7fr] md:gap-16">
       <div class="reveal flex items-start justify-center">
         <Photo
-          src={placeholder}
-          alt={t.about.placeholderAlt}
+          src={pierluigi}
+          alt={t.about.photoAlts.pierluigi}
           ratio="4 / 5"
           sizes="(min-width: 768px) 14rem, 40vw"
           widths={[320, 480, 640]}
           class="w-[40%] max-w-56 -rotate-3 shadow-2xl shadow-black/50"
-        >
-          <span class="badge">Da sostituire</span>
-        </Photo>
+        />
         <Photo
-          src={placeholder}
-          alt={t.about.placeholderAlt}
+          src={alberto}
+          alt={t.about.photoAlts.alberto}
           ratio="4 / 5"
           sizes="(min-width: 768px) 14rem, 40vw"
           widths={[320, 480, 640]}
           class="-ml-4 mt-12 w-[40%] max-w-56 rotate-[2.5deg] shadow-2xl shadow-black/50 md:-ml-6 md:mt-16"
-        >
-          <span class="badge">Da sostituire</span>
-        </Photo>
+        />
       </div>
 
       <div class="reveal text-center md:text-left">
@@ -58,20 +54,3 @@ const t = tr(Astro.currentLocale);
   </div>
 </section>
 
-<style>
-  .badge {
-    position: absolute;
-    inset-inline: 0.75rem;
-    bottom: 0.75rem;
-    border-radius: 9999px;
-    background: rgb(0 0 0 / 0.7);
-    padding: 0.375rem 0.75rem;
-    text-align: center;
-    font-size: 0.625rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    color: #fff;
-    text-transform: uppercase;
-    backdrop-filter: blur(4px);
-  }
-</style>
