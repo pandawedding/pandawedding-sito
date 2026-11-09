@@ -17,6 +17,8 @@ const { title, label } = diary.entry.data;
 const { lang } = diary;
 const ui_ = ui[lang];
 const t = ui_.diary;
+// Copertina verticale: intera, senza ritaglio, centrata e più stretta; orizzontale: 3:2 a tutta larghezza
+const portraitCover = !!diary.cover && diary.cover.height > diary.cover.width;
 ---
 
 <article class="mx-auto max-w-screen-lg px-5 md:px-10" data-lightbox-group data-diary-article>
@@ -25,14 +27,27 @@ const t = ui_.diary;
     <h1 id="diary-title" class="mt-4 text-display font-light tracking-title uppercase">{title}</h1>
   </header>
 
-  <Photo
-    src={diary.cover}
-    alt={diary.coverAlt}
-    ratio="3 / 2"
-    sizes="(min-width: 1024px) 960px, 100vw"
-    widths={[640, 960, 1280, 1600]}
-    class="mt-10 md:mt-14"
-  />
+  {
+    portraitCover ? (
+      <Photo
+        src={diary.cover}
+        alt={diary.coverAlt}
+        ratio={`${diary.cover!.width} / ${diary.cover!.height}`}
+        sizes="(min-width: 640px) 32rem, 100vw"
+        widths={[640, 960, 1280]}
+        class="mx-auto mt-10 max-w-lg md:mt-14"
+      />
+    ) : (
+      <Photo
+        src={diary.cover}
+        alt={diary.coverAlt}
+        ratio="3 / 2"
+        sizes="(min-width: 1024px) 960px, 100vw"
+        widths={[640, 960, 1280, 1600]}
+        class="mt-10 md:mt-14"
+      />
+    )
+  }
 
   <div class="prose-diary mx-auto mt-12 max-w-2xl md:mt-16">
     <Content />
