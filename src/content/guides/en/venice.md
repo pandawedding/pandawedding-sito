@@ -4,7 +4,7 @@ urlSlug: venice
 area: Venice
 label: Venice · Guide
 excerpt: Palaces on the Grand Canal, quiet islands and a city without cars. Everything you need to know about a wedding or an elopement in Venice, from two wedding photographers and videographers based in Verona.
-cover: ../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0049.jpg
+cover: ../../../assets/PORTFOLIO/0049-bride-veil-wind-field-black-white.jpg
 coverAlt: Bride with her veil billowing in the wind, in black and white
 order: 5
 ---
@@ -25,7 +25,7 @@ The Comune di Venezia celebrates civil weddings at **Palazzo Cavalli**, a histor
 
 For a symbolic ceremony the options multiply: hotel terraces and gardens on the Grand Canal, hidden cloisters, the islands of the lagoon. Venues, fees and paperwork change: always check with the Comune or with your wedding planner.
 
-![Bride and groom embracing, her veil moving in the wind, in black and white](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0071.jpg)
+![Bride and groom embracing, her veil moving in the wind, in black and white](../../../assets/PORTFOLIO/0071-bride-groom-kiss-behind-veil-black-white.jpg)
 
 ## An intimate wedding, or an elopement
 
@@ -41,8 +41,8 @@ Spring and September are the best months: soft light, pleasant temperatures and 
 
 For photos the most precious moment is sunrise: the city is still empty, the water is still and the light settles slowly on the façades. In the evening, sunset paints the lagoon pink and gold.
 
-![Bride and groom embracing against the light indoors](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0053.jpg)
-![Bride and groom kissing among the guests, in black and white](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0046.jpg)
+![Bride and groom embracing against the light indoors](../../../assets/PORTFOLIO/0053-bride-groom-embracing-backlight-wooden-beams.jpg)
+![Bride and groom kissing among the guests, in black and white](../../../assets/PORTFOLIO/0046-bride-groom-kiss-petal-toss-black-white.jpg)
 
 ## Practical tips
 
@@ -54,7 +54,7 @@ For photos the most precious moment is sunrise: the city is still empty, the wat
 
 **Guests from abroad.** Marco Polo airport is connected to the city by water too; from Verona it is just over an hour by train.
 
-![A toast with glasses of champagne](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0066.jpg)
+![A toast with glasses of champagne](../../../assets/PORTFOLIO/0066-champagne-tower-toast.jpg)
 
 ## How we tell it
 

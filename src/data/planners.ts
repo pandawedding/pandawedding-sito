@@ -1,8 +1,8 @@
 import type { ImageMetadata } from 'astro';
 import type { Lang } from '../i18n';
-import heroImg from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0047.jpg';
-import teamImg from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0060.jpg';
-import deliveryImg from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0027.jpg';
+import heroImg from '../assets/PORTFOLIO/0047-outdoor-ceremony-ribbons-cypress-trees.jpg';
+import teamImg from '../assets/PORTFOLIO/0060-banquet-table-fuchsia-flowers-frescoed-hall.jpg';
+import deliveryImg from '../assets/PORTFOLIO/0027-wedding-guests-group-photo-villa.jpg';
 
 // Pagina per i wedding planner (una per lingua): come lavoriamo con loro, per la SEO e per chi
 // valuta un fornitore per le coppie dall'estero. Linkata dal footer e dalla pagina Servizi. Mai prezzi.

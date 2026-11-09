@@ -1,0 +1,4 @@
+#!/bin/sh
+# Blocca il commit se una foto ha un nome generico (regola "Nomi delle foto" in CLAUDE.md).
+# Attivato da "npm run sync" (git config core.hooksPath .githooks).
+node scripts/photos.mjs check

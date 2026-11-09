@@ -115,6 +115,17 @@ Pagine separate: solo `/privacy`, `/cookie-policy`, le pagine statiche dei diari
 
 I testi di partenza vengono dal sito Framer: `https://delightful-plans-781348--build-luxury-portfolio-xdyarmjqp.framer.app/`. I diari di Imani & John e Daniel & Josiane vanno ancora scritti dal proprietario.
 
+## Nomi delle foto (SEO)
+
+Ogni foto caricata nel sito (diari, portfolio, guide, pagine) ha un **nome descrittivo in inglese**: Google lo legge e il build di Astro lo conserva (`41-bride-groom-kiss-fireworks.Xy12ab.webp`).
+
+- Minuscole e trattini, niente spazi, `_`, `&`, accenti. 3–6 parole su cosa si vede.
+- Parole generiche che la gente cerca (`bride`, `groom`, `bride-groom`, `bridesmaids`, `wedding-cake`), **mai i nomi degli sposi**: quelli stanno solo nel nome della cartella del diario.
+- La location quando si vede (`21-bride-groom-vows-villa-arvedi.jpg`).
+- Numero d'ordine davanti dove l'ordine conta: diari `NN-` (la `01-` è la copertina), portfolio `NNNN-` (è l'id dei testi alternativi in `src/data/portfolio.ts`; `0009-1-` per `0009_1`).
+- Vietati i nomi da fotocamera o generici (`IMG_1234`, `DSC_0001`, `01.jpg`).
+- Strumenti: `npm run photos:suggest -- <cartella>` propone i nomi dai testi alternativi del diario inglese (poi si correggono a mano, es. `couple` → `bride` / `groom`); `npm run photos:rename -- <vecchio> <nuovo>` (o `-- --map file.json`) rinomina con `git mv` e aggiorna i riferimenti in `src/`; `npm run photos:check` controlla tutto. Lo stesso controllo blocca i commit (hook in `.githooks/`, attivato da `npm run sync`).
+
 ## Correzioni ai testi (autorizzate)
 
 - `our approch` → `our approach`

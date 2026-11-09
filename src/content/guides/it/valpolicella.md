@@ -4,7 +4,7 @@ urlSlug: valpolicella
 area: Valpolicella
 label: Valpolicella · Guida
 excerpt: Ville venete tra i vigneti, cantine storiche e colline a pochi minuti da Verona. Tutto quello che serve sapere per sposarsi in Valpolicella, raccontato da due fotografi e videomaker di Verona.
-cover: ../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0017.jpg
+cover: ../../../assets/PORTFOLIO/0017-bride-groom-staircase-historic-garden.jpg
 coverAlt: Sposi davanti alla scalinata di una villa storica
 order: 2
 ---
@@ -26,7 +26,7 @@ Per chi cerca una villa storica senza rinunciare alla comodità, è difficile tr
 
 È anche un territorio raccolto: Negrar, Fumane, Marano, Sant’Ambrogio e San Pietro in Cariano sono a pochi chilometri l’uno dall’altro, e la giornata scorre senza lunghi spostamenti.
 
-![Sposi in un giardino all’italiana di siepi, in bianco e nero](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0028.jpg)
+![Sposi in un giardino all’italiana di siepi, in bianco e nero](../../../assets/PORTFOLIO/0028-bride-groom-hedge-maze-black-white.jpg)
 
 ## La luce e le stagioni
 
@@ -52,13 +52,13 @@ Per i ritratti la luce migliore arriva nell’ultima ora del giorno, quando il s
 
 Poco più a est, in Valpantena, c’è **Villa Arvedi**, dove abbiamo raccontato i matrimoni di Imani e John ([guardate il loro film](/it/#films)) e di Alina e Omrane ([leggete il loro diario](/it/real-weddings/alina-omrane/)): un altro modo di vivere le colline veronesi, tra cipressi, vigneti e un giardino all’italiana con le siepi di bosso disegnate come un labirinto.
 
-![Gli sposi nel labirinto di bosso del giardino all’italiana di Villa Arvedi, dall’alto](../../../assets/real-weddings/alina-omrane/29.jpg)
-![Gli sposi lungo il viale del giardino, con Villa Arvedi sullo sfondo](../../../assets/real-weddings/alina-omrane/24.jpg)
+![Gli sposi nel labirinto di bosso del giardino all’italiana di Villa Arvedi, dall’alto](../../../assets/real-weddings/alina-omrane/29-bride-groom-boxwood-maze-from-above.jpg)
+![Gli sposi lungo il viale del giardino, con Villa Arvedi sullo sfondo](../../../assets/real-weddings/alina-omrane/24-bride-groom-garden-avenue-villa-arvedi.jpg)
 
 Disponibilità, capienza e regole per la cerimonia cambiano da location a location: verificatele sempre direttamente con la struttura o con il vostro wedding planner.
 
-![Brindisi davanti a una piramide di calici di champagne](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0020.jpg)
-![Lo sposo con i testimoni nel giardino di una villa](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0014.jpg)
+![Brindisi davanti a una piramide di calici di champagne](../../../assets/PORTFOLIO/0020-groom-champagne-tower-bride-laughing.jpg)
+![Lo sposo con i testimoni nel giardino di una villa](../../../assets/PORTFOLIO/0014-groom-groomsmen-walking-villa-lawn.jpg)
 
 ## Consigli pratici
 
@@ -70,7 +70,7 @@ Disponibilità, capienza e regole per la cerimonia cambiano da location a locati
 
 **Le sere d’autunno.** In ottobre la temperatura scende in fretta dopo il tramonto: prevedete uno spazio coperto o riscaldato per la cena.
 
-![Sposi in bianco e nero accanto a un’auto d’epoca](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0035.jpg)
+![Sposi in bianco e nero accanto a un’auto d’epoca](../../../assets/PORTFOLIO/0035-bride-groom-vintage-car-black-white.jpg)
 
 ## Come lo raccontiamo noi
 

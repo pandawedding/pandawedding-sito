@@ -1,10 +1,10 @@
 import type { ImageMetadata } from 'astro';
 import type { Lang } from '../i18n';
-import photoImg from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0004.jpg';
+import photoImg from '../assets/PORTFOLIO/0004-bride-putting-on-earrings-black-white.jpg';
 import filmImg from '../assets/films/johanna-come.jpg';
-import bothImg from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0026.jpg';
-import extrasImg from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0078.jpg';
-import planningImg from '../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0013.jpg';
+import bothImg from '../assets/PORTFOLIO/0026-bride-long-veil-villa-staircase.jpg';
+import extrasImg from '../assets/PORTFOLIO/0078-cake-cutting-sparklers.jpg';
+import planningImg from '../assets/PORTFOLIO/0013-wedding-details-shoes-rings-invitations.jpg';
 
 // Pagina Servizi: descrittiva, per la SEO, linkata solo dal footer. Mai prezzi qui:
 // il listino sta nella brochure, che si invia di persona.

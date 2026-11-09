@@ -8,7 +8,10 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "sync": "git pull --ff-only && npm install && git status -sb && git log -1 --oneline"
+    "sync": "git pull --ff-only && npm install && git config core.hooksPath .githooks && git status -sb && git log -1 --oneline",
+    "photos:check": "node scripts/photos.mjs check",
+    "photos:suggest": "node scripts/photos.mjs suggest",
+    "photos:rename": "node scripts/photos.mjs rename"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

@@ -98,7 +98,8 @@ const featured = ['0016', '0024', '0011', '0062', '0045', '0058', '0063', '0068'
 
 const all = Object.entries(files)
   .map(([path, mod]) => {
-    const id = path.match(/_(\d{4}(?:_\d)?)\.jpg$/)![1];
+    // Nome file "0009-1-wedding-dress-….jpg": il numero davanti è l'id dei testi alternativi ("0009_1")
+    const id = path.match(/\/(\d{4}(?:-\d)?)-[a-z][^/]*\.jpg$/)![1].replace('-', '_');
     return {
       id,
       src: mod.default,

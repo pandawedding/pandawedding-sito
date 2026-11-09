@@ -4,7 +4,7 @@ urlSlug: lake-garda
 area: Lake Garda
 label: Lake Garda · Guide
 excerpt: Lakefront villas, lemon houses and stone villages. Everything you need to know about getting married on Lake Garda, from two wedding photographers and videographers based in Verona.
-cover: ../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0043.jpg
+cover: ../../../assets/PORTFOLIO/0043-bride-groom-lawn-sunset.jpg
 coverAlt: Bride and groom walking hand in hand at sunset, hills in the background
 order: 1
 ---
@@ -27,7 +27,7 @@ The **Brescia shore**, to the west, is Salò, Gardone Riviera and Gargnano: hist
 
 The **southern lake**, between Sirmione, Desenzano and Peschiera, is more open and bright, with a wide horizon and villages on the water. It is also the easiest area for your guests to reach.
 
-![Bride and groom walking among cypress trees in a garden](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0040.jpg)
+![Bride and groom walking among cypress trees in a garden](../../../assets/PORTFOLIO/0040-bride-groom-cypress-garden.jpg)
 
 ## Light and seasons
 
@@ -51,8 +51,8 @@ For photos, the best moment is the last hour before sunset. On the Verona shore 
 
 Availability, capacity and ceremony rules change from venue to venue: always check directly with the venue or with your wedding planner.
 
-![Bride and groom kissing in an avenue of hedges](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0034.jpg)
-![A glass of champagne in the bride’s hand](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0011.jpg)
+![Bride and groom kissing in an avenue of hedges](../../../assets/PORTFOLIO/0034-bride-groom-kiss-hedge-avenue-villa.jpg)
+![A glass of champagne in the bride’s hand](../../../assets/PORTFOLIO/0011-bride-glass-sparkling-wine-embroidered-sleeves.jpg)
 
 ## Practical tips
 
@@ -64,7 +64,7 @@ Availability, capacity and ceremony rules change from venue to venue: always che
 
 **The timeline.** Leave room for portraits in the last hour of light, even just twenty minutes away from the guests. It is worth it.
 
-![Bride and groom next to a red vintage convertible](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0030.jpg)
+![Bride and groom next to a red vintage convertible](../../../assets/PORTFOLIO/0030-bride-groom-red-vintage-convertible.jpg)
 
 ## How we tell it
 

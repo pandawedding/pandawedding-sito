@@ -4,7 +4,7 @@ urlSlug: venezia
 area: Venezia
 label: Venezia · Guida
 excerpt: Palazzi sul Canal Grande, isole silenziose e una città senza auto. Tutto quello che serve sapere per un matrimonio o una fuga d’amore a Venezia, raccontato da due fotografi e videomaker di Verona.
-cover: ../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0049.jpg
+cover: ../../../assets/PORTFOLIO/0049-bride-veil-wind-field-black-white.jpg
 coverAlt: Sposa con il velo che si gonfia nel vento, in bianco e nero
 order: 5
 ---
@@ -25,7 +25,7 @@ Il Comune di Venezia celebra i matrimoni civili a **Palazzo Cavalli**, un palazz
 
 Per una cerimonia simbolica le possibilità si moltiplicano: terrazze e giardini degli hotel sul Canal Grande, chiostri nascosti, le isole della laguna. Sedi, tariffe e documenti cambiano: verificateli sempre con il Comune o con il vostro wedding planner.
 
-![Sposi abbracciati, con il velo mosso dal vento, in bianco e nero](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0071.jpg)
+![Sposi abbracciati, con il velo mosso dal vento, in bianco e nero](../../../assets/PORTFOLIO/0071-bride-groom-kiss-behind-veil-black-white.jpg)
 
 ## Un matrimonio intimo, o una fuga a due
 
@@ -41,8 +41,8 @@ Primavera e settembre sono i mesi migliori: luce morbida, temperature piacevoli 
 
 Per le foto il momento più prezioso è l’alba: la città è ancora vuota, l’acqua è ferma e la luce si posa piano sulle facciate. La sera, invece, il tramonto colora la laguna di rosa e d’oro.
 
-![Sposi abbracciati controluce in un interno](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0053.jpg)
-![Bacio degli sposi tra gli ospiti, in bianco e nero](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0046.jpg)
+![Sposi abbracciati controluce in un interno](../../../assets/PORTFOLIO/0053-bride-groom-embracing-backlight-wooden-beams.jpg)
+![Bacio degli sposi tra gli ospiti, in bianco e nero](../../../assets/PORTFOLIO/0046-bride-groom-kiss-petal-toss-black-white.jpg)
 
 ## Consigli pratici
 
@@ -54,7 +54,7 @@ Per le foto il momento più prezioso è l’alba: la città è ancora vuota, l�
 
 **Gli ospiti da lontano.** L’aeroporto Marco Polo è collegato alla città anche via acqua; da Verona si arriva in treno in poco più di un’ora.
 
-![Brindisi con i calici di champagne](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0066.jpg)
+![Brindisi con i calici di champagne](../../../assets/PORTFOLIO/0066-champagne-tower-toast.jpg)
 
 ## Come lo raccontiamo noi
 

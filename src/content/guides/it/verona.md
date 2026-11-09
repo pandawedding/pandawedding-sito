@@ -4,7 +4,7 @@ urlSlug: verona
 area: Verona
 label: Verona · Guida
 excerpt: La città di Romeo e Giulietta, ma anche dell’Arena, dell’Adige e delle colline. Tutto quello che serve sapere per sposarsi a Verona, raccontato da due fotografi e videomaker che qui vivono e lavorano.
-cover: ../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0056.jpg
+cover: ../../../assets/PORTFOLIO/0056-bride-twirling-skirt-sunset-groom.jpg
 coverAlt: Sposi abbracciati al tramonto, con la pianura sullo sfondo
 order: 0
 ---
@@ -25,7 +25,7 @@ Verona è casa nostra. Per il mondo è la città di Romeo e Giulietta, e per chi
 
 Il centro storico è patrimonio UNESCO, ed è raccolto: Piazza delle Erbe con i suoi palazzi affrescati, Piazza dei Signori, l’Arena, Ponte Pietra sull’Adige. Dall’altra parte del fiume, la scalinata di Castel San Pietro porta al belvedere da cui si vede tutta la città, ed è uno dei posti più belli per i ritratti al tramonto.
 
-![Bacio degli sposi davanti a un portone in pietra, in bianco e nero](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0042.jpg)
+![Bacio degli sposi davanti a un portone in pietra, in bianco e nero](../../../assets/PORTFOLIO/0042-bride-groom-classical-doorway-black-white.jpg)
 
 ## Le cerimonie civili nei luoghi di Giulietta
 
@@ -35,7 +35,7 @@ Sono cerimonie raccolte, per pochi ospiti, spesso seguite da un ricevimento in u
 
 > A Verona basta girare un angolo per trovare una luce nuova: tra le pietre del centro, ogni vicolo può diventare un ritratto.
 
-![Sposa nel salone affrescato di un palazzo storico](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0068.jpg)
+![Sposa nel salone affrescato di un palazzo storico](../../../assets/PORTFOLIO/0068-bride-long-train-chapel-floor.jpg)
 
 ## La luce e le stagioni
 
@@ -49,12 +49,12 @@ Per i ritratti in centro il segreto è l’alba: piazze vuote, pietra che si acc
 
 **Villa Arvedi.** Una villa barocca sulle colline della Valpantena, a pochi minuti dalla città, tra cipressi e giardini all’italiana, con la Sala dei Titani affrescata per le cene più scenografiche. Qui abbiamo raccontato i matrimoni di Imani e John e di Jasmine e Daniel, che trovate tra i nostri [wedding film](/it/#films), e quello di Alina e Omrane: [leggete il loro diario](/it/real-weddings/alina-omrane/).
 
-![Il cortile di Villa Arvedi visto dal drone durante una cerimonia, tra cipressi e vigneti](../../../assets/real-weddings/alina-omrane/18.jpg)
-![Alina nella Sala dei Titani di Villa Arvedi, tra i tavoli allestiti per la cena](../../../assets/real-weddings/alina-omrane/14.jpg)
+![Il cortile di Villa Arvedi visto dal drone durante una cerimonia, tra cipressi e vigneti](../../../assets/real-weddings/alina-omrane/18-drone-view-ceremony-villa-arvedi-courtyard.jpg)
+![Alina nella Sala dei Titani di Villa Arvedi, tra i tavoli allestiti per la cena](../../../assets/real-weddings/alina-omrane/14-bride-hall-of-titans-villa-arvedi.jpg)
 
 Per chi cerca vigneti e ville venete c’è la [Valpolicella](/it/guide/valpolicella/), a venti minuti; per l’acqua e i tramonti, il [Lago di Garda](/it/guide/lago-di-garda/), a mezz’ora.
 
-![Sposi sotto i portici di un chiostro](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0064.jpg)
+![Sposi sotto i portici di un chiostro](../../../assets/PORTFOLIO/0064-bride-groom-cloister-arcade.jpg)
 
 ## Consigli pratici
 
@@ -66,7 +66,7 @@ Per chi cerca vigneti e ville venete c’è la [Valpolicella](/it/guide/valpolic
 
 **Dalla cerimonia alla festa.** Se vi sposate in centro e festeggiate in collina, calcolate il tragitto con calma e lasciate tempo per i ritratti lungo la strada.
 
-![Sposi abbracciati di sera in un giardino illuminato](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0080.jpg)
+![Sposi abbracciati di sera in un giardino illuminato](../../../assets/PORTFOLIO/0080-bride-groom-garden-blue-hour.jpg)
 
 ## Come lo raccontiamo noi
 

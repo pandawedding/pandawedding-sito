@@ -4,7 +4,7 @@ urlSlug: lago-di-garda
 area: Lago di Garda
 label: Lago di Garda · Guida
 excerpt: Ville sull’acqua, limonaie e borghi di pietra. Tutto quello che serve sapere per sposarsi sul Lago di Garda, raccontato da due fotografi e videomaker di Verona.
-cover: ../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0043.jpg
+cover: ../../../assets/PORTFOLIO/0043-bride-groom-lawn-sunset.jpg
 coverAlt: Sposi che camminano mano nella mano al tramonto, con le colline sullo sfondo
 order: 1
 ---
@@ -28,7 +28,7 @@ La **sponda bresciana**, a ovest, è quella di Salò, Gardone Riviera e Gargnano
 
 Il **basso lago**, tra Sirmione, Desenzano e Peschiera, è più aperto e luminoso, con l’orizzonte largo e i borghi sull’acqua. È anche la zona più comoda da raggiungere per gli ospiti.
 
-![Sposi che camminano tra i cipressi in un giardino](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0040.jpg)
+![Sposi che camminano tra i cipressi in un giardino](../../../assets/PORTFOLIO/0040-bride-groom-cypress-garden.jpg)
 
 ## La luce e le stagioni
 
@@ -52,8 +52,8 @@ Per le foto il momento migliore è l’ultima ora prima del tramonto. Sulla spon
 
 Disponibilità, capienza e regole per la cerimonia cambiano da location a location: verificatele sempre direttamente con la struttura o con il vostro wedding planner.
 
-![Bacio degli sposi in un viale di siepi](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0034.jpg)
-![Calice di champagne nella mano della sposa](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0011.jpg)
+![Bacio degli sposi in un viale di siepi](../../../assets/PORTFOLIO/0034-bride-groom-kiss-hedge-avenue-villa.jpg)
+![Calice di champagne nella mano della sposa](../../../assets/PORTFOLIO/0011-bride-glass-sparkling-wine-embroidered-sleeves.jpg)
 
 ## Consigli pratici
 
@@ -65,7 +65,7 @@ Disponibilità, capienza e regole per la cerimonia cambiano da location a locati
 
 **La timeline.** Lasciate spazio ai ritratti nell’ultima ora di luce, anche solo venti minuti lontano dagli ospiti. Ne vale la pena.
 
-![Sposi accanto a un’auto d’epoca rossa decappottabile](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0030.jpg)
+![Sposi accanto a un’auto d’epoca rossa decappottabile](../../../assets/PORTFOLIO/0030-bride-groom-red-vintage-convertible.jpg)
 
 ## Come lo raccontiamo noi
 

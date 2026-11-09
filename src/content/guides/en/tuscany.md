@@ -4,7 +4,7 @@ urlSlug: tuscany
 area: Tuscany
 label: Florence & Chianti · Guide
 excerpt: Castles among the vineyards, stone villages and the golden light of the hills. Everything you need to know about getting married in Florence and Chianti, from two wedding photographers and videographers based in Verona.
-cover: ../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0048.jpg
+cover: ../../../assets/PORTFOLIO/0048-aerial-view-villa-vineyards.jpg
 coverAlt: Aerial view of a historic villa among vineyards and cypresses
 order: 3
 ---
@@ -25,7 +25,7 @@ This is the first choice to make. **Florence** is for couples who dream of art a
 
 **Chianti**, between Florence and Siena, is for those who want the countryside: castles, villages and wineries among the vines, slow days and parties that last into the night. Many couples choose both: the ceremony in the city, the party in the hills.
 
-![Bride and groom in front of a historic villa and its garden](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0059.jpg)
+![Bride and groom in front of a historic villa and its garden](../../../assets/PORTFOLIO/0059-bride-groom-historic-villa-veil-wind.jpg)
 
 ## Light and seasons
 
@@ -51,8 +51,8 @@ Late-afternoon light in Tuscany has something special: it slides across the hill
 
 Availability, capacity and ceremony rules change from venue to venue: always check directly with the venue or with your wedding planner.
 
-![Wedding cake next to a stone fountain in a garden](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0074.jpg)
-![Arrangement of roses and hydrangeas](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0075.jpg)
+![Wedding cake next to a stone fountain in a garden](../../../assets/PORTFOLIO/0074-wedding-cake-flowers-fountain.jpg)
+![Arrangement of roses and hydrangeas](../../../assets/PORTFOLIO/0075-white-pink-roses-candles.jpg)
 
 ## Practical tips
 
@@ -64,7 +64,7 @@ Availability, capacity and ceremony rules change from venue to venue: always che
 
 **Summer.** In the heat of July and August, plan a late-afternoon ceremony and plenty of shade for your guests.
 
-![Bride and groom dancing at sunset in a garden](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0052.jpg)
+![Bride and groom dancing at sunset in a garden](../../../assets/PORTFOLIO/0052-bride-groom-dancing-lawn-sunset.jpg)
 
 ## How we tell it
 

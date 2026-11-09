@@ -4,7 +4,7 @@ urlSlug: lake-como
 area: Lake Como
 label: Lake Como · Guide
 excerpt: Historic villas at the water’s edge, botanical gardens and mountains plunging into the lake. Everything you need to know about getting married on Lake Como, from two wedding photographers and videographers based in Verona.
-cover: ../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0044.jpg
+cover: ../../../assets/PORTFOLIO/0044-bride-veil-baroque-staircase.jpg
 coverAlt: Bride walking down the marble staircase of a historic villa
 order: 4
 ---
@@ -25,7 +25,7 @@ The lake is shaped like an upside-down Y, with three branches meeting in front o
 
 The **Como branch**, to the south, is the closest to Milan, with large villas and parks that suit weddings with many guests.
 
-![The frescoed ceiling of a historic villa](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0063.jpg)
+![The frescoed ceiling of a historic villa](../../../assets/PORTFOLIO/0063-frescoed-ceiling-villa.jpg)
 
 ## Light and seasons
 
@@ -49,8 +49,8 @@ Here light needs more planning than elsewhere. The mountains are high and close:
 
 An important note: in Italy civil weddings are celebrated in venues authorised by the local Comune, and not every villa can host a legally valid one. Many couples choose a symbolic ceremony at the villa: always check with the venue or with your wedding planner.
 
-![Bride and groom embracing against the light, her veil lifting](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0067.jpg)
-![Bride and groom kissing among flowers and climbing plants](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0070.jpg)
+![Bride and groom embracing against the light, her veil lifting](../../../assets/PORTFOLIO/0067-bride-groom-kiss-backlight-veil.jpg)
+![Bride and groom kissing among flowers and climbing plants](../../../assets/PORTFOLIO/0070-bride-groom-flowering-stone-wall-hills.jpg)
 
 ## Practical tips
 
@@ -62,7 +62,7 @@ An important note: in Italy civil weddings are celebrated in venues authorised b
 
 **Book early.** The most sought-after villas have calendars full well in advance, especially in June and September.
 
-![Bride and groom walking hand in hand along an avenue](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0058.jpg)
+![Bride and groom walking hand in hand along an avenue](../../../assets/PORTFOLIO/0058-bride-groom-smiling-gravel-path.jpg)
 
 ## How we tell it
 

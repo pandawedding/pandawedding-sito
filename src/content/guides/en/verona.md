@@ -4,7 +4,7 @@ urlSlug: verona
 area: Verona
 label: Verona · Guide
 excerpt: The city of Romeo and Juliet, but also of the Arena, the Adige river and the hills. Everything you need to know about getting married in Verona, from two wedding photographers and videographers who live and work here.
-cover: ../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0056.jpg
+cover: ../../../assets/PORTFOLIO/0056-bride-twirling-skirt-sunset-groom.jpg
 coverAlt: Bride and groom embracing at sunset, with the plain in the background
 order: 0
 ---
@@ -23,7 +23,7 @@ It is a city to explore on foot, where a few steps take you from a medieval squa
 
 The historic centre is a UNESCO World Heritage Site, and it is compact: Piazza delle Erbe with its frescoed palaces, Piazza dei Signori, the Arena, Ponte Pietra over the Adige. Across the river, the steps up to Castel San Pietro lead to the viewpoint over the whole city, one of the most beautiful places for sunset portraits.
 
-![Bride and groom kissing in front of a stone doorway, in black and white](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0042.jpg)
+![Bride and groom kissing in front of a stone doorway, in black and white](../../../assets/PORTFOLIO/0042-bride-groom-classical-doorway-black-white.jpg)
 
 ## Civil ceremonies in Juliet’s places
 
@@ -33,7 +33,7 @@ These are intimate ceremonies for a small number of guests, often followed by a 
 
 > In Verona you only have to turn a corner to find new light: among the stones of the old town, every alley can become a portrait.
 
-![Bride in the frescoed hall of a historic palace](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0068.jpg)
+![Bride in the frescoed hall of a historic palace](../../../assets/PORTFOLIO/0068-bride-long-train-chapel-floor.jpg)
 
 ## Light and seasons
 
@@ -47,12 +47,12 @@ For portraits in the old town, the secret is sunrise: empty squares, stone glowi
 
 **Villa Arvedi.** A Baroque villa in the hills of Valpantena, a few minutes from the city, among cypresses and Italian gardens, with the frescoed Hall of the Titans for the most spectacular dinners. This is where we told the weddings of Imani and John and of Jasmine and Daniel, which you can find among our [wedding films](/#films), and that of Alina and Omrane: [read their diary](/real-weddings/alina-omrane/).
 
-![Drone view of the Villa Arvedi courtyard during a ceremony, among cypresses and vineyards](../../../assets/real-weddings/alina-omrane/18.jpg)
-![Alina in the Hall of the Titans at Villa Arvedi, among the tables set for dinner](../../../assets/real-weddings/alina-omrane/14.jpg)
+![Drone view of the Villa Arvedi courtyard during a ceremony, among cypresses and vineyards](../../../assets/real-weddings/alina-omrane/18-drone-view-ceremony-villa-arvedi-courtyard.jpg)
+![Alina in the Hall of the Titans at Villa Arvedi, among the tables set for dinner](../../../assets/real-weddings/alina-omrane/14-bride-hall-of-titans-villa-arvedi.jpg)
 
 If you are looking for vineyards and Venetian villas, [Valpolicella](/guides/valpolicella/) is twenty minutes away; for water and sunsets, [Lake Garda](/guides/lake-garda/) is half an hour.
 
-![Bride and groom under the arches of a cloister](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0064.jpg)
+![Bride and groom under the arches of a cloister](../../../assets/PORTFOLIO/0064-bride-groom-cloister-arcade.jpg)
 
 ## Practical tips
 
@@ -64,7 +64,7 @@ If you are looking for vineyards and Venetian villas, [Valpolicella](/guides/val
 
 **From ceremony to party.** If you marry in the old town and celebrate in the hills, allow plenty of time for the transfer and for portraits along the way.
 
-![Bride and groom embracing in a lit garden in the evening](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0080.jpg)
+![Bride and groom embracing in a lit garden in the evening](../../../assets/PORTFOLIO/0080-bride-groom-garden-blue-hour.jpg)
 
 ## How we tell it
 

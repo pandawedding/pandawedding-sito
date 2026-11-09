@@ -4,7 +4,7 @@ urlSlug: valpolicella
 area: Valpolicella
 label: Valpolicella · Guide
 excerpt: Venetian villas among the vineyards, historic wineries and hills just minutes from Verona. Everything you need to know about getting married in Valpolicella, from two wedding photographers and videographers based in Verona.
-cover: ../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0017.jpg
+cover: ../../../assets/PORTFOLIO/0017-bride-groom-staircase-historic-garden.jpg
 coverAlt: Bride and groom in front of the staircase of a historic villa
 order: 2
 ---
@@ -25,7 +25,7 @@ If you are looking for a historic villa without giving up convenience, it is har
 
 It is also a compact area: Negrar, Fumane, Marano, Sant’Ambrogio and San Pietro in Cariano are only a few kilometres apart, so the day flows without long transfers.
 
-![Bride and groom in a formal hedge garden, in black and white](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0028.jpg)
+![Bride and groom in a formal hedge garden, in black and white](../../../assets/PORTFOLIO/0028-bride-groom-hedge-maze-black-white.jpg)
 
 ## Light and seasons
 
@@ -51,13 +51,13 @@ For portraits the best light comes in the last hour of the day, when the sun dro
 
 A little further east, in Valpantena, is **Villa Arvedi**, where we told the weddings of Imani and John ([watch their film](/#films)) and of Alina and Omrane ([read their diary](/real-weddings/alina-omrane/)): another way to experience the hills around Verona, among cypresses, vineyards and an Italian garden of boxwood hedges shaped like a maze.
 
-![The couple in the boxwood maze of the Italian garden at Villa Arvedi, from above](../../../assets/real-weddings/alina-omrane/29.jpg)
-![The couple on the garden avenue, with Villa Arvedi in the background](../../../assets/real-weddings/alina-omrane/24.jpg)
+![The couple in the boxwood maze of the Italian garden at Villa Arvedi, from above](../../../assets/real-weddings/alina-omrane/29-bride-groom-boxwood-maze-from-above.jpg)
+![The couple on the garden avenue, with Villa Arvedi in the background](../../../assets/real-weddings/alina-omrane/24-bride-groom-garden-avenue-villa-arvedi.jpg)
 
 Availability, capacity and ceremony rules change from venue to venue: always check directly with the venue or with your wedding planner.
 
-![A toast in front of a tower of champagne glasses](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0020.jpg)
-![The groom with his groomsmen in the garden of a villa](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0014.jpg)
+![A toast in front of a tower of champagne glasses](../../../assets/PORTFOLIO/0020-groom-champagne-tower-bride-laughing.jpg)
+![The groom with his groomsmen in the garden of a villa](../../../assets/PORTFOLIO/0014-groom-groomsmen-walking-villa-lawn.jpg)
 
 ## Practical tips
 
@@ -69,7 +69,7 @@ Availability, capacity and ceremony rules change from venue to venue: always che
 
 **Autumn evenings.** In October the temperature drops quickly after sunset: plan a covered or heated space for dinner.
 
-![Bride and groom next to a vintage car, in black and white](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0035.jpg)
+![Bride and groom next to a vintage car, in black and white](../../../assets/PORTFOLIO/0035-bride-groom-vintage-car-black-white.jpg)
 
 ## How we tell it
 

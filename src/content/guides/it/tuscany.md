@@ -4,7 +4,7 @@ urlSlug: toscana
 area: Toscana
 label: Firenze e Chianti · Guida
 excerpt: Castelli tra i vigneti, borghi di pietra e la luce dorata delle colline. Tutto quello che serve sapere per sposarsi a Firenze e nel Chianti, raccontato da due fotografi e videomaker di Verona.
-cover: ../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0048.jpg
+cover: ../../../assets/PORTFOLIO/0048-aerial-view-villa-vineyards.jpg
 coverAlt: Veduta dall’alto di una villa storica tra vigneti e cipressi
 order: 3
 ---
@@ -26,7 +26,7 @@ L’abbiamo vissuta da vicino al Castello di Mugnana, nel Chianti, dove abbiamo 
 
 Il **Chianti**, tra Firenze e Siena, è per chi cerca la campagna: castelli, borghi e cantine tra i vigneti, giornate lente e feste che durano fino a notte. Molte coppie scelgono le due cose insieme: la cerimonia in città, la festa in collina.
 
-![Sposi davanti a una villa storica con il giardino](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0059.jpg)
+![Sposi davanti a una villa storica con il giardino](../../../assets/PORTFOLIO/0059-bride-groom-historic-villa-veil-wind.jpg)
 
 ## La luce e le stagioni
 
@@ -52,8 +52,8 @@ La luce del tardo pomeriggio in Toscana ha qualcosa di speciale: scivola sulle c
 
 Disponibilità, capienza e regole per la cerimonia cambiano da location a location: verificatele sempre direttamente con la struttura o con il vostro wedding planner.
 
-![Torta nuziale accanto a una fontana in pietra in un giardino](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0074.jpg)
-![Composizione di rose e ortensie](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0075.jpg)
+![Torta nuziale accanto a una fontana in pietra in un giardino](../../../assets/PORTFOLIO/0074-wedding-cake-flowers-fountain.jpg)
+![Composizione di rose e ortensie](../../../assets/PORTFOLIO/0075-white-pink-roses-candles.jpg)
 
 ## Consigli pratici
 
@@ -65,7 +65,7 @@ Disponibilità, capienza e regole per la cerimonia cambiano da location a locati
 
 **L’estate.** Con il caldo di luglio e agosto conviene una cerimonia nel tardo pomeriggio e tanta ombra per gli ospiti.
 
-![Sposi che ballano al tramonto in un giardino](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0052.jpg)
+![Sposi che ballano al tramonto in un giardino](../../../assets/PORTFOLIO/0052-bride-groom-dancing-lawn-sunset.jpg)
 
 ## Come lo raccontiamo noi
 

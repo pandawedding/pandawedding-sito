@@ -4,7 +4,7 @@ urlSlug: lago-di-como
 area: Lago di Como
 label: Lago di Como · Guida
 excerpt: Ville storiche a filo d’acqua, giardini botanici e montagne a picco sul lago. Tutto quello che serve sapere per sposarsi sul Lago di Como, raccontato da due fotografi e videomaker di Verona.
-cover: ../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0044.jpg
+cover: ../../../assets/PORTFOLIO/0044-bride-veil-baroque-staircase.jpg
 coverAlt: Sposa che scende la scalinata in marmo di una villa storica
 order: 4
 ---
@@ -26,7 +26,7 @@ Il lago ha la forma di una Y rovesciata, con tre rami che si incontrano davanti 
 
 Il **ramo di Como**, verso sud, è quello più vicino a Milano, con ville grandi e parchi adatti anche a matrimoni con molti ospiti.
 
-![Soffitto affrescato di una villa storica](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0063.jpg)
+![Soffitto affrescato di una villa storica](../../../assets/PORTFOLIO/0063-frescoed-ceiling-villa.jpg)
 
 ## La luce e le stagioni
 
@@ -50,8 +50,8 @@ Qui la luce va studiata più che altrove. Le montagne sono alte e vicine: in mol
 
 Una nota importante: in Italia il matrimonio civile si celebra nelle sedi autorizzate dal Comune, e non tutte le ville possono ospitarne uno valido. Molte coppie scelgono una cerimonia simbolica in villa: verificate sempre con la location o con il vostro wedding planner.
 
-![Sposi abbracciati controluce, con il velo che si alza](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0067.jpg)
-![Bacio degli sposi tra fiori e rampicanti](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0070.jpg)
+![Sposi abbracciati controluce, con il velo che si alza](../../../assets/PORTFOLIO/0067-bride-groom-kiss-backlight-veil.jpg)
+![Bacio degli sposi tra fiori e rampicanti](../../../assets/PORTFOLIO/0070-bride-groom-flowering-stone-wall-hills.jpg)
 
 ## Consigli pratici
 
@@ -63,7 +63,7 @@ Una nota importante: in Italia il matrimonio civile si celebra nelle sedi autori
 
 **Prenotare presto.** Le ville più richieste hanno calendari pieni con largo anticipo, soprattutto a giugno e settembre.
 
-![Sposi che camminano mano nella mano in un viale](../../../assets/PORTFOLIO/Portfolio_Pandabrosproductions_0058.jpg)
+![Sposi che camminano mano nella mano in un viale](../../../assets/PORTFOLIO/0058-bride-groom-smiling-gravel-path.jpg)
 
 ## Come lo raccontiamo noi
 
