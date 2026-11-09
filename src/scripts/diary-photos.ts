@@ -2,9 +2,9 @@
 // Usato dalla pagina statica e dal pannello, che carica il diario solo all'apertura.
 export function prepareDiaryPhotos(root: ParentNode) {
   root.querySelectorAll<HTMLImageElement>('.prose-diary img').forEach((img, i) => {
-    // Spazio reale: su telefono stanno in griglia, su desktop la colonna è larga 672px.
-    // Le foto sono lazy, quindi il browser sceglie la misura dopo questa riga
-    img.sizes = '(min-width: 768px) 672px, 62vw';
+    // Spazio reale: su telefono una sotto l'altra a tutta larghezza, da tablet in su al massimo 672px
+    // (da sole nella colonna o in coppia nel gruppo). Le foto sono lazy: il browser sceglie dopo questa riga
+    img.sizes = '(min-width: 768px) 672px, 100vw';
     // Orizzontale da sola nel paragrafo: esce dalla colonna, larga come i gruppi di foto.
     // Serve alle foto prese da lontano (giardini, sale, drone), che in colonna sembrano piccole
     const alone = img.parentElement?.children.length === 1;
