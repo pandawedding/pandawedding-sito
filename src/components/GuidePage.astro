@@ -17,7 +17,7 @@ interface Props {
 const { guide } = Astro.props;
 const { lang } = guide;
 const t = ui[lang];
-const { title, excerpt, label, area, cover, coverAlt } = guide.entry.data;
+const { title, excerpt, area, cover, coverAlt } = guide.entry.data;
 const { Content } = await render(guide.entry);
 const url = new URL(Astro.url.pathname, Astro.site).href;
 const coverUrl = new URL((await getImage({ src: cover, width: 1600, format: 'webp' })).src, Astro.site).href;
@@ -53,8 +53,11 @@ const schema = [
 <BaseLayout title={title} description={excerpt} ogType="article" ogImage={cover} ogImageAlt={coverAlt} schema={schema} alternates={guide.alternates}>
   <article class="mx-auto max-w-screen-lg px-5 pt-22 md:px-10 md:pt-32" data-lightbox-group>
     <header>
-      <a href={guidesPath[lang]} class="label -my-3 inline-block py-3 hover:text-fg">{t.guides.kicker}</a>
-      <p class="label mt-6 text-fg-muted!">{label}</p>
+      <!-- Percorso su una riga: indice delle guide › zona (come nel BreadcrumbList qui sopra) -->
+      <p class="label">
+        <a href={guidesPath[lang]} class="-my-3 inline-block py-3 hover:text-fg">{t.guides.kicker}</a>
+        <span class="whitespace-nowrap text-fg-muted"><span class="mx-1.5" aria-hidden="true">›</span>{area}</span>
+      </p>
       <h1 class="mt-4 text-title font-light tracking-title uppercase">{title}</h1>
     </header>
 
