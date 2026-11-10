@@ -33,7 +33,7 @@ Il sito esiste già su Framer: questo progetto lo **ricostruisce da zero in codi
 | Sfondo rialzato | `#151517` | Card, form, sezioni alternate. |
 | Testo principale | `#F5F5F7` | |
 | Testo secondario | `#A1A1A6` | |
-| Sfondo chiaro | `#FFFFFF` | Solo sezione Portfolio (vedi "Tema"). |
+| Sfondo chiaro | `#FFFFFF` | Solo sezioni Portfolio e Contatti (vedi "Tema"). |
 | Testo scuro originale | `#171513` | Testo sulle sezioni chiare. |
 
 Definisci tutto come variabili CSS / token Tailwind. Verifica il contrasto del testo (almeno 4.5:1) e usa il rosso su sfondo scuro per titoli grandi e CTA, non per testi piccoli.
@@ -63,11 +63,11 @@ Definisci tutto come variabili CSS / token Tailwind. Verifica il contrasto del t
 ### Tema
 
 Il sito è **prevalentemente scuro/nero**.
-**Eccezione voluta:** la sezione **Portfolio** (foto) ha **sfondo bianco**, per dare respiro alle fotografie e variare il ritmo. Header e menu si adattano quando passano sopra la sezione bianca.
+**Eccezioni volute:** la sezione **Portfolio** (foto) ha **sfondo bianco**, per dare respiro alle fotografie e variare il ritmo; anche la sezione **Contatti** è bianca, con testi scuri e rossi (commit `8bf6c49`). Header e menu si adattano quando passano sopra le sezioni bianche.
 
 Conseguenze da gestire:
 - Il logo "PandA Wedding" ha le lettere scure nell'originale: su sfondo nero deve diventare **chiaro** (P e A restano `#FF4040`), su sfondo bianco resta scuro. Essendo testo in font, basta cambiare il colore via CSS.
-- Header, menu mobile e testi si adattano al tema della sezione su cui si trovano (variabili CSS e `data-theme="light"` solo sulla sezione Portfolio).
+- Header, menu mobile e testi si adattano al tema della sezione su cui si trovano (variabili CSS e `data-theme="light"` solo sulle sezioni Portfolio e Contatti).
 - Le foto del Portfolio con sfondi chiari non devono "sparire" sul bianco: usa angoli arrotondati e, se serve, una sottile ombra o bordo.
 - Il passaggio dallo scuro alla sezione bianca deve essere morbido (sfumatura tra le sezioni), mai un lampo.
 
@@ -100,7 +100,7 @@ Menu ad ancore (con evidenza della sezione corrente): Wedding Films · Portfolio
 4. **Inspirations / Portfolio** (`#portfolio`): **sezione bianca** (`data-theme="light"`), selezione di foto + `Vedi altre foto` a blocchi + visore a schermo intero. Chiude con *Next chapter, your story*.
 5. **Pages / Real Weddings** (`#real-weddings`): card dei matrimoni; `Read the diary ›` / `Leggi il diario ›` apre il diario in un pannello (link condivisibile, vedi "Lingue"). Ogni diario ha anche una pagina statica `/real-weddings/<slug>/` per la SEO; il pannello carica l'articolo da quella pagina solo all'apertura (niente contenuto duplicato nella landing). I diari sono una content collection in `src/content/diaries/<lingua>/`; le foto di un diario vanno in `src/assets/real-weddings/<slug>/`.
 6. **About** (`#about`): impaginazione editoriale, le due foto piccole, vicine e leggermente inclinate accanto al testo (su mobile sopra): *The right team makes the difference*, *Photography captures the moment / Cinema brings you back to it*, *Research & Approach* con i tre paragrafi in inglese. Nessuna CTA: subito dopo vengono i contatti.
-7. **Contatti** (`#contatti`): *Your story deserves more than ordinary.* / *Let's talk about your wedding.*, email, WhatsApp, form con etichette e placeholder di Framer: Full names*, Email*, Wedding date, Location / Venue*, Phone number, Wedding planner, Message & your vision* (* obbligatori). Subito dopo: interludio *Tailoring your story, together*.
+7. **Contatti** (`#contatti`): **sezione bianca** (`data-theme="light"`). *Your story deserves more than ordinary.* / *Let's talk about your wedding.*, email, WhatsApp, form con etichette e placeholder di Framer: Full names*, Email*, Wedding date, Location / Venue*, Phone number, Wedding planner, Message & your vision* (* obbligatori). Subito dopo: interludio *Tailoring your story, together*.
 8. **Footer**: nome, *Stories made to be felt*, WhatsApp (`https://wa.me/393489538074`), dati societari.
 
 **Testi:** quelli attuali nel codice sono la base approvata (allineati a Framer il 30/10/2026). Framer non è più la fonte vincolante: si possono aggiungere CTA e brevi testi d'interfaccia in stile Apple (bottone principale + link testuale rosso con `›`, classe `.cta-link`), ma non riscrivere i testi esistenti senza chiedere.
