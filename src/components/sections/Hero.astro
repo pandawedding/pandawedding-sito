@@ -20,7 +20,7 @@ const desktop = {
 };
 const fallback = await getImage({ src: desktopSrc, width: 1920, format: 'jpg' });
 
-const featured = films.find((f) => f.slug === 'imani-john')!;
+const featured = films.find((f) => f.slug === 'selma-michiel')!;
 ---
 
 <section id="top" class="relative flex min-h-svh items-end overflow-hidden bg-black">
@@ -38,12 +38,12 @@ const featured = films.find((f) => f.slug === 'imani-john')!;
         class="size-full object-cover"
       />
     </picture>
-    <!-- Clip in loop dal trailer di Imani e John: compare sopra la foto quando parte -->
+    <!-- Clip in loop dal trailer di Selma e Michiel: compare sopra la foto quando parte -->
     <video
       id="hero-video"
       class="absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-1000 data-[playing]:opacity-100"
-      data-src-desktop="/videos/hero-imani-john-1080.mp4"
-      data-src-mobile="/videos/hero-imani-john-vertical.mp4"
+      data-src-desktop="/videos/hero-villa-arvedi-1080.mp4"
+      data-src-mobile="/videos/hero-villa-arvedi-vertical.mp4"
       muted
       loop
       playsinline

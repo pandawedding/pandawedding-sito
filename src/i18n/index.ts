@@ -37,7 +37,7 @@ export const ui = {
       whatsappLabel: 'Message us on WhatsApp',
     },
     hero: {
-      alt: 'Outdoor wedding ceremony at the foot of a villa staircase, the bride seen from behind facing the groom in a burgundy jacket, against red drapes',
+      alt: 'Aerial view of Villa Arvedi and its Italian garden, among the vineyards and hills of Valpantena near Verona',
       ogAlt: 'Bride and groom running hand in hand across a lawn at sunset, in front of a historic villa',
       title: ['Stories made', 'to be', 'felt,', 'not simply', 'remembered'],
       soundOn: 'Sound on',
@@ -195,7 +195,7 @@ export const ui = {
       whatsappLabel: 'Scrivici su WhatsApp',
     },
     hero: {
-      alt: 'Cerimonia all’aperto ai piedi dello scalone di una villa, la sposa di spalle davanti allo sposo in giacca bordeaux, con drappi rossi sullo sfondo',
+      alt: 'Villa Arvedi e il suo giardino all’italiana visti dal drone, tra i vigneti e le colline della Valpantena vicino a Verona',
       ogAlt: 'Sposi che corrono mano nella mano su un prato al tramonto, davanti a una villa storica',
       title: ['Storie', 'da', 'vivere,', 'non solo da', 'ricordare'],
       soundOn: 'Audio',
