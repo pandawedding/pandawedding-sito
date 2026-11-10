@@ -154,6 +154,15 @@ const otherHref = alternates[other] ?? localePath(other, '/');
       opacity 0.12s ease,
       transform 0.12s ease;
   }
+  /* In cima alla pagina l'header è trasparente sopra il video: voci in chiaro pieno, non grigie */
+  #site-header:not([data-scrolled]) nav a:not([aria-current='true']) {
+    color: var(--color-fg);
+  }
+  /* La lingua da scegliere resta un po' più tenue di quella attiva */
+  #site-header:not([data-scrolled]) [data-lang-switch] {
+    color: color-mix(in srgb, var(--color-fg) 78%, transparent);
+  }
+
   [data-open] .menu-item {
     opacity: 1;
     transform: none;

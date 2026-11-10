@@ -52,6 +52,8 @@ const featured = films.find((f) => f.slug === 'selma-michiel')!;
     ></video>
   </div>
   <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/30"></div>
+  <!-- Velo in alto: logo e menu restano leggibili anche sulle scene chiare del video -->
+  <div class="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-black/60 to-transparent md:h-44" aria-hidden="true"></div>
 
   <!-- Trailer e audio in alto a destra, fuori dal centro dell'immagine. L'audio compare sotto quando il video parte -->
   <div class="absolute top-20 right-5 z-10 flex flex-col items-end gap-2 md:top-28 md:right-10">
