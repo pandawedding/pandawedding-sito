@@ -176,6 +176,7 @@ const VISIBLE = 3;
 <script>
   import { prepareDiaryPhotos } from '../../scripts/diary-photos';
   import { lockScroll, unlockScroll } from '../../scripts/modal';
+  import { scrollBehavior } from '../../scripts/motion';
 
   // Apertura dei diari nel pannello, con link condivisibile #diary/<slug> (#diario/<slug> in italiano).
   // Il tasto indietro chiude il pannello; senza JS il link porta alla pagina statica.
@@ -203,7 +204,7 @@ const VISIBLE = 3;
           e.preventDefault();
           const target = document.getElementById(link.hash.slice(1));
           dialog.close();
-          setTimeout(() => target?.scrollIntoView({ behavior: 'smooth' }), 300);
+          setTimeout(() => target?.scrollIntoView({ behavior: scrollBehavior() }), 300);
         }),
       );
     } catch {

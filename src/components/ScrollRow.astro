@@ -100,6 +100,8 @@ const t = tr(Astro.currentLocale);
 </style>
 
 <script>
+  import { scrollBehavior } from '../scripts/motion';
+
   document.querySelectorAll<HTMLElement>('.scroll-row').forEach((row) => {
     const track = row.querySelector<HTMLElement>('.track');
     const buttons = row.querySelectorAll<HTMLButtonElement>('.arrow-btn');
@@ -115,7 +117,7 @@ const t = tr(Astro.currentLocale);
 
     buttons.forEach((btn) =>
       btn.addEventListener('click', () => {
-        track.scrollBy({ left: Number(btn.dataset.dir) * track.clientWidth * 0.85, behavior: 'smooth' });
+        track.scrollBy({ left: Number(btn.dataset.dir) * track.clientWidth * 0.85, behavior: scrollBehavior() });
       }),
     );
 

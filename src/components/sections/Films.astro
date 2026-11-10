@@ -168,6 +168,7 @@ const films = getFilms(lang);
 
 <script>
   import { canAutoplay } from '../../scripts/autoplay';
+  import { scrollBehavior } from '../../scripts/motion';
 
   // Anteprime in autoplay muto (anche su mobile): partono quando la card entra
   // nello schermo e si fermano quando esce. Il poster resta finché il video non gira.
@@ -242,7 +243,7 @@ const films = getFilms(lang);
     // Avvia il tracciamento "form iniziato" come se l'utente avesse scritto lì
     contact.dispatchEvent(new Event('input', { bubbles: true }));
 
-    document.getElementById('contatti')!.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById('contatti')!.scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
     // Il primo campo ancora vuoto è quasi sempre il nome
     const next = [...contact.querySelectorAll<HTMLInputElement>('input[required], textarea[required]')].find(
       (el) => !el.value.trim(),
