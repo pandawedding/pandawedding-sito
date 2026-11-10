@@ -12,8 +12,8 @@ interface FilmSource {
   names: [string, string];
   location: Record<Lang, string>;
   text?: Record<Lang, string>;
-  /** Trailer su Vimeo (caricato solo al click, con avviso cookie) */
-  vimeo?: { id: string; hash: string };
+  /** Trailer su Vimeo (caricato solo al click, con avviso cookie). `hash` solo per i video non in elenco */
+  vimeo?: { id: string; hash?: string };
   /** Oppure trailer ospitato sul sito, in public/videos (nessun cookie) */
   video?: string;
   poster: ImageMetadata;
@@ -30,11 +30,11 @@ export interface Film extends Omit<FilmSource, 'names' | 'location' | 'text'> {
 // Testi italiani dal sito Framer (pagina Wedding Films), riscritti in inglese per il sito principale
 const sources: FilmSource[] = [
   {
-    // TODO: descrizione da scrivere; link Vimeo se disponibile. È anche il film della hero
+    // TODO: descrizione da scrivere. È anche il film della hero
     slug: 'selma-michiel',
     names: ['Selma', 'Michiel'],
     location: { en: 'Villa Arvedi · Verona', it: 'Villa Arvedi · Verona' },
-    video: '/videos/trailer-selma-michiel.mp4',
+    vimeo: { id: '1245433726' },
     poster: selmaMichiel,
     preview: '/videos/preview-selma-michiel.mp4',
   },
@@ -75,11 +75,11 @@ const sources: FilmSource[] = [
     preview: '/videos/preview-daniel-josiane.mp4',
   },
   {
-    // TODO: descrizione da scrivere; link Vimeo se disponibile
+    // TODO: descrizione da scrivere
     slug: 'jasmine-daniel',
     names: ['Jasmine', 'Daniel'],
     location: { en: 'Villa Arvedi · Verona', it: 'Villa Arvedi · Verona' },
-    video: '/videos/trailer-jasmine-daniel.mp4',
+    vimeo: { id: '1139293247' },
     poster: jasmineDaniel,
     preview: '/videos/preview-jasmine-daniel.mp4',
   },
@@ -94,5 +94,5 @@ export const getFilms = (lang: Lang): Film[] =>
     text: text?.[lang],
   }));
 
-export const vimeoEmbedUrl = ({ id, hash }: { id: string; hash: string }) =>
-  `https://player.vimeo.com/video/${id}?h=${hash}&dnt=1&autoplay=1&title=0&byline=0&portrait=0`;
+export const vimeoEmbedUrl = ({ id, hash }: { id: string; hash?: string }) =>
+  `https://player.vimeo.com/video/${id}?${hash ? `h=${hash}&` : ''}dnt=1&autoplay=1&title=0&byline=0&portrait=0`;

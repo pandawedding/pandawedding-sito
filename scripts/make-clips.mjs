@@ -56,9 +56,8 @@ const clips = [
   { out: 'preview-daniel-josiane.mp4', src: 'daniel_e_josiane', start: 56, dur: 10, scale: '960:540', crf: 28 },
   { out: 'preview-jasmine-daniel.mp4', src: 'jasmine', start: 16, dur: 10, scale: '960:540', crf: 28 },
   { out: 'preview-selma-michiel.mp4', src: 'selma_e_michiel', start: 24.6, dur: 10, scale: '960:540', crf: 28 },
-  // Trailer completi ospitati sul sito (nessun link Vimeo)
-  { out: 'trailer-jasmine-daniel.mp4', src: 'jasmine', full: true, scale: '1280:720', crf: 28, audio: true },
-  { out: 'trailer-selma-michiel.mp4', src: 'selma_e_michiel', full: true, scale: '1280:720', crf: 28, audio: true },
+  // Un trailer senza link Vimeo può avere qui la sua versione web completa (ora sono tutti su Vimeo):
+  // { out: 'trailer-<slug>.mp4', src: '<file>', full: true, scale: '1280:720', crf: 28, audio: true },
 ];
 
 // Poster delle card film (fotogramma a "at" secondi)
