@@ -23,29 +23,32 @@ const find = (prefix) => {
 // Hero: le inquadrature più belle del trailer di Selma e Michiel (sposi, shooting, drone sulla villa).
 // [inizio, fine, ritaglio] in secondi dai tagli del trailer, con un fotogramma di margine per lato;
 // ritaglio = posizione orizzontale del taglio 9:16 su mobile (0 sinistra, 1 destra, di base al centro)
+// (centrato sulle persone o sulla villa; le coppie larghe non entrano intere, si centra tra i due)
 const heroShots = [
-  [40.04, 41.28], // drone: villa tra vigne e colline
+  [40.04, 41.28, 0.35], // drone: villa tra vigne e colline
   [1.8, 3.12], // drone: villa e giardino dall'alto
-  [3.12, 4.24], // sposa seduta sulla balaustra
-  [25.92, 27.76], // sposa che gira nel giardino
-  [27.76, 29.0, 0.7], // sposo nel giardino (sta a destra)
-  [32.08, 33.56], // sposi che camminano tra le siepi
-  [50.64, 51.44], // drone: labirinto
-  [48.0, 49.36], // sposa nel giardino
-  [22.4, 23.52], // drone: villa e vigneti
+  [4.24, 5.16], // sala affrescata con la tavolata
+  [3.12, 4.24, 0.47], // sposa seduta sulla balaustra
+  [25.92, 27.76, 0.68], // sposa che gira nel giardino
+  [27.76, 29.0, 0.7], // sposo nel giardino
+  [32.08, 33.56, 0.55], // sposi che camminano tra le siepi
+  [44.2, 44.88, 0.53], // bacio tra le statue affrescate
+  [50.64, 51.44, 0.38], // drone: labirinto con la sposa
+  [48.0, 49.36, 0.58], // sposa nel giardino
   [44.88, 45.6], // sposi che ridono davanti alla villa
-  [9.8, 10.72], // sposi al sole con l'auto d'epoca
-  [52.64, 53.84], // sposa al tramonto nel viale
-  [53.84, 54.8], // sposi alla fontana
-  [56.12, 57.4], // drone: valle e vigneti
+  [51.44, 52.64], // bacio nella sala in penombra
+  [9.8, 10.72, 0.4], // sposi al sole con l'auto d'epoca
+  [52.64, 53.84, 0.4], // sposi al tramonto nel viale
+  [53.84, 54.8, 0.47], // sposi alla fontana
+  [56.12, 57.4, 0.47], // drone: valle e vigneti
 ].map(([a, b, x = 0.5]) => [a + 0.04, b - 0.04, x]);
 
 // start/durata in secondi, scelti dai provini dei trailer
 const clips = [
   // Hero: orizzontale per desktop, verticale (ritaglio centrale 9:16) per mobile.
-  // Desktop meno compresso (siepi e vigneti si impastano oltre CRF 26): ~6,5 MB; mobile ~1,3 MB
+  // Meno compresse (siepi e vigneti si impastano oltre CRF 26-28): ~6,5 MB desktop; mobile a piena risoluzione per gli schermi densi
   { out: 'hero-villa-arvedi-1080.mp4', src: 'selma_e_michiel', shots: heroShots, audioStart: 40, scale: '1920:1080', crf: 26, preset: 'veryslow', abr: '64k', audio: true },
-  { out: 'hero-villa-arvedi-vertical.mp4', src: 'selma_e_michiel', shots: heroShots, audioStart: 40, crop: 'ih*9/16:ih:(iw-ow)*{x}', scale: '720:1280', crf: 33, preset: 'veryslow', abr: '64k', audio: true },
+  { out: 'hero-villa-arvedi-vertical.mp4', src: 'selma_e_michiel', shots: heroShots, audioStart: 40, crop: 'ih*9/16:ih:(iw-ow)*{x}', scale: '1080:1920', crf: 28, preset: 'veryslow', abr: '64k', audio: true },
   // Anteprime delle card film (desktop, al passaggio del mouse)
   { out: 'preview-imani-john.mp4', src: 'imani_e_john', start: 34, dur: 10, scale: '960:540', crf: 28 },
   { out: 'preview-johanna-come.mp4', src: 'johanna_e_c', start: 24, dur: 10, scale: '960:540', crf: 28 },
@@ -62,8 +65,8 @@ const posters = [
   { out: 'src/assets/films/jasmine-daniel.jpg', src: 'jasmine', at: 30 },
   { out: 'src/assets/films/selma-michiel.jpg', src: 'selma_e_michiel', at: 33 },
   // Fermo immagine dell'hero: prima inquadratura della clip, stesso ritaglio, così il video parte senza salti
-  { out: 'src/assets/hero/hero-poster-desktop.jpg', src: 'selma_e_michiel', at: 40.9, vf: 'scale=1920:1080:flags=lanczos' },
-  { out: 'src/assets/hero/hero-poster-mobile.jpg', src: 'selma_e_michiel', at: 40.9, vf: 'crop=ih*9/16:ih,scale=1080:1920:flags=lanczos' },
+  { out: 'src/assets/hero/hero-poster-desktop.jpg', src: 'selma_e_michiel', at: 40.1, vf: 'scale=1920:1080:flags=lanczos' },
+  { out: 'src/assets/hero/hero-poster-mobile.jpg', src: 'selma_e_michiel', at: 40.1, vf: 'crop=ih*9/16:ih:(iw-ow)*0.35,scale=1080:1920:flags=lanczos' },
 ];
 
 fs.mkdirSync(OUT, { recursive: true });
@@ -82,6 +85,7 @@ for (const clip of clips.filter((c) => !only || c.out.includes(only))) {
   const dest = path.join(OUT, clip.out);
   if (clip.shots) {
     // Montaggio: ogni inquadratura è un ingresso a sé, poi concat; la musica è un tratto continuo del trailer
+    // Niente dissolvenza dal nero all'inizio: il primo fotogramma è il fermo immagine dell'hero, il video subentra senza scurirsi
     const src = find(clip.src);
     const n = clip.shots.length;
     const end = (clip.dur - fade).toFixed(2);
@@ -89,7 +93,7 @@ for (const clip of clips.filter((c) => !only || c.out.includes(only))) {
       ...clip.shots.map(
         ([, , x], i) => `[${i}:v]${clip.crop ? `crop=${clip.crop.replace('{x}', x)},` : ''}scale=${clip.scale}:flags=lanczos,setsar=1,fps=25,setpts=PTS-STARTPTS[v${i}]`,
       ),
-      `${clip.shots.map((_, i) => `[v${i}]`).join('')}concat=n=${n}:v=1:a=0,fade=t=in:st=0:d=${fade},fade=t=out:st=${end}:d=${fade}[v]`,
+      `${clip.shots.map((_, i) => `[v${i}]`).join('')}concat=n=${n}:v=1:a=0,fade=t=out:st=${end}:d=${fade}[v]`,
       `[${n}:a]afade=t=in:st=0:d=${fade},afade=t=out:st=${end}:d=${fade}[a]`,
     ].join(';');
     execFileSync(ffmpeg, [
