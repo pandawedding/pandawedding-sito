@@ -43,8 +43,8 @@ const heroShots = [
 // start/durata in secondi, scelti dai provini dei trailer
 const clips = [
   // Hero: orizzontale per desktop, verticale (ritaglio centrale 9:16) per mobile.
-  // Compressione alta (sta sotto un gradiente scuro): ~4 MB desktop, ~1,8 MB mobile
-  { out: 'hero-villa-arvedi-1080.mp4', src: 'selma_e_michiel', shots: heroShots, audioStart: 40, scale: '1920:1080', crf: 33, preset: 'veryslow', abr: '64k', audio: true },
+  // Desktop meno compresso (siepi e vigneti si impastano oltre CRF 26): ~6,5 MB; mobile ~1,3 MB
+  { out: 'hero-villa-arvedi-1080.mp4', src: 'selma_e_michiel', shots: heroShots, audioStart: 40, scale: '1920:1080', crf: 26, preset: 'veryslow', abr: '64k', audio: true },
   { out: 'hero-villa-arvedi-vertical.mp4', src: 'selma_e_michiel', shots: heroShots, audioStart: 40, crop: 'ih*9/16:ih:(iw-ow)*{x}', scale: '720:1280', crf: 33, preset: 'veryslow', abr: '64k', audio: true },
   // Anteprime delle card film (desktop, al passaggio del mouse)
   { out: 'preview-imani-john.mp4', src: 'imani_e_john', start: 34, dur: 10, scale: '960:540', crf: 28 },
