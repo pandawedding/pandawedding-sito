@@ -95,6 +95,6 @@ document.getElementById('contact-form')?.addEventListener('input', () => track('
 
 // Scorrimento delle righe orizzontali (una volta per riga)
 document.querySelectorAll<HTMLElement>('[data-row]').forEach((row) => {
-  const scroller = row.matches('ul') ? row : row.querySelector<HTMLElement>('.track');
+  const scroller = row.querySelector<HTMLElement>('.track');
   scroller?.addEventListener('scroll', () => track('row_scroll', { row: row.dataset.row }), { once: true, passive: true });
 });

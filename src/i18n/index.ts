@@ -79,7 +79,6 @@ export const ui = {
     diaries: {
       rowLabel: 'Real Weddings, swipe to see more',
       lead: ['people brought together', 'places carved in memory', 'a story revealed'],
-      more: 'See more stories',
       newPage: ['Start a new', 'page'],
       close: 'Close the diary',
       loading: 'Loading…',
@@ -238,7 +237,6 @@ export const ui = {
     diaries: {
       rowLabel: 'Real Weddings, scorrete per vederne altri',
       lead: ['persone che si incontrano', 'luoghi che restano nella memoria', 'una storia che si svela'],
-      more: 'Vedi altre storie',
       newPage: ['Scriviamo una nuova', 'pagina'],
       close: 'Chiudi il diario',
       loading: 'Caricamento…',

@@ -2,6 +2,7 @@
 import WhatsAppLink from '../WhatsAppLink.astro';
 import BrochureLink from '../BrochureLink.astro';
 import Photo from '../Photo.astro';
+import ScrollRow from '../ScrollRow.astro';
 import { getDiaries } from '../../data/diaries';
 import { getLang, localePath, ui } from '../../i18n';
 
@@ -10,8 +11,8 @@ const t = ui[lang];
 
 const diaries = await getDiaries(lang);
 const diaryPath = (slug: string) => localePath(lang, `/real-weddings/${slug}/`);
-// Storie mostrate subito
-const VISIBLE = 3;
+// Larghezze delle card qui sotto
+const sizes = '(min-width: 1536px) 28vw, (min-width: 1024px) 30vw, (min-width: 768px) 44vw, 82vw';
 ---
 
 <!-- Pages: i Real Weddings. Il diario si apre in un pannello sopra la pagina -->
@@ -33,42 +34,24 @@ const VISIBLE = 3;
     </p>
   </header>
 
-  <!-- Storie centrate; oltre le prime VISIBLE si aprono con "Vedi altre storie".
-       Su telefono e tablet sono una riga orizzontale da scorrere (stile Netflix), per non allungare la pagina -->
-  <ul
-    class="stories mx-auto mt-12 flex max-w-screen-2xl gap-x-4 px-5 max-lg:snap-x max-lg:snap-mandatory max-lg:overflow-x-auto max-lg:overflow-y-hidden max-lg:overscroll-x-contain md:mt-16 md:gap-x-5 md:px-10 lg:flex-wrap lg:justify-center lg:gap-y-16"
-    aria-label={t.diaries.rowLabel}
-    data-row="real-weddings"
-  >
+  <!-- Riga orizzontale come i Wedding Film: si scorre con il dito, con le frecce su desktop.
+       La card successiva resta in parte visibile, così si capisce che si può scorrere -->
+  <ScrollRow name="real-weddings" label={t.diaries.rowLabel} class="mt-12 md:mt-16">
     {
-      diaries.map((diary, i) => (
-        <li
-          class="reveal w-[82%] max-w-[26rem] shrink-0 snap-start text-center lg:w-[calc((100%-2.5rem)/3)]"
-          hidden={i >= VISIBLE}
-          data-story
-        >
+      diaries.map((diary) => (
+        <article class="w-[82%] md:w-[44%] lg:w-[30%] 2xl:w-[28%]">
           {diary.hasStory ? (
             // Anche la copertina apre il diario; per i lettori di schermo basta il link testuale sotto
             <a href={diaryPath(diary.slug)} data-diary={diary.slug} class="cover-link block" tabindex="-1" aria-hidden="true">
-              <Photo
-                src={diary.cover}
-                alt={diary.coverAlt}
-                ratio="4 / 5"
-                sizes="(min-width: 1024px) 30vw, (min-width: 520px) 416px, 90vw"
-              />
+              <Photo src={diary.cover} alt={diary.coverAlt} ratio="4 / 5" sizes={sizes} />
             </a>
           ) : (
-            <Photo
-              src={diary.cover}
-              alt={diary.coverAlt}
-              ratio="4 / 5"
-              sizes="(min-width: 1024px) 30vw, (min-width: 520px) 416px, 90vw"
-            />
+            <Photo src={diary.cover} alt={diary.coverAlt} ratio="4 / 5" sizes={sizes} />
           )}
           <p class="label mt-6">{diary.entry.data.label}</p>
           <h3 class="mt-3 text-title font-light">{diary.entry.data.title}</h3>
-          <p class="mt-3 leading-relaxed font-light text-fg-muted">{diary.entry.data.excerpt}</p>
-          <div class="mt-4 flex flex-wrap justify-center gap-x-6">
+          <p class="mt-3 max-w-md leading-relaxed font-light text-fg-muted">{diary.entry.data.excerpt}</p>
+          <div class="mt-3 flex flex-wrap gap-x-6 gap-y-2">
             {diary.hasStory && (
               <a href={diaryPath(diary.slug)} data-diary={diary.slug} class="cta-link">
                 {t.cta.readDiary} <span class="chevron" aria-hidden="true">›</span>
@@ -80,20 +63,10 @@ const VISIBLE = 3;
               </button>
             )}
           </div>
-        </li>
+        </article>
       ))
     }
-  </ul>
-
-  {
-    diaries.length > VISIBLE && (
-      <div class="mt-14 flex justify-center">
-        <button type="button" id="stories-more" class="btn btn-ghost">
-          {t.diaries.more} <span class="text-fg-muted">({diaries.length - VISIBLE})</span>
-        </button>
-      </div>
-    )
-  }
+  </ScrollRow>
 
   <div class="reveal mx-auto mt-24 max-w-screen-2xl px-5 text-center md:mt-36 md:px-10">
     <p class="text-title font-light tracking-title uppercase">
@@ -146,18 +119,6 @@ const VISIBLE = 3;
     .cover-link:hover :global(img) {
       transform: scale(1.03);
     }
-  }
-  .stories {
-    scrollbar-width: none;
-    scroll-padding-inline: 1.25rem;
-  }
-  @media (min-width: 768px) {
-    .stories {
-      scroll-padding-inline: 2.5rem;
-    }
-  }
-  .stories::-webkit-scrollbar {
-    display: none;
   }
   .diary-panel[open] {
     animation: panel-in 0.6s var(--ease-out-soft);
@@ -263,10 +224,4 @@ const VISIBLE = 3;
   });
 
   if (diaryHash()) open(diaryHash()!, false);
-
-  // "Vedi altre storie": compare solo quando le storie superano quelle mostrate subito
-  document.getElementById('stories-more')?.addEventListener('click', (e) => {
-    document.querySelectorAll<HTMLElement>('[data-story][hidden]').forEach((el) => (el.hidden = false));
-    (e.currentTarget as HTMLElement).parentElement!.hidden = true;
-  });
 </script>
