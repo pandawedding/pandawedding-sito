@@ -1,6 +1,6 @@
 ---
 import { t as tr } from '../i18n';
-// Riga orizzontale scorrevole stile Netflix: swipe su mobile, frecce su desktop.
+// Riga orizzontale scorrevole stile Netflix: swipe su mobile, su desktop si trascina con il mouse o si usano le frecce.
 // Gli elementi figli diventano punti di aggancio dello scroll-snap.
 interface Props {
   /** Nome della riga, usato per l'evento analytics `row_scroll` */
@@ -50,6 +50,15 @@ const t = tr(Astro.currentLocale);
   .track::-webkit-scrollbar {
     display: none;
   }
+  /* Con il mouse la riga si trascina (solo se c'è altro da vedere, vedi lo script) */
+  .track[data-draggable] {
+    cursor: grab;
+    user-select: none;
+  }
+  .track[data-dragging] {
+    cursor: grabbing;
+    scroll-snap-type: none;
+  }
   .track > :global(*) {
     scroll-snap-align: start;
     flex-shrink: 0;
@@ -62,7 +71,7 @@ const t = tr(Astro.currentLocale);
 
   .arrow-btn {
     position: absolute;
-    top: 50%;
+    top: var(--arrow-top, 50%);
     z-index: 10;
     display: none;
     width: 3.25rem;
@@ -70,11 +79,11 @@ const t = tr(Astro.currentLocale);
     align-items: center;
     justify-content: center;
     border-radius: 999px;
-    background: rgb(11 11 12 / 0.7);
+    background: rgb(11 11 12 / 0.8);
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.35);
     color: #fff;
     font-size: 1.25rem;
     backdrop-filter: blur(8px);
-    opacity: 0;
     transform: translateY(-50%);
     transition:
       opacity 0.3s,
@@ -84,17 +93,13 @@ const t = tr(Astro.currentLocale);
     background: var(--accent);
   }
   .arrow-btn:disabled {
-    opacity: 0 !important;
+    opacity: 0;
     pointer-events: none;
   }
   /* Frecce solo su dispositivi con mouse */
   @media (hover: hover) and (pointer: fine) {
     .arrow-btn:not([hidden]) {
       display: flex;
-    }
-    .scroll-row:hover .arrow-btn,
-    .arrow-btn:focus-visible {
-      opacity: 1;
     }
   }
 </style>
@@ -106,9 +111,14 @@ const t = tr(Astro.currentLocale);
     const track = row.querySelector<HTMLElement>('.track');
     const buttons = row.querySelectorAll<HTMLButtonElement>('.arrow-btn');
     if (!track) return;
+    const canHover = matchMedia('(hover: hover) and (pointer: fine)').matches;
 
     const update = () => {
       const max = track.scrollWidth - track.clientWidth - 2;
+      track.toggleAttribute('data-draggable', max > 0 && canHover);
+      // Frecce a metà della foto, non sopra i nomi
+      const photo = track.querySelector<HTMLElement>('.photo');
+      if (photo) row.style.setProperty('--arrow-top', `${photo.offsetHeight / 2}px`);
       buttons.forEach((btn) => {
         btn.hidden = max <= 0;
         btn.disabled = btn.dataset.dir === '-1' ? track.scrollLeft <= 2 : track.scrollLeft >= max;
@@ -120,6 +130,87 @@ const t = tr(Astro.currentLocale);
         track.scrollBy({ left: Number(btn.dataset.dir) * track.clientWidth * 0.85, behavior: scrollBehavior() });
       }),
     );
+
+    // Trascinamento con il mouse; su touch lo scorrimento è quello nativo
+    const THRESHOLD = 6; // sotto questa distanza è un click
+    let drag: { id: number; x: number; left: number; lastX: number; lastT: number; speed: number } | null = null;
+    let moved = false;
+    let settle = 0;
+
+    const stopSettling = () => {
+      clearTimeout(settle);
+      track.removeAttribute('data-dragging');
+    };
+
+    track.addEventListener('pointerdown', (e) => {
+      if (e.pointerType !== 'mouse' || e.button !== 0 || !track.hasAttribute('data-draggable')) return;
+      clearTimeout(settle);
+      moved = false;
+      drag = { id: e.pointerId, x: e.clientX, left: track.scrollLeft, lastX: e.clientX, lastT: e.timeStamp, speed: 0 };
+    });
+
+    track.addEventListener('pointermove', (e) => {
+      if (!drag || e.pointerId !== drag.id) return;
+      // Tasto rilasciato fuori dalla riga o dalla finestra
+      if (!(e.buttons & 1)) {
+        release(e);
+        return;
+      }
+      const dx = e.clientX - drag.x;
+      if (!moved) {
+        if (Math.abs(dx) < THRESHOLD) return;
+        moved = true;
+        track.setPointerCapture(e.pointerId);
+        track.setAttribute('data-dragging', '');
+      }
+      const dt = e.timeStamp - drag.lastT;
+      if (dt > 0) drag.speed = 0.6 * ((e.clientX - drag.lastX) / dt) + 0.4 * drag.speed;
+      drag.lastX = e.clientX;
+      drag.lastT = e.timeStamp;
+      track.scrollLeft = drag.left - dx;
+    });
+
+    // Al rilascio la riga prosegue un po' nella direzione del gesto e si ferma su una card
+    const release = (e: PointerEvent) => {
+      if (!drag || e.pointerId !== drag.id) return;
+      const { speed, left, lastT } = drag;
+      drag = null;
+      if (!moved) {
+        stopSettling();
+        return;
+      }
+      const max = track.scrollWidth - track.clientWidth;
+      const padding = parseFloat(getComputedStyle(track).scrollPaddingInlineStart) || 0;
+      const origin = track.getBoundingClientRect().left - track.scrollLeft + padding;
+      const stops = [...track.children].map((el) => Math.min(max, Math.max(0, el.getBoundingClientRect().left - origin)));
+      // Mouse fermo prima del rilascio: nessuna spinta
+      const push = e.timeStamp - lastT > 80 ? 0 : speed * 250;
+      const goal = track.scrollLeft - push;
+      const delta = track.scrollLeft - left;
+      // Un gesto deciso arriva sempre almeno alla card successiva
+      const ahead = stops.filter((x) => Math.abs(delta) > 60 && (delta > 0 ? x > left + 2 : x < left - 2));
+      const target = (ahead.length ? ahead : stops).reduce((a, b) => (Math.abs(b - goal) < Math.abs(a - goal) ? b : a));
+      track.scrollTo({ left: target, behavior: scrollBehavior() });
+      // L'aggancio alle card torna attivo a fine corsa (il timer copre i browser senza scrollend)
+      track.addEventListener('scrollend', () => !drag && stopSettling(), { once: true });
+      settle = window.setTimeout(stopSettling, 1000);
+      // Il click che segue il rilascio non deve aprire la card
+      setTimeout(() => (moved = false), 60);
+    };
+    track.addEventListener('pointerup', release);
+    track.addEventListener('pointercancel', release);
+
+    track.addEventListener(
+      'click',
+      (e) => {
+        if (!moved) return;
+        e.preventDefault();
+        e.stopPropagation();
+      },
+      true,
+    );
+    // Il browser non deve "staccare" foto e link mentre si trascina
+    track.addEventListener('dragstart', (e) => e.preventDefault());
 
     let reported = false;
     track.addEventListener(
