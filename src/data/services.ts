@@ -1,7 +1,7 @@
 import type { ImageMetadata } from 'astro';
 import type { Lang } from '../i18n';
-import photoImg from '../assets/PORTFOLIO/0004-bride-putting-on-earrings-black-white.jpg';
-import filmImg from '../assets/films/johanna-come.jpg';
+import photoImg from '../assets/services/bride-groom-kiss-under-veil-black-white.jpg';
+import filmImg from '../assets/PORTFOLIO/0082-bride-groom-watching-fireworks.jpg';
 import bothImg from '../assets/team/pierluigi-alberto.jpg';
 import extrasImg from '../assets/PORTFOLIO/0078-cake-cutting-sparklers.jpg';
 import planningImg from '../assets/PORTFOLIO/0013-wedding-details-shoes-rings-invitations.jpg';
@@ -56,7 +56,7 @@ export const services: Record<Lang, ServicesCopy> = {
       {
         id: 'photography',
         image: photoImg,
-        alt: 'Black and white portrait of the bride putting on her earrings',
+        alt: 'Bride and groom kissing under the veil in the wind, with a white bouquet, in black and white',
         kicker: '01 · Wedding Photography',
         title: ['Photography captures', 'the moment…'],
         lead: 'Documentary spontaneity and editorial aesthetics: we believe in elegance without artifice and spontaneity with intention.',
@@ -73,7 +73,8 @@ export const services: Record<Lang, ServicesCopy> = {
       {
         id: 'films',
         image: filmImg,
-        alt: 'Wedding film at Castello di Mugnana, Florence',
+        alt: 'Bride and groom from behind, watching fireworks over the party',
+        imgClass: 'object-[50%_30%]',
         kicker: '02 · Wedding Film',
         title: ['… cinema brings you', 'back to it'],
         lead: 'A film that tells your story, frame by frame. Tailored work, with care and attention to detail, and a dedicated edit that takes you back to the mood of the day, made of real moments and genuine emotion.',
@@ -187,7 +188,7 @@ export const services: Record<Lang, ServicesCopy> = {
       {
         id: 'fotografia',
         image: photoImg,
-        alt: 'Ritratto in bianco e nero della sposa che indossa gli orecchini',
+        alt: 'Gli sposi si baciano sotto il velo mosso dal vento, con un bouquet bianco, in bianco e nero',
         kicker: '01 · Wedding Photography',
         title: ['La fotografia cattura', 'il momento…'],
         lead: 'La spontaneità del reportage e l’estetica editoriale: crediamo in un’eleganza senza artifici e in una spontaneità con intenzione.',
@@ -204,7 +205,8 @@ export const services: Record<Lang, ServicesCopy> = {
       {
         id: 'video',
         image: filmImg,
-        alt: 'Wedding film al Castello di Mugnana, Firenze',
+        alt: 'Sposi di spalle che guardano i fuochi d’artificio sopra la festa',
+        imgClass: 'object-[50%_30%]',
         kicker: '02 · Wedding Film',
         title: ['… il cinema', 'vi riporta lì'],
         lead: 'Un film che racconta la vostra storia, fotogramma dopo fotogramma. Un lavoro sartoriale di attenzione ai dettagli e di cura, un montaggio dedicato che sappia riportarvi nel mood della giornata, fatta di momenti veri ed emozioni sincere.',
