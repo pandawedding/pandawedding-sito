@@ -2,7 +2,7 @@ import type { ImageMetadata } from 'astro';
 import type { Lang } from '../i18n';
 import photoImg from '../assets/PORTFOLIO/0004-bride-putting-on-earrings-black-white.jpg';
 import filmImg from '../assets/films/johanna-come.jpg';
-import bothImg from '../assets/PORTFOLIO/0026-bride-long-veil-villa-staircase.jpg';
+import bothImg from '../assets/team/pierluigi-alberto.jpg';
 import extrasImg from '../assets/PORTFOLIO/0078-cake-cutting-sparklers.jpg';
 import planningImg from '../assets/PORTFOLIO/0013-wedding-details-shoes-rings-invitations.jpg';
 
@@ -16,6 +16,8 @@ interface Service {
   id: string;
   image: ImageMetadata;
   alt: string;
+  // Inquadratura della foto, se il centro non va bene
+  imgClass?: string;
   kicker: string;
   title: [string, string];
   lead: string;
@@ -88,7 +90,8 @@ export const services: Record<Lang, ServicesCopy> = {
       {
         id: 'photo-film',
         image: bothImg,
-        alt: 'Bride with a long veil on the staircase of a villa, the groom watching from the top',
+        alt: 'Pierluigi and Alberto of PandA Wedding, in black and white in a villa courtyard, holding a camera and a video camera',
+        imgClass: 'object-[50%_75%]',
         kicker: '03 · Photo & film',
         title: ['Photography and film,', 'together'],
         lead: 'We bring photography and film together in a single service, to give your wedding a refined, unique and authentic visual story.',
@@ -218,7 +221,8 @@ export const services: Record<Lang, ServicesCopy> = {
       {
         id: 'foto-video',
         image: bothImg,
-        alt: 'Sposa con velo lungo sulla scalinata di una villa, lo sposo in cima che la guarda',
+        alt: 'Pierluigi e Alberto di PandA Wedding, in bianco e nero nel cortile di una villa, con macchina fotografica e videocamera',
+        imgClass: 'object-[50%_75%]',
         kicker: '03 · Foto e video',
         title: ['Fotografia e cinema,', 'insieme'],
         lead: 'Uniamo fotografia e cinema in un unico servizio, per dare al vostro matrimonio un racconto visivo raffinato, unico e autentico.',
