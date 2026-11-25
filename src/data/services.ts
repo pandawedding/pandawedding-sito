@@ -192,7 +192,7 @@ export const services: Record<Lang, ServicesCopy> = {
         pointsTitle: 'Caratteristiche del servizio:',
         points: [
           'Reportage del matrimonio dalla preparazione degli sposi fino al termine della giornata',
-          'Shooting fotografico dedicato per gli sposi (circa 30 min)',
+          'Shooting fotografico dedicato agli sposi (circa 30 min)',
           'Post-produzione e consegna di tutti gli scatti selezionati',
           'Gallery online dedicata: condivisione veloce e download in alta risoluzione, ottimizzato per la stampa o la pubblicazione sui social',
           'Fotografia analogica su richiesta',
@@ -237,7 +237,7 @@ export const services: Record<Lang, ServicesCopy> = {
         kicker: '04 · Extra',
         title: ['Per completare', 'la vostra storia'],
         lead: 'Qualche aggiunta per costruire il servizio intorno alla vostra giornata.',
-        text: 'Dall’album stampato al secondo fotografo o videomaker, dalle riprese in analogico al photobooth per i vostri ospiti.',
+        text: 'Dall’album stampato al fotografo o videomaker aggiuntivo, dalle riprese in analogico al photobooth per i vostri ospiti.',
         points: [
           'Album di matrimonio o fotolibro',
           'Fotografo aggiuntivo, per un secondo punto di vista sulla giornata',
@@ -272,7 +272,7 @@ export const services: Record<Lang, ServicesCopy> = {
     faq: [
       [
         'Dove siete?',
-        'La nostra base operativa è a Verona, ma lavoriamo in tutta Italia e per i matrimoni all’estero: siamo aperti ad ogni richiesta, ovunque ci sia una storia da raccontare.',
+        'La nostra base operativa è a Verona, ma lavoriamo in tutta Italia e per i matrimoni all’estero: siamo aperti a ogni richiesta, ovunque ci sia una storia da raccontare.',
       ],
       [
         'Fotografate in digitale o in analogico?',
