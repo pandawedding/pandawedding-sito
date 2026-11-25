@@ -20,6 +20,8 @@ interface Service {
   title: [string, string];
   lead: string;
   text: string;
+  // Titoletto facoltativo sopra l'elenco
+  pointsTitle?: string;
   points: string[];
 }
 
@@ -175,40 +177,42 @@ export const services: Record<Lang, ServicesCopy> = {
     description:
       'Reportage foto e video di matrimonio dalla preparazione al termine della giornata: shooting di coppia, gallery online, riprese con drone e film montato sulla musica. Fotografi e videomaker a Verona, in tutta Italia e all’estero.',
     kicker: 'Servizi',
-    h1: ['Fotografo e videomaker di matrimonio', 'a Verona, in Italia e all’estero'],
+    h1: ['Fotografi e videomaker di matrimonio', 'a Verona, in Italia e all’estero'],
     intro:
-      'Siamo Pierluigi e Alberto, fotografi e videomaker di matrimonio a Verona. Seguiamo la vostra giornata dalla vestizione alla festa, con la fotografia, il video o entrambi, e un’unica visione: osservare, interpretare e costruire un racconto autentico del vostro matrimonio.',
+      'Siamo Pierluigi e Alberto, fotografi e videomaker di matrimonio a Verona. Insieme al nostro team, seguiamo la vostra giornata con la massima dedizione, con la fotografia, il video o entrambi, e un’unica visione: osservare, interpretare e costruire un racconto curato, sofisticato e autentico del vostro matrimonio.',
     services: [
       {
         id: 'fotografia',
         image: photoImg,
         alt: 'Ritratto in bianco e nero della sposa che indossa gli orecchini',
-        kicker: '01 · Servizio fotografico',
-        title: ['La fotografia cattura', 'il momento'],
-        lead: 'Un reportage che segue la vostra giornata dalla preparazione degli sposi fino al termine della festa, con foto digitali e analogiche.',
-        text: 'La spontaneità del reportage e l’estetica editoriale, più uno shooting dedicato solo a voi due. Ogni scatto selezionato viene post-prodotto e raccolto nella vostra gallery online privata.',
+        kicker: '01 · Wedding Photography',
+        title: ['La fotografia cattura', 'il momento…'],
+        lead: 'La spontaneità del reportage e l’estetica editoriale: crediamo in un’eleganza senza artifici e in una spontaneità con intenzione.',
+        text: 'Il vostro matrimonio merita uno studio accurato di tempi e luoghi, un ascolto attento delle vostre esigenze e dei vostri desideri. Ogni evento è unico e irripetibile, e nelle sfumature sta la sua unicità.',
+        pointsTitle: 'Caratteristiche del servizio:',
         points: [
           'Reportage del matrimonio dalla preparazione degli sposi fino al termine della giornata',
-          'Shooting fotografico dedicato agli sposi',
+          'Shooting fotografico dedicato per gli sposi (circa 30 min)',
           'Post-produzione e consegna di tutti gli scatti selezionati',
-          'Gallery online dedicata: condivisione veloce e download in alta risoluzione, ottimizzato per la stampa',
-          'Fotografia di matrimonio digitale e analogica (su pellicola)',
+          'Gallery online dedicata: condivisione veloce e download in alta risoluzione, ottimizzato per la stampa o la pubblicazione sui social',
+          'Fotografia analogica su richiesta',
         ],
       },
       {
         id: 'video',
         image: filmImg,
         alt: 'Wedding film al Castello di Mugnana, Firenze',
-        kicker: '02 · Wedding film',
-        title: ['Il cinema', 'vi riporta lì'],
-        lead: 'Un video reportage dalla preparazione degli sposi al termine della giornata: fotogramma dopo fotogramma, il vostro matrimonio diventa una storia fatta di momenti veri ed emozioni sincere.',
-        text: 'Riprese aeree, stabilizzatori professionali e un audio registrato con cura, per un film di circa 15 minuti montato sulla musica, da rivivere ogni volta con la stessa intensità.',
+        kicker: '02 · Wedding Film',
+        title: ['… il cinema', 'vi riporta lì'],
+        lead: 'Un film che racconta la vostra storia, fotogramma dopo fotogramma. Un lavoro sartoriale di attenzione ai dettagli e di cura, un montaggio dedicato che sappia riportarvi nel mood della giornata, fatta di momenti veri ed emozioni sincere.',
+        text: 'Riprese con droni, stabilizzatori e un audio professionale; tecnologie di qualità a supporto della creatività.',
         points: [
           'Video reportage dalla preparazione degli sposi al termine della giornata',
-          'Riprese aeree con drone (meteo permettendo)',
+          'Riprese aeree con drone',
           'Stabilizzatori elettronici professionali per scene in movimento dinamiche',
-          'Registrazione audio professionale di promesse, discorsi e festa',
+          'Registrazione audio professionale',
           'Montaggio finale di circa 15 minuti con sottofondo musicale',
+          'Trailer disponibile su richiesta',
         ],
       },
       {
@@ -217,12 +221,13 @@ export const services: Record<Lang, ServicesCopy> = {
         alt: 'Sposa con velo lungo sulla scalinata di una villa, lo sposo in cima che la guarda',
         kicker: '03 · Foto e video',
         title: ['Fotografia e cinema,', 'insieme'],
-        lead: 'Uniamo fotografia e cinema al loro meglio, per dare al vostro matrimonio un racconto visivo raffinato, unico e autentico.',
+        lead: 'Uniamo fotografia e cinema in un unico servizio, per dare al vostro matrimonio un racconto visivo raffinato, unico e autentico.',
         text: 'Seguiamo di persona ogni matrimonio, insieme o con il nostro team di fiducia. Un solo team per tutta la giornata vuol dire un solo sguardo, e più libertà per voi.',
         points: [
           'Fotografo e videomaker che lavorano come un’unica squadra',
           'Reportage foto e video dalla preparazione al termine della giornata',
           'Una gallery online e un film che raccontano la stessa storia',
+          'Coordinamento semplice e con un unico referente per entrambi i servizi',
         ],
       },
       {
@@ -235,10 +240,11 @@ export const services: Record<Lang, ServicesCopy> = {
         text: 'Dall’album stampato al secondo fotografo o videomaker, dalle riprese in analogico al photobooth per i vostri ospiti.',
         points: [
           'Album di matrimonio o fotolibro',
-          'Secondo fotografo, per un secondo punto di vista sulla giornata',
-          'Secondo videomaker, per più angolazioni durante cerimonia e discorsi',
-          'Riprese in analogico su pellicola, dalla grana calda e senza tempo, montate nel vostro film',
-          'Photobooth per le foto di gruppo e i ritratti spontanei degli ospiti',
+          'Fotografo aggiuntivo, per un secondo punto di vista sulla giornata',
+          'Videomaker aggiuntivo, per più angolazioni durante cerimonia e discorsi',
+          'Riprese in analogico su pellicola',
+          'Fotografia analogica',
+          'Photobooth con gadget party per animare il ricevimento',
           'Destination wedding in Italia e all’estero',
         ],
       },
@@ -249,7 +255,7 @@ export const services: Record<Lang, ServicesCopy> = {
         kicker: '05 · Organizzazione',
         title: ['Una squadra,', 'un’unica regia'],
         lead: 'Dietro un giorno che scorre leggero c’è un lavoro di squadra preciso.',
-        text: 'Lavoriamo in contatto diretto con il vostro wedding planner, la location e i fornitori, prima e durante il matrimonio, perché ogni momento sia pronto quando arriva.',
+        text: 'Lavoriamo in contatto diretto con il vostro wedding planner, la location e i fornitori, prima e durante il matrimonio.',
         points: [
           'Una timeline condivisa con il wedding planner',
           'Orari, luce e spostamenti pianificati insieme, per non perdere nessun momento',
@@ -264,34 +270,33 @@ export const services: Record<Lang, ServicesCopy> = {
     places: ['Villa Arvedi, Verona', 'Relais Fra Lorenzo, Verona', 'Villa La Favorita', 'Castello di Mugnana, Firenze'],
     faqTitle: 'Domande frequenti',
     faq: [
-      ['Dove siete?', 'Siamo a Verona e lavoriamo in tutta Italia e per i matrimoni all’estero.'],
+      [
+        'Dove siete?',
+        'La nostra base operativa è a Verona, ma lavoriamo in tutta Italia e per i matrimoni all’estero: siamo aperti ad ogni richiesta, ovunque ci sia una storia da raccontare.',
+      ],
       [
         'Fotografate in digitale o in analogico?',
         'Entrambi: il nostro servizio fotografico unisce foto digitali e fotografia analogica su pellicola.',
       ],
       [
-        'Come riceviamo le foto?',
-        'In una gallery online dedicata al vostro matrimonio, con condivisione veloce e download in alta risoluzione ottimizzato per la stampa.',
+        'Come riceveremo le foto?',
+        'Creeremo per voi una gallery online dedicata al vostro matrimonio, senza scadenza, con condivisione veloce e download in alta risoluzione ottimizzato per la stampa.',
       ],
       [
         'Usate il drone?',
-        'Sì, nei nostri film di matrimonio sono incluse le riprese aeree con drone, meteo permettendo.',
+        'Sì, non deve mai mancare! Nei nostri film di matrimonio sono incluse le riprese aeree con drone (meteo permettendo e in accordo con le normative di volo).',
       ],
       [
         'Possiamo avere foto e video insieme?',
-        'Sì. Lavoriamo come un’unica squadra per fotografia e video, con un’unica visione per tutta la giornata.',
+        'Sì, è da sempre la nostra accoppiata più richiesta. Lavoriamo come un’unica squadra per fotografia e video, con un’unica visione per tutta la giornata.',
       ],
       [
         'Lavorate con i wedding planner?',
-        'Sì. Lavoriamo in contatto diretto con il planner, la location e i fornitori: condividiamo la timeline della giornata prima del matrimonio e ci coordiniamo con loro durante.',
+        'Sì, certamente! Lavoriamo in contatto diretto con il planner, la location e i fornitori: condividiamo la timeline della giornata prima del matrimonio e ci coordiniamo con loro durante. Essere affiancati da un professionista che coordina l’intero evento è un plus per tutti, anche per noi!',
       ],
       [
-        'Possiamo vedere un film completo?',
-        'Sì. Diteci dove vi sposate e vi mostreremo in privato il film completo di un matrimonio simile al vostro.',
-      ],
-      [
-        'Quanto costa?',
-        'Ogni matrimonio è diverso: chiedeteci la brochure o scriveteci, e vi mandiamo tutti i dettagli.',
+        'Quanto costano i servizi?',
+        'Ogni matrimonio è diverso: chiedeteci la brochure o scriveteci, studieremo la soluzione più adatta per voi!',
       ],
     ],
     ctaTitle: ['La vostra storia merita qualcosa di', 'straordinario.'],

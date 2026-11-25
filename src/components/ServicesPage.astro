@@ -69,7 +69,8 @@ const schema = [
             </h2>
             <p class="mt-6 text-lead font-medium">{s.lead}</p>
             <p class="mt-4 text-lead font-light text-fg-muted">{s.text}</p>
-            <ul class="mt-8 space-y-3">
+            {s.pointsTitle && <p class="mt-8 font-medium">{s.pointsTitle}</p>}
+            <ul class:list={['space-y-3', s.pointsTitle ? 'mt-4' : 'mt-8']}>
               {s.points.map((p) => (
                 <li class="flex gap-3 leading-relaxed font-light">
                   <span class="text-accent" aria-hidden="true">—</span>
