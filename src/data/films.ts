@@ -4,7 +4,6 @@ import imaniJohn from '../assets/films/imani-john.jpg';
 import johannaCome from '../assets/films/johanna-come.jpg';
 import danielJosiane from '../assets/films/daniel-josiane.jpg';
 import jasmineDaniel from '../assets/films/jasmine-daniel.jpg';
-import selmaMichiel from '../assets/films/selma-michiel.jpg';
 
 interface FilmSource {
   slug: string;
@@ -29,15 +28,6 @@ export interface Film extends Omit<FilmSource, 'names' | 'location' | 'text'> {
 
 // Testi italiani dal sito Framer (pagina Wedding Films), riscritti in inglese per il sito principale
 const sources: FilmSource[] = [
-  {
-    // TODO: descrizione da scrivere. È anche il film della hero
-    slug: 'selma-michiel',
-    names: ['Selma', 'Michiel'],
-    location: { en: 'Villa Arvedi · Verona', it: 'Villa Arvedi · Verona' },
-    vimeo: { id: '1245433726' },
-    poster: selmaMichiel,
-    preview: '/videos/preview-selma-michiel.mp4',
-  },
   {
     slug: 'johanna-come',
     names: ['Johanna', 'Côme'],

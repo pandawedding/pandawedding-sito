@@ -1,7 +1,7 @@
 // Crea le clip leggere per il sito dai trailer originali (src/assets/trailers, non in git).
 // Uso: node scripts/make-clips.mjs [filtro]   es. "node scripts/make-clips.mjs jasmine" rifà solo quelle
 // Clip in loop con dissolvenza (audio solo per l'hero, attivabile con Sound on), H.264 con faststart, in public/videos/.
-// Una clip può essere un tratto continuo (start/dur) o un montaggio di inquadrature (shots), con la musica continua da audioStart.
+// Una clip può essere un tratto continuo (start/dur) o un montaggio di inquadrature da più trailer (shots), con la musica continua di un trailer (audio).
 // I trailer senza link Vimeo hanno anche una versione web completa (720p con audio) per il player.
 import { createRequire } from 'node:module';
 import { execFileSync } from 'node:child_process';
@@ -20,42 +20,40 @@ const find = (prefix) => {
   return path.join(SRC, file);
 };
 
-// Hero: le inquadrature più belle del trailer di Selma e Michiel (sposi, shooting, drone sulla villa).
-// [inizio, fine, ritaglio] in secondi dai tagli del trailer, con un fotogramma di margine per lato;
-// ritaglio = posizione orizzontale del taglio 9:16 su mobile (0 sinistra, 1 destra, di base al centro);
-// [da, a] fa un pan morbido durante l'inquadratura, per le coppie troppo larghe per il verticale
-// (centrato sulle persone o sulla villa; le coppie larghe non entrano intere, si centra tra i due)
+// Hero: montaggio dai trailer pubblicati (solo coppie che hanno dato il consenso per il web).
+// [trailer, inizio, fine, ritaglio] in secondi, dentro un'unica inquadratura del trailer (con margine dai tagli);
+// ritaglio = posizione orizzontale del taglio 9:16 su mobile (0 sinistra, 1 destra, di base al centro),
+// scelta sui soggetti; [da, a] fa un pan morbido durante l'inquadratura.
+// Apre e chiude con Villa Arvedi dal drone, così il loop si richiude e l'alt della hero resta vero.
 const heroShots = [
-  [40.04, 41.28, 0.35], // drone: villa tra vigne e colline
-  [1.8, 3.12], // drone: villa e giardino dall'alto
-  [4.24, 5.16], // sala affrescata con la tavolata
-  [3.12, 4.24, 0.47], // sposa seduta sulla balaustra
-  [25.92, 27.76, 0.68], // sposa che gira nel giardino
-  [27.76, 29.0, 0.7], // sposo nel giardino
-  [32.08, 33.56, [0.38, 0.72]], // sposi tra le siepi: pan da lui (sinistra) a lei
-  [44.2, 44.88, 0.53], // bacio tra le statue affrescate
-  [50.64, 51.44, 0.38], // drone: labirinto con la sposa
-  [48.0, 49.36, 0.58], // sposa nel giardino
-  [44.88, 45.6, [0.76, 0.28]], // sposi che ridono: pan da lui (destra) a lei
-  [51.44, 52.64], // bacio nella sala in penombra
-  [9.8, 10.72, 0.4], // sposi al sole con l'auto d'epoca
-  [52.64, 53.84, 0.4], // sposi al tramonto nel viale
-  [53.84, 54.8, 0.47], // sposi alla fontana
-  [56.12, 57.4, 0.47], // drone: valle e vigneti
-].map(([a, b, x = 0.5]) => [a + 0.04, b - 0.04, x]);
+  ['imani_e_john', 11.4, 13.1, 0.49], // drone: Villa Arvedi tra i vigneti
+  ['jasmine', 16.2, 17.2, 0.54], // sposi che camminano tra le siepi
+  ['daniel_e_josiane', 25.4, 26.45, 0.5], // sposa con il bouquet in terrazza
+  ['johanna_e_c', 28.44, 29.4, 0.6], // sposi che salutano, il velo nel vento
+  ['imani_e_john', 33.2, 34.05, 0.5], // drone: cerimonia nel giardino della villa
+  ['daniel_e_josiane', 59.72, 60.4, 0.29], // bacio al tramonto
+  ['johanna_e_c', 25.72, 26.52, 0.35], // sposi tra le mura del castello
+  ['johanna_e_c', 50.1, 51.3, 0.43], // sposi che ballano sulla terrazza
+  ['jasmine', 38.52, 39.2, 0.35], // bacio sulla guancia
+  ['jasmine', 53.64, 54.8, 0.5], // sposa e damigelle che corrono
+  ['daniel_e_josiane', 72.3, 73.5, 0.5], // abbraccio controluce
+  ['daniel_e_josiane', 66.04, 67.6, 0.46], // giravolta, l'abito che vola
+  ['imani_e_john', 56.04, 56.8, 0.5], // drone: Villa Arvedi e il labirinto
+];
+// Musica: tratto senza voce del trailer di Daniel e Josiane (la voce fuori campo finisce a 41 s)
+const heroAudio = { src: 'daniel_e_josiane', start: 42 };
 
 // start/durata in secondi, scelti dai provini dei trailer
 const clips = [
   // Hero: orizzontale per desktop, verticale (ritaglio centrale 9:16) per mobile.
   // Meno compresse (siepi e vigneti si impastano oltre CRF 26-28): ~6,5 MB desktop; mobile a piena risoluzione per gli schermi densi
-  { out: 'hero-villa-arvedi-1080.mp4', src: 'selma_e_michiel', shots: heroShots, audioStart: 40, scale: '1920:1080', crf: 26, preset: 'veryslow', abr: '64k', audio: true },
-  { out: 'hero-villa-arvedi-vertical.mp4', src: 'selma_e_michiel', shots: heroShots, audioStart: 40, crop: 'ih*9/16:ih:(iw-ow)*{x}', scale: '1080:1920', crf: 28, preset: 'veryslow', abr: '64k', audio: true },
+  { out: 'hero-reel-1080.mp4', shots: heroShots, audio: heroAudio, scale: '1920:1080', crf: 26, preset: 'veryslow', abr: '64k' },
+  { out: 'hero-reel-vertical.mp4', shots: heroShots, audio: heroAudio, crop: 'ih*9/16:ih:(iw-ow)*{x}', scale: '1080:1920', crf: 28, preset: 'veryslow', abr: '64k' },
   // Anteprime delle card film (desktop, al passaggio del mouse)
   { out: 'preview-imani-john.mp4', src: 'imani_e_john', start: 34, dur: 10, scale: '960:540', crf: 28 },
   { out: 'preview-johanna-come.mp4', src: 'johanna_e_c', start: 24, dur: 10, scale: '960:540', crf: 28 },
   { out: 'preview-daniel-josiane.mp4', src: 'daniel_e_josiane', start: 56, dur: 10, scale: '960:540', crf: 28 },
   { out: 'preview-jasmine-daniel.mp4', src: 'jasmine', start: 16, dur: 10, scale: '960:540', crf: 28 },
-  { out: 'preview-selma-michiel.mp4', src: 'selma_e_michiel', start: 24.6, dur: 10, scale: '960:540', crf: 28 },
   // Un trailer senza link Vimeo può avere qui la sua versione web completa (ora sono tutti su Vimeo):
   // { out: 'trailer-<slug>.mp4', src: '<file>', full: true, scale: '1280:720', crf: 28, audio: true },
 ];
@@ -63,10 +61,9 @@ const clips = [
 // Poster delle card film (fotogramma a "at" secondi)
 const posters = [
   { out: 'src/assets/films/jasmine-daniel.jpg', src: 'jasmine', at: 30 },
-  { out: 'src/assets/films/selma-michiel.jpg', src: 'selma_e_michiel', at: 33 },
   // Fermo immagine dell'hero: prima inquadratura della clip, stesso ritaglio, così il video parte senza salti
-  { out: 'src/assets/hero/hero-poster-desktop.jpg', src: 'selma_e_michiel', at: 40.1, vf: 'scale=1920:1080:flags=lanczos' },
-  { out: 'src/assets/hero/hero-poster-mobile.jpg', src: 'selma_e_michiel', at: 40.1, vf: 'crop=ih*9/16:ih:(iw-ow)*0.35,scale=1080:1920:flags=lanczos' },
+  { out: 'src/assets/hero/hero-poster-desktop.jpg', src: 'imani_e_john', at: 11.44, vf: 'scale=1920:1080:flags=lanczos' },
+  { out: 'src/assets/hero/hero-poster-mobile.jpg', src: 'imani_e_john', at: 11.44, vf: 'crop=ih*9/16:ih:(iw-ow)*0.49,scale=1080:1920:flags=lanczos' },
 ];
 
 // Posizione del ritaglio: fissa, oppure [da, a] con partenza e arrivo morbidi (smoothstep sul tempo dell'inquadratura)
@@ -79,7 +76,7 @@ const cropX = (x, dur) => {
 fs.mkdirSync(OUT, { recursive: true });
 for (const clip of clips.filter((c) => !only || c.out.includes(only))) {
   const fade = 0.6;
-  if (clip.shots) clip.dur = clip.shots.reduce((sum, [a, b]) => sum + b - a, 0);
+  if (clip.shots) clip.dur = clip.shots.reduce((sum, [, a, b]) => sum + b - a, 0);
   const filters = [
     clip.crop && `crop=${clip.crop}`,
     `scale=${clip.scale}:flags=lanczos`,
@@ -93,20 +90,19 @@ for (const clip of clips.filter((c) => !only || c.out.includes(only))) {
   if (clip.shots) {
     // Montaggio: ogni inquadratura è un ingresso a sé, poi concat; la musica è un tratto continuo del trailer
     // Niente dissolvenza dal nero all'inizio: il primo fotogramma è il fermo immagine dell'hero, il video subentra senza scurirsi
-    const src = find(clip.src);
     const n = clip.shots.length;
     const end = (clip.dur - fade).toFixed(2);
     const graph = [
       ...clip.shots.map(
-        ([a, b, x], i) => `[${i}:v]setpts=PTS-STARTPTS,${clip.crop ? `crop=${clip.crop.replace('{x}', cropX(x, b - a))},` : ''}scale=${clip.scale}:flags=lanczos,setsar=1,fps=25[v${i}]`,
+        ([, a, b, x], i) => `[${i}:v]setpts=PTS-STARTPTS,${clip.crop ? `crop=${clip.crop.replace('{x}', cropX(x, b - a))},` : ''}scale=${clip.scale}:flags=lanczos,setsar=1,fps=25[v${i}]`,
       ),
       `${clip.shots.map((_, i) => `[v${i}]`).join('')}concat=n=${n}:v=1:a=0,fade=t=out:st=${end}:d=${fade}[v]`,
       `[${n}:a]afade=t=in:st=0:d=${fade},afade=t=out:st=${end}:d=${fade}[a]`,
     ].join(';');
     execFileSync(ffmpeg, [
       '-hide_banner', '-loglevel', 'error', '-y',
-      ...clip.shots.flatMap(([a, b]) => ['-ss', String(a), '-t', (b - a).toFixed(2), '-i', src]),
-      '-ss', String(clip.audioStart), '-t', clip.dur.toFixed(2), '-i', src,
+      ...clip.shots.flatMap(([src, a, b]) => ['-ss', String(a), '-t', (b - a).toFixed(2), '-i', find(src)]),
+      '-ss', String(clip.audio.start), '-t', clip.dur.toFixed(2), '-i', find(clip.audio.src),
       '-filter_complex', graph, '-map', '[v]', '-map', '[a]',
       '-c:a', 'aac', '-b:a', clip.abr ?? '96k',
       '-c:v', 'libx264', '-preset', clip.preset ?? 'slow', '-crf', String(clip.crf),
