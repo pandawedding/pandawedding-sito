@@ -96,13 +96,8 @@ const schema = [
       ))
     }
 
-    <section class="reveal mx-auto mt-24 max-w-3xl px-5 text-center md:mt-36 md:px-10" aria-labelledby="venues-title">
-      <h2 id="venues-title" class="label">{c.venuesTitle}</h2>
-      <p class="mt-6 text-lead font-light text-fg-muted">{c.venuesText}</p>
-      <ul class="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm tracking-[0.18em] uppercase">
-        {c.venues.map((v) => <li>{v}</li>)}
-      </ul>
-      <div class="mt-8 flex flex-col items-center">
+    <nav class="reveal mx-auto mt-24 max-w-3xl px-5 text-center md:mt-36 md:px-10">
+      <div class="flex flex-col items-center">
         <a href={localePath(lang, '/#films')} class="cta-link" data-track="cta_click" data-label="films" data-position="planners">
           {t.guides.explore.films} <span class="chevron" aria-hidden="true">›</span>
         </a>
@@ -110,7 +105,7 @@ const schema = [
           {c.guidesLink} <span class="chevron" aria-hidden="true">›</span>
         </a>
       </div>
-    </section>
+    </nav>
 
     <section class="mx-auto mt-24 max-w-3xl px-5 md:mt-36 md:px-10" aria-labelledby="faq-title">
       <h2 id="faq-title" class="label reveal text-center">{c.faqTitle}</h2>

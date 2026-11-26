@@ -29,9 +29,6 @@ interface PlannersCopy {
   intro: string;
   hero: { image: ImageMetadata; alt: string };
   blocks: Block[];
-  venuesTitle: string;
-  venuesText: string;
-  venues: string[];
   guidesLink: string;
   faqTitle: string;
   faq: [string, string][];
@@ -80,10 +77,6 @@ export const planners: Record<Lang, PlannersCopy> = {
         ],
       },
     ],
-    venuesTitle: 'Where we have worked',
-    venuesText:
-      'Based in Verona, we follow weddings in Veneto, across Italy and at destination weddings abroad. Some of the venues where we have told a story:',
-    venues: ['Villa Arvedi, Verona', 'Relais Fra Lorenzo, Verona', 'Villa La Favorita', 'Castello di Mugnana, Florence'],
     guidesLink: 'Read our guides to Verona, Lake Garda, Tuscany and more',
     faqTitle: 'Questions planners ask us',
     faq: [
@@ -151,10 +144,6 @@ export const planners: Record<Lang, PlannersCopy> = {
         ],
       },
     ],
-    venuesTitle: 'Dove abbiamo lavorato',
-    venuesText:
-      'Da Verona seguiamo matrimoni in Veneto, in tutta Italia e all’estero. Alcune delle location dove abbiamo raccontato una storia:',
-    venues: ['Villa Arvedi, Verona', 'Relais Fra Lorenzo, Verona', 'Villa La Favorita', 'Castello di Mugnana, Firenze'],
     guidesLink: 'Leggete le nostre guide a Verona, Lago di Garda, Toscana e non solo',
     faqTitle: 'Le domande dei planner',
     faq: [
