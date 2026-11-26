@@ -83,20 +83,15 @@ const schema = [
       ))
     }
 
-    <section class="reveal mx-auto mt-24 max-w-3xl px-5 text-center md:mt-36 md:px-10" aria-labelledby="places-title">
-      <h2 id="places-title" class="label">{c.placesTitle}</h2>
-      <p class="mt-6 text-lead font-light text-fg-muted">{c.placesText}</p>
-      <ul class="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm tracking-[0.18em] uppercase">
-        {c.places.map((p) => <li>{p}</li>)}
-      </ul>
-      <a href={guidesPath[lang]} class="cta-link mt-8" data-track="cta_click" data-label="guides" data-position="services">
+    <nav class="reveal mx-auto mt-24 max-w-3xl px-5 text-center md:mt-36 md:px-10">
+      <a href={guidesPath[lang]} class="cta-link" data-track="cta_click" data-label="guides" data-position="services">
         {t.guides.servicesLink} <span class="chevron" aria-hidden="true">›</span>
       </a>
       <br />
       <a href={plannersPath[lang]} class="cta-link" data-track="cta_click" data-label="planners" data-position="services">
         {planners[lang].footerLink} <span class="chevron" aria-hidden="true">›</span>
       </a>
-    </section>
+    </nav>
 
     <section class="mx-auto mt-24 max-w-3xl px-5 md:mt-36 md:px-10" aria-labelledby="faq-title">
       <h2 id="faq-title" class="label reveal text-center">{c.faqTitle}</h2>
