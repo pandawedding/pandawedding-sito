@@ -93,7 +93,7 @@ const fields = [
 
         <div class="flex flex-col items-start gap-4 sm:col-span-2 md:col-span-1 xl:col-span-2">
           <p class="text-xs text-fg-muted">
-            {t.contact.privacy[0]}
+            {t.contact.privacy[0]}{' '}
             <a href={legalPath.privacy[lang]} class="underline underline-offset-2 hover:text-fg">{t.contact.privacy[1]}</a>.
           </p>
           <button type="submit" class="btn">
@@ -106,19 +106,19 @@ const fields = [
       <!-- Brochure: dopo il form, per chi non è ancora pronto a scrivere; basta l'email -->
       <form
         id="brochure"
-        class="reveal mt-14 scroll-mt-28 rounded-[6px] bg-bg-raised p-6 md:p-8"
+        class="reveal mt-10 scroll-mt-28 rounded-[6px] bg-bg-raised p-5 md:mt-14 md:p-8"
         novalidate
         data-msg-sending={t.contact.sending}
         data-msg-sent={t.brochure.sent}
         data-msg-failed={t.contact.failed(site.email)}
         aria-labelledby="brochure-title"
       >
-        <p class="label">{t.brochure.kicker}</p>
-        <h3 id="brochure-title" class="mt-3 text-xl font-light md:text-2xl">
+        <p class="label max-md:hidden">{t.brochure.kicker}</p>
+        <h3 id="brochure-title" class="text-lg font-light md:mt-3 md:text-2xl">
           {t.brochure.title[0]} <span class="text-accent">{t.brochure.title[1]}</span>
         </h3>
-        <p class="mt-3 leading-relaxed font-light text-fg-muted">{t.brochure.text}</p>
-        <div class="mt-6 flex flex-col gap-3 sm:flex-row md:flex-col xl:flex-row">
+        <p class="mt-2 text-sm leading-relaxed font-light text-fg-muted md:mt-3 md:text-base">{t.brochure.text}</p>
+        <div class="mt-4 flex flex-col gap-3 md:mt-6 sm:flex-row md:flex-col xl:flex-row">
           <label class="flex-1">
             <span class="sr-only">Email</span>
             <input

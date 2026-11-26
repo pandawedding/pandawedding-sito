@@ -72,13 +72,14 @@ const sizes = '(min-width: 1536px) 28vw, (min-width: 1024px) 30vw, (min-width: 7
     <p class="text-title font-light tracking-title uppercase">
       {t.diaries.newPage[0]} <span class="text-accent">{t.diaries.newPage[1]}</span>
     </p>
-    <div class="mt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+    <!-- Su mobile c'è già la barra fissa in basso: qui niente doppione -->
+    <div class="mt-10 hidden flex-wrap items-center justify-center gap-2 sm:gap-3 md:flex">
       <a href="#contatti" class="btn" data-track="cta_click" data-label="get in touch" data-position="diaries">
         {t.cta.getInTouch} <span class="arrow" aria-hidden="true">→</span>
       </a>
       <WhatsAppLink position="diaries" />
     </div>
-    <BrochureLink position="diaries" class="mt-5" />
+    <BrochureLink position="diaries" class="mt-8 md:mt-5" />
   </div>
 </section>
 
