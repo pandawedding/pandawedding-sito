@@ -34,9 +34,6 @@ interface ServicesCopy {
   h1: [string, string];
   intro: string;
   services: Service[];
-  placesTitle: string;
-  placesText: string;
-  places: string[];
   faqTitle: string;
   faq: [string, string][];
   ctaTitle: [string, string];
@@ -138,10 +135,6 @@ export const services: Record<Lang, ServicesCopy> = {
         ],
       },
     ],
-    placesTitle: 'Where we work',
-    placesText:
-      'Based in Verona, we photograph and film weddings in Veneto, across Italy and at destination weddings abroad. Some of the venues where we have told a story:',
-    places: ['Villa Arvedi, Verona', 'Relais Fra Lorenzo, Verona', 'Villa La Favorita', 'Castello di Mugnana, Florence'],
     faqTitle: 'Frequently asked questions',
     faq: [
       [
@@ -270,10 +263,6 @@ export const services: Record<Lang, ServicesCopy> = {
         ],
       },
     ],
-    placesTitle: 'Dove lavoriamo',
-    placesText:
-      'Da Verona fotografiamo e filmiamo matrimoni in Veneto, in tutta Italia e all’estero. Alcune delle location dove abbiamo raccontato una storia:',
-    places: ['Villa Arvedi, Verona', 'Relais Fra Lorenzo, Verona', 'Villa La Favorita', 'Castello di Mugnana, Firenze'],
     faqTitle: 'Domande frequenti',
     faq: [
       [
