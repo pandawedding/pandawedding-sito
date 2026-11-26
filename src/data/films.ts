@@ -29,18 +29,6 @@ export interface Film extends Omit<FilmSource, 'names' | 'location' | 'text'> {
 // Testi italiani dal sito Framer (pagina Wedding Films), riscritti in inglese per il sito principale
 const sources: FilmSource[] = [
   {
-    slug: 'johanna-come',
-    names: ['Johanna', 'Côme'],
-    location: { en: 'Castello di Mugnana · Florence', it: 'Castello di Mugnana · Firenze' },
-    text: {
-      en: 'A story told through glances, smiles and real emotion. A memory to relive, every time with the same intensity.',
-      it: 'Un racconto di sguardi, sorrisi ed emozioni autentiche. Un ricordo da rivivere, ogni volta con la stessa intensità.',
-    },
-    vimeo: { id: '1207460157', hash: '88bc475236' },
-    poster: johannaCome,
-    preview: '/videos/preview-johanna-come.mp4',
-  },
-  {
     slug: 'imani-john',
     names: ['Imani', 'John'],
     location: { en: 'Villa Arvedi · Verona', it: 'Villa Arvedi · Verona' },
@@ -51,6 +39,18 @@ const sources: FilmSource[] = [
     vimeo: { id: '1208434310', hash: 'df0186a96f' },
     poster: imaniJohn,
     preview: '/videos/preview-imani-john.mp4',
+  },
+  {
+    slug: 'johanna-come',
+    names: ['Johanna', 'Côme'],
+    location: { en: 'Castello di Mugnana · Florence', it: 'Castello di Mugnana · Firenze' },
+    text: {
+      en: 'A story told through glances, smiles and real emotion. A memory to relive, every time with the same intensity.',
+      it: 'Un racconto di sguardi, sorrisi ed emozioni autentiche. Un ricordo da rivivere, ogni volta con la stessa intensità.',
+    },
+    vimeo: { id: '1207460157', hash: '88bc475236' },
+    poster: johannaCome,
+    preview: '/videos/preview-johanna-come.mp4',
   },
   {
     slug: 'daniel-josiane',
