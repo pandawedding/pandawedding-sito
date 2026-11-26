@@ -20,28 +20,31 @@ const find = (prefix) => {
   return path.join(SRC, file);
 };
 
-// Hero: montaggio dai trailer pubblicati (solo coppie che hanno dato il consenso per il web).
-// [trailer, inizio, fine, ritaglio] in secondi, dentro un'unica inquadratura del trailer (con margine dai tagli);
+// Hero: montaggio dai trailer pubblicati, una scena diversa per inquadratura (drone, dettagli, ritratti, festa).
+// [trailer, inizio, battiti, ritaglio]: l'inquadratura parte da "inizio" (in secondi, dentro un'unica ripresa
+// del trailer) e dura 1 o 2 battiti della musica, così i tagli cadono a tempo;
 // ritaglio = posizione orizzontale del taglio 9:16 su mobile (0 sinistra, 1 destra, di base al centro),
 // scelta sui soggetti; [da, a] fa un pan morbido durante l'inquadratura.
 // Apre e chiude con Villa Arvedi dal drone, così il loop si richiude e l'alt della hero resta vero.
 const heroShots = [
-  ['imani_e_john', 11.4, 13.1, 0.49], // drone: Villa Arvedi tra i vigneti
-  ['jasmine', 16.2, 17.2, 0.54], // sposi che camminano tra le siepi
-  ['daniel_e_josiane', 25.4, 26.45, 0.5], // sposa con il bouquet in terrazza
-  ['johanna_e_c', 28.44, 29.4, 0.6], // sposi che salutano, il velo nel vento
-  ['imani_e_john', 33.2, 34.05, 0.5], // drone: cerimonia nel giardino della villa
-  ['daniel_e_josiane', 59.72, 60.4, 0.29], // bacio al tramonto
-  ['johanna_e_c', 25.72, 26.52, 0.35], // sposi tra le mura del castello
-  ['johanna_e_c', 50.1, 51.3, 0.43], // sposi che ballano sulla terrazza
-  ['jasmine', 38.52, 39.2, 0.35], // bacio sulla guancia
-  ['jasmine', 53.64, 54.8, 0.5], // sposa e damigelle che corrono
-  ['daniel_e_josiane', 72.3, 73.5, 0.5], // abbraccio controluce
-  ['daniel_e_josiane', 66.04, 67.6, 0.46], // giravolta, l'abito che vola
-  ['imani_e_john', 56.04, 56.8, 0.5], // drone: Villa Arvedi e il labirinto
+  ['imani_e_john', 11.4, 2, 0.49], // drone: Villa Arvedi tra i vigneti
+  ['johanna_e_c', 18.9, 2, 0.5], // il velo nel vento
+  ['imani_e_john', 13.3, 1, 0.68], // l'anello
+  ['johanna_e_c', 16.44, 1, 0.38], // primo piano della sposa che sorride
+  ['jasmine', 42.68, 1, 0.46], // sposi nel viale di siepi verso la villa
+  ['johanna_e_c', 30.76, 1, 0.46], // sposi lungo la navata
+  ['johanna_e_c', 34.56, 1, 0.46], // uscita tra i petali
+  ['daniel_e_josiane', 59.66, 1, 0.29], // bacio al tramonto
+  ['jasmine', 34.52, 1, 0.49], // sposo e testimoni che corrono
+  ['johanna_e_c', 33.5, 1, 0.47], // drone dall'alto: gli sposi sul prato
+  ['jasmine', 53.64, 1, 0.5], // sposa e damigelle che corrono
+  ['johanna_e_c', 44.0, 1, 0.57], // festa: lo sposo con le braccia al cielo
+  ['daniel_e_josiane', 66.04, 2, 0.46], // giravolta, l'abito che vola
+  ['imani_e_john', 56.0, 1, 0.5], // drone: Villa Arvedi e il labirinto
 ];
-// Musica: tratto senza voce del trailer di Daniel e Josiane (la voce fuori campo finisce a 41 s)
-const heroAudio = { src: 'daniel_e_josiane', start: 42 };
+// Musica: trailer di Selma e Michiel (solo musica, nessuna voce), ~74 bpm; l'inizio cade su un battito.
+// Il loro video non va sul sito, la musica sì (deciso dal proprietario il 26/11/2026).
+const heroAudio = { src: 'selma_e_michiel', start: 40.08, beat: 0.81 };
 
 // start/durata in secondi, scelti dai provini dei trailer
 const clips = [
@@ -76,7 +79,17 @@ const cropX = (x, dur) => {
 fs.mkdirSync(OUT, { recursive: true });
 for (const clip of clips.filter((c) => !only || c.out.includes(only))) {
   const fade = 0.6;
-  if (clip.shots) clip.dur = clip.shots.reduce((sum, [, a, b]) => sum + b - a, 0);
+  if (clip.shots) {
+    // [trailer, inizio, battiti, x] -> [trailer, inizio, fine, x], tagli sul fotogramma più vicino al battito
+    let beats = 0;
+    clip.shots = clip.shots.map(([src, a, n, x]) => {
+      const from = Math.round(beats * clip.audio.beat * 25) / 25;
+      beats += n;
+      const to = Math.round(beats * clip.audio.beat * 25) / 25;
+      return [src, a, +(a + to - from).toFixed(2), x];
+    });
+    clip.dur = clip.shots.reduce((sum, [, a, b]) => sum + b - a, 0);
+  }
   const filters = [
     clip.crop && `crop=${clip.crop}`,
     `scale=${clip.scale}:flags=lanczos`,
