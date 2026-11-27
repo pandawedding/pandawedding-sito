@@ -49,10 +49,11 @@ const t = tr(Astro.currentLocale);
   let items: HTMLElement[] = [];
   let pos = 0;
 
-  // Solo le foto dello stesso gruppo (portfolio o singolo diario) già visibili
-  const visibleItems = (trigger: HTMLElement) => {
+  // Tutte le foto dello stesso gruppo (portfolio o singolo diario), anche quelle non ancora
+  // mostrate nella pagina: il contatore dice il totale vero e nel visore si sfoglia tutto
+  const groupItems = (trigger: HTMLElement) => {
     const group = trigger.closest('[data-lightbox-group]') ?? document;
-    return [...group.querySelectorAll<HTMLElement>('[data-lightbox]')].filter((el) => !el.closest('[hidden]'));
+    return [...group.querySelectorAll<HTMLElement>('[data-lightbox]')];
   };
 
   const show = (i: number) => {
@@ -71,7 +72,7 @@ const t = tr(Astro.currentLocale);
   document.addEventListener('click', (e) => {
     const trigger = (e.target as HTMLElement).closest<HTMLElement>('[data-lightbox]');
     if (!trigger) return;
-    items = visibleItems(trigger);
+    items = groupItems(trigger);
     openDialog();
     show(items.indexOf(trigger));
   });

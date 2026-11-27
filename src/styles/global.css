@@ -265,6 +265,12 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;
 }
+/* Le sezioni bianche arrivano fino in cima, dietro l'header: altrimenti dopo il salto
+   resta sotto l'header una striscia della sezione scura precedente (l'header diventa grigio).
+   Il loro padding superiore tiene comunque i testi sotto l'header. */
+main > [data-theme='light'][id] {
+  scroll-margin-top: -4rem;
+}
 
 /* Passaggio morbido scuro → bianco → scuro mentre la sezione entra nello schermo.
    Senza supporto per le animazioni legate allo scroll resta il colore finale.
