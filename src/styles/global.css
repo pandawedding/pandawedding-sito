@@ -30,6 +30,8 @@
   --fg-muted: #a1a1a6;
   --line: rgb(245 245 247 / 0.12);
   --logo-ink: var(--fg);
+  /* Verde WhatsApp, solo per il logo nei link WhatsApp */
+  --whatsapp: #25d366;
 
   color-scheme: dark;
 }
@@ -41,6 +43,7 @@
   --fg-muted: #5c5852; /* ~7:1 su bianco */
   --line: rgb(23 21 19 / 0.12);
   --logo-ink: #171513;
+  --whatsapp: #1da851; /* un filo più scuro: sul bianco il verde originale si perde */
 
   color-scheme: light;
 }
