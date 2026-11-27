@@ -165,6 +165,10 @@ export const services: Record<Lang, ServicesCopy> = {
         'How much do your services cost?',
         'Every wedding is different: ask for our brochure or get in touch, and we’ll find the solution that suits you best!',
       ],
+      [
+        'How long does it take to receive photos and video?',
+        'We deliver photos and video within 6 months of the wedding date. Fast delivery and preview services are also available: talk to us about it!',
+      ],
     ],
     ctaTitle: ['Your story deserves more than', 'ordinary.'],
     ctaText: 'Let’s talk about your wedding.',
@@ -292,6 +296,10 @@ export const services: Record<Lang, ServicesCopy> = {
       [
         'Quanto costano i servizi?',
         'Ogni matrimonio è diverso: chiedeteci la brochure o scriveteci, studieremo la soluzione più adatta per voi!',
+      ],
+      [
+        'Quali sono i tempi di consegna?',
+        'Consegniamo foto e video entro 6 mesi dalla data del matrimonio. Sono disponibili anche servizi di fast delivery e preview: parlatene con noi!',
       ],
     ],
     ctaTitle: ['La vostra storia merita qualcosa di', 'straordinario.'],
