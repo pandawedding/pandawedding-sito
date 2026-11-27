@@ -4,6 +4,9 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "pandawedding-sito",
   "compatibility_date": "2026-11-01",
+  // Indirizzo di prova *.workers.dev e anteprime dei rami sempre attivi
+  "workers_dev": true,
+  "preview_urls": true,
   "assets": {
     "directory": "./dist"
   }
