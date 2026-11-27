@@ -110,6 +110,7 @@ export const ui = {
       kicker: 'Contact',
       title: ['Your story deserves more than', 'ordinary.'],
       lead: 'Let’s talk about your wedding.',
+      reply: ['We reply by email or WhatsApp', 'within 24 hours.'],
       fields: {
         names: ['Full names', 'e.g. Livia & Marco'],
         email: ['Email', 'name@email.com'],
@@ -269,6 +270,7 @@ export const ui = {
       kicker: 'Contatti',
       title: ['La vostra storia merita qualcosa di', 'straordinario.'],
       lead: 'Parliamo del vostro matrimonio.',
+      reply: ['Rispondiamo via email o WhatsApp', 'entro 24 ore.'],
       fields: {
         names: ['Nomi degli sposi', 'es. Livia e Marco'],
         email: ['Email', 'nome@email.com'],
