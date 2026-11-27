@@ -26,32 +26,52 @@ const find = (prefix) => {
 // ritaglio = posizione orizzontale del taglio 9:16 su mobile (0 sinistra, 1 destra, di base al centro),
 // scelta sui soggetti; [da, a] fa un pan morbido durante l'inquadratura.
 // Apre e chiude con Villa Arvedi dal drone, così il loop si richiude e l'alt della hero resta vero.
+// Giulia e Luca: solo dettagli e inquadrature larghe o dal drone, niente primi piani (proprietario, 27/11/2026).
 const heroShots = [
+  // Arrivo: bellezza e dolce vita
   ['imani_e_john', 11.4, 2, 0.49], // drone: Villa Arvedi tra i vigneti
-  ['johanna_e_c', 18.9, 2, 0.5], // il velo nel vento
-  ['imani_e_john', 13.3, 1, 0.68], // l'anello
-  ['johanna_e_c', 16.44, 1, 0.38], // primo piano della sposa che sorride
-  ['jasmine', 42.68, 1, 0.46], // sposi nel viale di siepi verso la villa
-  ['johanna_e_c', 30.76, 1, 0.46], // sposi lungo la navata
-  ['johanna_e_c', 34.56, 1, 0.46], // uscita tra i petali
+  ['giulia_e_luca', 6.3, 1, 0.5], // flower wall di rose
+  ['eugenia_e_andrea', 130.5, 1, 0.87], // sposi sulla spider d'epoca, lo sposo esulta
+  ['johanna_e_c', 23.48, 1, 0.65], // l'amico che salta addosso allo sposo
+  ['giulia_e_luca', 15.0, 1, 0.72], // Rolls-Royce bianca: la calandra con il logo
+  ['imani_e_john', 25.44, 1, 0.5], // salone affrescato con il lampadario
+  ['jasmine', 42.68, 1, 0.46], // sposi nel viale di siepi
+  ['eugenia_e_andrea', 104.0, 1, 0.5], // drone dall'alto sulla cerimonia
+  // Cerimonia e gioia (le tre uscite dalla chiesa distanziate)
+  ['tatiana_e_marco', 37.3, 1, 0.58], // uscita dal Duomo tra i cappelli
   ['daniel_e_josiane', 59.66, 1, 0.29], // bacio al tramonto
   ['jasmine', 34.52, 1, 0.49], // sposo e testimoni che corrono
-  ['johanna_e_c', 33.5, 1, 0.47], // drone dall'alto: gli sposi sul prato
+  ['imani_e_john', 33.2, 1, 0.5], // drone: cerimonia nel giardino della villa
+  ['tatiana_e_marco', 71.3, 1, 0.5], // la sposa e il cavallo bianco
+  ['giulia_e_luca', 66.5, 1, 0.5], // lancio del riso davanti alla chiesa
+  ['eugenia_e_andrea', 155.0, 1, 0.72], // sposi sdraiati sull'auto, il bacio
+  ['johanna_e_c', 50.1, 1, 0.43], // ballo sulla terrazza
+  ['tatiana_e_marco', 109.6, 1, 0.57], // sposi che scendono la scalinata
+  ['eugenia_e_andrea', 150.3, 1, 0.57], // brindisi accanto all'auto
+  ['johanna_e_c', 34.56, 1, 0.46], // uscita tra i petali
+  // Festa: dolce vita
+  ['tatiana_e_marco', 85.2, 1, 0.52], // sposi con le braccia al cielo tra le tende
+  ['giulia_e_luca', 44.1, 1, 0.25], // festa in pista, luci magenta
+  ['johanna_e_c', 44.0, 1, 0.57], // lo sposo con le braccia al cielo
+  ['Francesca', 15.12, 1, 0.4], // bacio tra le fontane di scintille
   ['jasmine', 53.64, 1, 0.5], // sposa e damigelle che corrono
-  ['johanna_e_c', 44.0, 1, 0.57], // festa: lo sposo con le braccia al cielo
+  ['giulia_e_luca', 46.36, 1, 0.5], // drone: sposi e scintille sulla scalinata
+  ['imani_e_john', 40.9, 1, 0.43], // festa in pista
+  ['Francesca', 33.6, 1, 0.43], // sposi controluce, fronte contro fronte
   ['daniel_e_josiane', 66.04, 2, 0.46], // giravolta, l'abito che vola
+  ['giulia_e_luca', 86.7, 1, 0.5], // drone: giardino all'italiana di Villa Arvedi
   ['imani_e_john', 56.0, 1, 0.5], // drone: Villa Arvedi e il labirinto
 ];
-// Musica: trailer di Selma e Michiel (solo musica, nessuna voce), ~74 bpm; l'inizio cade su un battito.
-// Il loro video non va sul sito, la musica sì (deciso dal proprietario il 26/11/2026).
-const heroAudio = { src: 'selma_e_michiel', start: 40.08, beat: 0.81 };
+// Musica: trailer di Selma e Michiel (solo musica, nessuna voce), ~74 bpm; parte su un battito
+// e finisce con il finale del brano. Il loro video non va sul sito, la musica sì (proprietario, 26/11/2026).
+const heroAudio = { src: 'Selma e Michiel', start: 36.03, beat: 0.81 };
 
 // start/durata in secondi, scelti dai provini dei trailer
 const clips = [
   // Hero: orizzontale per desktop, verticale (ritaglio centrale 9:16) per mobile.
   // Meno compresse (siepi e vigneti si impastano oltre CRF 26-28): ~6,5 MB desktop; mobile a piena risoluzione per gli schermi densi
-  { out: 'hero-reel-1080.mp4', shots: heroShots, audio: heroAudio, scale: '1920:1080', crf: 26, preset: 'veryslow', abr: '64k' },
-  { out: 'hero-reel-vertical.mp4', shots: heroShots, audio: heroAudio, crop: 'ih*9/16:ih:(iw-ow)*{x}', scale: '1080:1920', crf: 28, preset: 'veryslow', abr: '64k' },
+  { out: 'hero-reel-1080.mp4', shots: heroShots, audio: heroAudio, scale: '1920:1080', crf: 28, preset: 'veryslow', abr: '64k' },
+  { out: 'hero-reel-vertical.mp4', shots: heroShots, audio: heroAudio, crop: 'ih*9/16:ih:(iw-ow)*{x}', scale: '1080:1920', crf: 30, preset: 'veryslow', abr: '64k' },
   // Anteprime delle card film (desktop, al passaggio del mouse)
   { out: 'preview-imani-john.mp4', src: 'imani_e_john', start: 34, dur: 10, scale: '960:540', crf: 28 },
   { out: 'preview-johanna-come.mp4', src: 'johanna_e_c', start: 24, dur: 10, scale: '960:540', crf: 28 },
