@@ -19,6 +19,13 @@ const KEY = import.meta.env.PUBLIC_POSTHOG_KEY as string | undefined;
 const API_HOST = 'https://eu.i.posthog.com';
 const STORAGE = 'consent';
 
+// Solo in sviluppo: chiave mancante = eventi persi senza accorgersene. In produzione nessun avviso.
+if (import.meta.env.DEV && !KEY) {
+  console.error(
+    'PUBLIC_POSTHOG_KEY variable required by PostHog is missing or un-configured, this causes events to be silently missed. This error stops appearing once PUBLIC_POSTHOG_KEY is configured',
+  );
+}
+
 export const getConsent = (): Consent | null => {
   try {
     const v = localStorage.getItem(STORAGE);
@@ -63,6 +70,7 @@ function loadPostHog() {
     disable_session_recording: true,
     disable_surveys: true, // niente sondaggi: non li usiamo
     capture_dead_clicks: false, // solo eventi espliciti (vedi autocapture)
+    capture_exceptions: true, // errori JavaScript in PostHog Error tracking (solo con consenso)
   });
   arr.opt_in_capturing();
 }

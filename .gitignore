@@ -35,3 +35,4 @@ brochure/
 .claude/settings.local.json
 .codex/
 .impeccable/
+.posthog/
