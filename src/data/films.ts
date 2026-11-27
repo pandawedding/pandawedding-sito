@@ -76,19 +76,25 @@ const sources: FilmSource[] = [
     preview: '/videos/preview-jasmine-daniel.mp4',
   },
   {
-    // TODO: descrizione da scrivere
     slug: 'alessandra-denis',
     names: ['Alessandra', 'Denis'],
     location: { en: 'Villa Verità Fraccaroli · Verona', it: 'Villa Verità Fraccaroli · Verona' },
+    text: {
+      en: 'A kiss beneath the veil, light pouring into the halls of the villa. A day at Villa Verità Fraccaroli that ends in showers of sparks and dancing.',
+      it: 'Un bacio sotto il velo, la luce che entra nelle sale della villa. Una giornata a Villa Verità Fraccaroli che finisce tra fontane di scintille e balli.',
+    },
     vimeo: { id: '1232287325', hash: '1fc57821cb' },
     poster: alessandraDenis,
     preview: '/videos/preview-alessandra-denis.mp4',
   },
   {
-    // TODO: descrizione da scrivere
     slug: 'tatiana-marco',
     names: ['Tatiana', 'Marco'],
     location: { en: 'Ca’ Ottolina · Verona', it: 'Ca’ Ottolina · Verona' },
+    text: {
+      en: 'Morning coats, striking hats and the ancient stones of Verona. A wedding with the grace of another era, from the church to the evening at Ca’ Ottolina.',
+      it: 'Tight, cappelli di carattere e le pietre antiche di Verona. Un matrimonio con la grazia di altri tempi, dalla chiesa alla sera a Ca’ Ottolina.',
+    },
     vimeo: { id: '1051084938' },
     poster: tatianaMarco,
     preview: '/videos/preview-tatiana-marco.mp4',
