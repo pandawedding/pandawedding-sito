@@ -42,10 +42,14 @@ const fields = [
         >
           {site.email}
         </a>
-        <WhatsAppLink position="contact" />
+        <!-- WhatsApp è la via rapida, il modulo quella completa: lo diciamo accanto a ciascuno -->
+        <div class="flex flex-col items-start gap-3">
+          <WhatsAppLink position="contact" />
+          <p class="max-w-sm text-sm leading-relaxed text-balance text-fg-muted">{t.contact.whatsappHint}</p>
+        </div>
       </div>
       <!-- Cosa succede dopo: solo il tempo di risposta confermato dai titolari -->
-      <p class="mt-10 max-w-sm border-t border-line pt-6 text-sm leading-relaxed text-fg-muted md:mt-12">
+      <p class="mt-10 max-w-sm border-t border-line pt-6 text-sm leading-relaxed text-pretty text-fg-muted md:mt-12">
         {t.contact.reply[0]} <span class="font-semibold text-fg">{t.contact.reply[1]}</span>
       </p>
     </div>
