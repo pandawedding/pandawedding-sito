@@ -2,10 +2,8 @@
 import WhatsAppLink from '../WhatsAppLink.astro';
 import { getImage } from 'astro:assets';
 import { t as tr } from '../../i18n';
-import { getFilms } from '../../data/films';
 
 const t = tr(Astro.currentLocale);
-const films = getFilms(Astro.currentLocale === 'it' ? 'it' : 'en');
 import mobileSrc from '../../assets/hero/hero-poster-mobile.jpg';
 import desktopSrc from '../../assets/hero/hero-poster-desktop.jpg';
 
@@ -20,7 +18,6 @@ const desktop = {
 };
 const fallback = await getImage({ src: desktopSrc, width: 1920, format: 'jpg' });
 
-const featured = films.find((f) => f.slug === 'daniel-josiane')!;
 ---
 
 <section id="top" class="relative flex min-h-svh items-end overflow-hidden bg-black">
@@ -55,16 +52,19 @@ const featured = films.find((f) => f.slug === 'daniel-josiane')!;
   <!-- Velo in alto: logo e menu restano leggibili anche sulle scene chiare del video -->
   <div class="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-black/60 to-transparent md:h-44" aria-hidden="true"></div>
 
-  <!-- Trailer e audio in alto a destra, fuori dal centro dell'immagine. L'audio compare sotto quando il video parte -->
+  <!-- Link ai film e audio in alto a destra, fuori dal centro dell'immagine. L'audio compare sotto quando il video parte -->
   <div class="absolute top-20 right-5 z-10 flex flex-col items-end gap-2 md:top-28 md:right-10">
-    <button
-      type="button"
-      data-film={featured.slug}
+    <!-- Il video è un montaggio di più matrimoni: il chip porta alla riga dei film, dove ci sono i trailer -->
+    <a
+      href="#films"
+      data-track="cta_click"
+      data-label="our films"
+      data-position="hero"
       class="group relative inline-flex items-center gap-2 rounded-full bg-white/10 py-1 pr-3 pl-1 text-[0.6875rem] font-semibold tracking-[0.15em] text-white uppercase backdrop-blur-md transition-colors after:absolute after:inset-x-0 after:-inset-y-1.5 hover:bg-white/20 md:gap-3 md:py-2 md:pr-4 md:pl-2 md:tracking-[0.2em] md:after:hidden"
     >
       <span class="flex size-6 items-center justify-center rounded-full bg-accent text-[0.5rem] md:size-7 md:text-[0.625rem]" aria-hidden="true">▶</span>
-      <span>{featured.couple}</span>
-    </button>
+      <span>{t.hero.films}</span>
+    </a>
 
     <!-- I browser bloccano l'autoplay con audio: il video parte muto, l'audio si attiva qui -->
     <button

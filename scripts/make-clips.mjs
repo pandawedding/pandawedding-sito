@@ -66,12 +66,17 @@ const heroShots = [
 // e finisce con il finale del brano. Il loro video non va sul sito, la musica sì (proprietario, 26/11/2026).
 const heroAudio = { src: 'Selma e Michiel', start: 36.03, beat: 0.81 };
 
+// Qualità dell'hero: un montaggio con un taglio ogni battito è il materiale più difficile da comprimere.
+// Leggera riduzione della grana (hqdn3d) prima di scalare: il rumore dei trailer 1080p consumava i bit;
+// aq-mode=3 protegge cieli e zone scure dalle bande; CRF più basso di prima (era 28 / 30, sgranato)
+const heroQuality = { denoise: '2:1.5:3:3', x264: 'aq-mode=3:aq-strength=0.9' };
+
 // start/durata in secondi, scelti dai provini dei trailer
 const clips = [
   // Hero: orizzontale per desktop, verticale (ritaglio centrale 9:16) per mobile.
   // Meno compresse (siepi e vigneti si impastano oltre CRF 26-28): ~6,5 MB desktop; mobile a piena risoluzione per gli schermi densi
-  { out: 'hero-reel-1080.mp4', shots: heroShots, audio: heroAudio, scale: '1920:1080', crf: 28, preset: 'veryslow', abr: '64k' },
-  { out: 'hero-reel-vertical.mp4', shots: heroShots, audio: heroAudio, crop: 'ih*9/16:ih:(iw-ow)*{x}', scale: '1080:1920', crf: 30, preset: 'veryslow', abr: '64k' },
+  { out: 'hero-reel-1080.mp4', shots: heroShots, audio: heroAudio, scale: '1920:1080', crf: 25, preset: 'veryslow', abr: '64k', ...heroQuality },
+  { out: 'hero-reel-vertical.mp4', shots: heroShots, audio: heroAudio, crop: 'ih*9/16:ih:(iw-ow)*{x}', scale: '1080:1920', crf: 26, preset: 'veryslow', abr: '64k', ...heroQuality },
   // Anteprime delle card film (desktop, al passaggio del mouse)
   { out: 'preview-imani-john.mp4', src: 'imani_e_john', start: 34, dur: 10, scale: '960:540', crf: 28 },
   { out: 'preview-johanna-come.mp4', src: 'johanna_e_c', start: 24, dur: 10, scale: '960:540', crf: 28 },
@@ -131,7 +136,7 @@ for (const clip of clips.filter((c) => !only || c.out.includes(only))) {
     const end = (clip.dur - fade).toFixed(2);
     const graph = [
       ...clip.shots.map(
-        ([, a, b, x], i) => `[${i}:v]setpts=PTS-STARTPTS,${clip.crop ? `crop=${clip.crop.replace('{x}', cropX(x, b - a))},` : ''}scale=${clip.scale}:flags=lanczos,setsar=1,fps=25[v${i}]`,
+        ([, a, b, x], i) => `[${i}:v]setpts=PTS-STARTPTS,${clip.crop ? `crop=${clip.crop.replace('{x}', cropX(x, b - a))},` : ''}${clip.denoise ? `hqdn3d=${clip.denoise},` : ''}scale=${clip.scale}:flags=lanczos,setsar=1,fps=25[v${i}]`,
       ),
       `${clip.shots.map((_, i) => `[v${i}]`).join('')}concat=n=${n}:v=1:a=0,fade=t=out:st=${end}:d=${fade}[v]`,
       `[${n}:a]afade=t=in:st=0:d=${fade},afade=t=out:st=${end}:d=${fade}[a]`,
@@ -143,6 +148,7 @@ for (const clip of clips.filter((c) => !only || c.out.includes(only))) {
       '-filter_complex', graph, '-map', '[v]', '-map', '[a]',
       '-c:a', 'aac', '-b:a', clip.abr ?? '96k',
       '-c:v', 'libx264', '-preset', clip.preset ?? 'slow', '-crf', String(clip.crf),
+      ...(clip.x264 ? ['-x264-params', clip.x264] : []),
       '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
       dest,
     ]);
