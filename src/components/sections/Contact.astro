@@ -52,6 +52,8 @@ const fields = [
         class="reveal grid gap-x-5 gap-y-6 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2"
         novalidate
         data-msg-required={t.contact.required}
+        data-msg-missing={t.contact.fieldMissing}
+        data-msg-email={t.contact.fieldEmail}
         data-msg-sending={t.contact.sending}
         data-msg-sent={t.contact.sent}
         data-msg-failed={t.contact.failed(site.email)}
@@ -69,8 +71,10 @@ const fields = [
                 required={field.required}
                 placeholder={field.placeholder}
                 autocomplete={field.autocomplete}
+                aria-describedby={field.required ? `err-${field.name}` : undefined}
                 class="field"
               />
+              {field.required && <p id={`err-${field.name}`} class="field-error" hidden />}
             </label>
           ))
         }
@@ -83,7 +87,9 @@ const fields = [
             required
             rows="5"
             placeholder={f.message[1]}
+            aria-describedby="err-message"
             class="field resize-y"></textarea>
+          <p id="err-message" class="field-error" hidden></p>
         </label>
 
         <!-- Honeypot antispam: invisibile alle persone -->
@@ -108,6 +114,8 @@ const fields = [
         id="brochure"
         class="reveal mt-10 scroll-mt-28 rounded-[6px] bg-bg-raised p-5 md:mt-14 md:p-8"
         novalidate
+        data-msg-missing={t.contact.fieldMissing}
+        data-msg-email={t.contact.fieldEmail}
         data-msg-sending={t.contact.sending}
         data-msg-sent={t.brochure.sent}
         data-msg-failed={t.contact.failed(site.email)}
@@ -127,8 +135,10 @@ const fields = [
               required
               placeholder={t.contact.fields.email[1]}
               autocomplete="email"
+              aria-describedby="err-brochure-email"
               class="field"
             />
+            <p id="err-brochure-email" class="field-error mt-2" hidden></p>
           </label>
           <!-- Honeypot antispam: invisibile alle persone -->
           <label class="absolute -left-[9999px]" aria-hidden="true">
@@ -172,18 +182,70 @@ const fields = [
     color: var(--fg-muted);
     opacity: 0.8; /* ~5:1 sullo sfondo del campo */
   }
+  /* Il rosso è riservato agli errori: il campo attivo ha un bordo neutro più spesso */
   .field:focus {
     outline: none;
-    box-shadow: inset 0 0 0 1px var(--accent);
+    box-shadow: inset 0 0 0 2px var(--fg);
   }
   .field[aria-invalid='true'] {
     box-shadow: inset 0 0 0 1px var(--accent);
   }
+  .field[aria-invalid='true']:focus {
+    box-shadow: inset 0 0 0 2px var(--accent);
+  }
+  /* Messaggio sotto il campo: testo scuro/chiaro leggibile, il rosso solo nell'icona */
+  .field-error {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5em;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: var(--fg);
+  }
+  .field-error[hidden] {
+    display: none;
+  }
+  .field-error::before {
+    content: '!';
+    flex: none;
+    display: inline-grid;
+    place-items: center;
+    width: 1.15em;
+    height: 1.15em;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1;
+    translate: 0 0.1em;
+  }
 </style>
 
 <script>
+  type Field = HTMLInputElement | HTMLTextAreaElement;
+
+  // Controlla un campo e mostra sotto il motivo dell'errore (collegato con aria-describedby)
+  const check = (el: Field, f: HTMLFormElement) => {
+    const ok = el.checkValidity();
+    el.setAttribute('aria-invalid', String(!ok));
+    const msg = document.getElementById(el.getAttribute('aria-describedby') ?? '');
+    if (msg) {
+      msg.textContent = ok ? '' : el.validity.valueMissing ? f.dataset.msgMissing! : f.dataset.msgEmail!;
+      msg.hidden = ok;
+    }
+    return ok;
+  };
+
+  // Dopo il primo errore il campo si ricontrolla mentre si scrive: il messaggio sparisce appena è corretto
+  const liveCheck = (f: HTMLFormElement) =>
+    f.addEventListener('input', (e) => {
+      const el = e.target as Field;
+      if (el.getAttribute('aria-invalid') === 'true') check(el, f);
+    });
 
   const form = document.getElementById('contact-form') as HTMLFormElement;
+  liveCheck(form);
   const status = form.querySelector<HTMLElement>('[data-form-status]')!;
   let started = false;
 
@@ -196,10 +258,8 @@ const fields = [
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     let firstInvalid: HTMLElement | null = null;
-    form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input[required], textarea[required]').forEach((el) => {
-      const ok = el.checkValidity();
-      el.setAttribute('aria-invalid', String(!ok));
-      if (!ok && !firstInvalid) firstInvalid = el;
+    form.querySelectorAll<Field>('input[required], textarea[required]').forEach((el) => {
+      if (!check(el, form) && !firstInvalid) firstInvalid = el;
     });
     if (firstInvalid) {
       status.textContent = form.dataset.msgRequired!;
@@ -231,11 +291,11 @@ const fields = [
   // Richiesta brochure: solo l'email, stesso endpoint dei contatti con type "brochure"
   const brochure = document.getElementById('brochure') as HTMLFormElement;
   const brochureStatus = brochure.querySelector<HTMLElement>('[data-form-status]')!;
+  liveCheck(brochure);
   brochure.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = brochure.querySelector<HTMLInputElement>('input[name="email"]')!;
-    email.setAttribute('aria-invalid', String(!email.checkValidity()));
-    if (!email.checkValidity()) {
+    if (!check(email, brochure)) {
       email.focus();
       return;
     }
