@@ -1,0 +1,10 @@
+// Cloudflare Workers con file statici: il sito è la cartella dist generata da "npm run build".
+// Il nome deve coincidere con il progetto su Cloudflare.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "pandawedding-sito",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist"
+  }
+}
