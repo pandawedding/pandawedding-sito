@@ -18,7 +18,7 @@ Il sito esiste già su Framer: questo progetto lo **ricostruisce da zero in codi
 
 - **Astro** + **Tailwind CSS**, sito statico, JavaScript solo dove serve (carosello, menu, animazioni, form).
 - Contenuti dei Real Weddings come **content collection** (Markdown/MDX), una pagina per ogni "diario".
-- Hosting: Vercel o Cloudflare Pages, deploy automatico da GitHub.
+- Hosting: **Cloudflare Pages** (deciso il 27/11/2026), deploy automatico da GitHub; build `npm run build`, cartella `dist`, Node da `.node-version`. Intestazioni in `public/_headers`. Vercel (Hobby) resta solo come anteprima finché il dominio non passa a Cloudflare.
 - Form contatti: endpoint serverless che invia email a `info@pandawedding.it` (es. Resend), con protezione antispam (honeypot, o Cloudflare Turnstile).
 - Analytics: **PostHog Cloud EU** (`https://eu.i.posthog.com`), chiave in variabile d'ambiente `PUBLIC_POSTHOG_KEY`.
 
