@@ -267,18 +267,20 @@ html {
 }
 
 /* Passaggio morbido scuro → bianco → scuro mentre la sezione entra nello schermo.
-   Senza supporto per le animazioni legate allo scroll resta il colore finale. */
+   Senza supporto per le animazioni legate allo scroll resta il colore finale.
+   Il cambio si chiude nella prima fascia di ingresso (15%): i testi compaiono (.reveal)
+   solo dopo, quindi non restano mai sopra il grigio di metà passaggio. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     .fade-from-dark {
       animation: from-dark linear both;
       animation-timeline: view();
-      animation-range: entry 0% entry 70%;
+      animation-range: entry 0% entry 15%;
     }
     .fade-from-light {
       animation: from-light linear both;
       animation-timeline: view();
-      animation-range: entry 0% entry 70%;
+      animation-range: entry 0% entry 15%;
     }
   }
 }
