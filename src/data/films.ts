@@ -92,8 +92,8 @@ const sources: FilmSource[] = [
     names: ['Tatiana', 'Marco'],
     location: { en: 'Ca’ Ottolina · Verona', it: 'Ca’ Ottolina · Verona' },
     text: {
-      en: 'Morning coats, striking hats and the ancient stones of Verona. A wedding with the grace of another era, from the church to the evening at Ca’ Ottolina.',
-      it: 'Tight, cappelli di carattere e le pietre antiche di Verona. Un matrimonio con la grazia di altri tempi, dalla chiesa alla sera a Ca’ Ottolina.',
+      en: 'Morning coats, striking hats and an Orthodox rite in Verona Cathedral. A wedding with the grace of another era, from the cathedral to the evening at Ca’ Ottolina.',
+      it: 'Tight, cappelli di carattere e il rito ortodosso nel Duomo di Verona. Un matrimonio con la grazia di altri tempi, dalla cattedrale alla sera a Ca’ Ottolina.',
     },
     vimeo: { id: '1051084938' },
     poster: tatianaMarco,
