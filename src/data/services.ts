@@ -1,9 +1,9 @@
 import type { ImageMetadata } from 'astro';
 import type { Lang } from '../i18n';
 import photoImg from '../assets/services/bride-groom-kiss-under-veil-black-white.jpg';
-import filmImg from '../assets/PORTFOLIO/0082-bride-groom-watching-fireworks.jpg';
+import filmImg from '../assets/photos/0082-bride-groom-watching-fireworks.jpg';
 import bothImg from '../assets/team/pierluigi-alberto.jpg';
-import extrasImg from '../assets/PORTFOLIO/0078-cake-cutting-sparklers.jpg';
+import extrasImg from '../assets/PORTFOLIO/0028-cake-cutting-sparklers.jpg';
 import planningImg from '../assets/services/aerial-view-wedding-ceremony-villa-arvedi.jpg';
 
 // Pagina Servizi: descrittiva, per la SEO, linkata solo dal footer. Mai prezzi qui:

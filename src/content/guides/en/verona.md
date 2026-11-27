@@ -4,7 +4,7 @@ urlSlug: verona
 area: Verona
 label: Verona · Guide
 excerpt: The city of Romeo and Juliet, but also of the Arena, the Adige river and the hills. Everything you need to know about getting married in Verona, from two wedding photographers and videographers who live and work here.
-cover: ../../../assets/PORTFOLIO/0056-bride-twirling-skirt-sunset-groom.jpg
+cover: ../../../assets/photos/0056-bride-twirling-skirt-sunset-groom.jpg
 coverAlt: Bride and groom embracing at sunset, with the plain in the background
 order: 0
 ---
@@ -23,7 +23,7 @@ It is a city to explore on foot, where a few steps take you from a medieval squa
 
 The historic centre is a UNESCO World Heritage Site, and it is compact: Piazza delle Erbe with its frescoed palaces, Piazza dei Signori, the Arena, Ponte Pietra over the Adige. Across the river, the steps up to Castel San Pietro lead to the viewpoint over the whole city, one of the most beautiful places for sunset portraits.
 
-![Bride and groom kissing in front of a stone doorway, in black and white](../../../assets/PORTFOLIO/0042-bride-groom-classical-doorway-black-white.jpg)
+![Bride and groom kissing in front of a stone doorway, in black and white](../../../assets/PORTFOLIO/0018-bride-groom-classical-doorway-black-white.jpg)
 
 ## Civil ceremonies in Juliet’s places
 
@@ -33,7 +33,7 @@ These are intimate ceremonies for a small number of guests, often followed by a 
 
 > In Verona you only have to turn a corner to find new light: among the stones of the old town, every alley can become a portrait.
 
-![Bride in the frescoed hall of a historic palace](../../../assets/PORTFOLIO/0068-bride-long-train-chapel-floor.jpg)
+![Bride in the frescoed hall of a historic palace](../../../assets/PORTFOLIO/0024-bride-long-train-chapel-floor.jpg)
 
 ## Light and seasons
 
@@ -52,7 +52,7 @@ For portraits in the old town, the secret is sunrise: empty squares, stone glowi
 
 If you are looking for vineyards and Venetian villas, [Valpolicella](/guides/valpolicella/) is twenty minutes away; for water and sunsets, [Lake Garda](/guides/lake-garda/) is half an hour.
 
-![Bride and groom under the arches of a cloister](../../../assets/PORTFOLIO/0064-bride-groom-cloister-arcade.jpg)
+![Bride and groom under the arches of a cloister](../../../assets/photos/0064-bride-groom-cloister-arcade.jpg)
 
 ## Practical tips
 
@@ -64,7 +64,7 @@ If you are looking for vineyards and Venetian villas, [Valpolicella](/guides/val
 
 **From ceremony to party.** If you marry in the old town and celebrate in the hills, allow plenty of time for the transfer and for portraits along the way.
 
-![Bride and groom embracing in a lit garden in the evening](../../../assets/PORTFOLIO/0080-bride-groom-garden-blue-hour.jpg)
+![Bride and groom embracing in a lit garden in the evening](../../../assets/photos/0080-bride-groom-garden-blue-hour.jpg)
 
 ## How we tell it
 

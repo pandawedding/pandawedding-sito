@@ -4,7 +4,7 @@ urlSlug: valpolicella
 area: Valpolicella
 label: Valpolicella · Guida
 excerpt: Ville venete tra i vigneti, cantine storiche e colline a pochi minuti da Verona. Tutto quello che serve sapere per sposarsi in Valpolicella, raccontato da due fotografi e videomaker di Verona.
-cover: ../../../assets/PORTFOLIO/0017-bride-groom-staircase-historic-garden.jpg
+cover: ../../../assets/photos/0017-bride-groom-staircase-historic-garden.jpg
 coverAlt: Sposi davanti alla scalinata di una villa storica
 order: 2
 ---
@@ -26,7 +26,7 @@ Per chi cerca una villa storica senza rinunciare alla comodità, è difficile tr
 
 È anche un territorio raccolto: Negrar, Fumane, Marano, Sant’Ambrogio e San Pietro in Cariano sono a pochi chilometri l’uno dall’altro, e la giornata scorre senza lunghi spostamenti.
 
-![Sposi in un giardino all’italiana di siepi, in bianco e nero](../../../assets/PORTFOLIO/0028-bride-groom-hedge-maze-black-white.jpg)
+![Sposi in un giardino all’italiana di siepi, in bianco e nero](../../../assets/PORTFOLIO/0032-bride-groom-hedge-maze-black-white.jpg)
 
 ## La luce e le stagioni
 
@@ -57,8 +57,8 @@ Poco più a est, in Valpantena, c’è **Villa Arvedi**, dove abbiamo raccontato
 
 Disponibilità, capienza e regole per la cerimonia cambiano da location a location: verificatele sempre direttamente con la struttura o con il vostro wedding planner.
 
-![Brindisi davanti a una piramide di calici di champagne](../../../assets/PORTFOLIO/0020-groom-champagne-tower-bride-laughing.jpg)
-![Lo sposo con i testimoni nel giardino di una villa](../../../assets/PORTFOLIO/0014-groom-groomsmen-walking-villa-lawn.jpg)
+![Brindisi davanti a una piramide di calici di champagne](../../../assets/PORTFOLIO/0061-groom-champagne-tower-bride-laughing.jpg)
+![Lo sposo con i testimoni nel giardino di una villa](../../../assets/photos/0014-groom-groomsmen-walking-villa-lawn.jpg)
 
 ## Consigli pratici
 
@@ -70,7 +70,7 @@ Disponibilità, capienza e regole per la cerimonia cambiano da location a locati
 
 **Le sere d’autunno.** In ottobre la temperatura scende in fretta dopo il tramonto: prevedete uno spazio coperto o riscaldato per la cena.
 
-![Sposi in bianco e nero accanto a un’auto d’epoca](../../../assets/PORTFOLIO/0035-bride-groom-vintage-car-black-white.jpg)
+![Sposi in bianco e nero accanto a un’auto d’epoca](../../../assets/photos/0035-bride-groom-vintage-car-black-white.jpg)
 
 ## Come lo raccontiamo noi
 

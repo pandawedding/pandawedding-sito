@@ -4,7 +4,7 @@ urlSlug: valpolicella
 area: Valpolicella
 label: Valpolicella · Guide
 excerpt: Venetian villas among the vineyards, historic wineries and hills just minutes from Verona. Everything you need to know about getting married in Valpolicella, from two wedding photographers and videographers based in Verona.
-cover: ../../../assets/PORTFOLIO/0017-bride-groom-staircase-historic-garden.jpg
+cover: ../../../assets/photos/0017-bride-groom-staircase-historic-garden.jpg
 coverAlt: Bride and groom in front of the staircase of a historic villa
 order: 2
 ---
@@ -25,7 +25,7 @@ If you are looking for a historic villa without giving up convenience, it is har
 
 It is also a compact area: Negrar, Fumane, Marano, Sant’Ambrogio and San Pietro in Cariano are only a few kilometres apart, so the day flows without long transfers.
 
-![Bride and groom in a formal hedge garden, in black and white](../../../assets/PORTFOLIO/0028-bride-groom-hedge-maze-black-white.jpg)
+![Bride and groom in a formal hedge garden, in black and white](../../../assets/PORTFOLIO/0032-bride-groom-hedge-maze-black-white.jpg)
 
 ## Light and seasons
 
@@ -56,8 +56,8 @@ A little further east, in Valpantena, is **Villa Arvedi**, where we told the wed
 
 Availability, capacity and ceremony rules change from venue to venue: always check directly with the venue or with your wedding planner.
 
-![A toast in front of a tower of champagne glasses](../../../assets/PORTFOLIO/0020-groom-champagne-tower-bride-laughing.jpg)
-![The groom with his groomsmen in the garden of a villa](../../../assets/PORTFOLIO/0014-groom-groomsmen-walking-villa-lawn.jpg)
+![A toast in front of a tower of champagne glasses](../../../assets/PORTFOLIO/0061-groom-champagne-tower-bride-laughing.jpg)
+![The groom with his groomsmen in the garden of a villa](../../../assets/photos/0014-groom-groomsmen-walking-villa-lawn.jpg)
 
 ## Practical tips
 
@@ -69,7 +69,7 @@ Availability, capacity and ceremony rules change from venue to venue: always che
 
 **Autumn evenings.** In October the temperature drops quickly after sunset: plan a covered or heated space for dinner.
 
-![Bride and groom next to a vintage car, in black and white](../../../assets/PORTFOLIO/0035-bride-groom-vintage-car-black-white.jpg)
+![Bride and groom next to a vintage car, in black and white](../../../assets/photos/0035-bride-groom-vintage-car-black-white.jpg)
 
 ## How we tell it
 
