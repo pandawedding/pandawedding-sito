@@ -61,6 +61,8 @@ function loadPostHog() {
     capture_pageleave: true, // include la profondità di scroll della pagina
     autocapture: false, // solo eventi espliciti: niente testi dei campi del modulo
     disable_session_recording: true,
+    disable_surveys: true, // niente sondaggi: non li usiamo
+    capture_dead_clicks: false, // solo eventi espliciti (vedi autocapture)
   });
   arr.opt_in_capturing();
 }
