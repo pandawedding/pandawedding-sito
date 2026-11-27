@@ -18,15 +18,15 @@ const MOBILE_FIRST = 5;
 // le verticali danno il movimento: dimensioni e posizioni sfalsate che si ripetono ogni 9 verticali.
 // Su desktop le verticali stanno a coppie (una colonna di partenza più a sinistra manda a capo), sul telefono una per riga.
 const layout = [
-  'col-start-1 col-span-5 md:col-start-1 md:col-span-5',
-  'col-start-2 col-span-5 md:col-start-8 md:col-span-4 md:mt-24',
-  'col-start-1 col-span-5 md:col-start-2 md:col-span-4',
-  'col-start-2 col-span-5 md:col-start-8 md:col-span-5 md:mt-16',
-  'col-start-1 col-span-5 md:col-start-1 md:col-span-4 md:mt-8',
-  'col-start-2 col-span-5 md:col-start-7 md:col-span-4 md:mt-32',
-  'col-start-1 col-span-5 md:col-start-4 md:col-span-5',
-  'col-start-2 col-span-5 md:col-start-2 md:col-span-4 md:mt-6',
-  'col-start-1 col-span-5 md:col-start-7 md:col-span-5 md:mt-20',
+  'col-start-1 col-span-5 md:col-start-1 md:col-span-6',
+  'col-start-2 col-span-5 md:col-start-8 md:col-span-5 md:mt-24',
+  'col-start-1 col-span-5 md:col-start-2 md:col-span-5',
+  'col-start-2 col-span-5 md:col-start-7 md:col-span-6 md:mt-16',
+  'col-start-1 col-span-6 md:col-start-1 md:col-span-5 md:mt-8',
+  'col-start-2 col-span-5 md:col-start-7 md:col-span-5 md:mt-32',
+  'col-start-1 col-span-6 md:col-start-4 md:col-span-6',
+  'col-start-1 col-span-5 md:col-start-1 md:col-span-5 md:mt-6',
+  'col-start-2 col-span-5 md:col-start-7 md:col-span-6 md:mt-20',
 ];
 const wide = 'col-start-1 col-span-6 md:col-start-2 md:col-span-10';
 const photos = await Promise.all(
@@ -89,7 +89,7 @@ const slots = batches.map((batch) => {
                   formats={['avif', 'webp']}
                   fallbackFormat="webp"
                   widths={photo.landscape ? [720, 1000, 1400, 1600] : [480, 720, 1000]}
-                  sizes={photo.landscape ? '(min-width: 1200px) 960px, 100vw' : '(min-width: 1024px) 500px, (min-width: 768px) 45vw, 85vw'}
+                  sizes={photo.landscape ? '(min-width: 1200px) 960px, 100vw' : '(min-width: 1024px) 600px, (min-width: 768px) 55vw, 90vw'}
                   loading="lazy"
                   decoding="async"
                   class="block h-auto w-full transition-transform duration-700 ease-out-soft group-hover:scale-[1.03]"
