@@ -2,7 +2,8 @@
 import WhatsAppLink from './WhatsAppLink.astro';
 import { t as tr } from '../i18n';
 const t = tr(Astro.currentLocale);
-// Barra fissa in basso su mobile: compare dopo l'hero, sparisce sui contatti.
+// Barra fissa in basso su mobile: compare dopo l'hero, sparisce sui contatti
+// e quando un bottone di sezione passa nella fascia in basso (non lo copre mai).
 // "Get in touch" con WhatsApp accanto, come nel resto del sito.
 ---
 
@@ -32,9 +33,9 @@ const t = tr(Astro.currentLocale);
   const contact = document.getElementById('contatti');
   const footer = document.querySelector('footer');
   if (hero && contact && 'IntersectionObserver' in window) {
-    const state = { hero: true, end: false };
+    const state = { hero: true, end: false, cta: false };
     const update = () => {
-      const show = !state.hero && !state.end;
+      const show = !state.hero && !state.end && !state.cta;
       bar.toggleAttribute('data-show', show);
       // Nascosta: fuori dal tab e dagli screen reader
       bar.inert = !show;
@@ -52,5 +53,20 @@ const t = tr(Astro.currentLocale);
     endIo.observe(contact);
     if (footer) endIo.observe(footer);
     document.querySelectorAll("[data-sticky-end]").forEach((el) => endIo.observe(el));
+
+    // I bottoni delle sezioni non finiscono mai sotto la barra: quando uno entra
+    // nella fascia in basso dove sta la barra (ultimo 20% dello schermo), la barra si toglie
+    const covered = new Set<Element>();
+    const ctaIo = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => (e.isIntersecting ? covered.add(e.target) : covered.delete(e.target)));
+        state.cta = covered.size > 0;
+        update();
+      },
+      { rootMargin: '-80% 0px 0px 0px' },
+    );
+    document.querySelectorAll('main .btn').forEach((el) => {
+      if (!bar.contains(el)) ctaIo.observe(el);
+    });
   }
 </script>
