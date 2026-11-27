@@ -57,6 +57,8 @@ const clips = [
   { out: 'preview-johanna-come.mp4', src: 'johanna_e_c', start: 24, dur: 10, scale: '960:540', crf: 28 },
   { out: 'preview-daniel-josiane.mp4', src: 'daniel_e_josiane', start: 56, dur: 10, scale: '960:540', crf: 28 },
   { out: 'preview-jasmine-daniel.mp4', src: 'jasmine', start: 16, dur: 10, scale: '960:540', crf: 28 },
+  { out: 'preview-alessandra-denis.mp4', src: 'alessandra_e_denis', start: 13.32, dur: 10, scale: '960:540', crf: 28 },
+  { out: 'preview-tatiana-marco.mp4', src: 'tatiana_e_marco', start: 92.92, dur: 10, scale: '960:540', crf: 28 },
   // Un trailer senza link Vimeo può avere qui la sua versione web completa (ora sono tutti su Vimeo):
   // { out: 'trailer-<slug>.mp4', src: '<file>', full: true, scale: '1280:720', crf: 28, audio: true },
 ];
@@ -64,6 +66,8 @@ const clips = [
 // Poster delle card film (fotogramma a "at" secondi)
 const posters = [
   { out: 'src/assets/films/jasmine-daniel.jpg', src: 'jasmine', at: 30 },
+  { out: 'src/assets/films/alessandra-denis.jpg', src: 'alessandra_e_denis', at: 3.3, vf: 'scale=1920:1080:flags=lanczos' },
+  { out: 'src/assets/films/tatiana-marco.jpg', src: 'tatiana_e_marco', at: 93.9 },
   // Fermo immagine dell'hero: prima inquadratura della clip, stesso ritaglio, così il video parte senza salti
   { out: 'src/assets/hero/hero-poster-desktop.jpg', src: 'imani_e_john', at: 11.44, vf: 'scale=1920:1080:flags=lanczos' },
   { out: 'src/assets/hero/hero-poster-mobile.jpg', src: 'imani_e_john', at: 11.44, vf: 'crop=ih*9/16:ih:(iw-ow)*0.49,scale=1080:1920:flags=lanczos' },

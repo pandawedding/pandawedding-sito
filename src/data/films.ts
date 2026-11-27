@@ -4,6 +4,8 @@ import imaniJohn from '../assets/films/imani-john.jpg';
 import johannaCome from '../assets/films/johanna-come.jpg';
 import danielJosiane from '../assets/films/daniel-josiane.jpg';
 import jasmineDaniel from '../assets/films/jasmine-daniel.jpg';
+import alessandraDenis from '../assets/films/alessandra-denis.jpg';
+import tatianaMarco from '../assets/films/tatiana-marco.jpg';
 
 interface FilmSource {
   slug: string;
@@ -72,6 +74,24 @@ const sources: FilmSource[] = [
     vimeo: { id: '1139293247' },
     poster: jasmineDaniel,
     preview: '/videos/preview-jasmine-daniel.mp4',
+  },
+  {
+    // TODO: descrizione da scrivere
+    slug: 'alessandra-denis',
+    names: ['Alessandra', 'Denis'],
+    location: { en: 'Villa Verità Fraccaroli · Verona', it: 'Villa Verità Fraccaroli · Verona' },
+    vimeo: { id: '1232287325', hash: '1fc57821cb' },
+    poster: alessandraDenis,
+    preview: '/videos/preview-alessandra-denis.mp4',
+  },
+  {
+    // TODO: descrizione da scrivere
+    slug: 'tatiana-marco',
+    names: ['Tatiana', 'Marco'],
+    location: { en: 'Ca’ Ottolina · Verona', it: 'Ca’ Ottolina · Verona' },
+    vimeo: { id: '1051084938' },
+    poster: tatianaMarco,
+    preview: '/videos/preview-tatiana-marco.mp4',
   },
 ];
 
