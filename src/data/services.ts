@@ -4,7 +4,7 @@ import photoImg from '../assets/services/bride-groom-kiss-under-veil-black-white
 import filmImg from '../assets/PORTFOLIO/0082-bride-groom-watching-fireworks.jpg';
 import bothImg from '../assets/team/pierluigi-alberto.jpg';
 import extrasImg from '../assets/PORTFOLIO/0078-cake-cutting-sparklers.jpg';
-import planningImg from '../assets/PORTFOLIO/0013-wedding-details-shoes-rings-invitations.jpg';
+import planningImg from '../assets/services/aerial-view-outdoor-wedding-ceremony-villa.jpg';
 
 // Pagina Servizi: descrittiva, per la SEO, linkata solo dal footer. Mai prezzi qui:
 // il listino sta nella brochure, che si invia di persona.
@@ -122,7 +122,7 @@ export const services: Record<Lang, ServicesCopy> = {
       {
         id: 'planning',
         image: planningImg,
-        alt: 'Wedding invitations, ring boxes, shoes and a glass of champagne on a table',
+        alt: 'Aerial view of an outdoor wedding ceremony in the courtyard of a villa, among cypresses, olive groves and vineyards',
         kicker: '05 · Planning',
         title: ['One team,', 'one direction'],
         lead: 'Behind a day that flows effortlessly there is precise teamwork.',
@@ -250,7 +250,7 @@ export const services: Record<Lang, ServicesCopy> = {
       {
         id: 'organizzazione',
         image: planningImg,
-        alt: 'Partecipazioni, scatole delle fedi, scarpe e un calice di champagne su un tavolo',
+        alt: 'Vista aerea di una cerimonia all’aperto nel cortile di una villa, tra cipressi, ulivi e vigneti',
         kicker: '05 · Organizzazione',
         title: ['Una squadra,', 'un’unica regia'],
         lead: 'Dietro un giorno che scorre leggero c’è un lavoro di squadra preciso.',
