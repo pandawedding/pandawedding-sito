@@ -14,21 +14,21 @@ const BATCH = 18;
 // Sul telefono la selezione è più corta: le altre foto della selezione arrivano con il primo "Vedi altre foto"
 const MOBILE_FIRST = 5;
 
-// Impaginazione editoriale: dimensioni e posizioni sfalsate che si ripetono ogni 9 foto.
-// Su desktop ogni riga ha una o due foto (una colonna di partenza più a sinistra manda a capo); sul telefono una foto per riga, sfalsate.
+// Impaginazione editoriale. Le foto orizzontali sono centrate e prendono una riga intera;
+// le verticali danno il movimento: dimensioni e posizioni sfalsate che si ripetono ogni 9 verticali.
+// Su desktop le verticali stanno a coppie (una colonna di partenza più a sinistra manda a capo), sul telefono una per riga.
 const layout = [
   'col-start-1 col-span-5 md:col-start-1 md:col-span-6',
-  'col-start-2 col-span-5 md:col-start-8 md:col-span-4 md:mt-24',
-  'col-start-1 col-span-5 md:col-start-2 md:col-span-4',
-  'col-start-2 col-span-5 md:col-start-6 md:col-span-6 md:mt-12',
-  'col-start-1 col-span-6 md:col-start-1 md:col-span-5 md:mt-6',
-  'col-start-2 col-span-5 md:col-start-7 md:col-span-4 md:mt-28',
-  'col-start-1 col-span-6 md:col-start-3 md:col-span-7',
-  'col-start-1 col-span-5 md:col-start-1 md:col-span-4 md:mt-10',
-  'col-start-2 col-span-5 md:col-start-6 md:col-span-6',
+  'col-start-2 col-span-5 md:col-start-8 md:col-span-5 md:mt-24',
+  'col-start-1 col-span-5 md:col-start-2 md:col-span-5',
+  'col-start-2 col-span-5 md:col-start-7 md:col-span-6 md:mt-16',
+  'col-start-1 col-span-6 md:col-start-1 md:col-span-5 md:mt-8',
+  'col-start-2 col-span-5 md:col-start-7 md:col-span-5 md:mt-32',
+  'col-start-1 col-span-6 md:col-start-4 md:col-span-6',
+  'col-start-1 col-span-5 md:col-start-1 md:col-span-5 md:mt-6',
+  'col-start-2 col-span-5 md:col-start-7 md:col-span-6 md:mt-20',
 ];
-// Le foto orizzontali in uno spazio stretto diventano minuscole: prendono una riga tutta per loro
-const wide = 'col-start-1 col-span-6 md:col-start-2 md:col-span-10';
+const wide = 'col-start-1 col-span-6 md:col-start-1 md:col-span-12';
 const photos = await Promise.all(
   portfolio.map(async (p, index) => ({
     ...p,
@@ -40,6 +40,11 @@ const photos = await Promise.all(
 );
 const batches = [photos.slice(0, PORTFOLIO_FIRST)];
 for (let i = PORTFOLIO_FIRST; i < photos.length; i += BATCH) batches.push(photos.slice(i, i + BATCH));
+// Posizione di ogni foto: le verticali seguono lo schema contando solo le verticali del blocco
+const slots = batches.map((batch) => {
+  let portrait = 0;
+  return batch.map((p) => (p.landscape ? wide : layout[portrait++ % layout.length]));
+});
 ---
 
 <!-- Inspirations: unica sezione chiara del sito -->
@@ -71,7 +76,7 @@ for (let i = PORTFOLIO_FIRST; i < photos.length; i += BATCH) batches.push(photos
           {batch.map((photo, i) => (
             <button
               type="button"
-              class:list={['group block w-full', photo.landscape ? wide : layout[i % layout.length], b === 0 && i >= MOBILE_FIRST && 'mobile-extra max-md:hidden']}
+              class:list={['group block w-full', slots[b][i], b === 0 && i >= MOBILE_FIRST && 'mobile-extra max-md:hidden']}
               data-lightbox={photo.index}
               data-full={photo.full}
               data-alt={photo.alt}
@@ -83,8 +88,8 @@ for (let i = PORTFOLIO_FIRST; i < photos.length; i += BATCH) batches.push(photos
                   alt={photo.alt}
                   formats={['avif', 'webp']}
                   fallbackFormat="webp"
-                  widths={photo.landscape ? [720, 1000, 1400] : [480, 720, 1000]}
-                  sizes={photo.landscape ? '(min-width: 1024px) 960px, 94vw' : '(min-width: 1024px) 600px, (min-width: 768px) 55vw, 90vw'}
+                  widths={photo.landscape ? [720, 1000, 1400, 1600] : [480, 720, 1000]}
+                  sizes={photo.landscape ? '(min-width: 1200px) 1150px, 100vw' : '(min-width: 1024px) 600px, (min-width: 768px) 55vw, 90vw'}
                   loading="lazy"
                   decoding="async"
                   class="block h-auto w-full transition-transform duration-700 ease-out-soft group-hover:scale-[1.03]"
